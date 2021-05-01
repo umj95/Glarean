@@ -52,7 +52,7 @@ In terms of music, I have some snippets at hand that I use for testing Verovio f
 5. Make it humanly palatable with CSS and the likes
 ### Scholarly
 1. Decide on the sources to consider: Are there considerable variants? Is there an authoritative source, varying editions, etc? Decide on a chain of command when in doubt between the sources considered
-2. Decide on the passage to use for this experiment (chapters 23-24?)
+2. Decide on the passage to use for this experiment
 3. Transcribe / correct the Music and Text
 4. Decide on a markup scheme
 5. Research the things to be marked up
