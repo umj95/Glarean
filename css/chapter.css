@@ -1,0 +1,225 @@
+/* General Layout */
+
+.chapter {
+  grid-column-start: 1;
+  grid-column-end: 25;
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  background-color: #ecdbbf;
+}
+
+.chapter p {
+  overflow: visible;
+}
+
+.chapter h1, .chapter h2, .chapter h3, .chapter h4, .chapter h5, .chapter h6 {
+  margin: 0.7em 0 0.2em 0;
+  font-style: normal;
+  font-feature-settings: "smcp";
+  letter-spacing: 0.075em;
+}
+
+.chapter h1 {
+  font-size: 5rem;
+}
+
+.chapter h2 {
+  font-size: 3rem;
+}
+
+.chapter h3 {
+  font-size: 2.4rem;
+}
+
+.chapter h4 {
+  font-size: 2rem;
+}
+
+.chapter h5 {
+  font-size: 1.5rem;
+}
+
+.chapter tei-title {
+  font-style: italic;
+}
+
+.chapter .pb {
+  text-align: right;
+  color: #2f4858;
+}
+
+tei-term, .term {
+  font-size: inherit;
+  font-style: inherit;
+  font-feature-settings: inherit;
+}
+
+.meiHead {
+  padding: 0.3em;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+/* The "Page" */
+
+.body-text {
+  grid-column: 3 / 16;
+  overflow: visible;
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  background-color: #efe4d8;
+  box-shadow: 5px 5px 20px #88837a;
+  font-size: 1.25rem;
+}
+
+.text {
+  overflow: visible;
+  grid-column: 1 / 14;
+  margin: 6rem 12.48vw 6rem 8.32vw;
+}
+
+/* Margins */
+
+.margin {
+  float: right;
+  width: 9.72vw;
+  margin-right: -35%;
+  position: relative;
+}
+
+/* Tooltips */
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tiptext {
+  visibility: hidden;
+  max-width: max-content;
+  padding: 0.15rem 0.2rem 0.15rem 0.2rem;
+  background-color: #D5DED7;
+  color: #2f4858;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid #2f4858;
+  box-shadow: 5px 5px 5px #888;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  z-index: 1;
+} 
+
+.tooltip:hover .tiptext {
+  visibility: visible;
+} 
+
+
+
+/* Tranlsation Buttons */
+
+.transl-button {
+  overflow: visible;
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-left: -15%;
+  transform: translateY(-2.5rem);
+}
+
+button.transl {
+  border: none;
+  color: #ecdbbf;
+  background-color: #2f4858;
+  border-radius: 4px;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: right;
+  height: 2vh;
+  width: 2vh;
+}
+
+/* Notes */
+
+#noteArea {
+  grid-column: 16 / 25;
+  margin-top: 4rem;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.note {
+  overflow: hidden;
+  grid-column: 2 / 9;
+  position: sticky;
+  top: calc(0.8in + 6rem);
+  place-self: stretch;
+  display: grid;
+  grid-template-rows: 2.7vh auto 2.7vh;
+  grid-template-areas:  " title"
+                        "body"
+                        "footer";
+  height: min-content;
+  margin: 0 4.1vw 0 4.1vw;
+  margin-bottom: 1.6rem;
+  background-color: #b9bfa3;
+  border: 1px solid #2f4858;
+  border-radius: 4px;
+  box-shadow: 5px 5px 20px #88837a;
+}
+
+.noteTitle, .noteBody, .noteFooter {
+  overflow: hidden;
+  margin: 0;
+  padding: 0.3rem;
+  padding-left: 1rem;
+  font-size: 0.9rem;
+}
+
+.noteBody {
+  grid-area: body;
+  min-height: 4vh;
+  padding: 0.5rem 2rem 0.5rem 1rem;
+}
+
+.noteTitle, .noteFooter {
+  color: #efe4d8;
+  background-color: #2f4858;
+}
+
+.noteTitle {
+  grid-area: title;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.noteFooter{
+  grid-area: footer;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.noteBody .margin {
+  display: none;
+}
+
+.note .closebtn {
+  grid-area: button;
+  position: relative;
+  float: left;
+  height: 2vh;
+  width: 2vh;
+  border-radius: 50%;
+  color: #2f4858;
+  background-color: #ecdbbf;
+  text-align: center;
+  font-size: 1.8vh;
+  overflow: hidden;
+  border: none;
+  padding-top: 0vh;
+  padding-bottom: 1vh;
+}

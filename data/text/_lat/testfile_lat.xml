@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>De <term>Symphonetarum</term> Ingenio</title>
+				<author>Heinrich Glarean</author>
+				<editor>Janosch Umbreit</editor>
+				<respStmt>
+						<resp>codiert von</resp>
+						<name>Janosch Umbreit</name>
+				</respStmt>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Janosch Umbreit</publisher>
+			</publicationStmt>
+			<sourceDesc>
+				<p>De Symphonetarum Ingenio</p>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<p>Diese Datei enthält die letzten beiden Kapitel aus Heinrich Glareans Dodekachordon im lateinischen Original nach einer Übertrgung des Thesaurus Musicarum Latinarum. Dies ist, zusammen mit einer deutschen Übersetzung, teil eines digitalen Editionsprojektes ausgewählter Passagen aus dem Dodekachordon.</p>
+		</encodingDesc>
+		<profileDesc>
+			<creation>
+				<date when="2021-05-28">28.05.2021</date>
+				<name type="place">Regensburg, Deutschland</name>
+			</creation>
+			<langUsage>
+				<language ident="la">Latein</language>
+				<language ident="grc">Altgriechisch</language>
+				<language ident="fr-FR">Französisch</language>
+			</langUsage>
+		</profileDesc>
+		<revisionDesc>
+			<change when="2021-05-28">Initialversion</change>
+		</revisionDesc>
+	</teiHeader>
+	<text>
+		<body>
+			<div type="chapter" n="1">
+        <pb n="440"/>
+        <head n="1">De <term>Symphonetarum</term> ingenio</head>
+        <p xml:id="p1">Finis erat huius libri, portentosae sane magnitudinis si exempla respicias, non omnino magni, si commentationem spectes. Sed libuit unum duntaxat caput annectere de <term ref="data/symph.html">Symphonetarum</term> ingenio. Neque enim his suus hac in arte deest genius, ex quo spectentur probenturue. Horum igitur fuere alij (nam breuiter id narrandum est) qui solum ad ostentationem sua edebant, et haec multo maxima turba est: Alij ut plurimos delectarent ac iuuentutem exercerent. Nonnulli ut Ecclesiastici Cantus maiestatem iuuarent. Inuenias qui necessitatem etiam suam hac arte leuarent, et horum plurimi. Sed de quibusdam pauca dicenda, quantum nos auditu precepimus a fide dignis.</p>
+        <div type="section" n="1.1">
+          <head n="1.1">De Iodoco pratensi</head>
+          <p xml:id="p2">In primis uero de <name type="person" key="Josq" ref="http://d-nb.info/gnd/118524895">Iodoci Pratensis</name>, ut Cantorum coryphaei <term>ingenio</term> de quo non semel in prioribus. Is multa iucunda relatu fecisse dicitur, antequam in hominnm noticiam uenerit. Inter alia multa et hoc ferunt. <name type="person"><roleName><placeName>Francorum</placeName> Regem</roleName> Lituichum XII</name>. haud scio quod sacerdotium homini promisisse. Verum cum promissa leuiter, ut in Regum aulis fieri solet, caderent, ibi commotum Iodocum psalmum composuisse. <title>Memor esto uerbi tui seruo tuo</title>, tanta maiestate ac elegantia, ut ad Cantorum collegium relatus ac deinde iusto iudicio excussus, admirationi omnibus fuerit. Regem suffuso pudore promissionem diutius differe non ausum, beneficium quod promiserat, prestitisse, Ibi uero uirum, Principis liberalitatem expertum, continuo alterum progratiarum actione orsum esse psalmum, <title>Bonitatem fecisti cum seruo tuo Domine</title>.<note>This is indeed a very long test note. One that stretches various lines. Lets hope it does not collide! Also it has <title>Styles</title>! I wonder how they <name key="test" ref="example.com">look</name>?</note> Verum inter has duas Harmonias uidere licet, quanto dubia praemiorum spes plus urgeat, quam certo depositum beneficium. Neque enim paulo uenustior est, meo quidem iudicatu, si affectus spectes prior quam posterior editio. Idem Iodocus, cum ab nescio quo Magnate beneficium ambiret, ac ille procrastinator identidem diceret mutila illa Francorum lingua, <foreign xml:lang="fr">Laise faire moy</foreign>, hoc est, sine me facere, haud cunctanter ad eadem uerba totam composuit Missam oppido elegantem La sol fa re mi.</p>
+          <pb n="441"/>
+          <p xml:id="p3">Ad ostentationem autem artis haud dubie duas illas Missas instituit <title xml:lang="fr">L’homme arme, cum super uoces Musicaleis</title>, tum <title>ad VI tonum</title>, ita enim ipse Hypoionicum nominauit. Amauit et hic Iodocus ex una uoce plureis deducere, quod post eum multi aemulati sunt. Sed ante eum <name type="person">Ioannes Ockenheim</name>, de quo paulo post, ea in exercitatione claruerat. Eius rei cum superius per diuersos Modos aliquot exempla posuerimus, sed eodem <term>temporis</term> motu incedentia, hic tardante altero temporis mensuram signo, dupla ratione decantanda, ponemus. Sunt autem ex priore Missa, in qua Modos identidem uariauit, ad Hypodorium tria haec oppido breuia.</p>
+          <figure type="music">
+            <head>Ex Missa Ivsqvini svper voces mvsicaleis</head>
+            <notatedMusic corresp="3_Symph_1.mei"></notatedMusic>
+          </figure>
+          <pb n="442"/>
+          <figure type="music">
+            <head>Qui uenit In nomine Domini.</head>
+            <notatedMusic corresp="3_Symph_2.mei"></notatedMusic>
+          </figure>
+          <p xml:id="p4">Idem Iodocus treis uoces tribus diuersis signis praepositis ex una uoce eliciendas exemplo docuit ubi ualor notularum in Tenore, si Thema in spicias sit duplus ad notulas in Basi. Baseos uero notulae sesquialterae ad Cantus notulas, Ita ut duplae rationi sesquiplam mixtam intelligamus. Sed primum exemplum ponamus, ut ipse ex eodem Missa adposuit. Deinde Thematis <term>resolutionem</term> in treis uoces cum propria cuiusque uocis sede subiungamus.</p>
+          <!--Ex una uoce tres, ex eiusdem Iodoci Missa Lhome arme super uoces musicales.-->
+          <!--[Dodecachordon, 442,2; text: Agnus Dei qui tollis peccata mundi miserere nostri.] [GLADOD3 202GF]
+          Sequitur resolutio.-->
+          <pb n="443"/>
+          <!--[Dodecachordon, 443; text: Cantus, Agnus Dei qui tollis peccata mundi Miserere nostri. Tenor, Basis] [GLADOD3 203GF]-->
+          <pb n="444"/>
+          <p xml:id="p5">In huiuscemodi sane Symphonijs, ut libere dicam quae sentio, magis est ingenij ostentatio quam auditum reficiens adeo iucunditas, quale et hoc ciuis nostri <name type="person">Lutuichi Senflij</name> <name type="place">Tigurini</name>, docti nostra aetate Symphonetae. Cui ipse Cantorum more Canonem praefixit. <title>Omne trinum perfectum.</title> Caeterum pro inceptione poterat et hic praefigi Canon ex Odysseae. V.
+          <choice ana="transl">
+						<orig><foreign xml:lang="grc">Τρὶς μάϰαρες Δαναοὶ ϰαὶ τετράϰις</foreign></orig>
+						<reg>Tris makanes Danaoi kai tetrakis</reg>
+					</choice>.
+          Quod in <title>AEneide</title> <name type="person">Virgilius</name> ita uertit: O terque quaterque beati. Sed AEnigma non admodum difficile eruditus lector facile discutiet consyderata diapente Diatessaron ac diapason consonantiarum ratione, ad eum modum quo <name type="person">Macrobius</name>, quod diximus, Virgilianum discussit.</p>
+          <!--Lutuichi Senflij Tigurini Hypoaeolius, Canon. Omne trinum perfectum.
+          [Dodecachordon, 444] [GLADOD3 204GF]-->
+          <p  xml:id="p6">Sed admirabilius longe est <name type="person">Petri Platensis</name> Exemplum, quod aemulatione haud dubie Iusquini eadem proportione, caeterum quatuor diuersis signis praescripsit. In eo Basis ac Altus absque diminutione incedunt, hic perfecti, illa <term>imperfecti temporis</term>, Cantus uero cum diminutione imperfecti item temporis. Tenor sesquipla ratione constat, non omnino difficile cantatu, si quis Hemioliam recte intromiscuerit. Hypodorij est Modi, quanquam fine claudicans. Id alij resoluerunt, nobis satius uisum est, nudum proponere. Neque ob id lector iure succensere nobis poterit, quando tam multa alia bona fide indicauerimus, si ipsi etiam quaedam discutienda relinquimus.</p>
+          <pb n="445"/>
+          <!--Petri Platensis IIII uocum fuga ex unica ad Hypodorium
+          [Dodecachordon, 445,1] [GLADOD3 205GF]-->
+          <p  xml:id="p7">Idem Petrus Platensis Missam totam quatuor item uocum ex unica instituit. <title>O Salutaris hostia</title>, literis innuens cuiusque uocis et principium et finem. Cuius unum duntaxat Kyrie adponere placuit cum initij resolutione, ut ex his Lector, quae nimis multa sunt, reliqua facilius ad eandem formam discutiat. Sane uocum initia hisce IIII produntur literis, S.C.T.B. et S quidem supremae uocis, nos Cantum uocamus, C. Contratenoris nunc Altum nominant. T. Tenoris. B. Baseos. Finis etiam eisdem, sed semicirculo tectis literis indicatur.</p>
+          <!--Eiusdem Petri Platensis IIII uocum fuga ex unica sed aliter, ad eundem Hypodorium.
+          [Dodecachordon, 445,2; text: [Kyrie] eleison, [Kyrie eleeson], Initiorum resolutio, Cantus, Altus, Tenor, Basis.] [GLADOD3 205GF]-->
+          <pb n="446"/>
+          <p xml:id="p8">Sed ad Iodocum redeamus, de quo ceperamus. Idem author saepe ex una duas fecit uoces hoc modo, Praecinente uocem aliquo, Alter unius temporis mora sequebatur eandem canens uocem, sed certe tono uel leuatam uel depressam, ut qui cantionem in sol incepisset, audiret alterum in la incipientem, aut contra si prior in la cepisset, sequens in sol ordiebatur. Vnde binorum Modorum systemata coludebant. Cuius rei aliquot eius exempla subijcere placuit, cum Modorum praescriptione. Sunt enim sane elegantia.</p>
+          <!-- Ionici Hypoionicique connexorum exemplum finitum ut Phrygius
+          [Dodecachordon, 446] [GLADOD3 206GF]-->
+          <pb n="447"/>
+          <p xml:id="p9">Poterant duae hae uoces a mediocriter etiam exercitatis sub una cani per notatione: Verum et hic et in sequentibus ad hoc proderunt Lectori binae pernotationes, ut binorum Modorum incessum luculentius uideat. Et in hoc quidem exemplo finis utrorumque in Phrygium tortus est ad authoris arbitrium, Quippe ut binis connexionibus suos daret fineis fieri non potuit, quaesiuit igitur externum hospitem, cum contra in exemplo sequente Dorij Hypodorijque connexioni suum dederit finem: Ionico Hypoionicoque non dederit.</p>
+          <!-- Dorij Hypodorijque connexorum exemplum in Phrygij finitum sede
+          [Dodecachordon, 447] [GLADOD3 206GF] -->
+          <pb n="448"/>
+          <p xml:id="p10">In hoc exemplo sane plus licentiae in ascensu ac descensu quam Modorum ambitus desyderet. Sed sic fuit homo Iodocus noster nimis ingenio lasciuiens, quemadmodum antea diximus.</p>
+          <!-- Dorij Hypodorijque connexorum exemplum cum Semiditono superne
+          [Dodecachordon, 448] [GLADOD3 207GF] -->
+          <pb n="449"/>
+          <p xml:id="p11">In priore exemplo altera uocum tono leuabatur, hic eodem deprimitur, quemadmodum et in sequenti.</p>
+          <!-- Ionici Hypoionicique connexorum exemplum cum Ditono superne, sed non suo finitum loco.
+          [Dodecachordon, 449] [GLADOD3 207GF] -->
+          <pb n="450"/>
+          <p xml:id="p12">Post huius exempli medium proportio sesquipla admixta est admirabili sane syncopatione per totum tractum, sed uera tamen ratione.</p>
+          <!-- Phrygij phrasis ac systema superne semitonio inferne tono adiectis, finis licentia quaesitus.
+          [Dodecachordon, 450] [GLADOD3 208GF] -->
+          <pb n="451"/>
+          <!-- [Dodecachordon, 451; text: Dorij phrasis ac systema adiecto inferne ac superne tono, finis in diatessaron infima chorda.] [GLADOD3 208GF] -->
+          <pb n="452"/>
+          <p xml:id="p13">Delectatus est idem Iodocus fuga ad minimam instituta, quod in Missa <title xml:lang="fr">Lhome arme ad sextum Tonum</title> in extremo <title>Agnus Dei</title> mirifice ostendit. Est et haec, quam hic subiecimus, insignis eiusdem cantio, in qua duae item uoces ad fugam minimae institutae sunt.</p>
+          <!-- [Dodecachordon, 452] [GLADOD3 209GF] -->
+          <pb n="453"/>
+          <!-- [Dodecachordon, 453; text: Fuga ad minimam] [GLADOD3 210GF] -->
+          <pb n="454"/>
+        </div>
+        <div type="section" n="1.2">
+          <head n="1.2">Okenheim</head>
+          <p xml:id="p14">Haec hactenus de Iodoco satis superque. Antiquior aliquanto fuit Okenheim et ipse Belga, qui ingenio omneis excelluisse dicitur. Quippe quem constat triginta sex uocibus garritum quendam instituisse. Eum nos non uidimus. Certe inuentione et ingenij acrimonia admirabilis fuit. Amauit autem
+          <choice ana="transl">
+						<orig><foreign xml:lang="grc">καθολικὰ</foreign></orig>
+						<reg>katholika</reg>
+					</choice>
+          in cantu, hoc est, Cantiones instituere, quae multis cantarentur modis ad cantorum propemodum arbitrium, ita tamen ut Harmoniae ac consonantiarum ratio nihilo secius obseruaretur, quale in primis hoc eius ferunt carmen, in quo aureis habeas oportet. <title>Fuga trium uocum in Epidiatessaron</title> (nam sic nunc loquuntur) <title>post perfectum tempus</title>.</p>
+          <!-- [Dodecachordon, 454] [GLADOD3 211GF] -->
+          <p xml:id="p15">Idem Okenheim Missam ad omnem Tonum (ita enim ipse nominauit) composuit cum ad treis duntaxat uoceis, secundum treis diatessaron species, decantaretur, nulla initio claui adposita, sed circulo duntaxat cum uirgula interrogatoria uel lineam uel spacium notante. Eius Missae unum
+          <choice ana="transl">
+						<orig><foreign xml:lang="grc">κύριε</foreign></orig>
+						<reg>kyrie</reg>
+					</choice>
+          , ut ita dicam adponere placuit, ut Lector uideret Tenorem eius uel in ut, uel in re, uel in mi exordium habere posse. Adiectum et <title>Benedictus</title> duarum uocum, ex eadem.</p>
+          <pb n="455"/>
+          <!-- [Dodecachordon, 455; text: Cantus, [Kyrie eleeson]. Altitonans, Tenor, Basis, Benedictus.] [GLADOD3 212GF] -->
+          <pb n="456"/>
+        </div>
+        <div type="section" n="1.3">
+          <head n="1.3">Iacobus Hobrechth.</head>
+          <p xml:id="p16">Tertius in hac classe haud dubius est <name type="person">Iacobus Hobrechth</name> et ipse Belga, quippe qui <name type="person">D. Erasmo Roterodamo</name> Praeceptor fuit, Cuius iudicium de eo in AEolio retulimus. Hunc praeterea fama est, tanta ingenij celeritate ac inuentionis copia uiguisse, ut per unam noctem, egregiam, et quae doctis admirationi esset, Missam componeret. Omnia huius uiri monumenta miram quandam habent maiestatem et mediocritatis uenam. Ipse hercules non tam amans raritatis, atque Iodocus fuit. Ingenij quidem ostentator sed absque fuco, quasi qui auditoris iudicium expectare maluerit quam se ipse efferre. Multae passim huius uiri sunt Compositiones, et nos aliquot eius in hoc adeo libro exempla Lectori ostendimus, maxime cum de sesquipla ratione dissereremus. Ideoque de eo plura dicere supersedemus.</p>
+        </div>
+        <div type="section" n="1.4">
+          <head n="1.4">Antonius Brumel.</head>
+          <p xml:id="p17"><name type="person">Antonius item Brumel</name> dignus qui inter eximios Symphonetas numeretur, magis tamen diligentia et arte ualuit quam naturae indulgentia. Huius extat <title>Missa de Beatissima Virgine</title> MARIA IESV Christi matre, magno uiro digna: sunt et aliae quaedam eius Missae, sed ex ea, quae
+          <choice ana="transl">
+						<orig><foreign xml:lang="grc">Δρίγξ</foreign></orig>
+						<reg>drighs</reg>
+					</choice>
+          inscribitur, treis binarum uocum cantilenas huc adponere placuit ad exercitationem sane utileis.</p>
+          <!-- [Dodecachordon, 456; text: Pleni sunt et terra gloria tua.] [GLADOD3 213GF] -->
+          <pb n="457"/>
+          <!-- [Dodecachordon, 457; text: Pleni sunt terra gloria] [GLADOD3 214GF] -->
+          <!-- Sequuntur aliae eiusdem Antonij Cantiones -->
+          <pb n="458"/>
+          <!-- [Dodecachordon, 458; text: Benedictus qui uenit in nomine Domini, Tenor, Agnus Dei] [GLADOD3 215GF] -->
+          <pb n="459"/>
+          <!-- [Dodecachordon, 459; text: Benedictus qui uenit in nomine Domini, Cantus, Agnus Dei Qui tollis Peccata mundi Miserere nostri] [GLADOD3 216GF] -->
+          <pb n="460"/>
+        </div>
+        <div type="section" n="1.5">
+          <head n="1.5">Henricus Isaac</head>
+          <p xml:id="p18">Sequitur haud imerito Symphonetas iam dictos et arte et ingenio <name type="person">Henrichus Isaac</name> Germanus. Qui et erudite et copiose innumera composuisse dicitur. Hic maxime Ecclesiasticum ornauit cantum uidelicet in quo uiderat maiestatem ac naturalem uim, non paulo superantem nostrae aetatis inuenta
+          <choice ana="transl">
+						<orig><foreign xml:lang="grc">θέματα</foreign></orig>
+						<reg>themata</reg>
+					</choice>
+          , Phrasi aliquanto durior nec tam sollicitus, ut consuetudini quid daret, quam ut elimata essent, quae ederet. Id etiam uoluptati duxit copiam ostendere maxime Phthongis in una quapiam uoce immobilibus, caeteris autem uocibus cursitantibus ac undique circumstrepentibus, uelut undae uento agitatae in mari circa scopulum ludere solent, Quod et Hobrechthum fecisse constat, quanquam alio quodam modo. Hic Isaac etiam Italis notus fuit. Nam eius mentionem, ut libro priore diximus, facit <name type="person">Politianus</name>, cuius aetate hunc uixisse constat. non multum ante hanc nostram. Idem Isaac obscura quaedam, nec omnibus obuia composuit, qualis in primis haec est cantio ex Prosa <title>de Diuae Virginis Mariae conceptione</title>. In qua non tam probo aenigmaticam propemodum institutionem, cum alijs fere cantoribus communem, quam id per hunc etiam demostratum esse, quod superius in hoc adeo libro ostendimus, nempe hanc nouam artem, nondum certis legibus ita constrictam, ut non cuiuis Symphonetae aliquid liceret, quod ita manifestum medius fidius est, ut a nemine negari possit.</p>
+          <!-- [Dodecachordon, 460; text: Conceptio Mariae Virginis Quae nos lauit a labe criminis, celebratur hodie, Dies est laeticiae.] [GLADOD3 217GF] -->
+          <pb n="461"/>
+          <!-- [Dodecachordon, 461; text: Conceptio Mariae Virginis, quae nos lauit a labe criminis, celebratur hodie, Dies est laeticiae. Sequitur resolutio] [GLADOD3 218GF] -->
+          <pb n="462"/>
+          <p xml:id="p19">In hac itaque Cantione Tenor Dorius est elegantissimus cum tono inferne. Basis autem AEolij Phrasis, sed finis Hypodorij, nec mirum cum essentia et natura eandem habeant Diapason speciem. In cantu Diapente est quatuor Modorum, cum tono inferne, semitonio superne. Altus Dorij Systema habet finitum suo more infima Diatessaron chorda, non Diapente. Caetera Lector ipse dispiciat. Nam nos Modorum potissimum rationem explicandam suscepimus, reliqua obiter duntaxat, et ut dicitur per transennam.</p>
+          <!-- [Dodecachordon, 462; text: Conceptio Mariae Virginis, quae nos lauit a labe criminis, celebratur hodie, Dies est laeticiae.] [GLADOD3 219GF] -->
+          <pb n="463"/>
+          <!-- [Dodecachordon, 463; text: Conceptio Mariae Virginis, quae nos lauit a labe criminis, celebratur hodie Dies est laeticiae.] [GLADOD3 220GF] -->
+          <pb n="464"/>
+        </div>
+        <div type="section" n="1.6">
+          <head n="1.6">Ioannes Mouton</head>
+          <p xml:id="p20"><name type="person">Ioannes Mouton</name> Gallus, quem nos uidimus, quemadmodum antea in hoc adeo libro testati sumus, raritatem quandam habuit studio ac industria quaesitam, ut ab alijs, quos hactenus commemorauimus differret, alioqui facili fluentem filo cantum edebat. Maxime autem in <name type="person">Principis Francisci</name> gratiam, a quo honeste decoratus erat, respiciens, Psalmos ac uulgata quaedam proferebat, quod testatur cantio, <title>Domine saluum fac Regem</title>, quam in Dorio retulimus. Porro grauissimas Missas composuit a <name type="person">Leone .X.</name> Pontifice Maximo approbatas, qualis <title>Alma Redemptoris</title> ac alia permulta, quae in manibus sunt omnium. Nos duas eius de Beata Virgine MARIA adponemus cantiones: ex quibus Lector iudicet eius uiri Phrasin.</p>
+          <!-- [Dodecachordon, 464; text: Salue Mater saluatoris Vas electum: uas honoris: uas misericordiae. Sis pro nobis fons ueniae.] [GLADOD3 221GF] -->
+          <pb n="465"/>
+          <p xml:id="p21">In priore hac cantione ita Basin instituit, ut nihilo secius ex ea uoce Altum canas ex aduerso constitutus, ijsdem etiam notulis, sed ad te uersis. Ita duo suam uterque uocem incinent ex una. Idque in Diapason et duorum temporum spacio sese consequentes, ita ut Basis in D. magno incipiat, Altus post duo tempora in d paruo. Praeterea ut Altus ita descendat, quemadmodum Basis ascendit: Cantio Dodrij Phrasin sapit, quod in Tenore potissimum cernitur, qui pulchre Dorius est. Sed Resolutionem eius nihilominus adposuimus, quod illi uocant. Ad longum.</p>
+          <!-- Ad longum
+          [Dodecachordon, 465; text: Salue Mater saluatoris Vas electum uas honoris. Vas misericordiae: sis pro nobis fons ueniae. Duo aduersi aduerse in unum] [GLADOD3 222GF] -->
+          <p xml:id="p22">Sequentem autem octo uocibus instituit, qui concentus quam mihi placeat, superius Capite XIII huius ostendimus. Itaque praeter morem nostrum id nos fecisse fatemur, quod in hanc commentationem huiusmodi concentum adduxerimus, qui quaternum probamus. Quanquam communi omnium opinioni refragare non est admodum ciuile. Sed lectoris imo auditoris iudicium esto in hisce et in alijs similibus. Tenor Hypoionicus est. Basis uere Ionica. Cantus et Altus mixti.</p>
+          <pb n="466"/>
+          <!-- [Dodecachordon, 466; text: Nesciens mater uirgo uirum peperit sine dolore Saluatorem seculorum ipsum Regem angelorum Sola uirgo lactabat ubere de coelo pleno. Octo uocum] [GLADOD3 223GF] -->
+          <pb n="467"/>
+          <!-- [Dodecachordon, 467; text: Nesciens mater Virgo uirum peperit sine dolore, Saluatorem seculorum Ipsum Regem angelorum Sola Virgo lactabat ubere de coelo pleno. Mouton] [GLADOD3 224GF] -->
+          <pb n="468"/>
+          <p xml:id="p23">Verum enimuero non modo nimis longus, sed ineptus me hercules etiam fuero, si omneis recensere uoluero uel huius, uel ante nos aetatis Symphonetas, multo magis etiam si eorundem Cantiones. In primis autem hoc de me hic fateri libet, semper displicuisse nobis cum leueis omnes Cantiones, nihil nisi garritum quendam adferenteis, ac ad stultorum aureis demulcendas institutas, quales sunt illae Centonum laciniae male consarcinatae: Tum maxime lasciuas ac turpeis, quibus nunc omneis Christianae nationes, pro dolor, personant, et refertae sunt ubique. Ego hunc cantum grauem uolo, et ad Dei Optimam Maximam laudem pertinere, non ad ostentationem. Volo honestae uoluptati adesse. Denique ad Ingenij culturam adhiberi, ac maxime ad album puerorum os formandum, ut inquit <name type="person">Flaccus</name>. Iucunditatis gratia quaesitus ac inuentus est, sed praeterea multis rebus utilis esse potest, Iocos, modo sint maturi et honesti, ab hoc non secludo. Caeterum plus laudis habent ac uere merentur Ioci, si qui incidunt cum grauitate et occasione quaesiti: Quales Iodoci Pratensis aliquot feruntur, et qualis est quem iam dicturi sumus. Lutuichus Francorum Rex eius nominis XII. admodum exili uoce fuisse dicitur. Is haud scio qua Cantione olim delectatus, cum a Cantorum suorum Primario rogasset, Ecquid Cantionem aliquot uocibus institueret, In qua et ipse aliquam canere uocem posset. Cantor admirans Regis postulationem, quem sciebat Musices prorsus ignarum, ac paulum cunctatus, tandem inuento quod diceret, faciam, inquit, Domine Rex Cantionem, in qua et Maiestati tuae dabitur canendi locus. Postridie quam pransus fuisset Rex, ac Cantilenis more regio recreandus esset: Cantor eam quam mox subijciemus attulit Cantionem, quatuor institutam uocibus. In qua non tam probo ingenium artis, atque laudo industriam cum arte coniunctam. Nam Cantionem eam ita instituerat, ut pueri duo Cantum incinerent ex uno Themate subtiliter sane ac tenere, uidelicet ne Regis uox, oppido gracilis obtunderetur. Alteram uocem Regi dederat uno perpetuo phthongo pernotatam Altitonantis sub limitate, quae Regiae uoci apta esset. Nec contentus eo lenocinio (Tanta sedulitate omnia prospiciebat in re quidem parua, sed ex qua ipse beneuolum sibi fecit principem) ne Rex uacillaret, ipse symphonetes cantaturus Basin ita eam adornauit, ut identidem altero dimidij temporis phthongo in octaua succurreret Regi. Est autem octaua uelut unisonus, per quam Regis uox mire iuuabatur. Risit machinamentum Rex hilariter, ac cum gaudio hominem dimisit nec indonatum, nec absque optata gratia. Huiusmodi iocos dixi mihi placere. Sed nunc audiamus rarum miraculum, Regem ipsum cum suis Cantoribus intonantem. Verba erant linguae Romanae, illius mutilae, qua nunc, derelicta uetere Gallorum lingua Gallia balbutit uerius quam loquitur. Sed liberum esto cuique quod notulis uolet subscribere.</p>
+          <pb n="469"/>
+          <!-- [Dodecachordon, 469; text: Cantus, Regis Vox, Basis] [GLADOD3 225GF] -->
+        </div>
+      </div>
+      <div type="chapter" n="2">
+        <head n="2">Peroratio</head>
+        <p xml:id="p24">Haec ferme sunt quae de XII Musicorum Modis, admonenda duxi de quibus Plura dici posse fortassis non est dubium, At citra taedium, potuerint ne plura adduci, id uero apud me per ambiguum, quando necessariorum nihil omissum est. Ideoque nec plura addam, donec animo meo id certo sedeat. Interea lectores oppellam hanc boni consulant.</p>
+        <p xml:id="p25"><name type="place">Friburgi Brisgoae</name></p>
+      </div>
+    </body>
+  </text>
+</TEI>
