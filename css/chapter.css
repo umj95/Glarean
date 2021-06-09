@@ -8,10 +8,6 @@
   background-color: #ecdbbf;
 }
 
-.chapter p {
-  overflow: visible;
-}
-
 .chapter h1, .chapter h2, .chapter h3, .chapter h4, .chapter h5, .chapter h6 {
   margin: 0.7em 0 0.2em 0;
   font-style: normal;
@@ -151,7 +147,6 @@ button.transl {
 
 .note {
   overflow: hidden;
-  grid-column: 2 / 9;
   position: sticky;
   top: calc(0.8in + 6rem);
   place-self: stretch;
@@ -161,6 +156,7 @@ button.transl {
                         "body"
                         "footer";
   height: min-content;
+  max-height: 73vh;
   margin: 0 4.1vw 0 4.1vw;
   margin-bottom: 1.6rem;
   background-color: #b9bfa3;
@@ -179,6 +175,7 @@ button.transl {
 
 .noteBody {
   grid-area: body;
+  overflow-y: auto;
   min-height: 4vh;
   padding: 0.5rem 2rem 0.5rem 1rem;
 }

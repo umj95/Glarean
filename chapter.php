@@ -33,6 +33,8 @@
           <script>insertTEIChapter()</script>
         </div>
     </section>
+    <div id="noteArea" class="notes">
+    </div>
   </div>
 <?php
   include("includes/footer.php");

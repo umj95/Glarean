@@ -336,12 +336,10 @@
     console.log(langSpecifier);
     let path = pathToText + langSpecifier + "/" + currentChapter + langSpecifier + ".xml";
     //d.addBehaviors(translTextBehaviors);
-    d.getHTML5(path, function(data) {
-      var noteBody = document.getElementById(noteBodyID);
-      for (var p of Array.from(data.getElementsByTagName("tei-p"))) {
+    c.getHTML5(path, function(data) {
+      const noteBody = document.getElementById(noteBodyID);
+      for (const p of Array.from(data.getElementsByTagName("tei-p"))) {
         if(p.getAttribute("id") === paraID) {
-          console.log(typeof p)
-          console.log(p);
           document.adoptNode(p);
           noteBody.appendChild(p);
         }
