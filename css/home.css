@@ -95,6 +95,10 @@ header h1{
   letter-spacing: 0.1em;
 }
 
+header a {
+  color: #efe4d8;
+}
+
 nav.main {
   grid-column: 8 / 16;
   /* grid-area: navig; */

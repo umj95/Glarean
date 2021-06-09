@@ -1,8 +1,11 @@
-window.addEventListener("load", function() {
+window.addEventListener("load", function() { 
+
+  var path = pathToMusic;
   var meiNumber = document.getElementsByClassName("meiBody");
-  console.log("number =" + meiNumber.length);
+  console.log("number = " + meiNumber.length);
   var tk = [];
   var svg = [];
+
   for(var i = 0 ; i < meiNumber.length ; i++) {
     fileLocation = meiNumber[i].parentNode.id;
     console.log("file location is " + fileLocation);
@@ -23,7 +26,7 @@ window.addEventListener("load", function() {
               };
       tk[i].setOptions(options);
 
-      fetch("data/" + fileLocation)                              //  get  MEI file
+      fetch(path + "modern/" + fileLocation)                              //  get  MEI file
       .then((response) => response.text())
       .then((meiXML) => {
         svg[i]= tk[i].renderData(meiXML,{});

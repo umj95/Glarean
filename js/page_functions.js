@@ -1,12 +1,20 @@
 /* ========================================================================== Global Variables ================ */
 
-  var currentChapter = "testfile";           // the current main Chapter to be displayed
+  var currentChapter = "";           // the current main Chapter to be displayed
 
-  var mainLanguage = "_lat";                 // the language of the main document
+  var languages = [];
 
-  var secondaryLanguage = "_deu";            // the first translation language
+    languages['_lat'] = "lateinisch";
+    languages['_deu'] = "deutsch";
+    languages['_eng'] = "englisch";
 
-  var pathToData = "data/";                  // the (relative) path to the data folder
+  var mainLanguage = "";                 // the language of the main document
+
+  var secondaryLanguages = [];            // the translation languages
+
+  var pathToText = "data/text/";         // the (relative) path to the text data folder
+
+  var pathToMusic = "data/music/";         // the (relative) path to the music data folder
 
   var noteNr = 0;                           // track the Number of Notes
 
@@ -142,18 +150,22 @@
     "p": function(para) {
       if(para.hasAttribute("xml:id")) {
         var paragraph = document.createElement("p");
-        var container = document.createElement("div");
-        container.setAttribute("class", "transl-button tooltip");
-        var label = document.createElement("span");
-        label.setAttribute("class", "tiptext");
-        label.innerHTML = "Diesen Absatz übersetzen";
-        var button1 = document.createElement("button");
-        button1.setAttribute("class", "transl");
-        button1.setAttribute('onclick', 'createNote("transl", "' + para.getAttribute("xml:id") + '")');
-        container.appendChild(label);
-        container.appendChild(button1);
         paragraph.innerHTML = para.innerHTML;
-        paragraph.appendChild(container);
+
+        for(let language of secondaryLanguages){
+          var container = document.createElement("div");
+          container.setAttribute("class", "transl-button tooltip");
+          var label = document.createElement("span");
+          label.setAttribute("class", "tiptext");
+          label.innerHTML = "Diesen Absatz auf " + languages[language] + " übersetzen";
+          var button1 = document.createElement("button");
+          button1.setAttribute("class", "transl");
+          button1.setAttribute('onclick', 'createNote("transl", "' + para.getAttribute("xml:id") + '", "' + language + '")');
+          container.appendChild(label);
+          container.appendChild(button1);
+          paragraph.appendChild(container);
+        }
+        
         return paragraph;
       }
     }
@@ -260,7 +272,7 @@
 /* ================================================================================= Functions ================= */
 
   function insertTEIChapter() {               // inserts a full TEI document with name FILENAME in CONTAINERID
-    let path = pathToData + currentChapter + mainLanguage + ".xml";
+    let path = pathToText + mainLanguage + "/" + currentChapter + mainLanguage + ".xml";
     c.addBehaviors(fullTextBehaviors);
     c.getHTML5(path, function(data) {
       document.getElementById("fulltext").innerHTML = "";
@@ -276,7 +288,7 @@
     document.getElementById("leftpanel").style.width = "0";
   }
 
-  function createNote(kind, key) {                                   // creates a new Note
+  function createNote(kind, key, langSpecifier = "") {                                   // creates a new Note
     // KIND is the sort of note (translation, person, etc 
     // – determines the styling) and KEY is the 
     // identifier that is used to load the data.
@@ -306,7 +318,7 @@
       footer.setAttribute("class", "noteFooter");
       footer.innerHTML = "";
       
-      waitForEl("#noteBody_" + noteID, fetchParagraph(key, "noteBody_" + noteID));
+      waitForEl("#noteBody_" + noteID, fetchParagraph(key, "noteBody_" + noteID, langSpecifier));
     }
   
     newNote.appendChild(title);
@@ -320,13 +332,16 @@
     document.getElementById("noteArea").removeChild(elem);
   }
   
-  function fetchParagraph(paraID, noteBodyID) {
-    let path = pathToData + currentChapter + secondaryLanguage + ".xml";
-    d.addBehaviors(translTextBehaviors);
+  function fetchParagraph(paraID, noteBodyID, langSpecifier) {
+    console.log(langSpecifier);
+    let path = pathToText + langSpecifier + "/" + currentChapter + langSpecifier + ".xml";
+    //d.addBehaviors(translTextBehaviors);
     d.getHTML5(path, function(data) {
-      const noteBody = document.getElementById(noteBodyID);
-      for (const p of Array.from(data.getElementsByTagName("tei-p"))) {
+      var noteBody = document.getElementById(noteBodyID);
+      for (var p of Array.from(data.getElementsByTagName("tei-p"))) {
         if(p.getAttribute("id") === paraID) {
+          console.log(typeof p)
+          console.log(p);
           document.adoptNode(p);
           noteBody.appendChild(p);
         }
