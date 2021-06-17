@@ -1,33 +1,24 @@
 <?php
-  $currentChapter = $_GET['currentChapter'];
-
-  //check what language was chosen and set the corresponding variables
-  $mainLanguage = $_GET['mainLanguage'];
+  //load chapter options from GET
+  $chapterOptions = array();
+  foreach($_GET as $key => $value) {
+    $chapterOptions[$key] = $value; 
+  }
+  //filter the current main language from the available languages
   $languageOptions = array();
   for($i = 0; $i < count($languageList); $i++) {
-    if($languageList[$i] != $mainLanguage) {
+    if($languageList[$i] != $chapterOptions['mainLanguage']) {
       $languageOptions[$i] = $languageList[$i];
     }
   }
+  // commentary options to offer
+  $commentaryOptions   = array('editorsComments', 'additionalComments');
 
-  //load options
-  $chapterOptions = array();
-  //$chapterOptions['secondaryLanguages'] = array();
-  //$chapterOptions['comments'] = array();
-  foreach($_GET as $key => $value) {
-    /*if(substr($key, 0, 6) == "transl") {
-      array_push($chapterOptions['secondaryLanguages'], $value);
-    }
-    elseif(substr($key, 0, 8) == "comments") {
-      array_push($chapterOptions['comments'], $value);
-    }*/
-    $chapterOptions[$key] = $value; 
-  }
 ?>
-<button class="leftpanel" onclick="openNav()">ᐳ</button>
-<div id="leftpanel" class="leftpanel">
+<button class="panel" onclick="openPanel('optionsPanel')"></button>
+<div id="optionsPanel" class="panel">
   <div id="closer">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="javascript:void(0)" class="closebtn" onclick="closePanel('optionsPanel')">&times;</a>
   </div>
   <div id="content">
     <form method="POST">
@@ -44,7 +35,11 @@
                 echo "Übersetzung auf " . $languages[$language] . " anbieten";
               }
               echo    "</label>\n"
-                    . "<input id=\"transl$language\" type=\"checkbox\" name=\"secondaryLanguages[]\" value=\"$language\"/>\n";
+                    . "<input id=\"transl$language\" type=\"checkbox\" name=\"secondaryLanguages[]\" value=\"$language\"";
+              if(in_array($language, $chapterOptions['secondaryLanguages'])) {
+                echo  "checked ";
+              }
+              echo    "/><br/>\n";
               $i++;
             }
           ?>
@@ -54,14 +49,37 @@
         <legend><h2>Marginalien</h2></legend>
         <div class="control">
           <label for="margins">Marginalien anzeigen</label>
-          <input id="margins" type="radio" name="marginalia" value="true"/>
+          <?php
+          echo    '<input id="margins" type="checkbox" name="marginalia" value="true"';
+          if($chapterOptions['marginalia']){
+            echo  ' checked ';
+          }
+          echo    "/>\n";
+          ?>
         </div>
       </fieldset>
       <fieldset>
         <legend><h2>Kommentare</h2></legend>
         <div class="control">
-          <label for="comments">Kommentarfunktion anbieten</label>
-          <input id="comments" type="checkbox" name="comments[]" value="editorsNotes"/>
+          <?php
+          if (is_array($commentaryOptions) || is_object($commentaryOptions)) {
+            foreach($commentaryOptions as $commentary) {
+              echo "<label for=\"$commentary\">";
+              if($commentary == "editorsComments") {
+                echo "Kommentare der Herausgeber anbieten";
+              } else if($commentary == "additionalComments") {
+                echo "Weitere Kommentare anbieten";
+              }
+              echo  "</label>\n"
+                  ."<input id=\"$commentary\" type=\"checkbox\" name=\"comments[]\" value=\"$commentary\"";
+              if(in_array($commentary, $chapterOptions['comments'])){
+                echo  ' checked ';
+              }
+              echo    "/><br/>\n";
+            }
+          }
+          ?>
+          
         </div>
       </fieldset>
       <label for="margins">Änderungen vornehmen</label>
@@ -88,7 +106,7 @@
         $custom .= "comments[]=" . $_POST['comments'][$i] . "&";
       }
     }    
-    $url = "<meta http-equiv=\"refresh\" content=\"0;url=chapter.php?currentChapter=".$currentChapter."&mainLanguage=".$mainLanguage.$custom."\" />";
+    $url = "<meta http-equiv=\"refresh\" content=\"0;url=chapter.php?currentChapter=".$chapterOptions['currentChapter']."&mainLanguage=".$chapterOptions['mainLanguage'].$custom."\" />";
     echo $url;
   }
 ?>

@@ -1,35 +1,101 @@
 <?php
+  session_start();
+  if(isset($_POST['recordSize'])) { //check for screen dimensions
+    $height = $_POST['height'];
+    $width = $_POST['width'];
+    $_SESSION['screen_height'] = $height;
+    $_SESSION['screen_width'] = $width;
+  }
+    
+  function parseOptionstoString($chapterOptions) {
+    $passOptions = "";
+    foreach($chapterOptions as $key => $option) {
+      $name = $key;
+      if(is_array($option)) {
+        $subOptionList = array();
+        foreach($option as $subOption) {
+          array_push($subOptionList, $subOption);
+        }
+        $value = json_encode($subOptionList);
+        $passOptions .= $name . "=" . "$value" . "; ";
+      } else {
+        $value = "$option";
+        $passOptions .= $name . "=" . "\"$value\"" . "; ";
+      }
+    }
+    return $passOptions;
+  }
+
   $languageList = array('_lat', '_deu', '_eng');
   
   $languages    = array( '_lat' => 'lateinisch',
                          '_deu' => 'deutsch',
                          '_eng' => 'englisch');
+
+  
+
+  $chapterOptions = array();
+  foreach($_GET as $key => $value) {
+    $chapterOptions[$key] = $value;
+  }
 ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Testpage</title>
+    <title>ΔΟΔΕΚΑΧΟΡΔΟΝ</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/home.css"/>
-    <link rel="stylesheet" href="css/panels.css"/>
-    <link rel="stylesheet" href="css/chapter.css"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="css/glarean.css"/>
     <script type="text/javascript" src="js/CETEI.js"></script>
     <script type="text/javascript" src="js/page_functions.js"></script>
     <script type="text/javascript" src="https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js" defer></script>
     <script type="text/javascript" src="js/verovio_loader.js"></script>
-    <script type="text/javascript" src="https://www.verovio.org/javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+    <?php 
+      if(!isset($_SESSION['screen_height'])) { //check for screen dimensions but only on first load
+        echo "
+          <script>\n
+            $(document).ready( function() {\n
+                var height = $(window).height();\n
+                var width = $(window).width();\n
+                $.ajax({\n
+                    url: 'includes/header.php',\n
+                    type: 'post',\n
+                    data: { 'width' : width, 'height' : height, 'recordSize' : 'true' },\n
+                    success: function(response) {\n
+                        $(\"body\").html(response);\n
+                    }\n
+                });\n
+            });\n
+          </script>\n";
+      }
+    ?>
   </head>
   <body>
     <header id="header">
-        <h1>&#xEF91;<span class="grc">ΔΟΔΕΚΑΧΟΡΔΟΝ</span>&#xEF92;</h1>
-        <nav class="main">
-          <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="chapter_select.php">Kapitel</a></li>
-            <li>Über dieses Projekt</li>
-            <li>Impressum</li>
-            <li>Kontakt</li>
-          </ul>
+      <div id="container">
+        <h1><span class="grc">ΔΟΔΕΚΑΧΟΡΔΟΝ</span></h1>
+        <a href="javascript:void(0);" class="hamburger" onclick="topNavExpand()">&#x2630;</a>
+        <nav id="topnav" class="main">
+          <a href="index.php">Home</a></li>
+          <a href="chapter_select.php">Kapitel</a></li>
+          <a href="#">Über dieses Projekt</a>
+          <a href="impressum.php">Impressum</a>
+          <a href="#">Kontakt</a>
         </nav>
+      </div>
+      <script type="text/javascript"> 
+        var prevScrollpos = window.pageYOffset; //make header disappear on scroll
+        window.onscroll = function() {
+          var currentScrollPos = window.pageYOffset;
+          if (prevScrollpos > currentScrollPos) {
+            document.getElementById("header").style.top = "0";
+          } else {
+            document.getElementById("header").style.top = "-0.8in";
+          }
+          prevScrollpos = currentScrollPos;
+        }
+      </script>
     </header>
+    

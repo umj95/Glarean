@@ -55,7 +55,8 @@ button.leftpanel {
   background-color: #2f4858;
   border-radius: 50%;
   font-family: inherit;
-  padding: 0.5vh;
+  padding: 0.7vh;
+  padding-left: 0;
   cursor: pointer;
   text-align: right;
   height: 4vh;
@@ -63,6 +64,7 @@ button.leftpanel {
   border-radius: 0 150px 150px 0;
   transform: translate(-2vh);
   box-shadow: 5px 5px 20px #88837a;
+  font-size: 0.8rem;
 }
 
 button.rightpanel {

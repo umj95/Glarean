@@ -6,6 +6,8 @@
   display: grid;
   grid-template-columns: repeat(24, 1fr);
   background-color: #ecdbbf;
+  font-family: 'Junicode'!important;
+  font-feature-settings:"calt", "liga", "clig", "kern", "onum";
 }
 
 .chapter h1, .chapter h2, .chapter h3, .chapter h4, .chapter h5, .chapter h6 {
@@ -159,7 +161,7 @@ button.transl {
   max-height: 73vh;
   margin: 0 4.1vw 0 4.1vw;
   margin-bottom: 1.6rem;
-  background-color: #b9bfa3;
+  background-color: #efe4d8;
   border: 1px solid #2f4858;
   border-radius: 4px;
   box-shadow: 5px 5px 20px #88837a;
@@ -212,7 +214,7 @@ button.transl {
   width: 2vh;
   border-radius: 50%;
   color: #2f4858;
-  background-color: #ecdbbf;
+  background-color: #efe4d8;
   text-align: center;
   font-size: 1.8vh;
   overflow: hidden;

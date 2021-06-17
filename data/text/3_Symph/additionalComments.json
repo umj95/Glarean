@@ -1,0 +1,17 @@
+[
+  {
+    "id": "0003",
+    "target": "p3",
+    "author": "Janosch Umbreit",
+    "title": "The third comment",
+    "content": "This is a test comment",
+    "references": ["reference 1", "reference 2", "reference 3"]
+  },
+  {
+    "id": "0004",
+    "target": "p4",
+    "title": "The fourth comment",
+    "content": "This is another test comment",
+    "references": ["reference a", "reference b", "reference c"]
+  }
+]

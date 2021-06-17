@@ -1,40 +1,51 @@
 <?php
-  function parseOptionstoString($chapterOptions) {
-    $passOptions = "";
-    foreach($chapterOptions as $key => $option) {
-      $name = $key;
-      if(is_array($option)) {
-        $subOptionList = array();
-        foreach($option as $subOption) {
-          array_push($subOptionList, $subOption);
-        }
-        $value = json_encode($subOptionList);
-        $passOptions .= $name . "=" . "$value" . "; ";
-      } else {
-        $value = "$option";
-        $passOptions .= $name . "=" . "\"$value\"" . "; ";
-      }
-    }
-    return $passOptions;
-  }
-  
-  $chapterOptions = array();
-  foreach($_GET as $key => $value) {
-    $chapterOptions[$key] = $value;
-  }
-
   include("includes/header.php");
   include("includes/sidepanel.php");
+
+  $optionsToJSON = json_encode($chapterOptions);
 ?>
-  <script><?php echo parseOptionsToString($chapterOptions);?></script>
+  <script>
+    var chapterOptions = <?php echo $optionsToJSON;?>;  // extract custom behaviors
+    mainLanguage = chapterOptions.mainLanguage;
+    currentChapter = chapterOptions.currentChapter;
+    secondaryLanguages = chapterOptions.secondaryLanguages;
+    marginalia = chapterOptions.marginalia;
+    //commentaryOptions = chapterOptions.comments;
+    
+  optionalBehaviors(chapterOptions);                    // Load custom TEI behaviors
+          
+  var c = new CETEI();                                  // the primary CETEIcean object
+          
+  var d = new CETEI();                                  // the secondary CETEIcean object (for translations)
+          
+  d.addBehaviors(translTextBehaviors);                  // add behaviors to CETEIcean instances
+
+  c.addBehaviors(fullTextBehaviors);
+
+  </script>
   <div class="chapter">
-    <section class="body-text">
-        <div id="fulltext" class="text">
-          <script>insertTEIChapter()</script>
-        </div>
+    <section id="body-text" class="body-text">
+      <div id="fulltext" class="text">
+        <script>insertTEIChapter()</script>
+      </div>
     </section>
-    <div id="noteArea" class="notes">
+    <button class="panel" id="notesButton" onclick="openPanel('notesPanel')"></button>
+    <div id="noteArea" class="panel">
+      <div id="closer">
+        <a href="javascript:void(0)" class="closebtn" onclick="closePanel('notesPanel')">&times;</a>
+      </div>
+      <div id="notesContent">
+      </div>
     </div>
+    <script>
+    window.addEventListener("load", function() { 
+      if(chapterOptions.comments) {
+        for(let i in chapterOptions.comments) {
+          insertComments(chapterOptions.comments[i]);
+        }
+        }
+      })
+    </script>
   </div>
 <?php
   include("includes/footer.php");
