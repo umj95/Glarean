@@ -494,6 +494,7 @@
 
     var references = document.createElement("div");         // note references
     references.setAttribute("class", "commentReferences");
+    references.innerHTML = "<h6>Weiterführende Literatur</h6>"
     var referenceList = document.createElement("ul");
     for(var i = 0; i < commentsReferences.length; i++) {
       var item = document.createElement("li");

@@ -52,7 +52,7 @@ html {
   height: 100vh;
   min-height: 100vh;
   overflow: visible;
-  /* overflow-x: hidden; */ /* Overflow cannot be hidden or else position:sticky does not work */
+  overflow-x: hidden;  /* Overflow cannot be hidden or else position:sticky does not work */
   font-family: 'Biolinum';
   font-size: 1vw;
   box-sizing: border-box;}
