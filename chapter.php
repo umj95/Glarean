@@ -12,21 +12,21 @@
     marginalia = chapterOptions.marginalia;
     //commentaryOptions = chapterOptions.comments;
     
-  optionalBehaviors(chapterOptions);                    // Load custom TEI behaviors
-          
-  var c = new CETEI();                                  // the primary CETEIcean object
-          
-  var d = new CETEI();                                  // the secondary CETEIcean object (for translations)
-          
-  d.addBehaviors(translTextBehaviors);                  // add behaviors to CETEIcean instances
+    optionalBehaviors(chapterOptions);                    // Load custom TEI behaviors
+            
+    var c = new CETEI();                                  // the primary CETEIcean object
+            
+    var d = new CETEI();                                  // the secondary CETEIcean object (for translations)
+            
+    d.addBehaviors(translTextBehaviors);                  // add behaviors to CETEIcean instances
 
-  c.addBehaviors(fullTextBehaviors);
+    c.addBehaviors(fullTextBehaviors);
 
   </script>
   <div class="chapter">
     <section id="body-text" class="body-text">
       <div id="fulltext" class="text">
-        <script>insertTEIChapter()</script>
+        <script>insertTEIChapter()</script>              <!-- insert the TEI document -->
       </div>
     </section>
     <button class="panel" id="notesButton" onclick="openPanel('notesPanel')"></button>
@@ -39,7 +39,7 @@
     </div>
     <script>
     window.addEventListener("load", function() { 
-      if(chapterOptions.comments) {
+      if(chapterOptions.comments) {                     // load selected commentaries AFTER the TEI document has been loaded
         for(let i in chapterOptions.comments) {
           insertComments(chapterOptions.comments[i]);
         }

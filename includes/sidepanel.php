@@ -1,19 +1,19 @@
 <?php
-  //load chapter options from GET
-  $chapterOptions = array();
+  /*=========================
+  This included section allows for the customisation of the selected chapter text, with things like translations and commentary.
+  Pre-existant selections, such as the current chapter, are retrieved from GET. Once the Submit button is pressed, all selections are transported via GET
+  and the page gets reloaded.
+  =========================*/
+  /*$chapterOptions = array();                                      // load chapter options from GET -> into $chapterOptions -> also used extensively in chapter.php
   foreach($_GET as $key => $value) {
     $chapterOptions[$key] = $value; 
-  }
-  //filter the current main language from the available languages
-  $languageOptions = array();
-  for($i = 0; $i < count($languageList); $i++) {
+  }*/
+  $languageOptions = array();                                     // filter the current main language from the available languages
+  for($i = 0; $i < count($languageList); $i++) {                  // global serverside variables such as $languageList are declared in header.php
     if($languageList[$i] != $chapterOptions['mainLanguage']) {
       $languageOptions[$i] = $languageList[$i];
     }
   }
-  // commentary options to offer
-  $commentaryOptions   = array('editorsComments', 'additionalComments');
-
 ?>
 <button class="panel" onclick="openPanel('optionsPanel')"></button>
 <div id="optionsPanel" class="panel">
@@ -22,7 +22,7 @@
   </div>
   <div id="content">
     <form method="POST">
-      <fieldset>
+      <fieldset>                                                  <!-- languages: options as previously defined in $languageOptions -->
         <legend><h2>Übersetzungen</h2></legend>
         <div class="control">
           <?php
@@ -46,7 +46,7 @@
         </div>
       </fieldset>
       <fieldset>
-        <legend><h2>Marginalien</h2></legend>
+        <legend><h2>Marginalien</h2></legend>                     <!-- Offer marginalia -->
         <div class="control">
           <label for="margins">Marginalien anzeigen</label>
           <?php
@@ -59,7 +59,7 @@
         </div>
       </fieldset>
       <fieldset>
-        <legend><h2>Kommentare</h2></legend>
+        <legend><h2>Kommentare</h2></legend>                      <!-- Offer commentary: available options are listed in $commentaryOptions (header.php) -->
         <div class="control">
           <?php
           if (is_array($commentaryOptions) || is_object($commentaryOptions)) {
@@ -82,30 +82,30 @@
           
         </div>
       </fieldset>
-      <label for="margins">Änderungen vornehmen</label>
+      <label for="margins">Änderungen vornehmen</label>           <!-- Submit selection -->
       <input type="submit" name="submit" value="submit"/>
     </form>
   </div>
 </div>
 <?php
-  if(isset($_POST['submit'])){
+  if(isset($_POST['submit'])){                                    // trigger form prossessing and page reload only after SUBMIT is pressed
     unset($_POST['submit']);
-    $custom = "&";
-    if($_POST['secondaryLanguages']) {
+    $custom = "&";                                                // $custom contains all values selectable via the form
+    if($_POST['secondaryLanguages']) {                            // languages
       for($i = 0; $i < count($_POST['secondaryLanguages']); $i++) {
         $custom .= "secondaryLanguages[]=";
         $custom .= $_POST['secondaryLanguages'][$i];
         $custom .= "&";
       }
     }
-    if($_POST['marginalia']) {
+    if($_POST['marginalia']) {                                    // marginalia
       $custom .= "marginalia=true&";
     }
     if($_POST['comments']) {
-      for($i = 0; $i < count($_POST['comments']); $i++) {
+      for($i = 0; $i < count($_POST['comments']); $i++) {         // comments
         $custom .= "comments[]=" . $_POST['comments'][$i] . "&";
       }
-    }    
+    }
     $url = "<meta http-equiv=\"refresh\" content=\"0;url=chapter.php?currentChapter=".$chapterOptions['currentChapter']."&mainLanguage=".$chapterOptions['mainLanguage'].$custom."\" />";
     echo $url;
   }

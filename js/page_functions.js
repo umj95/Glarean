@@ -190,7 +190,7 @@
     //},
     // Adds a new handler for <term>, wrapping it in an HTML <b>
     // Note that you could just do `term: ["<b>","</b>"]` instead.
-    "term": 
+    "term":                                                       // put a term in its own span container
       function(elt) {
         var term = document.createElement("span");
         term.setAttribute("class", "term");
@@ -198,11 +198,11 @@
         return term;
       },
 
-    "name": [
+    "name": [                                                     // if a name has a ref-attribute, link to it
       ["[ref]", ["<a href=\"$rw@ref\" target=\"_blank\">","</a>"]]
     ],
 
-    "head": function(e) {
+    "head": function(e) {                                         // heads get their corresponding <hx>-tags, depending on their depth
       if (e.hasAttribute("n")){
         var dot = /\./;
         if (dot.test(e.getAttribute("n"))){
@@ -216,15 +216,16 @@
       return result;
     },
 
-    "pb": function(elt) {
+    "pb": function(elt) {                                         // page breaks get their own div-container
       var pb = document.createElement("div");
       pb.setAttribute("class", "pb");
       pb.innerHTML = elt.getAttribute("n");
       return pb;
     },
 
-    "choice": function(choice) {
-      if(choice.getAttribute("ana") === "transl") {
+    "choice": function(choice) {                                  // choice builds tooltips to display expansions, of abbreviations,
+                                                                  // transliteration of greek script etc.
+      if(choice.getAttribute("ana") === "transl") {               // transliterations
         var transl = document.createElement("span");
         transl.setAttribute("class", "transl tooltip")
         var orig = document.createElement("span");
@@ -237,7 +238,7 @@
         transl.appendChild(reg);
         return transl;
       } 
-      else if(choice.getAttribute("ana") === "abbr") {
+      else if(choice.getAttribute("ana") === "abbr") {            // abbreviations
         var abbr = document.createElement("span");
         abbr.setAttribute("class", "abbr tooltip")
         var orig = document.createElement("span");
@@ -252,14 +253,14 @@
       }
     },
 
-    "foreign": function(foreign) {
+    "foreign": function(foreign) {                                // foreign text get its own span container (i.e. Greek)
       var otherLang = document.createElement("span");
       otherLang.setAttribute("class", foreign.getAttribute("xml:lang"))
       otherLang.innerHTML = foreign.innerHTML;
       return otherLang;
     },
 
-    "seg": function(initial) {
+    "seg": function(initial) {                                    // initials can be marked here in order to create drop caps if desired
       if(initial.getAttribute("type") === "initial-caps") {
         var init = document.createElement("span");
         init.setAttribute("class", "initial");
@@ -268,12 +269,12 @@
       }
     },
 
-    "note": function(note) {
-      note.innerHTML = "";
-      return note;
-    },
+    //"note": function(note) {
+    //  note.innerHTML = "";
+    //  return note;
+    //},
 
-    "p": function(para) {
+    "p": function(para) {                                         // unlike the main text, paragraphs only get their tags, but no transl.-buttons
       if(para.hasAttribute("xml:id")) {
         var paragraph = document.createElement("p");
         paragraph.innerHTML = para.innerHTML;

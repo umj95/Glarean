@@ -32,7 +32,7 @@
                          '_deu' => 'deutsch',
                          '_eng' => 'englisch');
 
-  
+  $commentaryOptions   = array('editorsComments', 'additionalComments');
 
   $chapterOptions = array();
   foreach($_GET as $key => $value) {
