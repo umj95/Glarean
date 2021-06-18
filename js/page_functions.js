@@ -1,6 +1,6 @@
-/* ========================================================================== Global Variables ================ */
+/* ================================================================================= Global Variables ================ */
 
-  var currentChapter = "";           // the current main Chapter to be displayed
+  var currentChapter = "";                                        // the current main Chapter to be displayed
 
   var languages = [];
 
@@ -8,19 +8,23 @@
     languages['_deu'] = "deutsch";
     languages['_eng'] = "englisch";
 
-  var mainLanguage = "";                 // the language of the main document
+  var mainLanguage = "";                                          // the language of the main document
 
-  var secondaryLanguages = [];            // the translation languages
+  var secondaryLanguages = [];                                    // the translation languages
 
-  var pathToText = "data/text/";         // the (relative) path to the text data folder
+  var pathToText = "data/text/";                                  // the (relative) path to the text data folder, containing the chapter folders
 
-  var pathToMusic = "data/music/";         // the (relative) path to the music data folder
+  var pathToMusic = "data/music/";                                // the (relative) path to the music data folder
   
-  var comments = {};                       // the comment Object
+  var comments = {};                                              // the comment Object -> commentary will be loaded in here one at a time
+                                                                  // commentary exists in separate JSON files, so comments[editorsComments]
+                                                                  // will point to the data from the JSON file containing editorial comments, 
+                                                                  // whereas comments[errata] will point to the JSON file containing errata.
+                                                                  // Every comment is linked to its target via the target's xml:id attribute.
 
-  var noteNr = 0;                           // track the Number of Notes
+  var noteNr = 0;                                                 // tracks the Number of Notes
 
-  var fullTextBehaviors = {"tei":{            // all CETEIcean behaviors are defined here
+  var fullTextBehaviors = {"tei":{                                // all CETEIcean behaviors are defined here
     // Overrides the default ptr behavior, displaying a short link
     //"ptr": function(elt) {
     //  var link = document.createElement("a");
@@ -30,12 +34,12 @@
     //},
     // Adds a new handler for <term>, wrapping it in an HTML <b>
     // Note that you could just do `term: ["<b>","</b>"]` instead.
-    "term": 
+    "term":                                                       // put a term in its own span container
       function(elt) {
         var term = document.createElement("span");
         term.setAttribute("class", "term");
         if (elt.hasAttribute("ref")) {
-          var ref = document.createElement("a");
+          var ref = document.createElement("a");                  // if it has a ref-attribute, link to it
           ref.setAttribute("class", "term");
           ref.setAttribute("href", elt.getAttribute("ref"));
           ref.setAttribute("target", "_blank");
@@ -46,11 +50,11 @@
         return term;
       },
 
-    "name": [
+    "name": [                                                     // if a name has a ref-attribute, link to it
       ["[ref]", ["<a href=\"$rw@ref\" target=\"_blank\">","</a>"]]
     ],
 
-    "head": function(e) {
+    "head": function(e) {                                         // heads get their corresponding <hx>-tags, depending on their depth
       if (e.hasAttribute("n")){
         var dot = /\./;
         if (dot.test(e.getAttribute("n"))){
@@ -64,7 +68,7 @@
       return result;
     },
 
-    "pb": function(elt) {
+    "pb": function(elt) {                                         // page breaks get their own div-container
       var pb = document.createElement("div");
       pb.setAttribute("class", "pb");
       pb.innerHTML = elt.getAttribute("n");
@@ -72,29 +76,33 @@
       return pb;
     },
 
-    "figure": function(fig) {
+    "figure": function(fig) {                                     // figure contains musical examples – it is built with a container,
+                                                                  // a header containing the title
+                                                                  // and a body that will be targeted by Verovio to render the corresp.
+                                                                  // MEI file, identified by the figure's corresp-attribute
       if (fig.getAttribute("type") === "music") {
-        var children = fig.children;                                  //  Get information about mei file / title
+        var children = fig.children;                              //  Get information about mei file / title
         var title = children[0].textContent;
         var meiFile = children[1].getAttribute("corresp");
-        var mei = document.createElement("div");                      //  Build container 
+        var mei = document.createElement("div");                  //  Build container 
         mei.setAttribute("class", "music");
         mei.setAttribute("id", meiFile);
-        var meiHead = document.createElement("div");                  //  Build Header
+        var meiHead = document.createElement("div");              //  Build Header
         mei.appendChild(meiHead);
         meiHead.setAttribute("class", "meiHead");
         meiHead.setAttribute("id", meiFile + "-head");
         meiHead.innerHTML = title;
-        var meiBody = document.createElement("div");                  //  Build Body
+        var meiBody = document.createElement("div");              //  Build Body
         mei.appendChild(meiBody);
         meiBody.setAttribute("class", "meiBody");
-        meiBody.setAttribute("id", meiFile + "-body");
+        meiBody.setAttribute("id", meiFile + "-body");            // the body's id attribute is the hook for Verovio to pick the right file
         return mei;
       }
     },
 
-    "choice": function(choice) {
-      if(choice.getAttribute("ana") === "transl") {
+    "choice": function(choice) {                                  // choice builds tooltips to display expansions, of abbreviations,
+                                                                  // transliteration of greek script etc.
+      if(choice.getAttribute("ana") === "transl") {               // transliterations
         var transl = document.createElement("span");
         transl.setAttribute("class", "transl tooltip")
         var orig = document.createElement("span");
@@ -107,7 +115,7 @@
         transl.appendChild(reg);
         return transl;
       } 
-      else if(choice.getAttribute("ana") === "abbr") {
+      else if(choice.getAttribute("ana") === "abbr") {            // abbreviations
         var abbr = document.createElement("span");
         abbr.setAttribute("class", "abbr tooltip")
         var orig = document.createElement("span");
@@ -122,14 +130,14 @@
       }
     },
 
-    "foreign": function(foreign) {
+    "foreign": function(foreign) {                                // foreign text get its own span container (i.e. Greek)
       var otherLang = document.createElement("span");
       otherLang.setAttribute("class", foreign.getAttribute("xml:lang"))
       otherLang.innerHTML = foreign.innerHTML;
       return otherLang;
     },
 
-    "seg": function(initial) {
+    "seg": function(initial) {                                    // initials can be marked here in order to create drop caps if desired
       if(initial.getAttribute("type") === "initial-caps") {
         var init = document.createElement("span");
         init.setAttribute("class", "initial");
@@ -145,12 +153,13 @@
     //   return margin;
     // },
 
-    "p": function(para) {
+    "p": function(para) {                                         // paragraphs with id (all of them) get their own <p>-tags
       if(para.hasAttribute("xml:id")) {
         var paragraph = document.createElement("p");
         paragraph.innerHTML = para.innerHTML;
 
-        if(secondaryLanguages){
+        if(secondaryLanguages){                                   // if chapterOptions includes secondary languages, each paragraph gets
+                                                                  // one or more translation buttons that triggers the createNote function
           for(let language of secondaryLanguages){
             var container = document.createElement("div");
             container.setAttribute("class", "transl-button tooltip");
@@ -171,7 +180,7 @@
   }
 };
 
-  var translTextBehaviors = {"tei":{            // all CETEIcean behaviors for translated texts
+  var translTextBehaviors = {"tei":{                              // all CETEIcean behaviors for translated texts
     // Overrides the default ptr behavior, displaying a short link
     //"ptr": function(elt) {
     //  var link = document.createElement("a");
@@ -211,7 +220,6 @@
       var pb = document.createElement("div");
       pb.setAttribute("class", "pb");
       pb.innerHTML = elt.getAttribute("n");
-      //pb.appendChild(document.createElement("br"));
       return pb;
     },
 
@@ -272,12 +280,12 @@
         return para;
       }
     },
-            }   //  these three belong to c.addBehaviors -> DO NOT DELETE!
+            }                                                     //  these three belong to c.addBehaviors -> DO NOT DELETE!
   };
 /* ================================================================================= Functions ================= */
 
 
-  function insertTEIChapter() {               // inserts a full TEI document with name FILENAME in CONTAINERID
+  function insertTEIChapter() {                                   // inserts a full TEI document at location PATH in #FULLTEXT
     let path = pathToText + currentChapter + "/" + currentChapter + mainLanguage + ".xml";
     c.getHTML5(path, function(data) {
       document.getElementById("fulltext").innerHTML = "";
@@ -285,7 +293,7 @@
     });
   }
 
-  function optionalBehaviors(optionsList) {
+  function optionalBehaviors(optionsList) {                       // takes the options list from the URL and adds the appropriate behaviors to the fulltextBehaviors object
     Object.keys(optionsList).forEach(function(key){
       if(key === "marginalia" && optionsList[key] === "true") {
         fullTextBehaviors["tei"]["note"] = function(note) {
@@ -302,8 +310,7 @@
     console.log(fullTextBehaviors);
   }
 
-  function openPanel(form) {
-    console.log(form);                                              // opens the left Panel
+  function openPanel(form) {                                      // opens the left Panel
     if(form == 'optionsPanel') {
       if($(window).width() > 600){
         document.getElementById("optionsPanel").style.width = "40%";
@@ -324,7 +331,7 @@
     }
   }
 
-  function closePanel(form) {                                             // closes the left Panel
+  function closePanel(form) {                                     // closes the left Panel
     if(form === "optionsPanel") {
       if($(window).width() > 600){
         document.getElementById("optionsPanel").style.width = "0";
@@ -341,7 +348,7 @@
     }
   }
 
-  function topNavExpand() {                                             //make menu items look better on mobile
+  function topNavExpand() {                                       //make menu items look better on mobile
     var x = document.getElementById("topnav");
     if (x.className === "main") {
       x.className += " responsive";
@@ -350,10 +357,12 @@
     }
   }
 
-  function createNote(kind, key, specifierA = "") {                                   // creates a new Note
+  function createNote(kind, key, specifierA = "") {               // creates a new Note
     // KIND is the sort of note (translation, person, etc 
     // – determines the styling) and KEY is the 
     // identifier that is used to load the data.
+    // specifierA is a generic variable, used for language in translations
+    // and commentary specification in comments
     noteNr++;
     var noteID = "note_" + noteNr;
     var newNote = document.createElement("div"); //create Note
@@ -413,12 +422,12 @@
     newNote.appendChild(title);
     newNote.appendChild(body);
     newNote.appendChild(footer);
-    if($(window).width() < 1200) {
+    if($(window).width() < 1200) {              // if on mobile, open commentary panel immediately
       openPanel('notesPanel');
     }
   }
   
-  function deleteNote(noteId) {                                      // deletes a Note wit ID NOTEID
+  function deleteNote(noteId) {                                   // deletes a Note wit ID NOTEID
     var elem = document.getElementById(noteId);
     document.getElementById("notesContent").removeChild(elem);
     if($(window).width() < 600) {
@@ -426,7 +435,7 @@
     }
   }
   
-  function fetchParagraph(paraID, noteBodyID, langSpecifier) {
+  function fetchParagraph(paraID, noteBodyID, langSpecifier) {    // fetches a paragraph with id PARAID from a file at location PATH
     console.log(langSpecifier);
     let path = pathToText + currentChapter + "/" + currentChapter + langSpecifier + ".xml";
     console.log(path);
@@ -441,7 +450,7 @@
     });
   }
 
-  async function insertComments(commentaryFile) {       //inserts comment links in the body text
+  async function insertComments(commentaryFile) {                 //inserts comment links in the body text at all targets specified in COMMENTARYFILE
     let path = pathToText + currentChapter + "/" + commentaryFile + ".json"
 
     var rawCommentary = await fetch(path);
@@ -466,7 +475,7 @@
     }
   }
 
-  function fetchComment(commentId, noteBodyID, commentCorpus) {        // inserts comment into note
+  function fetchComment(commentId, noteBodyID, commentCorpus) {   // inserts a comment from comments[COMMENTCORPUS] into a note
     //comments = JSON.parse(comments);
 
     commentText = document.createElement("div");
@@ -511,7 +520,7 @@
     return commentText;
   }
 
-  function waitForEl(selector, callback) {      //gives document time to build objects that are targeted by functions
+  function waitForEl(selector, callback) {                        //gives document time to build objects that are targeted by functions
     if (jQuery(selector).length) {
       callback;
     } else {
