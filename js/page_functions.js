@@ -313,10 +313,10 @@
 
   function openPanel(form) {                                      // opens the left Panel
     if(form == 'optionsPanel') {
-      if($(window).width() > 600){
+      if($(window).width() > 1200){
+          document.getElementById("optionsPanel").style.width = "25%";
+      } else if($(window).width() > 600){
         document.getElementById("optionsPanel").style.width = "40%";
-      } else if($(window).width() > 1200){
-          document.getElementById("optionsPanel").style.width = "30%";
       } else {
         document.getElementById("optionsPanel").style.height = "100vh";
       }
@@ -469,7 +469,7 @@
         commentLink.setAttribute("class", "commentLink ");
         commentLink.setAttribute("href", "#");
         commentLink.setAttribute('onclick', 'createNote("comment", "' + id + '", "' + commentaryFile + '")');
-        commentLink.innerHTML = " &#xE736;";
+        commentLink.innerHTML = " &#x2020;";
         comment.appendChild(commentLink);
         target.appendChild(comment);
       }
