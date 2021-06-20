@@ -47,14 +47,33 @@
       font-weight: bold;
       font-style: bold;}
 
+    /* Crimson */
+    @font-face {
+      font-family: "Crimson";
+      src: url( fonts/crimson/Crimson-Roman.otf);
+      src: url('fonts/crimson/Crimson-Roman.otf') format("opentype");
+      font-weight: normal;
+      font-style: normal;}
+    
+    @font-face {
+      font-family: "Crimson";
+      src: url( fonts/crimson/Crimson-Italic.otf);
+      src: url('fonts/crimson/Crimson-Italic.otf') format("opentype");
+      font-weight: normal;
+      font-style: italic;}
+
 :root {
   --header-blue: #2f4858;
   --paper-beige: #fff4e7;
+  --music-beige: #f8f7f5;
   --background-beige: #ecdbbf;
   --paper-shadow: #88837a;
 
-  --edition-font: "Junicode";
-  --site-font: "Biolinum"
+  --edition-font: "Crimson";
+  --site-font: "Biolinum";
+
+  --meta-fontsize: 0.9rem;
+  --comment-fontsize: 0.8rem;
 }
 
 html {
@@ -96,9 +115,21 @@ body {
 /*  ---------------- Links ---------------- */
 
 a {
+<<<<<<< HEAD
   color: inherit;
   text-decoration: none;
   font-feature-settings: "smcp";}
+=======
+  font-feature-settings: "smcp";
+  color: inherit;
+  letter-spacing: 0.08em;
+  /* color: var(--header-blue); */
+  text-decoration: none;}
+>>>>>>> 7df6a5fda71a45ccb74a0814468cac8c0211fc4c
+
+a:visited {
+  color: inherit;
+}
 
 a:hover {text-shadow: 2px 2px 4px var(--paper-shadow);}
 
@@ -106,7 +137,7 @@ a:visited {color: inherit};
 
 button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
 
-.grc {font-family: 'Foulis Greek';}
+/* .grc {font-family: 'Foulis Greek';} */
 
 /* ---------------- The Header ---------------- */
 
@@ -120,7 +151,8 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
     display: block;
     color: #efe4d8;
     background-color: var(--header-blue);
-    transition: top 0.4s;}
+    transition: top 0.4s;
+    font-size: var(--meta-fontsize);}
 
   header #container {
     margin: 0;
@@ -173,8 +205,6 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
     color: #efe4d8;
     background-color: var(--header-blue);
     transition: top 0.4s;}
-
-
 
   /* Note that the header elements are the only ones given in fixed widths */
 
@@ -232,9 +262,8 @@ footer {
   z-index: 2;
   grid-column-start: 1;
   grid-column-end: 25;
-  position: relative; 
+  position: relative;
   height: 0.4in;
-  margin-top: -0.4in;
   width: 100%;
   bottom: 0;
   color: #efe4d8;
@@ -244,7 +273,8 @@ footer p {
   margin: 0;
   padding: 0.2rem;
   text-align: center;
-  vertical-align: middle;}
+  vertical-align: middle;
+  font-size: var(--meta-fontsize);}
 
 em {font-style: italic;}
 
@@ -261,6 +291,7 @@ em {font-style: italic;}
 .panel #content {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
+  font-size: var(--meta-fontsize);
 }
 
 .panel .closebtn {
@@ -496,17 +527,21 @@ button.panel {
     grid-column-start: 1;
     grid-column-end: 25;
     min-height: 100%;
+    margin-bottom: 0.4in;
     display: grid;
     grid-template-columns: repeat(24, 1fr);
     background-color: var(--background-beige);
     font-family: var(--edition-font);
-    font-feature-settings:"calt", "liga", "clig", "kern", "onum";}
+    line-height: 1.4;
+    font-feature-settings:"liga", "dlig", "kern", "onum";
+  }
   
   .chapter h1, .chapter h2, .chapter h3, .chapter h4, .chapter h5, .chapter h6 {
     margin: 0.7em 0 0.2em 0;
-    font-style: normal;
+    /* font-family: var(--headings-font); */
     font-feature-settings: "smcp";
-    letter-spacing: 0.075em;}
+    letter-spacing: 0.075em;
+    line-height: normal;}
   
   .chapter h1 {font-size: 5rem;} .chapter h2 {font-size: 3rem;} .chapter h3 {font-size: 2.4rem;} 
   .chapter h4 {font-size: 2rem;} .chapter h5 {font-size: 1.5rem;} .chapter h6 {font-size: 1rem;}
@@ -554,6 +589,15 @@ button.panel {
     grid-column: 1 / 16;
     margin: 6rem 12.48vw 6rem 8.32vw;}
 
+  .commentLink {
+    font-style: normal;
+    color: darkred;
+  }
+
+  .commentLink a:visited {
+    color: darkred;
+  }
+
   @media only screen and (max-width: 1100px) {
     .body-text { grid-column: 2 / 24;
       overflow-x: hidden;
@@ -570,6 +614,13 @@ button.panel {
       grid-column: 1 / 25;}
   }
   
+  /* ----------------- Music ------------------- */
+
+  .music {
+    background-color: var(--music-beige);
+    border: 1px solid var(--header-blue);
+  }
+
   /* ----------------- Margins ----------------- */
   
   .margin {
@@ -577,7 +628,8 @@ button.panel {
     width: 9.72vw;
     margin-right: -25%;
     position: relative;
-    font-size: 0.8rem;}
+    font-size: var(--comment-fontsize);
+    line-height: normal;}
 
   @media only screen and (max-width: 1100px) {
     .margin {margin-right: -30%;}
@@ -592,8 +644,7 @@ button.panel {
     visibility: hidden;
     max-width: max-content;
     padding: 0.15rem 0.2rem 0.15rem 0.2rem;
-    background-color: #D5DED7;
-    color: var(--header-blue);
+    background-color: var(--background-beige);
     text-align: center;
     border-radius: 4px;
     border: 1px solid var(--header-blue);
@@ -668,11 +719,20 @@ button.panel {
     border: 1px solid var(--header-blue);
     border-radius: 4px;
     box-shadow: 5px 5px 20px var(--paper-shadow);
-    font-size: 0.8rem;
+    font-size: var(--comment-fontsize);
     }
 
   .comment {
     font-family: var(--site-font);
+  }
+
+  .comment h5, .comment h6 {
+    font-feature-settings: normal;
+    font-weight: bold;
+  }
+
+  .comment .commentAuthor {
+    font-style: italic;
   }
   
   .noteTitle, .noteBody, .noteFooter {
@@ -680,7 +740,7 @@ button.panel {
     margin: 0;
     padding: 0.3rem;
     padding-left: 1rem;
-    font-size: 0.8rem;}
+    font-size: var(--comment-fontsize);}
   
   .noteBody {
     grid-area: body;
