@@ -1,4 +1,8 @@
 <?php
+  /*=========================
+  This page offers the available chapters in their available languages.
+  It loads the chapter.php file with the appropriate $_GET variables upon submission
+  =========================*/
   if(isset($_GET['3_Symph_lat'])) {
     $currentChapter = "3_Symph";
     $mainLanguage = "_lat";

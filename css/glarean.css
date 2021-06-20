@@ -96,10 +96,13 @@ body {
 /*  ---------------- Links ---------------- */
 
 a {
-  color: var(--header-blue);
-  text-decoration: none;}
+  color: inherit;
+  text-decoration: none;
+  font-feature-settings: "smcp";}
 
 a:hover {text-shadow: 2px 2px 4px var(--paper-shadow);}
+
+a:visited {color: inherit};
 
 button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
 
@@ -226,6 +229,7 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
 
 /* ---------------- Footer  ---------------- */
 footer {
+  z-index: 2;
   grid-column-start: 1;
   grid-column-end: 25;
   position: relative; 
@@ -309,7 +313,7 @@ button.panel {
     box-shadow: 7px 7px 25px #31302f;}
 
   #noteArea {
-    z-index: 1;
+    z-index: 0;
     width: inherit;
     height: inherit;
     position: inherit;
@@ -494,7 +498,7 @@ button.panel {
     min-height: 100%;
     display: grid;
     grid-template-columns: repeat(24, 1fr);
-    /* background-color: #ecdbbf; */
+    background-color: var(--background-beige);
     font-family: var(--edition-font);
     font-feature-settings:"calt", "liga", "clig", "kern", "onum";}
   
@@ -535,13 +539,14 @@ button.panel {
   /* ----------------- The "Page" ----------------- */
   
   .body-text {
+    z-index: 1;
     grid-column: 2 / 17;
     overflow: visible;
     padding-top: 0.8in;
     display: grid;
     grid-template-columns: repeat(15, 1fr);
     background-color: var(--paper-beige);
-    /* box-shadow: 5px 5px 20px #88837a; */
+    box-shadow: 5px 5px 20px #88837a;
     font-size: 1rem;}
   
   .text {
@@ -570,7 +575,7 @@ button.panel {
   .margin {
     float: right;
     width: 9.72vw;
-    margin-right: -35%;
+    margin-right: -25%;
     position: relative;
     font-size: 0.8rem;}
 
@@ -646,6 +651,7 @@ button.panel {
   /* ----------------- Notes ----------------- */
  
   .note {
+    z-index: 1;
     overflow: hidden;
     position: sticky;
     /* top: calc(0.8in + 6rem); */
@@ -658,7 +664,7 @@ button.panel {
     height: min-content;
     margin: 0 4.1vw 0 4.1vw;
     margin-bottom: 1.6rem;
-    background-color: var(--background-beige);
+    background-color: var(--paper-beige);
     border: 1px solid var(--header-blue);
     border-radius: 4px;
     box-shadow: 5px 5px 20px var(--paper-shadow);

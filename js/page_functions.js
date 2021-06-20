@@ -469,7 +469,7 @@
         commentLink.setAttribute("class", "commentLink ");
         commentLink.setAttribute("href", "#");
         commentLink.setAttribute('onclick', 'createNote("comment", "' + id + '", "' + commentaryFile + '")');
-        commentLink.innerHTML = " &#xE736;";
+        commentLink.innerHTML = " &#x2020;";
         comment.appendChild(commentLink);
         target.appendChild(comment);
       }

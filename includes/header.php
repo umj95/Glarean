@@ -1,13 +1,17 @@
 <?php
+  /*=========================
+  This header contains the boilerplate header for all pages.
+  Additionally, it contains global variables for php.
+  =========================*/
   session_start();
-  if(isset($_POST['recordSize'])) { //check for screen dimensions
+  if(isset($_POST['recordSize'])) {                               // check for screen dimensions
     $height = $_POST['height'];
     $width = $_POST['width'];
     $_SESSION['screen_height'] = $height;
     $_SESSION['screen_width'] = $width;
   }
     
-  function parseOptionstoString($chapterOptions) {
+  function parseOptionstoString($chapterOptions) {                // converts $chapterOptions into a String
     $passOptions = "";
     foreach($chapterOptions as $key => $option) {
       $name = $key;
@@ -25,19 +29,20 @@
     }
     return $passOptions;
   }
-
-  $languageList = array('_lat', '_deu', '_eng');
+  /* --------------------------------------------------------------  Global Variables  ------------------- */
+  $languageList = array('_lat', '_deu', '_eng');                  // the available languages for translations
   
-  $languages    = array( '_lat' => 'lateinisch',
+  $languages    = array( '_lat' => 'lateinisch',                  // expand the languages for labels etc.
                          '_deu' => 'deutsch',
                          '_eng' => 'englisch');
 
-  $commentaryOptions   = array('editorsComments', 'additionalComments');
+  $commentaryOptions = array('editorsComments', 'additionalComments');  // commentary options to offer
 
-  $chapterOptions = array();
+  $chapterOptions = array();                                      // load chapter options from GET -> into $chapterOptions -> also used extensively in chapter.php
   foreach($_GET as $key => $value) {
     $chapterOptions[$key] = $value;
   }
+  /* ----------------------------------------------------------------------------------------------------- */
 ?>
 <!DOCTYPE html>
 <html>
@@ -53,7 +58,7 @@
     <script type="text/javascript" src="js/verovio_loader.js"></script>
     <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
     <?php 
-      if(!isset($_SESSION['screen_height'])) { //check for screen dimensions but only on first load
+      if(!isset($_SESSION['screen_height'])) {                    // check for screen dimensions but only on first load
         echo "
           <script>\n
             $(document).ready( function() {\n
@@ -86,7 +91,7 @@
         </nav>
       </div>
       <script type="text/javascript"> 
-        var prevScrollpos = window.pageYOffset; //make header disappear on scroll
+        var prevScrollpos = window.pageYOffset;                    // make header disappear on scroll
         window.onscroll = function() {
           var currentScrollPos = window.pageYOffset;
           if (prevScrollpos > currentScrollPos) {

@@ -4,10 +4,6 @@
   Pre-existant selections, such as the current chapter, are retrieved from GET. Once the Submit button is pressed, all selections are transported via GET
   and the page gets reloaded.
   =========================*/
-  /*$chapterOptions = array();                                      // load chapter options from GET -> into $chapterOptions -> also used extensively in chapter.php
-  foreach($_GET as $key => $value) {
-    $chapterOptions[$key] = $value; 
-  }*/
   $languageOptions = array();                                     // filter the current main language from the available languages
   for($i = 0; $i < count($languageList); $i++) {                  // global serverside variables such as $languageList are declared in header.php
     if($languageList[$i] != $chapterOptions['mainLanguage']) {
