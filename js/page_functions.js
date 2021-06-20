@@ -372,7 +372,7 @@
 
     document.getElementById("notesContent").appendChild(newNote);
   
-    if(kind === "transl") {                                                              // makes note for translated paragraph
+    if(kind === "transl") {                                       // makes note for translated paragraph
       newNote.setAttribute("class", "note transl");
       var title = document.createElement("div");  // create Title
       title.setAttribute("class", "noteTitle");
@@ -395,7 +395,7 @@
       
       waitForEl("#noteBody_" + noteID, fetchParagraph(key, "noteBody_" + noteID, specifierA));
     }
-    else if(kind === "comment") {                                                      // makes note for comment
+    else if(kind === "comment") {                                 // makes note for comment
       newNote.setAttribute("class", "note comment");
       var title = document.createElement("div");          // create Title
       title.setAttribute("class", "noteTitle");
@@ -437,9 +437,7 @@
   }
   
   function fetchParagraph(paraID, noteBodyID, langSpecifier) {    // fetches a paragraph with id PARAID from a file at location PATH
-    console.log(langSpecifier);
     let path = pathToText + currentChapter + "/" + currentChapter + langSpecifier + ".xml";
-    console.log(path);
     d.getHTML5(path, function(data) {
       const noteBody = document.getElementById(noteBodyID);
       for (const p of Array.from(data.getElementsByTagName("tei-p"))) {

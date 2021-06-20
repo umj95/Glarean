@@ -1,37 +1,49 @@
-window.addEventListener("load", function() { 
-
-  var path = pathToMusic;
-  var meiNumber = document.getElementsByClassName("meiBody");     // the iterator is defined by the amount of meiBody elements to be filled
-  console.log("number = " + meiNumber.length);
-  var tk = [];
+function insertSVGs(toolkit, meiNumber, files) {                  // renders the files retrieved by getMEIFiles() and inserts them
   var svg = [];
+  for(let i = 0; i < meiNumber.length; i++) {
+    let fileLocation = meiNumber[i].id;                           // the id of the corresponding div
+    console.log(fileLocation);
+    svg[i] = toolkit.renderData(files[i],{});
+    console.log("SVG Nr " + i);
+    document.getElementById(fileLocation).innerHTML = svg[i];     // render in meiBody-div
+  };
+}
 
-  for(var i = 0 ; i < meiNumber.length ; i++) {
-    fileLocation = meiNumber[i].parentNode.id;                    // the file location is determined by the id of the container (div class="music")
-    console.log("file location is " + fileLocation);
-    Module.onRuntimeInitialized = async_ => {                     // for every meiBody Element, a new toolkit is set up
-      tk[i] = new verovio.toolkit();
-      console.log("Verovio has loaded!");
+async function getMEIfiles(meiNumber) {                           // retrieves the mei-files, returns as array / promise
+  var path = pathToMusic;
+  var fetches = [];
+  for (let i = 0; i < meiNumber.length; i++) {
+    fileLocation = meiNumber[i].parentNode.id;
+    fetches[i] = await fetch(path + "modern/" + fileLocation);
+    fetches[i] = await fetches[i].text();
+  }
+  return fetches;
+}
+  
+window.addEventListener("load", function() {                      // start Verovio only after Window has loaded
+  var tk;
 
-      var zoom = 30;                                              //  declare Options
-      var pageHeight = 500;
-      var pageWidth = 500;
-      pageHeight = $(document).height() * 100 / zoom;
-      pageWidth = $(".music").width() * 100 / zoom;
-      options = {
-                  pageHeight: pageHeight,
-                  pageWidth: pageWidth,
-                  scale: zoom,
-                  adjustPageHeight: true
-              };
-      tk[i].setOptions(options);                                  // set Options
+  Module.onRuntimeInitialized = async_ => {
 
-      fetch(path + "modern/" + fileLocation)                      //  get MEI file
-      .then((response) => response.text())
-      .then((meiXML) => {
-        svg[i]= tk[i].renderData(meiXML,{});
-        document.getElementById(fileLocation + "-body").innerHTML = svg[i];      //  render in meiBody-div
-      });
-    }
+    tk = new verovio.toolkit();                                   // instantiate Toolkit
+
+    var zoom = 30;                                                //  declare Options
+    var pageHeight = 500;
+    var pageWidth = 500;
+    pageHeight = $(document).height() * 100 / zoom;
+    pageWidth = $(".music").width() * 100 / zoom;
+    options = {
+                pageHeight: pageHeight,
+                pageWidth: pageWidth,
+                scale: zoom,
+                adjustPageHeight: true
+            };
+
+    tk.setOptions(options);
+    var meiNumber = document.getElementsByClassName("meiBody");     // the iterator is defined by the amount of meiBody elements 
+
+    getMEIfiles(meiNumber).then(result => {                         // fetch MEI files, then insert them
+      insertSVGs(tk, meiNumber, result);
+    });
   }
 });
