@@ -115,17 +115,11 @@ body {
 /*  ---------------- Links ---------------- */
 
 a {
-<<<<<<< HEAD
-  color: inherit;
-  text-decoration: none;
-  font-feature-settings: "smcp";}
-=======
   font-feature-settings: "smcp";
   color: inherit;
   letter-spacing: 0.08em;
   /* color: var(--header-blue); */
   text-decoration: none;}
->>>>>>> 7df6a5fda71a45ccb74a0814468cac8c0211fc4c
 
 a:visited {
   color: inherit;
