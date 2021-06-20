@@ -54,4 +54,5 @@ window.addEventListener("load", function() {                      // start Verov
       insertSVGs(tk, meiNumber, result);
     });
   }
-}); 
+  //commit message
+});
