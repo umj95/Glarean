@@ -11,14 +11,6 @@ function insertSVGs(toolkit, meiNumber, files) {                  // renders the
 
 async function getMEIfiles(meiNumber) {                           // retrieves the mei-files, returns as array / promise
   var path = pathToMusic;
-  var meiNumber = document.getElementsByClassName("meiBody");     // the iterator is defined by the amount of meiBody elements to be filled
-  var tk = [];
-  var svg = [];
-
-  for(var i = 0 ; i < meiNumber.length ; i++) {
-    fileLocation = meiNumber[i].parentNode.id;                    // the file location is determined by the id of the container (div class="music")
-    Module.onRuntimeInitialized = async_ => {                     // for every meiBody Element, a new toolkit is set up
-      tk[i] = new verovio.toolkit();
   var fetches = [];
   for (let i = 0; i < meiNumber.length; i++) {
     fileLocation = meiNumber[i].parentNode.id;
