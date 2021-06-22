@@ -30,11 +30,10 @@
     return $passOptions;
   }
   /* --------------------------------------------------------------  Global Variables  ------------------- */
-  $languageList = array('_lat', '_deu', '_eng');                  // the available languages for translations
+  $languageList = array('_lat', '_deu');                  // the available languages for translations
   
   $languages    = array( '_lat' => 'lateinisch',                  // expand the languages for labels etc.
-                         '_deu' => 'deutsch',
-                         '_eng' => 'englisch');
+                         '_deu' => 'deutsch');
 
   $commentaryOptions = array('editorsComments', 'additionalComments');  // commentary options to offer
 

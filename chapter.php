@@ -16,12 +16,12 @@
     secondaryLanguages = chapterOptions.secondaryLanguages;
     marginalia = chapterOptions.marginalia;
     //commentaryOptions = chapterOptions.comments;
-    
-    optionalBehaviors(chapterOptions);                            // Load custom TEI behaviors
-            
+
     var c = new CETEI();                                          // the primary CETEIcean object
                                                                   // (two are specified because we need different sets of behaviors)
     var d = new CETEI();                                          // the secondary CETEIcean object (for translations)
+
+    optionalBehaviors(chapterOptions);                            // Load custom TEI behaviors
             
     d.addBehaviors(translTextBehaviors);                          // add behaviors to the translation text object
 
