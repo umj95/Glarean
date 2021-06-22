@@ -10,11 +10,11 @@ function insertSVGs(toolkit, meiNumber, files) {                  // renders the
 }
 
 async function getMEIfiles(meiNumber) {                           // retrieves the mei-files, returns as array / promise
-  var path = pathToMusic;
+  var path = pathToData + currentChapter + "/";
   var fetches = [];
   for (let i = 0; i < meiNumber.length; i++) {
     fileLocation = meiNumber[i].parentNode.id;
-    fetches[i] = await fetch(path + "modern/" + fileLocation);
+    fetches[i] = await fetch(path + "music/modern/" + fileLocation);
     fetches[i] = await fetches[i].text();
   }
   return fetches;
