@@ -12,9 +12,7 @@
 
   var secondaryLanguages = [];                                    // the translation languages
 
-  var pathToText = "data/text/";                                  // the (relative) path to the text data folder, containing the chapter folders
-
-  var pathToMusic = "data/music/";                                // the (relative) path to the music data folder
+  var pathToData = "data/chapters/";                               // the (relative) path to the text data folder, containing the chapter folders
   
   var comments = {};                                              // the comment Object -> commentary will be loaded in here one at a time
                                                                   // commentary exists in separate JSON files, so comments[editorsComments]
@@ -23,6 +21,11 @@
                                                                   // Every comment is linked to its target via the target's xml:id attribute.
 
   var noteNr = 0;                                                 // tracks the Number of Notes
+
+
+  var c = new CETEI();                                            // the primary CETEIcean object
+                                                                  // (two are specified because we need different sets of behaviors)
+  var d = new CETEI();                                            // the secondary CETEIcean object (for translations)
 
   var fullTextBehaviors = {"tei":{                                // all CETEIcean behaviors are defined here
     // Overrides the default ptr behavior, displaying a short link
@@ -287,7 +290,7 @@
 
 
   function insertTEIChapter() {                                   // inserts a full TEI document at location PATH in #FULLTEXT
-    let path = pathToText + currentChapter + "/" + currentChapter + mainLanguage + ".xml";
+    let path = pathToData + currentChapter + "/" + currentChapter + mainLanguage + ".xml";
     c.getHTML5(path, function(data) {
       document.getElementById("fulltext").innerHTML = "";
       document.getElementById("fulltext").appendChild(data);
@@ -297,14 +300,22 @@
   function optionalBehaviors(optionsList) {                       // takes the options list from the URL and adds the appropriate behaviors to the fulltextBehaviors object
     Object.keys(optionsList).forEach(function(key){
       if(key === "marginalia" && optionsList[key] === "true") {
+        console.log("marginalia === true");
         fullTextBehaviors["tei"]["note"] = function(note) {
           var margin = document.createElement("span");
           margin.setAttribute("class", "margin");
           margin.innerHTML = note.innerHTML;
           return margin;
         };
-      } else if(key === "marginalia" && optionsList[key] != "true") {
-        c.removeBehavior("note");
+      } else {
+        console.log("marginalia != true");
+        fullTextBehaviors["tei"]["note"] = function(note) {
+          var margin = document.createElement("span");
+          margin.setAttribute("class", "margin");
+          margin.innerHTML = note.innerHTML;
+          margin.innerHTML = "";
+          return margin;
+        };
       }
     })
 
@@ -437,7 +448,7 @@
   }
   
   function fetchParagraph(paraID, noteBodyID, langSpecifier) {    // fetches a paragraph with id PARAID from a file at location PATH
-    let path = pathToText + currentChapter + "/" + currentChapter + langSpecifier + ".xml";
+    let path = pathToData + currentChapter + "/" + currentChapter + langSpecifier + ".xml";
     d.getHTML5(path, function(data) {
       const noteBody = document.getElementById(noteBodyID);
       for (const p of Array.from(data.getElementsByTagName("tei-p"))) {
@@ -450,7 +461,7 @@
   }
 
   async function insertComments(commentaryFile) {                 //inserts comment links in the body text at all targets specified in COMMENTARYFILE
-    let path = pathToText + currentChapter + "/" + commentaryFile + ".json"
+    let path = pathToData + currentChapter + "/" + commentaryFile + ".json"
 
     var rawCommentary = await fetch(path);
     comments[commentaryFile] = await rawCommentary.json();

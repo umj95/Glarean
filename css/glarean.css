@@ -2,6 +2,8 @@
 
   /* Fonts */
 
+  @import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&display=swap');
+
     /* Junicode / Foulis Greek */
     @font-face {
       font-family: "Junicode";
@@ -68,9 +70,11 @@
   --music-beige: #f8f7f5;
   --background-beige: #ecdbbf;
   --paper-shadow: #88837a;
+  --margin-grey: rgb(99, 99, 99);
 
   --edition-font: "Crimson";
   --site-font: "Biolinum";
+  --margin-font: "IM Fell DW Pica";
 
   --meta-fontsize: 0.9rem;
   --comment-fontsize: 0.8rem;
@@ -622,6 +626,8 @@ button.panel {
     width: 9.72vw;
     margin-right: -25%;
     position: relative;
+    color: var(--margin-grey);
+    font-family: var(--margin-font);
     font-size: var(--comment-fontsize);
     line-height: normal;}
 
@@ -639,6 +645,7 @@ button.panel {
     max-width: max-content;
     padding: 0.15rem 0.2rem 0.15rem 0.2rem;
     background-color: var(--background-beige);
+    font-size: var(--comment-fontsize);
     text-align: center;
     border-radius: 4px;
     border: 1px solid var(--header-blue);

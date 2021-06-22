@@ -81,6 +81,12 @@
       <label for="margins">Änderungen vornehmen</label>           <!-- Submit selection -->
       <input type="submit" name="submit" value="submit"/>
     </form>
+    <p><a href="<?php 
+      $thisChapter = $chapterOptions['currentChapter'];
+      $thisLanguage = $chapterOptions['mainLanguage'];
+      echo "/data/chapters/";
+      echo "$thisChapter/$thisChapter"."$thisLanguage.xml";
+    ?>" download>Dieses Kapitel als TEI-Datei Herunterladen</a></p>
   </div>
 </div>
 <?php
