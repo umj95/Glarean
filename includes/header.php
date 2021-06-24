@@ -51,6 +51,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link rel="stylesheet" href="css/glarean.css"/>
+    <link rel="icon" type="image/ico" href="favicon.ico">
     <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
     <script type="text/javascript" src="js/CETEI.js"></script>
     <script type="text/javascript" src="https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js" defer></script>
@@ -84,9 +85,9 @@
         <nav id="topnav" class="main">
           <a href="index.php">Home</a></li>
           <a href="chapter_select.php">Kapitel</a></li>
-          <a href="#">Über dieses Projekt</a>
+          <a href="about.php">Über dieses Projekt</a>
           <a href="impressum.php">Impressum</a>
-          <a href="#">Kontakt</a>
+          <a href="contact.php">Kontakt</a>
         </nav>
       </div>
       <script type="text/javascript"> 

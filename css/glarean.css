@@ -2,8 +2,6 @@
 
   /* Fonts */
 
-  @import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&display=swap');
-
     /* Junicode / Foulis Greek */
     @font-face {
       font-family: "Junicode";
@@ -74,7 +72,7 @@
 
   --edition-font: "Crimson";
   --site-font: "Biolinum";
-  --margin-font: "IM Fell DW Pica";
+  --margin-font: "Crimson";
 
   --meta-fontsize: 0.9rem;
   --comment-fontsize: 0.8rem;
@@ -273,6 +271,10 @@ footer p {
   text-align: center;
   vertical-align: middle;
   font-size: var(--meta-fontsize);}
+
+footer .grc {
+  font-family: var(--edition-font);
+}
 
 em {font-style: italic;}
 
