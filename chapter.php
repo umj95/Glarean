@@ -34,7 +34,7 @@
         <script>insertTEIChapter()</script>                       <!-- insert the TEI document -->
       </div>
     </section>
-    <button class="panel" id="notesButton" onclick="openPanel('notesPanel')"></button>
+    <button name="comments" class="panel" id="notesButton" onclick="openPanel('notesPanel')"></button>
     <div id="noteArea" class="panel">
       <div id="closer">
         <a href="javascript:void(0)" class="closebtn" onclick="closePanel('notesPanel')">&times;</a>

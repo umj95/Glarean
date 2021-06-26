@@ -11,7 +11,7 @@
     }
   }
 ?>
-<button class="panel" onclick="openPanel('optionsPanel')"></button>
+<button name="options" class="panel" onclick="openPanel('optionsPanel')"></button>
 <div id="optionsPanel" class="panel">
   <div id="closer">
     <a href="javascript:void(0)" class="closebtn" onclick="closePanel('optionsPanel')">&times;</a>
