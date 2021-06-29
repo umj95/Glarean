@@ -79,7 +79,7 @@
         </div>
       </fieldset>
       <label for="margins">Änderungen vornehmen</label>           <!-- Submit selection -->
-      <input type="submit" name="submit" value="submit"/>
+      <input type="submit" name="Änderungen vornehmen" value="submit"/>
     </form>
     <p><a href="<?php 
       $thisChapter = $chapterOptions['currentChapter'];
