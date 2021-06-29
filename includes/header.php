@@ -54,9 +54,9 @@
     <link rel="icon" type="image/ico" href="favicon.ico">
     <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
     <script type="text/javascript" src="js/CETEI.js"></script>
-    <script type="text/javascript" src="https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js" defer></script>
+    <!-- <script type="text/javascript" src="https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js" defer></script> -->
     <script type="text/javascript" src="js/page_functions.js"></script>
-    <script type="text/javascript" src="js/verovio_loader.js"></script>
+    <!-- <script type="text/javascript" src="js/verovio_loader.js"></script> -->
     <?php 
       if(!isset($_SESSION['screen_height'])) {                    // check for screen dimensions but only on first load
         echo "

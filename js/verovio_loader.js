@@ -20,31 +20,31 @@ async function getMEIfiles(meiNumber) {                           // retrieves t
   return fetches;
 }
   
-window.addEventListener("load", function() {                      // start Verovio only after Window has loaded
-  var tk;
+function addVerovio() {                                           // starts Verovio toolkit and calls helper functions
 
-  Module.onRuntimeInitialized = async_ => {
+    var tk;
 
-    tk = new verovio.toolkit();                                   // instantiate Toolkit
+    Module.onRuntimeInitialized = async_ => {
 
-    var zoom = 30;                                                //  declare Options
-    var pageHeight = 500;
-    var pageWidth = 500;
-    pageHeight = $(document).height() * 100 / zoom;
-    pageWidth = $(".music").width() * 100 / zoom;
-    options = {
-                pageHeight: pageHeight,
-                pageWidth: pageWidth,
-                scale: zoom,
-                adjustPageHeight: true
-            };
+      tk = new verovio.toolkit();                                 // instantiate Toolkit
 
-    tk.setOptions(options);
-    var meiNumber = document.getElementsByClassName("meiBody");     // the iterator is defined by the amount of meiBody elements 
+      var zoom = 30;                                              //  declare Options
+      var pageHeight = 500;
+      var pageWidth = 500;
+      pageHeight = $(document).height() * 100 / zoom;
+      pageWidth = $(".music").width() * 100 / zoom;
+      options = {
+                  pageHeight: pageHeight,
+                  pageWidth: pageWidth,
+                  scale: zoom,
+                  adjustPageHeight: true
+              };
 
-    getMEIfiles(meiNumber).then(result => {                         // fetch MEI files, then insert them
-      insertSVGs(tk, meiNumber, result);
-    });
-  }
-  //commit message
-});
+      tk.setOptions(options);
+      var meiNumber = document.getElementsByClassName("meiBody"); // the iterator is defined by the amount of meiBody elements 
+
+      getMEIfiles(meiNumber).then(result => {                     // fetch MEI files, then insert them
+        insertSVGs(tk, meiNumber, result);
+      });
+    }
+}
