@@ -202,7 +202,7 @@
       },
 
     "name": [                                                     // if a name has a ref-attribute, link to it
-      ["[ref]", ["<a href=\"$rw@ref\" target=\"_blank\">","</a>"]]
+      ["[ref]", ["<a href=\"$rw@ref\" target=\"_blank\" rel=\"noopener\">","</a>"]]
     ],
 
     "head": function(e) {                                         // heads get their corresponding <hx>-tags, depending on their depth

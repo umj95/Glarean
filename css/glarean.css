@@ -2,8 +2,6 @@
 
   /* Fonts */
 
-  @import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&display=swap');
-
     /* Junicode / Foulis Greek */
     @font-face {
       font-family: "Junicode";
@@ -74,7 +72,7 @@
 
   --edition-font: "Crimson";
   --site-font: "Biolinum";
-  --margin-font: "IM Fell DW Pica";
+  --margin-font: "Crimson";
 
   --meta-fontsize: 0.9rem;
   --comment-fontsize: 0.8rem;
@@ -273,6 +271,10 @@ footer p {
   text-align: center;
   vertical-align: middle;
   font-size: var(--meta-fontsize);}
+
+footer .grc {
+  font-family: var(--edition-font);
+}
 
 em {font-style: italic;}
 
@@ -524,8 +526,7 @@ button.panel {
   .chapter {
     grid-column-start: 1;
     grid-column-end: 25;
-    min-height: 100%;
-    margin-bottom: 0.4in;
+    min-height: calc(100vh - 0.4in);
     display: grid;
     grid-template-columns: repeat(24, 1fr);
     background-color: var(--background-beige);
@@ -629,7 +630,11 @@ button.panel {
     color: var(--margin-grey);
     font-family: var(--margin-font);
     font-size: var(--comment-fontsize);
+    font-style: italic;
     line-height: normal;}
+
+  .margin em {
+    font-style: normal;}
 
   @media only screen and (max-width: 1100px) {
     .margin {margin-right: -30%;}

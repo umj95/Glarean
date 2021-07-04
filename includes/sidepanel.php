@@ -11,7 +11,7 @@
     }
   }
 ?>
-<button class="panel" onclick="openPanel('optionsPanel')"></button>
+<button name="options" class="panel" onclick="openPanel('optionsPanel')"></button>
 <div id="optionsPanel" class="panel">
   <div id="closer">
     <a href="javascript:void(0)" class="closebtn" onclick="closePanel('optionsPanel')">&times;</a>
@@ -79,7 +79,7 @@
         </div>
       </fieldset>
       <label for="margins">Änderungen vornehmen</label>           <!-- Submit selection -->
-      <input type="submit" name="submit" value="submit"/>
+      <input type="submit" name="Änderungen vornehmen" value="submit"/>
     </form>
     <p><a href="<?php 
       $thisChapter = $chapterOptions['currentChapter'];
