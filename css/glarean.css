@@ -1,28 +1,6 @@
 /* ====================================================================================  Whole Page  ============*/
 
   /* Fonts */
-
-    /* Junicode / Foulis Greek */
-    @font-face {
-      font-family: "Junicode";
-      src: url( fonts/junicode/Junicode.ttf);
-      src: url('fonts/junicode/Junicode.ttf') format("truetype");
-      font-weight: normal;
-      font-style: normal;}
-
-    @font-face {
-      font-family: "Junicode";
-      src: url( fonts/junicode/Junicode-Italic.ttf);
-      src: url('fonts/junicode/Junicode-Italic.ttf') format("truetype");
-      font-weight: normal;
-      font-style: italic;}
-
-    @font-face {
-      font-family: "Foulis Greek";
-      src: url( fonts/junicode/FoulisGreek.ttf);
-      src: url('fonts/junicode/FoulisGreek.ttf') format("truetype");
-      font-weight: normal;
-      font-style: italic;}
     
     /* Biolinum */
     
@@ -48,6 +26,7 @@
       font-style: bold;}
 
     /* Crimson */
+
     @font-face {
       font-family: "Crimson";
       src: url( fonts/crimson/Crimson-Roman.otf);
@@ -62,6 +41,22 @@
       font-weight: normal;
       font-style: italic;}
 
+    /* Gentium */
+
+    @font-face {
+      font-family: "Gentium";
+      src: url( fonts/gentium/GenBasR.ttf);
+      src: url('fonts/gentium/GenBasR.ttf') format("truetype");
+      font-weight: normal;
+      font-style: normal;}
+    
+    @font-face {
+      font-family: "Gentium";
+      src: url( fonts/gentium/GenBasI.otf);
+      src: url('fonts/gentium/GenBasI.otf') format("opentype");
+      font-weight: normal;
+      font-style: italic;}
+
 :root {
   --header-blue: #2f4858;
   --paper-beige: #fff4e7;
@@ -72,7 +67,7 @@
 
   --edition-font: "Crimson";
   --site-font: "Biolinum";
-  --add-font: "Crimson";
+  --add-font: "Gentium";
 
   --meta-fontsize: 0.9rem;
   --comment-fontsize: 0.8rem;
