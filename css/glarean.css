@@ -52,8 +52,8 @@
     
     @font-face {
       font-family: "Gentium";
-      src: url( fonts/gentium/GenBasI.otf);
-      src: url('fonts/gentium/GenBasI.otf') format("opentype");
+      src: url( fonts/gentium/GenBasI.ttf);
+      src: url('fonts/gentium/GenBasI.ttf') format("opentype");
       font-weight: normal;
       font-style: italic;}
 
