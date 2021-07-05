@@ -86,6 +86,7 @@
           <a href="index.php">Home</a></li>
           <a href="chapter_select.php">Kapitel</a></li>
           <a href="about.php">Über dieses Projekt</a>
+          <a href="edition.php">Editionsrichtlinien</a>
           <a href="impressum.php">Impressum</a>
           <a href="contact.php">Kontakt</a>
         </nav>

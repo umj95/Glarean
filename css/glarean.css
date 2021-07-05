@@ -278,6 +278,14 @@ footer .grc {
 
 em {font-style: italic;}
 
+pre {
+  display: inline;
+  font-size: 0.8em;}
+
+pre.block {
+  display: block;
+}
+
 /* =======================================================================================  Panel  ============*/
 
 .panel #closer {
