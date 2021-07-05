@@ -18,8 +18,8 @@
 </ul>
 <h3>Textstruktur</h3>
 <ul>
-  <li>Kapitel: <pre>&lt;div type="chapter" n="[x]"&gt;[Kapitel]&lt;/div&gt;</pre></li>
-  <li>Unterkapitel: <pre>&lt;div type="section" n="1.1"&gt;[Unterkapitel]&lt;/div&gt;</pre></li>
+  <li>Kapitel: <pre>&lt;div1 type="chapter" n="[x]"&gt;[Kapitel]&lt;/div&gt;</pre></li>
+  <li>Unterkapitel: <pre>&lt;div2 type="section" n="1.1"&gt;[Unterkapitel]&lt;/div&gt;</pre></li>
   <li>Kapitel- / Unterkapitelüberschriften: <pre>&lt;head n="[corresp. n]"&gt;[Überschrift]&lt;/head&gt;</pre></li>
   <li>Seitenumbrüche: <pre>&lt;pb n="[Seitennummer im Original]"/&gt;</li>
   <li>Paragraphen: <pre>&lt;p xml:id="p[nummer, hochzählend]"&gt;[Paragraph]&lt;/p&gt;</pre></li>

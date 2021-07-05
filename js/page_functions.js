@@ -85,8 +85,13 @@
                                                                   // MEI file, identified by the figure's corresp-attribute
       if (fig.getAttribute("type") === "music") {
         var children = fig.children;                              //  Get information about mei file / title
-        var title = children[0].textContent;
-        var meiFile = children[1].getAttribute("corresp");
+        if(children.length > 1) {
+          var title = children[0].textContent;
+          var meiFile = children[1].getAttribute("corresp");
+        } else {
+          var title = "";
+          var meiFile = children[0].getAttribute("corresp");
+        }
         var mei = document.createElement("div");                  //  Build container 
         mei.setAttribute("class", "music");
         mei.setAttribute("id", meiFile);
@@ -149,12 +154,18 @@
       }
     },
 
-    // "note": function(note) {
-    //   var margin = document.createElement("span");
-    //   margin.setAttribute("class", "margin");
-    //   margin.innerHTML = note.innerHTML;
-    //   return margin;
-    // },
+    "add": function(add) {
+      var addition = document.createElement("span");
+      addition.setAttribute("class", "addition");
+      if(add.hasAttribute("rend")) {
+        addition.style.color = add.getAttribute("rend");
+      }
+      if(add.getAttribute("type") === "heading") {
+        addition.className += " heading";
+      }
+      addition.innerHTML = add.innerHTML;
+      return addition;
+    },
 
     "p": function(para) {                                         // paragraphs with id (all of them) get their own <p>-tags
       if(para.hasAttribute("xml:id")) {

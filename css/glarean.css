@@ -68,11 +68,11 @@
   --music-beige: #f8f7f5;
   --background-beige: #ecdbbf;
   --paper-shadow: #88837a;
-  --margin-grey: rgb(99, 99, 99);
+  --add-grey: rgb(99, 99, 99);
 
   --edition-font: "Crimson";
   --site-font: "Biolinum";
-  --margin-font: "Crimson";
+  --add-font: "Crimson";
 
   --meta-fontsize: 0.9rem;
   --comment-fontsize: 0.8rem;
@@ -628,6 +628,21 @@ button.panel {
     border: 1px solid var(--header-blue);
   }
 
+  /* ----------------- Handwriting ------------- */
+
+  .addition {
+    color: var(--add-grey);
+    font-family: var(--add-font);
+    font-style: italic;
+    line-height: normal;
+  }
+
+  .addition.heading {
+    display: block;
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
   /* ----------------- Margins ----------------- */
   
   .margin {
@@ -636,11 +651,7 @@ button.panel {
     margin-right: -25%;
     position: relative;
     clear: both;
-    color: var(--margin-grey);
-    font-family: var(--margin-font);
-    font-size: var(--comment-fontsize);
-    font-style: italic;
-    line-height: normal;}
+    font-size: var(--comment-fontsize);}
 
   .margin em {
     font-style: normal;}
