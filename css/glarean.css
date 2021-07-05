@@ -621,6 +621,7 @@ button.panel {
   .music {
     background-color: var(--music-beige);
     border: 1px solid var(--header-blue);
+    margin-bottom: 0.8em;
   }
 
   /* ----------------- Handwriting ------------- */
