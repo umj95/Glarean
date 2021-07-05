@@ -5,9 +5,9 @@
    <meiHead>
       <fileDesc>
          <titleStmt>
-            <title>Title</title>
+            <title></title>
             <respStmt>
-               <persName role="composer">Composer</persName>
+               <persName role="composer"></persName>
             </respStmt>
          </titleStmt>
          <pubStmt><date isodate="2021-07-05" type="encoding-date">2021-07-05</date>

@@ -58,33 +58,36 @@
 	</teiHeader>
 	<text>
 		<body>
-			<div type="chapter" n="1">
+			<div1 type="chapter" n="1">
         <pb n="440"/>
         <head n="1">De <term>Symphonetarum</term> ingenio</head>
         <p xml:id="p1">Finis erat huius libri, portentosae sane magnitudinis si exempla respicias, non omnino magni, si commentationem spectes. Sed libuit unum duntaxat caput annectere de <term>Symphonetarum</term> ingenio. Neque enim his suus hac in arte deest genius, ex quo spectentur probenturue. Horum igitur fuere alij (nam breuiter id narrandum est) qui solum ad ostentationem sua edebant, et haec multo maxima turba est: Alij ut plurimos delectarent ac iuuentutem exercerent. Nonnulli ut Ecclesiastici Cantus maiestatem iuuarent. Inuenias qui necessitatem etiam suam hac arte leuarent, et horum plurimi. Sed de quibusdam pauca dicenda, quantum nos auditu precepimus a fide dignis.</p>
-        <div type="section" n="1.1">
+        <div2 type="section" n="1.1">
           <head n="1.1">De Iodoco pratensi</head>
           <p xml:id="p2">In primis uero de <name xml:id="118524895" type="person" key="Josq" ref="http://d-nb.info/gnd/118524895">Iodoci Pratensis</name>, ut Cantorum coryphaei <term>ingenio</term> de quo non semel in prioribus. Is multa iucunda relatu fecisse dicitur, antequam in <sic>hominnm</sic> noticiam uenerit. Inter alia multa et hoc ferunt. <name type="person"><roleName><placeName>Francorum</placeName> Regem</roleName> Lituichum XII</name>. haud scio quod sacerdotium homini promisisse. Verum cum promissa leuiter, ut in Regum aulis fieri solet, caderent, ibi commotum Iodocum psalmum composuisse. <title>Memor esto uerbi tui seruo tuo</title>, tanta maiestate ac elegantia, ut ad Cantorum collegium relatus ac deinde iusto iudicio excussus, admirationi omnibus fuerit. Regem suffuso pudore promissionem diutius differe non ausum, beneficium quod promiserat, prestitisse, Ibi uero uirum, Principis liberalitatem expertum, continuo alterum progratiarum actione orsum esse psalmum, <title xml:id="bonitatem">Bonitatem fecisti cum seruo tuo Domine</title>.<note>This is indeed a very long test note. One that stretches various lines. Lets hope it does not collide! Also it has <title>Styles</title>! I wonder how they <name key="test" ref="example.com">look</name>?</note> Verum inter has duas Harmonias uidere licet, quanto dubia praemiorum spes plus urgeat, quam certo depositum beneficium. Neque enim paulo uenustior est, meo quidem iudicatu, si affectus spectes prior quam posterior editio. Idem Iodocus, cum ab nescio quo Magnate beneficium ambiret, ac ille procrastinator identidem diceret mutila illa Francorum lingua, <foreign xml:lang="fr">Laise faire moy</foreign>, hoc est, sine me facere, haud cunctanter ad eadem uerba totam composuit Missam oppido elegantem La sol fa re mi.</p>
           <pb n="441"/>
-          <p xml:id="p3">Ad ostentationem autem artis haud dubie duas illas Missas instituit <title xml:lang="fr">L’homme arme, cum super uoces Musicaleis</title>, tum <title>ad VI tonum</title>, ita enim ipse Hypoionicum nominauit. Amauit et hic Iodocus ex una uoce plureis deducere, quod post eum multi aemulati sunt. Sed ante eum <name type="person">Ioannes Ockenheim</name>, de quo paulo post, ea in exercitatione claruerat. Eius rei cum superius per diuersos Modos aliquot exempla posuerimus, sed eodem <term>temporis</term> motu incedentia, hic tardante altero temporis mensuram signo, dupla ratione decantanda, ponemus. Sunt autem ex priore Missa, in qua Modos identidem uariauit, ad Hypodorium tria haec oppido breuia.</p>
+          <p xml:id="p3">Ad ostentationem autem artis haud dubie duas illas Missas instituit <title xml:lang="fr">L’homme arme, cum super uoces Musicaleis</title>, tum <title>ad VI tonum</title>, ita enim ipse Hypoionicum nominauit. Amauit et hic Iodocus ex una uoce plureis deducere, quod post eum multi aemulati sunt. Sed ante eum <name type="person">Ioannes Ockenheim</name>, de quo paulo post, ea in exercitatione claruerat. Eius rei cum superius per diuersos Modos aliquot exempla posuerimus, sed eodem <term>temporis</term> motu incedentia, hic tardante altero temporis mensuram signo, dupla ratione decantanda, ponemus. Sunt autem ex priore Missa, in qua Modos identidem uariauit, ad Hypodorium tria haec oppido breuia.
+          <add type="heading" rend="red">Ex missa Iusqvini super uoces mvsicales.</add></p>
           <figure type="music">
-            <head><add rend="color(red)">Ex missa Iusqvini super uoces mvsicales.</add></head>
             <notatedMusic corresp="3_Symph_1.mei"></notatedMusic>
           </figure>
           <pb n="442"/>
           <figure type="music">
-            <head>Qui uenit In nomine Domini.</head>
             <notatedMusic corresp="3_Symph_2.mei"></notatedMusic>
           </figure>
-          <p xml:id="p4">Idem Iodocus treis uoces tribus diuersis signis praepositis ex una uoce eliciendas exemplo docuit ubi ualor notularum in Tenore, si Thema in spicias sit duplus ad notulas in Basi. Baseos uero notulae sesquialterae ad Cantus notulas, Ita ut duplae rationi sesquiplam mixtam intelligamus. Sed primum exemplum ponamus, ut ipse ex eodem Missa adposuit. Deinde Thematis <term>resolutionem</term> in treis uoces cum propria cuiusque uocis sede subiungamus.</p>
           <figure type="music">
-            <head>Ex una uoce tres, ex eiusdem Iodoci Missa Lhome arme super uoces musicales.<note><add>Sexta notula ante signum [???]</add></note></head>
             <notatedMusic corresp="3_Symph_3.mei"></notatedMusic>
+          </figure>
+          <p xml:id="p4">Idem Iodocus treis uoces tribus diuersis signis praepositis ex una uoce eliciendas exemplo docuit ubi ualor notularum in Tenore, si Thema in spicias sit duplus ad notulas in Basi. Baseos uero notulae sesquialterae ad Cantus notulas, Ita ut duplae rationi sesquiplam mixtam intelligamus. Sed primum exemplum ponamus, ut ipse ex eodem Missa adposuit. Deinde Thematis <term>resolutionem</term> in treis uoces cum propria cuiusque uocis sede subiungamus.</p>
+          <note><add>Sexta notula ante signum concordantiae[?]</add></note>
+          <figure type="music">
+            <head>Ex una uoce tres, ex eiusdem Iodoci Missa Lhome arme super uoces musicales.</head>
+            <notatedMusic corresp="3_Symph_4.mei"></notatedMusic>
           </figure>
           <pb n="443"/>
           <figure type="music">
             <head>Sequitur resolutio.</head>
-            <notatedMusic corresp="3_Symph_4.mei"></notatedMusic>
+            <notatedMusic corresp="3_Symph_5.mei"></notatedMusic>
           </figure>
           <pb n="444"/>
           <p xml:id="p5">In huiuscemodi sane Symphonijs, ut libere dicam quae sentio, magis est ingenij ostentatio quam auditum reficiens adeo iucunditas, quale et hoc ciuis nostri <name type="person">Lutuichi Senflij</name> <name type="place">Tigurini</name>, docti nostra aetate Symphonetae. Cui ipse Cantorum more Canonem praefixit. <title>Omne trinum perfectum.</title> Caeterum pro inceptione poterat et hic praefigi Canon ex Odysseae. V.
@@ -95,7 +98,7 @@
           Quod in <title>AEneide</title> <name type="person">Virgilius</name> ita uertit: O terque quaterque beati. Sed AEnigma non admodum difficile eruditus lector facile discutiet consyderata diapente Diatessaron ac diapason consonantiarum ratione, ad eum modum quo <name type="person">Macrobius</name>, quod diximus, Virgilianum discussit.</p>
           <figure type="music">
             <head>Lutuichi Senflij Tigurini Hypoaeolius, Canon. Omne trinum perfectum.</head>
-            <notatedMusic corresp="3_Symph_5.mei"></notatedMusic>
+            <notatedMusic corresp="3_Symph_6.mei"></notatedMusic>
           </figure>
           <p  xml:id="p6">Sed admirabilius longe est <name type="person">Petri Platensis</name> Exemplum, quod aemulatione haud dubie Iusquini eadem proportione, caeterum quatuor diuersis signis praescripsit. In eo Basis ac Altus absque diminutione incedunt, hic perfecti, illa <term>imperfecti temporis</term>, Cantus uero cum diminutione imperfecti item temporis. Tenor sesquipla ratione constat, non omnino difficile cantatu, si quis Hemioliam recte intromiscuerit. Hypodorij est Modi, quanquam fine claudicans. Id alij resoluerunt, nobis satius uisum est, nudum proponere. Neque ob id lector iure succensere nobis poterit, quando tam multa alia bona fide indicauerimus, si ipsi etiam quaedam discutienda relinquimus.</p>
           <pb n="445"/>
@@ -154,8 +157,8 @@
             <notatedMusic corresp="3_Symph_15.mei"></notatedMusic>
           </figure>
           <pb n="454"/>
-        </div>
-        <div type="section" n="1.2">
+        </div2>
+        <div2 type="section" n="1.2">
           <head n="1.2">Okenheim</head>
           <p xml:id="p14"><note><add>Basis [?] Tenor Sog. Cantus [?]</add></note><note><add>Tolum fa [?] mi in [?] fa Tolum mi.</add></note>Haec hactenus de Iodoco satis superque. Antiquior aliquanto fuit Okenheim et ipse Belga, qui ingenio omneis excelluisse dicitur. Quippe quem constat triginta sex uocibus garritum quendam instituisse. Eum nos non uidimus. Certe inuentione et ingenij acrimonia admirabilis fuit. Amauit autem
           <choice ana="transl">
@@ -178,12 +181,12 @@
             <notatedMusic corresp="3_Symph_17.mei"></notatedMusic>
           </figure>
           <pb n="456"/>
-        </div>
-        <div type="section" n="1.3">
+        </div2>
+        <div2 type="section" n="1.3">
           <head n="1.3">Iacobus Hobrechth.</head>
           <p xml:id="p16">Tertius in hac classe haud dubius est <name type="person">Iacobus Hobrechth</name> et ipse Belga, quippe qui <name type="person">D. Erasmo Roterodamo</name> Praeceptor fuit, Cuius iudicium de eo in AEolio retulimus. Hunc praeterea fama est, tanta ingenij celeritate ac inuentionis copia uiguisse, ut per unam noctem, egregiam, et quae doctis admirationi esset, Missam componeret. Omnia huius uiri monumenta miram quandam habent maiestatem et mediocritatis uenam. Ipse hercules non tam amans raritatis, atque Iodocus fuit. Ingenij quidem ostentator sed absque fuco, quasi qui auditoris iudicium expectare maluerit quam se ipse efferre. Multae passim huius uiri sunt Compositiones, et nos aliquot eius in hoc adeo libro exempla Lectori ostendimus, maxime cum de sesquipla ratione dissereremus. Ideoque de eo plura dicere supersedemus.</p>
-        </div>
-        <div type="section" n="1.4">
+        </div2>
+        <div2 type="section" n="1.4">
           <head n="1.4">Antonius Brumel.</head>
           <p xml:id="p17"><name type="person">Antonius item Brumel</name> dignus qui inter eximios Symphonetas numeretur, magis tamen diligentia et arte ualuit quam naturae indulgentia. Huius extat <title>Missa de Beatissima Virgine</title> MARIA IESV Christi matre, magno uiro digna: sunt et aliae quaedam eius Missae, sed ex ea, quae
           <choice ana="transl">
@@ -209,8 +212,8 @@
             <notatedMusic corresp="3_Symph_20.mei"></notatedMusic>
           </figure>
           <pb n="460"/>
-        </div>
-        <div type="section" n="1.5">
+        </div2>
+        <div2 type="section" n="1.5">
           <head n="1.5">Henricus Isaac</head>
           <p xml:id="p18">Sequitur haud imerito Symphonetas iam dictos et arte et ingenio <name type="person">Henrichus Isaac</name> Germanus. Qui et erudite et copiose innumera composuisse dicitur. Hic maxime Ecclesiasticum ornauit cantum uidelicet in quo uiderat maiestatem ac naturalem uim, non paulo superantem nostrae aetatis inuenta
           <choice ana="transl">
@@ -233,8 +236,8 @@
           </figure>
           <pb n="463"/>
           <pb n="464"/>
-        </div>
-        <div type="section" n="1.6">
+        </div2>
+        <div2 type="section" n="1.6">
           <head n="1.6">Ioannes Mouton</head>
           <p xml:id="p20"><name type="person">Ioannes Mouton</name> Gallus, quem nos uidimus, quemadmodum antea in hoc adeo libro testati sumus, raritatem quandam habuit studio ac industria quaesitam, ut ab alijs, quos hactenus commemorauimus differret, alioqui facili fluentem filo cantum edebat. Maxime autem in <name type="person">Principis Francisci</name> gratiam, a quo honeste decoratus erat, respiciens, Psalmos ac uulgata quaedam proferebat, quod testatur cantio, <title>Domine saluum fac Regem</title>, quam in Dorio retulimus. Porro grauissimas Missas composuit a <name type="person">Leone .X.</name> Pontifice Maximo approbatas, qualis <title>Alma Redemptoris</title> ac alia permulta, quae in manibus sunt omnium. Nos duas eius de Beata Virgine MARIA adponemus cantiones: ex quibus Lector iudicet eius uiri Phrasin.</p>
           <figure type="music">
@@ -266,13 +269,13 @@
             <!-- Cantus Regis -->
             <notatedMusic corresp="3_Symph_27.mei"></notatedMusic>
           </figure>
-        </div>
-      </div>
-      <div type="chapter" n="2">
+        </div2>
+      </div1>
+      <div1 type="chapter" n="2">
         <head n="2">Peroratio</head>
         <p xml:id="p24">Haec ferme sunt quae de XII Musicorum Modis, admonenda duxi de quibus Plura dici posse fortassis non est dubium, At citra taedium, potuerint ne plura adduci, id uero apud me per ambiguum, quando necessariorum nihil omissum est. Ideoque nec plura addam, donec animo meo id certo sedeat. Interea lectores oppellam hanc boni consulant.</p>
         <p xml:id="p25"><name type="place">Friburgi Brisgoae</name></p>
-      </div>
+      </div1>
     </body>
   </text>
 </TEI>
