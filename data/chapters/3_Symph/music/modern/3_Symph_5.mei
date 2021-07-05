@@ -5,7 +5,7 @@
    <meiHead>
       <fileDesc>
          <titleStmt>
-            <title>3_Symph_4</title>
+            <title></title>
             <respStmt />
          </titleStmt>
          <pubStmt><date isodate="2021-07-05" type="encoding-date">2021-07-05</date>
@@ -239,7 +239,7 @@
                            <rest xml:id="rest-0000002127208171" dur.ppq="8" dur="1" />
                            <note xml:id="note-0000001648122469" dur.ppq="8" dur="1" oct="4" pname="a">
                               <verse xml:id="verse-0000000501737416" n="1">
-                                 <syl xml:id="syl-0000000478637301" con="s" wordpos="s">qui</syl>
+                                 <syl xml:id="syl-0000000478637301" con="s">qui</syl>
                               </verse>
                            </note>
                         </layer>
@@ -321,7 +321,7 @@
                         <layer xml:id="layer-0000000866352568" n="1">
                            <note xml:id="note-0000000063282478" dur.ppq="8" dur="1" oct="4" pname="g">
                               <verse xml:id="verse-0000000548187992" n="1">
-                                 <syl xml:id="syl-0000001036893756" fontstyle="italic" con="s" wordpos="s">qui</syl>
+                                 <syl xml:id="syl-0000001036893756" fontstyle="italic" con="s" >qui</syl>
                               </verse>
                            </note>
                            <note xml:id="note-0000000983203749" dots="1" dur.ppq="12" dur="1" oct="4" pname="e">
@@ -346,7 +346,7 @@
                            <rest xml:id="rest-0000000236733451" dots="1" dur.ppq="12" dur="1" />
                            <note xml:id="note-0000000920412749" dots="1" dur.ppq="12" dur="1" oct="3" pname="a">
                               <verse xml:id="verse-0000001792247815" n="1">
-                                 <syl xml:id="syl-0000000000396198" con="s" wordpos="s">qui</syl>
+                                 <syl xml:id="syl-0000000000396198" con="s" >qui</syl>
                               </verse>
                            </note>
                         </layer>
@@ -470,7 +470,7 @@
                         <layer xml:id="layer-0000001778672215" n="1">
                            <note xml:id="note-0000001619144827" dots="1" dur.ppq="24" dur="breve" oct="4" pname="b">
                               <verse xml:id="verse-0000001287905859" n="1">
-                                 <syl xml:id="syl-0000000926509614" fontstyle="italic" con="s" wordpos="s">de</syl>
+                                 <syl xml:id="syl-0000000926509614" fontstyle="italic" con="s" >de</syl>
                               </verse>
                            </note>
                         </layer>
@@ -479,7 +479,7 @@
                         <layer xml:id="layer-0000000587973724" n="1">
                            <note xml:id="note-0000000943003803" dots="1" dur.ppq="12" dur="1" oct="3" pname="g">
                               <verse xml:id="verse-0000001833549694" n="1">
-                                 <syl xml:id="syl-0000001826627269" con="s" wordpos="s">qui</syl>
+                                 <syl xml:id="syl-0000001826627269" con="s" >qui</syl>
                               </verse>
                            </note>
                            <note xml:id="note-0000000412656182" dots="1" dur.ppq="12" dur="1" oct="3" pname="e">
@@ -567,7 +567,7 @@
                         <layer xml:id="layer-0000000698403343" n="1">
                            <note xml:id="note-0000001136442939" dots="1" dur.ppq="24" dur="breve" oct="4" pname="e">
                               <verse xml:id="verse-0000000195277909" n="1">
-                                 <syl xml:id="syl-0000001251321616" fontstyle="italic" con="s" wordpos="s">i,</syl>
+                                 <syl xml:id="syl-0000001251321616" fontstyle="italic" con="s" >i,</syl>
                               </verse>
                            </note>
                         </layer>
@@ -643,7 +643,7 @@
                         <layer xml:id="layer-0000000327647726" n="1">
                            <note xml:id="note-0000000930197850" dots="1" dur.ppq="24" dur="breve" oct="5" pname="e">
                               <verse xml:id="verse-0000001378920167" n="1">
-                                 <syl xml:id="syl-0000000466090036" con="s" wordpos="s">qui</syl>
+                                 <syl xml:id="syl-0000000466090036" con="s" >qui</syl>
                               </verse>
                            </note>
                         </layer>
