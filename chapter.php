@@ -9,6 +9,8 @@
   $optionsToJSON = json_encode($chapterOptions);                  // $chapterOptions (assocArray collected from GET requests in sidepanel.php) 
                                                                   // is put into a JSON-Object for further use by Javascript
 ?>
+  <script type="text/javascript" src="https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js" defer></script>
+  <script type="text/javascript" src="js/verovio_loader.js"></script>
   <script>
     var chapterOptions = <?php echo $optionsToJSON;?>;            // extract chapter variables -> fill the global variables specified in js/page-functions
     mainLanguage = chapterOptions.mainLanguage;
@@ -34,7 +36,7 @@
         <script>insertTEIChapter()</script>                       <!-- insert the TEI document -->
       </div>
     </section>
-    <button class="panel" id="notesButton" onclick="openPanel('notesPanel')"></button>
+    <button name="comments" class="panel" id="notesButton" onclick="openPanel('notesPanel')"></button>
     <div id="noteArea" class="panel">
       <div id="closer">
         <a href="javascript:void(0)" class="closebtn" onclick="closePanel('notesPanel')">&times;</a>
@@ -43,13 +45,17 @@
       </div>
     </div>
     <script>
-    window.addEventListener("load", function() { 
+    window.addEventListener("load", function() {                  // notes and Music are added after main text has loaded
       if(chapterOptions.comments) {                               // load selected commentaries AFTER the TEI document has been loaded
         for(let i in chapterOptions.comments) {                   // every set of commentary is inserted iteratively
           insertComments(chapterOptions.comments[i]);
         }
-        }
-      })
+      }
+
+      if(this.document.getElementsByClassName("music").length > 0) {  // if chapter has music examples, call verovio
+        addVerovio();
+      }
+    });
     </script>
   </div>
 <?php
