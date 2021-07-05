@@ -154,7 +154,14 @@
       }
     },
 
-    "add": function(add) {
+    "note": function(note) {
+      var margin = document.createElement("span");
+      margin.setAttribute("class", "margin");
+      margin.innerHTML = note.innerHTML;
+      return margin;
+    },
+
+    /*"add": function(add) {
       var addition = document.createElement("span");
       addition.setAttribute("class", "addition");
       if(add.hasAttribute("rend")) {
@@ -165,7 +172,7 @@
       }
       addition.innerHTML = add.innerHTML;
       return addition;
-    },
+    },*/
 
     "p": function(para) {                                         // paragraphs with id (all of them) get their own <p>-tags
       if(para.hasAttribute("xml:id")) {
@@ -312,20 +319,37 @@
     Object.keys(optionsList).forEach(function(key){
       if(key === "marginalia" && optionsList[key] === "true") {
         console.log("marginalia === true");
-        fullTextBehaviors["tei"]["note"] = function(note) {
-          var margin = document.createElement("span");
-          margin.setAttribute("class", "margin");
-          margin.innerHTML = note.innerHTML;
-          return margin;
+        fullTextBehaviors["tei"]["add"] = function(add) {
+          var addition = document.createElement("span");
+          addition.setAttribute("class", "addition");
+          if(add.hasAttribute("rend")) {
+            addition.style.color = add.getAttribute("rend");
+          }
+          if(add.getAttribute("type") === "heading") {
+            addition.className += " heading";
+          }
+          addition.innerHTML = add.innerHTML;
+          return addition;
+          //fullTextBehaviors["tei"]["note"] = function(note) {
+          // var margin = document.createElement("span");
+          // margin.setAttribute("class", "margin");
+          // margin.innerHTML = note.innerHTML;
+          // return margin;
         };
       } else {
         console.log("marginalia != true");
-        fullTextBehaviors["tei"]["note"] = function(note) {
-          var margin = document.createElement("span");
-          margin.setAttribute("class", "margin");
-          margin.innerHTML = note.innerHTML;
-          margin.innerHTML = "";
-          return margin;
+        fullTextBehaviors["tei"]["add"] = function(add) {
+          var addition = document.createElement("span");
+          addition.setAttribute("class", "addition");
+          addition.innerHTML = add.innerHTML;
+          addition.innerHTML = "";
+          return addition;
+        // fullTextBehaviors["tei"]["note"] = function(note) {
+        //   var margin = document.createElement("span");
+        //   margin.setAttribute("class", "margin");
+        //   margin.innerHTML = note.innerHTML;
+        //   margin.innerHTML = "";
+        //   return margin;
         };
       }
     })

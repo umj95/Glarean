@@ -42,9 +42,9 @@
         </div>
       </fieldset>
       <fieldset>
-        <legend><h2>Marginalien</h2></legend>                     <!-- Offer marginalia -->
+        <legend><h2>Annotationen</h2></legend>                     <!-- Offer marginalia -->
         <div class="control">
-          <label for="margins">Marginalien anzeigen</label>
+          <label for="margins">Annotationen anzeigen</label>
           <?php
           echo    '<input id="margins" type="checkbox" name="marginalia" value="true"';
           if($chapterOptions['marginalia']){
