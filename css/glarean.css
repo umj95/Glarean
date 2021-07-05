@@ -627,6 +627,7 @@ button.panel {
     width: 9.72vw;
     margin-right: -25%;
     position: relative;
+    clear: both;
     color: var(--margin-grey);
     font-family: var(--margin-font);
     font-size: var(--comment-fontsize);
