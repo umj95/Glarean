@@ -1,7 +1,7 @@
 [
   {
     "ISBN": "0899901026",
-    "collection-title": "Detroit monographs in musicology",
+    "collection-title": "Detroit Monographs in Musicology",
     "id": ".Music",
     "issued": {
       "date-parts": [
@@ -12,8 +12,8 @@
     },
     "publisher": "Harmonie Park Press",
     "publisher-place": "Warren",
-    "title": "Music in renaissance cities and courts: Studies in honor of lewis lockwood",
-    "title-short": "Music in renaissance cities and courts",
+    "title": "Music in Renaissance Cities and Courts: Studies in Honor of Lewis Lockwood",
+    "title-short": "Music in Renaissance Cities and Courts",
     "type": "book"
   },
   {
@@ -24,7 +24,7 @@
         "given": "Michelle"
       }
     ],
-    "container-title": "Heinrich glarean oder: Die rettung der musik aus dem geist der antike?",
+    "container-title": "Heinrich Glarean oder: Die Rettung der Musik aus dem Geist der Antike?",
     "editor": [
       {
         "family": "Schwindt",
@@ -42,7 +42,7 @@
     "page": "199-212",
     "publisher": "Bärenreiter",
     "publisher-place": "Kassel",
-    "title": "Die ideologie des exemplum – bemerkungen zu den notenbeispielen des dodekachordon",
+    "title": "Die Ideologie des Exemplum – Bemerkungen zu den Notenbeispielen des Dodekachordon",
     "type": "chapter"
   },
   {
@@ -53,7 +53,7 @@
         "given": "Max"
       }
     ],
-    "container-title": "Heinrich glarean’s books",
+    "container-title": "Heinrich Glarean’s Books",
     "editor": [
       {
         "family": "Fenlon",
@@ -101,8 +101,8 @@
     },
     "publisher": "Cambridge UP",
     "publisher-place": "Cambridge",
-    "title": "Heinrich glarean’s books: The intellectual world of a sixteenth-century musical humanist",
-    "title-short": "Heinrich glarean’s books",
+    "title": "Heinrich Glarean’s Books: The Intellectual World of a Sixteenth-Century Musical Mumanist",
+    "title-short": "Heinrich Glarean’s Books",
     "type": "book"
   },
   {
@@ -117,7 +117,7 @@
         "given": "Inga Mai"
       }
     ],
-    "container-title": "Heinrich glarean’s books",
+    "container-title": "Heinrich Glarean’s Books",
     "editor": [
       {
         "family": "Fenlon",
@@ -154,7 +154,7 @@
         "given": "Inga Mai"
       }
     ],
-    "container-title": "Heinrich glarean’s books",
+    "container-title": "Heinrich Glarean’s Books",
     "editor": [
       {
         "family": "Fenlon",
@@ -176,7 +176,7 @@
     "page": "303-334",
     "publisher": "Cambridge UP",
     "publisher-place": "Cambridge",
-    "title": "Heinrich glarean’s books",
+    "title": "Heinrich Glarean’s Books",
     "type": "chapter"
   },
   {
@@ -187,7 +187,7 @@
         "given": "Menso"
       }
     ],
-    "container-title": "Heinrich glarean’s books",
+    "container-title": "Heinrich Glarean’s Books",
     "editor": [
       {
         "family": "Fenlon",
@@ -209,7 +209,7 @@
     "page": "159-179",
     "publisher": "Cambridge UP",
     "publisher-place": "Cambridge",
-    "title": "Roman weights and measurements in glarean’s liber de asse et partibus eius",
+    "title": "Roman Weights and Measurements in Glarean’s Liber de Asse et Partibus Eius",
     "type": "chapter"
   },
   {
@@ -219,7 +219,7 @@
         "given": "Heinrich"
       }
     ],
-    "collection-title": "Musicological studies and documents",
+    "collection-title": "Musicological Studies and Documents",
     "id": "Glarean.Dodekachordon",
     "issued": {
       "date-parts": [
@@ -245,7 +245,7 @@
         "given": "Urs B."
       }
     ],
-    "container-title": "Heinrich glarean’s books",
+    "container-title": "Heinrich Glarean’s Books",
     "editor": [
       {
         "family": "Fenlon",
@@ -267,7 +267,7 @@
     "page": "248-279",
     "publisher": "Cambridge UP",
     "publisher-place": "Cambridge",
-    "title": "Chronologia est unica historiae lux: How glarean studied and taught the chronology of the ancient world",
+    "title": "Chronologia est unica historiae lux: How Glarean Studied and Taught the Chronology of the Ancient World",
     "title-short": "Chronologia est unica historiae lux",
     "type": "chapter"
   },
@@ -287,7 +287,7 @@
         "given": "Susan"
       }
     ],
-    "container-title": "Heinrich glarean’s books",
+    "container-title": "Heinrich Glarean’s Books",
     "editor": [
       {
         "family": "Fenlon",
@@ -309,8 +309,8 @@
     "page": "280-302",
     "publisher": "Cambridge UP",
     "publisher-place": "Cambridge",
-    "title": "Evidence of glarean’s music lectures from his student’s books: Congruent annotations in the epitome and the dodekachordon",
-    "title-short": "Evidence of glarean’s music lectures from his student’s books",
+    "title": "Evidence of Glarean’s Music Lectures from his Student’s Books: Congruent Annotations in the Epitome and the Dodekachordon",
+    "title-short": "Evidence of Glarean’s Music Lectures from his Students’ Books",
     "type": "chapter"
   },
   {
@@ -321,7 +321,7 @@
         "given": "Inga Mai"
       }
     ],
-    "container-title": "Heinrich glarean’s books",
+    "container-title": "Heinrich Glarean’s Books",
     "editor": [
       {
         "family": "Fenlon",
@@ -343,8 +343,8 @@
     "page": "195-222",
     "publisher": "Cambridge UP",
     "publisher-place": "Cambridge",
-    "title": "Studying music and arithmetic with glarean: Contextualizing the epitomes and annotationes among the sources for glarean’s teaching",
-    "title-short": "Studying music and arithmetic with glarean",
+    "title": "Studying Music and Arithmetic with Glarean: Contextualizing the Epitomes and Annotationes Among the Sources for Glarean’s Teaching",
+    "title-short": "Studying Music and Arithmetic with Glarean",
     "type": "chapter"
   },
   {
@@ -355,7 +355,7 @@
         "given": "Andrea"
       }
     ],
-    "container-title": "Heinrich glarean’s books",
+    "container-title": "Heinrich Glarean’s Books",
     "editor": [
       {
         "family": "Fenlon",
@@ -377,7 +377,7 @@
     "page": "180-194",
     "publisher": "Cambridge UP",
     "publisher-place": "Cambridge",
-    "title": "A dorio ad phrygium: Glarean and the adagia of erasmus",
+    "title": "A dorio ad phrygium: Glarean and the Adagia of Erasmus",
     "title-short": "A dorio ad phrygium",
     "type": "chapter"
   },
@@ -389,7 +389,7 @@
         "given": "Christine R."
       }
     ],
-    "container-title": "Heinrich glarean’s books",
+    "container-title": "Heinrich Glarean’s Books",
     "editor": [
       {
         "family": "Fenlon",
@@ -411,34 +411,9 @@
     "page": "139-158",
     "publisher": "Cambridge UP",
     "publisher-place": "Cambridge",
-    "title": "Between the human and the divine: Glarean’s de geographia and the span of renaissance geography",
-    "title-short": "Between the human and the divine",
+    "title": "Between the Human and the Divine: Glarean’s De Geographia and the Span of Renaissance Geography",
+    "title-short": "Between the Human and the Divine",
     "type": "chapter"
-  },
-  {
-    "ISBN": "9780754662686",
-    "abstract": "A humanist, John Merbecke – Erasmian humanism and the reform of sacred music – Anglican plainchant in the making – Rhetoric and the reform of plainchant in the Booke of common praier noted",
-    "author": [
-      {
-        "family": "Kim",
-        "given": "Hyun-Ah"
-      }
-    ],
-    "collection-title": "St andrews studies in reformation history",
-    "id": "Kim.Humanism",
-    "issued": {
-      "date-parts": [
-        [
-          2016
-        ]
-      ]
-    },
-    "keyword": "Church music;Church of England;England;Humanism;Kim;Merbecke, John;Reformation",
-    "publisher": "Routledge Taylor and Francis Group",
-    "publisher-place": "London",
-    "title": "Humanism and the reform of sacred music in early modern england: John merbecke the orator and the booke of common praier noted (1550)",
-    "title-short": "Humanism and the reform of sacred music in early modern england",
-    "type": "book"
   },
   {
     "ISBN": "9781139136976",
@@ -448,7 +423,7 @@
         "given": "Bernhard"
       }
     ],
-    "container-title": "Heinrich glarean’s books",
+    "container-title": "Heinrich Glarean’s Books",
     "editor": [
       {
         "family": "Fenlon",
@@ -470,7 +445,7 @@
     "page": "47-63",
     "publisher": "Cambridge UP",
     "publisher-place": "Cambridge",
-    "title": "’Mitto ad te meos de musica labores’: Glarean’s dodecachordon and the politics of dedication",
+    "title": "’Mitto ad te meos de musica labores’: Glarean’s Dodecachordon and the Politics of Dedication",
     "title-short": "’Mitto ad te meos de musica labores’",
     "type": "chapter"
   },
@@ -512,7 +487,7 @@
         "given": "Laurenz"
       }
     ],
-    "container-title": "Heinrich glarean oder: Die rettung der musik aus dem geist der antike?",
+    "container-title": "Heinrich Glarean oder: Die Rettung der Musik aus dem Geist der Antike?",
     "editor": [
       {
         "family": "Schwindt",
@@ -529,7 +504,7 @@
     },
     "publisher": "Bärenreiter",
     "publisher-place": "Kassel",
-    "title": "Gratwanderung oder integrales konzept? Glarean in der musikalischen und intellektuellen geschichte des 16. Jahrhunderts",
+    "title": "Gratwanderung oder integrales Konzept? Glarean in der musikalischen und intellektuellen Geschichte des 16. Jahrhunderts",
     "type": "chapter"
   },
   {
@@ -542,7 +517,7 @@
     "id": "Lutteken.MGG",
     "publisher": "Bärenreiter",
     "publisher-place": "Kassel",
-    "title": "MGG online: Musik in geschichte und gegenwart",
+    "title": "MGG online: Musik in Geschichte und Gegenwart",
     "title-short": "MGG online",
     "type": "no-type"
   },
@@ -554,7 +529,7 @@
         "given": "Laurenz"
       }
     ],
-    "container-title": "Heinrich glarean’s books",
+    "container-title": "Heinrich Glarean’s Books",
     "editor": [
       {
         "family": "Fenlon",
@@ -576,7 +551,7 @@
     "page": "38-46",
     "publisher": "Cambridge UP",
     "publisher-place": "Cambridge",
-    "title": "Theory of music and philosophy of life: The dodecachordon and the counter-reformation",
+    "title": "Theory of Music and Philosophy of Life: The Dodecachordon and the Counter-Reformation",
     "title-short": "Theory of music and philosophy of life",
     "type": "chapter"
   },
@@ -588,7 +563,7 @@
         "given": "Barbara"
       }
     ],
-    "container-title": "Heinrich glarean’s books",
+    "container-title": "Heinrich Glarean’s Books",
     "editor": [
       {
         "family": "Fenlon",
@@ -610,8 +585,8 @@
     "page": "64-90",
     "publisher": "Cambridge UP",
     "publisher-place": "Cambridge",
-    "title": "Sympathies with luther — preference for the roman church: Glarean’s annotations as a mirror of his intellectual development",
-    "title-short": "Sympathies with luther — preference for the roman church",
+    "title": "Sympathies with Luther — Preference for the Roman Church: Glarean’s Annotations as a Mirror of his Intellectual Development",
+    "title-short": "Sympathies with Luther — Preference for the Roman Church",
     "type": "chapter"
   },
   {
@@ -622,7 +597,7 @@
         "given": "Christian"
       }
     ],
-    "container-title": "Heinrich glarean oder: Die rettung der musik aus dem geist der antike?",
+    "container-title": "Heinrich Glarean oder: Die Rettung der Musik aus dem Geist der Antike?",
     "editor": [
       {
         "family": "Schwindt",
@@ -640,7 +615,7 @@
     "page": "147-",
     "publisher": "Bärenreiter",
     "publisher-place": "Kassel",
-    "title": "Zur Konstruktion’ der antiken musiktheorie bei glarean",
+    "title": "Zur Konstruktion’ der antiken Musiktheorie bei Glarean",
     "type": "chapter"
   },
   {
@@ -665,7 +640,7 @@
     },
     "keyword": "Erasmus;Miller",
     "page": "332-349",
-    "title": "Erasmus on music",
+    "title": "Erasmus on Music",
     "type": "article-journal",
     "volume": "52"
   },
@@ -687,8 +662,8 @@
     },
     "publisher": "Bärenreiter",
     "publisher-place": "Kassel",
-    "title": "Heinrich glarean oder: Die rettung der musik aus dem geist der antike?",
-    "title-short": "Heinrich glarean oder",
+    "title": "Heinrich Glarean oder: Die Rettung der Musik aus dem Geist der Antike?",
+    "title-short": "Heinrich Glarean",
     "type": "book"
   },
   {
@@ -712,8 +687,8 @@
     },
     "keyword": "Erasmus;Humanism;Tracy",
     "page": "3",
-    "title": "Against the ’barbarians’: The young erasmus and his humanist contemporaries",
-    "title-short": "Against the ’barbarians’",
+    "title": "Against the ‘Barbarians’: The Young Erasmus and his Humanist Contemporaries",
+    "title-short": "Against the ‘Barbarians’",
     "type": "article-journal",
     "volume": "11"
   },
@@ -725,7 +700,7 @@
         "given": "Melanie"
       }
     ],
-    "container-title": "Heinrich glarean oder: Die rettung der musik aus dem geist der antike?",
+    "container-title": "Heinrich Glarean oder: Die Rettung der Musik aus dem Geist der Antike?",
     "editor": [
       {
         "family": "Schwindt",
@@ -742,7 +717,7 @@
     },
     "publisher": "Bärenreiter",
     "publisher-place": "Kassel",
-    "title": "Die beendigung der geschichte – glarean, kircher und die katholische deutsche musiktheorie",
+    "title": "Die Beendigung der Geschichte – Glarean, Kircher und die katholische deutsche Musiktheorie",
     "type": "chapter"
   },
   {
@@ -765,7 +740,7 @@
     "keyword": "16th century;Music;Wegman",
     "publisher": "Routledge",
     "publisher-place": "New York, NY",
-    "title": "The crisis of music in early modern europe, 1470–1530",
+    "title": "The Crisis of Music in Early Modern Europe, 1470–1530",
     "type": "book"
   },
   {
@@ -789,7 +764,7 @@
     },
     "keyword": "Erasmus;Obrecht;Wegman",
     "page": "109-123",
-    "title": "Obrecht and erasmus",
+    "title": "Obrecht and Erasmus",
     "type": "article-journal",
     "volume": "3"
   },
@@ -801,7 +776,7 @@
         "given": "Claudia"
       }
     ],
-    "container-title": "Heinrich glarean’s books",
+    "container-title": "Heinrich Glarean’s Books",
     "editor": [
       {
         "family": "Fenlon",
@@ -823,7 +798,7 @@
     "page": "223-247",
     "publisher": "Cambridge UP",
     "publisher-place": "Cambridge",
-    "title": "Glarean’s didactic approach to horace, and his critical review of classical and modern commentaries",
+    "title": "Glarean’s Didactic Approach to Horace, and his Critical Review of Classical and Modern Commentaries",
     "type": "chapter"
   }
 ]

@@ -534,19 +534,19 @@
         var commentsReferences = comments[commentCorpus][key].references;
       }
     }
-    var title = document.createElement("h5");               // note title
+    var title = document.createElement("h5");                     // note title
     title.setAttribute("class", "commentTitle");
     title.innerHTML = commentTitle;
 
-    var author = document.createElement("span");            // note author
+    var author = document.createElement("span");                  // note author
     author.setAttribute("class", "commentAuthor");
     author.innerHTML = commentAuthor;
 
-    var content = document.createElement("div");            // note content
+    var content = document.createElement("div");                  // note content
     content.setAttribute("class", "commentContent");
     content.innerHTML = commentContent;
 
-    var references = document.createElement("div");         // note references
+    var references = document.createElement("div");               // note references
     references.setAttribute("class", "commentReferences");
     references.innerHTML = "<h6>Weiterführende Literatur</h6>"
     var referenceList = document.createElement("ul");
@@ -563,6 +563,14 @@
     commentText.appendChild(references);
 
     return commentText;
+  }
+
+  async function getBibliography() {
+    let path = "data/site/sources.json";
+    let bibliography = fetch(path);
+    //bibliography = await bibliography.json();
+
+    return bibliography;
   }
 
   function waitForEl(selector, callback) {                        //gives document time to build objects that are targeted by functions

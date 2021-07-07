@@ -210,8 +210,6 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
     font-family: var(--edition-font);
     letter-spacing: 0.1em;}
 
-  
-
   header #container nav.main a {
     display: block;
     text-align: center;
@@ -246,6 +244,13 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
     color: #efe4d8;
     background-color: var(--header-blue);
     transition: 0.4s;}
+}
+
+/* ---------------- Works Cited -------------*/
+
+.csl-entry {
+  text-indent: -1.3em;
+  padding-bottom: 0.3em;
 }
 
 /* ---------------- Footer  ---------------- */
