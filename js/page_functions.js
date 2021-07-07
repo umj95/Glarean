@@ -565,7 +565,7 @@
     return commentText;
   }
 
-  async function getBibliography() {
+  async function getBibliography() {                              // fetches a bibliography (CSL-JSON)
     let path = "data/site/sources.json";
     let bibliography = fetch(path);
     //bibliography = await bibliography.json();
@@ -573,7 +573,7 @@
     return bibliography;
   }
 
-  function waitForEl(selector, callback) {                        //gives document time to build objects that are targeted by functions
+  function waitForEl(selector, callback) {                        // gives document time to build objects that are targeted by functions
     if (jQuery(selector).length) {
       callback;
     } else {
