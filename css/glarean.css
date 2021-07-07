@@ -251,6 +251,7 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
 .csl-entry {
   text-indent: -1.3em;
   padding-bottom: 0.3em;
+  padding-left: 1.3em;
 }
 
 /* ---------------- Footer  ---------------- */

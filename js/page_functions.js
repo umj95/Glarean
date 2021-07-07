@@ -552,7 +552,7 @@
     var referenceList = document.createElement("ul");
     for(var i = 0; i < commentsReferences.length; i++) {
       var item = document.createElement("li");
-      item.innerHTML = commentsReferences[i];
+      item.innerHTML = cite(commentsReferences[i]);
       referenceList.appendChild(item);
     }
     references.appendChild(referenceList);
@@ -571,6 +571,39 @@
     //bibliography = await bibliography.json();
 
     return bibliography;
+  }
+
+  function printBibliography(option) {
+    if(option === 'csl') {
+      var a = document.createElement("a");
+      a.href = "data/site/sources.json";
+      a.setAttribute("download", "glarean_bibliography_csl.json");
+      a.click();
+    }
+    else if(option === 'txt') {
+
+    }
+  }
+
+  async function getCiteStyle() {
+    let csl = fetch('data/site/mla.csl');
+    return csl;
+  }
+
+  function cite(citeKey) {
+    getBibliography()
+    .then(result => result.json())
+    .then((bibliographie) => {
+      for(let i = 0; i < bibliographie.length; i++) {
+        if(bibliographie[i].id === citeKey) {
+          let author = bibliographie[i].author.family + ', ' + bibliographie[i].author.given;
+          let title = bibliographie[i].title;
+          let citation = '<span class="literatur">' + author + ', ' + title + '</span>';
+          console.log(citation);
+          return citation;
+        }
+      }
+    })
   }
 
   function waitForEl(selector, callback) {                        // gives document time to build objects that are targeted by functions
