@@ -59,9 +59,10 @@
 
 :root {
   --header-blue: #2f4858;
-  --paper-beige: #fff4e7;
+  --paper-beige: #fffcee;
   --music-beige: #f8f7f5;
-  --background-beige: #ecdbbf;
+  --background-beige: #e6d9c5;
+  --code-grey: lightgrey;
   --paper-shadow: #88837a;
   --add-grey: rgb(99, 99, 99);
 
@@ -220,13 +221,13 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
   header #container nav.main {display: none;}
 
   header #container a.hamburger {
-    color: #efe4d8;
+    color: var(--paper-beige);
     float: right;
     display: block;
     padding-right: calc(100vw / 13);
     line-height: 0.5in;
     font-size: 8vw;
-    color: #efe4d8;}
+    color: var(--paper-beige);}
 
   header #container .hamburger {display: none;}
 
@@ -241,7 +242,7 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
     width: 100%;
     display: block;
     text-align: left;
-    color: #efe4d8;
+    color: var(--paper-beige);
     background-color: var(--header-blue);
     transition: 0.4s;}
 }
@@ -263,7 +264,7 @@ footer {
   height: 0.4in;
   width: 100%;
   bottom: 0;
-  color: #efe4d8;
+  color: var(--paper-beige);
   background-color: var(--header-blue);}
 
 footer p {
@@ -277,14 +278,21 @@ footer .grc {
   font-family: var(--edition-font);
 }
 
+/* -------------- General ------------- */
 em {font-style: italic;}
 
 pre {
   display: inline;
-  font-size: 0.8em;}
+  font-size: 0.8em;
+  background-color: var(--code-grey);
+  padding: 0.3em;
+  border-radius: 4px;
+}
 
 pre.block {
   display: block;
+  background-color: var(--code-grey);
+  overflow-x: scroll;
 }
 
 /* =======================================================================================  Panel  ============*/

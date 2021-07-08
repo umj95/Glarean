@@ -5,7 +5,11 @@
     "author": "Janosch Umbreit",
     "title": "The first comment",
     "content": "This is a comment concerning Josquin des Prez.",
-    "references": ["Fenlon.Heinrichc", "Kolbl.Mitto", "Lutteken.Gratwanderung"]
+    "references": [
+      ["Fenlon.Heinrichc", "1"], 
+      ["Kolbl.Mitto", "2-6"], 
+      ["Lutteken.Gratwanderung", "35f."]
+    ]
   },
   {
     "id": "0002",

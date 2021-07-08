@@ -1,22 +1,5 @@
 [
   {
-    "ISBN": "0899901026",
-    "collection-title": "Detroit Monographs in Musicology",
-    "id": ".Music",
-    "issued": {
-      "date-parts": [
-        [
-          1997
-        ]
-      ]
-    },
-    "publisher": "Harmonie Park Press",
-    "publisher-place": "Warren",
-    "title": "Music in Renaissance Cities and Courts: Studies in Honor of Lewis Lockwood",
-    "title-short": "Music in Renaissance Cities and Courts",
-    "type": "book"
-  },
-  {
     "ISBN": "9783761818664",
     "author": [
       {
@@ -476,7 +459,7 @@
       }
     ],
     "id": "Lutteken.Glarean",
-    "title": "Glarean, heinrich",
+    "title": "Glarean, Heinrich",
     "type": "no-type"
   },
   {

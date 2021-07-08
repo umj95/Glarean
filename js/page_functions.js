@@ -1,33 +1,35 @@
 /* ================================================================================= Global Variables ================ */
 
-  var currentChapter = "";                                        // the current main Chapter to be displayed
+  let currentChapter = "";                                        // the current main Chapter to be displayed
 
-  var languages = [];
+  const languages = [];
 
     languages['_lat'] = "lateinisch";
     languages['_deu'] = "deutsch";
     languages['_eng'] = "englisch";
 
-  var mainLanguage = "";                                          // the language of the main document
+  let mainLanguage = "";                                          // the language of the main document
 
-  var secondaryLanguages = [];                                    // the translation languages
+  let secondaryLanguages = [];                                    // the translation languages
 
-  var pathToData = "data/chapters/";                               // the (relative) path to the text data folder, containing the chapter folders
-  
-  var comments = {};                                              // the comment Object -> commentary will be loaded in here one at a time
+  const pathToData = "data/chapters/";                            // the (relative) path to the text data folder, containing the chapter folders
+
+  let bibliography = {};
+
+  let comments = {};                                              // the comment Object -> commentary will be loaded in here one at a time
                                                                   // commentary exists in separate JSON files, so comments[editorsComments]
                                                                   // will point to the data from the JSON file containing editorial comments, 
                                                                   // whereas comments[errata] will point to the JSON file containing errata.
                                                                   // Every comment is linked to its target via the target's xml:id attribute.
 
-  var noteNr = 0;                                                 // tracks the Number of Notes
+  let noteNr = 0;                                                 // tracks the Number of Notes
 
 
-  var c = new CETEI();                                            // the primary CETEIcean object
+  const c = new CETEI();                                          // the primary CETEIcean object
                                                                   // (two are specified because we need different sets of behaviors)
-  var d = new CETEI();                                            // the secondary CETEIcean object (for translations)
+  const d = new CETEI();                                          // the secondary CETEIcean object (for translations)
 
-  var fullTextBehaviors = {"tei":{                                // all CETEIcean behaviors are defined here
+  let fullTextBehaviors = {"tei":{                                // all CETEIcean behaviors are defined here
     // Overrides the default ptr behavior, displaying a short link
     //"ptr": function(elt) {
     //  var link = document.createElement("a");
@@ -201,7 +203,7 @@
   }
 };
 
-  var translTextBehaviors = {"tei":{                              // all CETEIcean behaviors for translated texts
+  let translTextBehaviors = {"tei":{                              // all CETEIcean behaviors for translated texts
     // Overrides the default ptr behavior, displaying a short link
     //"ptr": function(elt) {
     //  var link = document.createElement("a");
@@ -552,7 +554,7 @@
     var referenceList = document.createElement("ul");
     for(var i = 0; i < commentsReferences.length; i++) {
       var item = document.createElement("li");
-      item.innerHTML = cite(commentsReferences[i]);
+      item.innerHTML = cite(commentsReferences[i][0], commentsReferences[i][1]);
       referenceList.appendChild(item);
     }
     references.appendChild(referenceList);
@@ -563,14 +565,6 @@
     commentText.appendChild(references);
 
     return commentText;
-  }
-
-  async function getBibliography() {                              // fetches a bibliography (CSL-JSON)
-    let path = "data/site/sources.json";
-    let bibliography = fetch(path);
-    //bibliography = await bibliography.json();
-
-    return bibliography;
   }
 
   function printBibliography(option) {
@@ -590,20 +584,30 @@
     return csl;
   }
 
-  function cite(citeKey) {
-    getBibliography()
-    .then(result => result.json())
-    .then((bibliographie) => {
-      for(let i = 0; i < bibliographie.length; i++) {
-        if(bibliographie[i].id === citeKey) {
-          let author = bibliographie[i].author.family + ', ' + bibliographie[i].author.given;
-          let title = bibliographie[i].title;
-          let citation = '<span class="literatur">' + author + ', ' + title + '</span>';
-          console.log(citation);
-          return citation;
+  function cite(citeKey, range) {                                 // takes a citeKey and a range, returns a short citation
+    for(let i = 0; i < bibliography.length; i++) {
+      if(bibliography[i].id === citeKey) {                        // browse the bibliography
+        let source = bibliography[i];
+        let title = '';
+
+        if(source.hasOwnProperty('title-short')){                 // determine title
+          title = source['title-short'];
+        } else { title = source.title;}
+        let authors = '';
+
+        const authorList = source.author.length;
+        for(let i = 0; i < authorList; i++) {
+          author = source.author[i]['family'];
+          authors += author;
+          if(i == (authorList - 1) || authorList == 1) {
+            authors += ', ';
+          } else {authors += ' &amp; ';}
         }
+        let citation = '<span class="tooltip"><a href="bibliography.php#' + citeKey + '" rel="noopener" target="blank">' + authors + '</a><span class="tiptext">Zum Bibliographieeintrag</span></span>' + title;
+        let citeString = '<span class="citation">' + citation + ', ' + range + '.</span>'
+        return citeString;
       }
-    })
+    }
   }
 
   function waitForEl(selector, callback) {                        // gives document time to build objects that are targeted by functions
