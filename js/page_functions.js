@@ -338,7 +338,7 @@
           // margin.innerHTML = note.innerHTML;
           // return margin;
         };
-      } else {
+      } else if(key === "marginalia" && optionsList[key] != "true"){
         console.log("marginalia != true");
         fullTextBehaviors["tei"]["add"] = function(add) {
           var addition = document.createElement("span");
