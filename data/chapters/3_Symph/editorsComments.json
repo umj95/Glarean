@@ -18,5 +18,13 @@
     "title": "The second comment",
     "content": "And this one is about that one piece.",
     "references": ["MahlmannBauer.Sympathies", "Miller.Erasmus", "Wegman.crisis"]
+  },
+  {
+    "id": "0003",
+    "target": "tris_makares",
+    "author": "Janosch Umbreit",
+    "title": "Τρὶς μάϰαρες",
+    "content": "Aus der <em>Odyssee</em>. Deutsche Übersetzung: „Dreimal selig und viermal die Danaer [die einst im weiten Troja zugrunde gingen, den Atreussöhnen zuliebe.]“ (Übers. Hampe, 1979). – Klage des Herumirrenden Odysseus",
+    "links": ["http://gams.uni-graz.at/archive/get/o:via.2553/sdef:TEI/get"]
   }
 ]

@@ -533,7 +533,8 @@
         var commentAuthor = comments[commentCorpus][key].author;
         var commentTitle = comments[commentCorpus][key].title;
         var commentContent = comments[commentCorpus][key].content;
-        var commentsReferences = comments[commentCorpus][key].references;
+        var commentLinks = comments[commentCorpus][key].links;
+        var commentReferences = comments[commentCorpus][key].references;
       }
     }
     var title = document.createElement("h5");                     // note title
@@ -548,21 +549,37 @@
     content.setAttribute("class", "commentContent");
     content.innerHTML = commentContent;
 
-    var references = document.createElement("div");               // note references
-    references.setAttribute("class", "commentReferences");
-    references.innerHTML = "<h6>Weiterführende Literatur</h6>"
-    var referenceList = document.createElement("ul");
-    for(var i = 0; i < commentsReferences.length; i++) {
-      var item = document.createElement("li");
-      item.innerHTML = cite(commentsReferences[i][0], commentsReferences[i][1]);
-      referenceList.appendChild(item);
+    if(commentLinks) {
+      var links = document.createElement("div");                    // note links
+      links.setAttribute("class", "commentLinks");
+      links.innerHTML = "<h6>Weblinks</h6>"
+      var linkList = document.createElement("ul");
+      for(var i = 0; i < commentLinks.length; i++) {
+        var item = document.createElement("li");
+        item.innerHTML = '<a href="' + commentLinks[i] + '" target="_blank" rel="noopener">' + commentLinks[i] + '</a>';
+        linkList.appendChild(item);
+      }
+      links.appendChild(linkList);
     }
-    references.appendChild(referenceList);
+
+    if(commentReferences){
+      var references = document.createElement("div");               // note references
+      references.setAttribute("class", "commentReferences");
+      references.innerHTML = "<h6>Weiterführende Literatur</h6>"
+      var referenceList = document.createElement("ul");
+      for(var i = 0; i < commentReferences.length; i++) {
+        var item = document.createElement("li");
+        item.innerHTML = cite(commentReferences[i][0], commentReferences[i][1]);
+        referenceList.appendChild(item);
+      }
+      references.appendChild(referenceList);
+    }
 
     commentText.appendChild(title);
     commentText.appendChild(author);
     commentText.appendChild(content);
-    commentText.appendChild(references);
+    if(links){commentText.appendChild(links);}
+    if(references){commentText.appendChild(references);}
 
     return commentText;
   }
@@ -584,7 +601,7 @@
     return csl;
   }
 
-  function cite(citeKey, range) {                                 // takes a citeKey and a range, returns a short citation
+  function cite(citeKey, range = '') {                                 // takes a citeKey and a range, returns a short citation
     for(let i = 0; i < bibliography.length; i++) {
       if(bibliography[i].id === citeKey) {                        // browse the bibliography
         let source = bibliography[i];

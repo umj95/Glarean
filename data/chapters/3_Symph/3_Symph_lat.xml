@@ -91,7 +91,7 @@
           </figure>
           <pb n="444"/>
           <p xml:id="p5">In huiuscemodi sane Symphonijs, ut libere dicam quae sentio, magis est ingenij ostentatio quam auditum reficiens adeo iucunditas, quale et hoc ciuis nostri <name type="person">Lutuichi Senflij</name> <name type="place">Tigurini</name>, docti nostra aetate Symphonetae. Cui ipse Cantorum more Canonem praefixit. <title>Omne trinum perfectum.</title> Caeterum pro inceptione poterat et hic praefigi Canon ex Odysseae. V.
-          <choice ana="transl">
+          <choice ana="transl" xml:id="tris_makares">
 						<orig><foreign xml:lang="grc">Τρὶς μάϰαρες Δαναοὶ ϰαὶ τετράϰις</foreign></orig>
 						<reg>Tris makares Danaoi kai tetrakis</reg>
 					</choice>.
