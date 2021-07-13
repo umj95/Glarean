@@ -772,7 +772,7 @@ button.panel {
   }
   
   .noteTitle, .noteBody, .noteFooter {
-    overflow: hidden;
+    overflow-x: hidden;
     margin: 0;
     padding: 0.3rem;
     padding-left: 1rem;
