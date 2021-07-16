@@ -122,7 +122,7 @@
                 if(doi){citeString += ' DOI: ' + doi + '. '};
                 break;
               case 'chapter':
-                citeString += author + '. ' + '„' + title + '“. ' + '<em>' + containerTitle + '</em>. ' + editor + ' (Hg.). ' + place + ': ' + publisher + ', ' + year + '.' + pageRange + '. ';
+                citeString += author + '. ' + '„' + title + '“. ' + '<em>' + containerTitle + '</em>. ' + editor + ' (Hg.). ' + place + ': ' + publisher + ', ' + year + '. ' + pageRange + '. ';
                 if(isbn){citeString += ' ISBN: ' + isbn+ '. '};
                 if(doi){citeString += ' DOI: ' + doi + '. '};
                 break;
