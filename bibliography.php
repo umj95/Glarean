@@ -117,7 +117,7 @@
               case 'book':
                 if(author != '') {citeString += author + '. ';}
                 else if(editor != '') {citeString += editor + ' (Hg.). ';}
-                citeString += '<em>' + title + '</em>. ' + place + ': ' + publisher + ', ' + year + '.';
+                citeString += '<em>' + title + '</em>. ' + place + ': ' + publisher + ', ' + year + '. ';
                 if(isbn){citeString += ' ISBN: ' + isbn + '. '};
                 if(doi){citeString += ' DOI: ' + doi + '. '};
                 break;
@@ -127,7 +127,7 @@
                 if(doi){citeString += ' DOI: ' + doi + '. '};
                 break;
               case 'article-journal':
-                citeString += author + '. ' + '„' + title + '“. ' + '<em>' + containerTitle + '</em>. ' + volume + '.' + issue + '(' + year + '): ' + pageRange + '.';
+                citeString += author + '. ' + '„' + title + '“. ' + '<em>' + containerTitle + '</em>. ' + volume + '.' + issue + '(' + year + '): ' + pageRange + '. ';
                 if(issn){citeString += ' ISSN: ' + isbn + '. '};
                 if(doi){citeString += ' DOI: ' + doi + '. '};
               default:
