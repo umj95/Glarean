@@ -368,10 +368,11 @@
       } else {
         document.getElementById("optionsPanel").style.height = "100vh";
       }
-    } else if(form == 'notesPanel') {
+    } else if(form == 'notesPanel') {                             // opens the right Panel
+      console.log('notesPanel button clicked');
       if($(window).width() > 600){
-        document.getElementById("noteArea").style.width = "40%";
-        document.getElementById("noteArea").style.marginLeft = "60%";
+        document.getElementById("noteArea").style.width = "30%";
+        document.getElementById("noteArea").style.marginLeft = "70%";
         //document.getElementById("body-text").style.marginRight = "30%";
       } else {
         document.getElementById("noteArea").style.height = "50vh";
@@ -387,7 +388,7 @@
       } else {
         document.getElementById("optionsPanel").style.height = "0";
       }
-    } else if(form === "notesPanel") {
+    } else if(form === "notesPanel") {                            // closes the right Panel
       if($(window).width() > 600){
         document.getElementById("noteArea").style.width = "0";
         document.getElementById("noteArea").style.marginLeft = "100%";
@@ -471,9 +472,9 @@
     newNote.appendChild(title);
     newNote.appendChild(body);
     newNote.appendChild(footer);
-    if($(window).width() < 1200) {              // if on mobile, open commentary panel immediately
+    //if($(window).width() < 1200) {              // if on mobile, open commentary panel immediately
       openPanel('notesPanel');
-    }
+    //}
   }
   
   function deleteNote(noteId) {                                   // deletes a Note wit ID NOTEID
