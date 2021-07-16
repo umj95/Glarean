@@ -545,8 +545,8 @@ button.panel {
     letter-spacing: 0.075em;
     line-height: normal;}
   
-  .chapter h1 {font-size: 5rem;} .chapter h2 {font-size: 3rem;} .chapter h3 {font-size: 2.4rem;} 
-  .chapter h4 {font-size: 2rem;} .chapter h5 {font-size: 1.5rem;} .chapter h6 {font-size: 1rem;}
+  .chapter h1 {font-size: 4rem;} .chapter h2 {font-size: 2.4rem;} .chapter h3 {font-size: 2rem;} 
+  .chapter h4 {font-size: 1.5rem;} .chapter h5 {font-size: 1.2rem;} .chapter h6 {font-size: 1rem;}
 
   .chapter p {
     font-family: inherit;}
