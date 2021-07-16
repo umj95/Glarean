@@ -47,7 +47,7 @@
           <label for="margins">Annotationen anzeigen</label>
           <?php
           echo    '<input id="margins" type="checkbox" name="marginalia" value="true"';
-          if($chapterOptions['marginalia']){
+          if($chapterOptions['marginalia'] == 'true'){
             echo  ' checked ';
           }
           echo    "/>\n";
@@ -102,7 +102,7 @@
     }
     if($_POST['marginalia']) {                                    // marginalia
       $custom .= "marginalia=true&";
-    }
+    } else {$custom .= "marginalia=false&";}
     if($_POST['comments']) {
       for($i = 0; $i < count($_POST['comments']); $i++) {         // comments
         $custom .= "comments[]=" . $_POST['comments'][$i] . "&";

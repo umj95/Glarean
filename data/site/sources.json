@@ -1,0 +1,787 @@
+[
+  {
+    "ISBN": "9783761818664",
+    "author": [
+      {
+        "family": "Calella",
+        "given": "Michelle"
+      }
+    ],
+    "container-title": "Heinrich Glarean oder: Die Rettung der Musik aus dem Geist der Antike?",
+    "editor": [
+      {
+        "family": "Schwindt",
+        "given": "Nicole"
+      }
+    ],
+    "id": "Calella.Ideo",
+    "issued": {
+      "date-parts": [
+        [
+          2006
+        ]
+      ]
+    },
+    "page": "199-212",
+    "publisher": "Bärenreiter",
+    "publisher-place": "Kassel",
+    "title": "Die Ideologie des Exemplum – Bemerkungen zu den Notenbeispielen des Dodekachordon",
+    "type": "chapter"
+  },
+  {
+    "ISBN": "9781139136976",
+    "author": [
+      {
+        "family": "Engammere",
+        "given": "Max"
+      }
+    ],
+    "container-title": "Heinrich Glarean’s Books",
+    "editor": [
+      {
+        "family": "Fenlon",
+        "given": "Iain"
+      },
+      {
+        "family": "Groote",
+        "given": "Inga Mai"
+      }
+    ],
+    "id": "Engammere.Glarean",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "page": "91-109",
+    "publisher": "Cambridge UP",
+    "publisher-place": "Cambridge",
+    "title": "Glarean’s Bible",
+    "type": "chapter"
+  },
+  {
+    "DOI": "10.1017/CBO9781139136976",
+    "ISBN": "9781139136976",
+    "editor": [
+      {
+        "family": "Fenlon",
+        "given": "Iain"
+      },
+      {
+        "family": "Groote",
+        "given": "Inga Mai"
+      }
+    ],
+    "id": "Fenlon.Heinrich",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "publisher": "Cambridge UP",
+    "publisher-place": "Cambridge",
+    "title": "Heinrich Glarean’s Books: The Intellectual World of a Sixteenth-Century Musical Mumanist",
+    "title-short": "Heinrich Glarean’s Books",
+    "type": "book"
+  },
+  {
+    "ISBN": "9781139136976",
+    "author": [
+      {
+        "family": "Fenlon",
+        "given": "Iain"
+      },
+      {
+        "family": "Groote",
+        "given": "Inga Mai"
+      }
+    ],
+    "container-title": "Heinrich Glarean’s Books",
+    "editor": [
+      {
+        "family": "Fenlon",
+        "given": "Iain"
+      },
+      {
+        "family": "Groote",
+        "given": "Inga Mai"
+      }
+    ],
+    "id": "Fenlon.Heinrichb",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "page": "1-37",
+    "publisher": "Cambridge UP",
+    "publisher-place": "Cambridge",
+    "title": "Heinrich Glarean’s World",
+    "type": "chapter"
+  },
+  {
+    "ISBN": "9781139136976",
+    "author": [
+      {
+        "family": "Fenlon",
+        "given": "Iain"
+      },
+      {
+        "family": "Groote",
+        "given": "Inga Mai"
+      }
+    ],
+    "container-title": "Heinrich Glarean’s Books",
+    "editor": [
+      {
+        "family": "Fenlon",
+        "given": "Iain"
+      },
+      {
+        "family": "Groote",
+        "given": "Inga Mai"
+      }
+    ],
+    "id": "Fenlon.Heinrichc",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "page": "303-334",
+    "publisher": "Cambridge UP",
+    "publisher-place": "Cambridge",
+    "title": "Heinrich Glarean’s Books",
+    "type": "chapter"
+  },
+  {
+    "ISBN": "9781139136976",
+    "author": [
+      {
+        "family": "Folkerts",
+        "given": "Menso"
+      }
+    ],
+    "container-title": "Heinrich Glarean’s Books",
+    "editor": [
+      {
+        "family": "Fenlon",
+        "given": "Iain"
+      },
+      {
+        "family": "Groote",
+        "given": "Inga Mai"
+      }
+    ],
+    "id": "Folkerts.Roman",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "page": "159-179",
+    "publisher": "Cambridge UP",
+    "publisher-place": "Cambridge",
+    "title": "Roman Weights and Measurements in Glarean’s Liber de Asse et Partibus Eius",
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Glarean",
+        "given": "Heinrich"
+      }
+    ],
+    "collection-title": "Musicological Studies and Documents",
+    "id": "Glarean.Dodekachordon",
+    "issued": {
+      "date-parts": [
+        [
+          1965
+        ]
+      ]
+    },
+    "publisher": "American Institute of Musicology",
+    "title": "Dodekachordon",
+    "type": "book",
+    "volume": "6"
+  },
+  {
+    "ISBN": "9781139136976",
+    "author": [
+      {
+        "family": "Grafton",
+        "given": "Anthony"
+      },
+      {
+        "family": "Leu",
+        "given": "Urs B."
+      }
+    ],
+    "container-title": "Heinrich Glarean’s Books",
+    "editor": [
+      {
+        "family": "Fenlon",
+        "given": "Iain"
+      },
+      {
+        "family": "Groote",
+        "given": "Inga Mai"
+      }
+    ],
+    "id": "Grafton.Chrono",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "page": "248-279",
+    "publisher": "Cambridge UP",
+    "publisher-place": "Cambridge",
+    "title": "Chronologia est unica historiae lux: How Glarean Studied and Taught the Chronology of the Ancient World",
+    "title-short": "Chronologia est unica historiae lux",
+    "type": "chapter"
+  },
+  {
+    "ISBN": "9781139136976",
+    "author": [
+      {
+        "family": "Groote",
+        "given": "Inga Mai"
+      },
+      {
+        "family": "Kölbl",
+        "given": "Bernhard"
+      },
+      {
+        "family": "Forscher Weiss",
+        "given": "Susan"
+      }
+    ],
+    "container-title": "Heinrich Glarean’s Books",
+    "editor": [
+      {
+        "family": "Fenlon",
+        "given": "Iain"
+      },
+      {
+        "family": "Groote",
+        "given": "Inga Mai"
+      }
+    ],
+    "id": "Groote.Eviden",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "page": "280-302",
+    "publisher": "Cambridge UP",
+    "publisher-place": "Cambridge",
+    "title": "Evidence of Glarean’s Music Lectures from his Student’s Books: Congruent Annotations in the Epitome and the Dodekachordon",
+    "title-short": "Evidence of Glarean’s Music Lectures from his Students’ Books",
+    "type": "chapter"
+  },
+  {
+    "ISBN": "9781139136976",
+    "author": [
+      {
+        "family": "Groote",
+        "given": "Inga Mai"
+      }
+    ],
+    "container-title": "Heinrich Glarean’s Books",
+    "editor": [
+      {
+        "family": "Fenlon",
+        "given": "Iain"
+      },
+      {
+        "family": "Groote",
+        "given": "Inga Mai"
+      }
+    ],
+    "id": "Groote.Studying",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "page": "195-222",
+    "publisher": "Cambridge UP",
+    "publisher-place": "Cambridge",
+    "title": "Studying Music and Arithmetic with Glarean: Contextualizing the Epitomes and Annotationes Among the Sources for Glarean’s Teaching",
+    "title-short": "Studying Music and Arithmetic with Glarean",
+    "type": "chapter"
+  },
+  {
+    "ISBN": "9781139136976",
+    "author": [
+      {
+        "family": "Horz",
+        "given": "Andrea"
+      }
+    ],
+    "container-title": "Heinrich Glarean’s Books",
+    "editor": [
+      {
+        "family": "Fenlon",
+        "given": "Iain"
+      },
+      {
+        "family": "Groote",
+        "given": "Inga Mai"
+      }
+    ],
+    "id": "Horz.Dorio",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "page": "180-194",
+    "publisher": "Cambridge UP",
+    "publisher-place": "Cambridge",
+    "title": "A dorio ad phrygium: Glarean and the Adagia of Erasmus",
+    "title-short": "A dorio ad phrygium",
+    "type": "chapter"
+  },
+  {
+    "ISBN": "9781139136976",
+    "author": [
+      {
+        "family": "Johnson",
+        "given": "Christine R."
+      }
+    ],
+    "container-title": "Heinrich Glarean’s Books",
+    "editor": [
+      {
+        "family": "Fenlon",
+        "given": "Iain"
+      },
+      {
+        "family": "Groote",
+        "given": "Inga Mai"
+      }
+    ],
+    "id": "Johnson.Between",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "page": "139-158",
+    "publisher": "Cambridge UP",
+    "publisher-place": "Cambridge",
+    "title": "Between the Human and the Divine: Glarean’s De Geographia and the Span of Renaissance Geography",
+    "title-short": "Between the Human and the Divine",
+    "type": "chapter"
+  },
+  {
+    "ISBN": "9781139136976",
+    "author": [
+      {
+        "family": "Kölbl",
+        "given": "Bernhard"
+      }
+    ],
+    "container-title": "Heinrich Glarean’s Books",
+    "editor": [
+      {
+        "family": "Fenlon",
+        "given": "Iain"
+      },
+      {
+        "family": "Groote",
+        "given": "Inga Mai"
+      }
+    ],
+    "id": "Kolbl.Mitto",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "page": "47-63",
+    "publisher": "Cambridge UP",
+    "publisher-place": "Cambridge",
+    "title": "’Mitto ad te meos de musica labores’: Glarean’s Dodecachordon and the Politics of Dedication",
+    "title-short": "’Mitto ad te meos de musica labores’",
+    "type": "chapter"
+  },
+  {
+    "accessed": {
+      "date-parts": [
+        [
+          2021,
+          3,
+          2
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Lütteken",
+        "given": "Laurenz"
+      },
+      {
+        "family": "Föllmi",
+        "given": "Beat"
+      }
+    ],
+    "editor": [
+      {
+        "family": "Lütteken",
+        "given": "Laurenz"
+      }
+    ],
+    "id": "Lutteken.Glarean",
+    "title": "Glarean, Heinrich",
+    "type": "no-type"
+  },
+  {
+    "ISBN": "9783761818664",
+    "author": [
+      {
+        "family": "Lütteken",
+        "given": "Laurenz"
+      }
+    ],
+    "container-title": "Heinrich Glarean oder: Die Rettung der Musik aus dem Geist der Antike?",
+    "editor": [
+      {
+        "family": "Schwindt",
+        "given": "Nicole"
+      }
+    ],
+    "id": "Lutteken.Gratwanderung",
+    "issued": {
+      "date-parts": [
+        [
+          2006
+        ]
+      ]
+    },
+    "publisher": "Bärenreiter",
+    "publisher-place": "Kassel",
+    "title": "Gratwanderung oder integrales Konzept? Glarean in der musikalischen und intellektuellen Geschichte des 16. Jahrhunderts",
+    "type": "chapter"
+  },
+  {
+    "editor": [
+      {
+        "family": "Lütteken",
+        "given": "Laurenz"
+      }
+    ],
+    "id": "Lutteken.MGG",
+    "publisher": "Bärenreiter",
+    "publisher-place": "Kassel",
+    "title": "MGG online: Musik in Geschichte und Gegenwart",
+    "title-short": "MGG online",
+    "type": "no-type"
+  },
+  {
+    "ISBN": "9781139136976",
+    "author": [
+      {
+        "family": "Lütteken",
+        "given": "Laurenz"
+      }
+    ],
+    "container-title": "Heinrich Glarean’s Books",
+    "editor": [
+      {
+        "family": "Fenlon",
+        "given": "Iain"
+      },
+      {
+        "family": "Groote",
+        "given": "Inga Mai"
+      }
+    ],
+    "id": "Lutteken.Theory",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "page": "38-46",
+    "publisher": "Cambridge UP",
+    "publisher-place": "Cambridge",
+    "title": "Theory of Music and Philosophy of Life: The Dodecachordon and the Counter-Reformation",
+    "title-short": "Theory of music and philosophy of life",
+    "type": "chapter"
+  },
+  {
+    "ISBN": "9781139136976",
+    "author": [
+      {
+        "family": "Mahlmann-Bauer",
+        "given": "Barbara"
+      }
+    ],
+    "container-title": "Heinrich Glarean’s Books",
+    "editor": [
+      {
+        "family": "Fenlon",
+        "given": "Iain"
+      },
+      {
+        "family": "Groote",
+        "given": "Inga Mai"
+      }
+    ],
+    "id": "MahlmannBauer.Sympathies",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "page": "64-90",
+    "publisher": "Cambridge UP",
+    "publisher-place": "Cambridge",
+    "title": "Sympathies with Luther — Preference for the Roman Church: Glarean’s Annotations as a Mirror of his Intellectual Development",
+    "title-short": "Sympathies with Luther — Preference for the Roman Church",
+    "type": "chapter"
+  },
+  {
+    "ISBN": "9783761818664",
+    "author": [
+      {
+        "family": "Meyer",
+        "given": "Christian"
+      }
+    ],
+    "container-title": "Heinrich Glarean oder: Die Rettung der Musik aus dem Geist der Antike?",
+    "editor": [
+      {
+        "family": "Schwindt",
+        "given": "Nicole"
+      }
+    ],
+    "id": "Meyer.Zur",
+    "issued": {
+      "date-parts": [
+        [
+          2006
+        ]
+      ]
+    },
+    "page": "147-",
+    "publisher": "Bärenreiter",
+    "publisher-place": "Kassel",
+    "title": "Zur Konstruktion’ der antiken Musiktheorie bei Glarean",
+    "type": "chapter"
+  },
+  {
+    "ISSN": "00274631",
+    "author": [
+      {
+        "comma-suffix": false,
+        "family": "Miller",
+        "given": "Clement A.",
+        "suffix": "Übers."
+      }
+    ],
+    "container-title": "The Musical Quarterly",
+    "id": "Miller.Erasmus",
+    "issue": "3",
+    "issued": {
+      "date-parts": [
+        [
+          1966
+        ]
+      ]
+    },
+    "keyword": "Erasmus;Miller",
+    "page": "332-349",
+    "title": "Erasmus on Music",
+    "type": "article-journal",
+    "volume": "52"
+  },
+  {
+    "ISBN": "9783761818664",
+    "editor": [
+      {
+        "family": "Schwindt",
+        "given": "Nicole"
+      }
+    ],
+    "id": "Schwindt.Heinrich",
+    "issued": {
+      "date-parts": [
+        [
+          2006
+        ]
+      ]
+    },
+    "publisher": "Bärenreiter",
+    "publisher-place": "Kassel",
+    "title": "Heinrich Glarean oder: Die Rettung der Musik aus dem Geist der Antike?",
+    "title-short": "Heinrich Glarean",
+    "type": "book"
+  },
+  {
+    "DOI": "10.2307/2539472",
+    "ISSN": "03610160",
+    "author": [
+      {
+        "family": "Tracy",
+        "given": "James D."
+      }
+    ],
+    "container-title": "Sixteenth Century Journal",
+    "id": "Tracy.Against",
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          1980
+        ]
+      ]
+    },
+    "keyword": "Erasmus;Humanism;Tracy",
+    "page": "3",
+    "title": "Against the ‘Barbarians’: The Young Erasmus and his Humanist Contemporaries",
+    "title-short": "Against the ‘Barbarians’",
+    "type": "article-journal",
+    "volume": "11"
+  },
+  {
+    "ISBN": "9783761818664",
+    "author": [
+      {
+        "family": "Wald",
+        "given": "Melanie"
+      }
+    ],
+    "container-title": "Heinrich Glarean oder: Die Rettung der Musik aus dem Geist der Antike?",
+    "editor": [
+      {
+        "family": "Schwindt",
+        "given": "Nicole"
+      }
+    ],
+    "id": "Wald.Beendigung",
+    "issued": {
+      "date-parts": [
+        [
+          2006
+        ]
+      ]
+    },
+    "publisher": "Bärenreiter",
+    "publisher-place": "Kassel",
+    "title": "Die Beendigung der Geschichte – Glarean, Kircher und die katholische deutsche Musiktheorie",
+    "type": "chapter"
+  },
+  {
+    "ISBN": "9780415964746",
+    "author": [
+      {
+        "family": "Wegman",
+        "given": "Rob C."
+      }
+    ],
+    "edition": "First paperback Ed.",
+    "id": "Wegman.crisis",
+    "issued": {
+      "date-parts": [
+        [
+          2008
+        ]
+      ]
+    },
+    "keyword": "16th century;Music;Wegman",
+    "publisher": "Routledge",
+    "publisher-place": "New York, NY",
+    "title": "The Crisis of Music in Early Modern Europe, 1470–1530",
+    "type": "book"
+  },
+  {
+    "DOI": "10.1484/J.JAF.1.102195",
+    "ISSN": "2032-5371",
+    "author": [
+      {
+        "family": "Wegman",
+        "given": "Rob C."
+      }
+    ],
+    "container-title": "Journal of the Alamire Foundation",
+    "id": "Wegman.Obrecht",
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    },
+    "keyword": "Erasmus;Obrecht;Wegman",
+    "page": "109-123",
+    "title": "Obrecht and Erasmus",
+    "type": "article-journal",
+    "volume": "3"
+  },
+  {
+    "ISBN": "9781139136976",
+    "author": [
+      {
+        "family": "Wiener",
+        "given": "Claudia"
+      }
+    ],
+    "container-title": "Heinrich Glarean’s Books",
+    "editor": [
+      {
+        "family": "Fenlon",
+        "given": "Iain"
+      },
+      {
+        "family": "Groote",
+        "given": "Inga Mai"
+      }
+    ],
+    "id": "Wiener.Glarean",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "page": "223-247",
+    "publisher": "Cambridge UP",
+    "publisher-place": "Cambridge",
+    "title": "Glarean’s Didactic Approach to Horace, and his Critical Review of Classical and Modern Commentaries",
+    "type": "chapter"
+  }
+]

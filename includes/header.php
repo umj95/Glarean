@@ -29,6 +29,8 @@
     }
     return $passOptions;
   }
+
+
   /* --------------------------------------------------------------  Global Variables  ------------------- */
   $languageList = array('_lat', '_deu');                  // the available languages for translations
   
@@ -41,6 +43,9 @@
   foreach($_GET as $key => $value) {
     $chapterOptions[$key] = $value;
   }
+
+  $bibliography = file_get_contents('data/site/sources.json');   // the bibliography as a json object
+
   /* ----------------------------------------------------------------------------------------------------- */
 ?>
 <!DOCTYPE html>
@@ -87,14 +92,15 @@
           <a href="chapter_select.php">Kapitel</a></li>
           <a href="about.php">Über dieses Projekt</a>
           <a href="edition.php">Editionsrichtlinien</a>
+          <a href="bibliography.php">Bibliographie</a>
           <a href="impressum.php">Impressum</a>
           <a href="contact.php">Kontakt</a>
         </nav>
       </div>
       <script type="text/javascript"> 
-        var prevScrollpos = window.pageYOffset;                    // make header disappear on scroll
+        let prevScrollpos = window.pageYOffset;                    // make header disappear on scroll
         window.onscroll = function() {
-          var currentScrollPos = window.pageYOffset;
+          let currentScrollPos = window.pageYOffset;
           if (prevScrollpos > currentScrollPos) {
             document.getElementById("header").style.top = "0";
           } else {
@@ -102,6 +108,8 @@
           }
           prevScrollpos = currentScrollPos;
         }
+
+        bibliography = <?php echo $bibliography;?>
       </script>
     </header>
     

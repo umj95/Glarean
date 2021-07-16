@@ -19,15 +19,13 @@
     marginalia = chapterOptions.marginalia;
     //commentaryOptions = chapterOptions.comments;
 
-    var c = new CETEI();                                          // the primary CETEIcean object
-                                                                  // (two are specified because we need different sets of behaviors)
-    var d = new CETEI();                                          // the secondary CETEIcean object (for translations)
-
     optionalBehaviors(chapterOptions);                            // Load custom TEI behaviors
             
     d.addBehaviors(translTextBehaviors);                          // add behaviors to the translation text object
 
     c.addBehaviors(fullTextBehaviors);                            // add behaviors to the main language text object
+
+    //getBibliography().then(result => bibliography = result);
 
   </script>
   <div class="chapter">

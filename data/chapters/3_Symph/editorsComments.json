@@ -5,7 +5,11 @@
     "author": "Janosch Umbreit",
     "title": "The first comment",
     "content": "This is a comment concerning Josquin des Prez.",
-    "references": ["reference 1", "reference 2", "reference 3"]
+    "references": [
+      ["Fenlon.Heinrichc", "1"], 
+      ["Kolbl.Mitto", "2-6"], 
+      ["Lutteken.Gratwanderung", "35f."]
+    ]
   },
   {
     "id": "0002",
@@ -13,6 +17,14 @@
     "author": "Janosch Umbreit",
     "title": "The second comment",
     "content": "And this one is about that one piece.",
-    "references": ["reference a", "reference b", "reference c"]
+    "references": ["MahlmannBauer.Sympathies", "Miller.Erasmus", "Wegman.crisis"]
+  },
+  {
+    "id": "0003",
+    "target": "tris_makares",
+    "author": "Janosch Umbreit",
+    "title": "Τρὶς μάϰαρες",
+    "content": "Aus der <em>Odyssee</em>. Deutsche Übersetzung: „Dreimal selig und viermal die Danaer [die einst im weiten Troja zugrunde gingen, den Atreussöhnen zuliebe.]“ (Übers. Hampe, 1979). – Klage des Herumirrenden Odysseus",
+    "links": ["http://gams.uni-graz.at/archive/get/o:via.2553/sdef:TEI/get"]
   }
 ]
