@@ -118,18 +118,18 @@
                 if(author != '') {citeString += author + '. ';}
                 else if(editor != '') {citeString += editor + ' (Hg.). ';}
                 citeString += '<em>' + title + '</em>. ' + place + ': ' + publisher + ', ' + year + '.';
-                if(isbn){citeString += ' ISBN: ' + isbn + '.'};
-                if(doi){citeString += ' DOI: ' + doi + '.'};
+                if(isbn){citeString += ' ISBN: ' + isbn + '. '};
+                if(doi){citeString += ' DOI: ' + doi + '. '};
                 break;
               case 'chapter':
-                citeString += author + '. ' + '„' + title + '“. ' + '<em>' + containerTitle + '</em>. ' + editor + ' (Hg.). ' + place + ': ' + publisher + ', ' + year + '.' + pageRange + '.';
-                if(isbn){citeString += ' ISBN: ' + isbn+ '.'};
-                if(doi){citeString += ' DOI: ' + doi + '.'};
+                citeString += author + '. ' + '„' + title + '“. ' + '<em>' + containerTitle + '</em>. ' + editor + ' (Hg.). ' + place + ': ' + publisher + ', ' + year + '.' + pageRange + '. ';
+                if(isbn){citeString += ' ISBN: ' + isbn+ '. '};
+                if(doi){citeString += ' DOI: ' + doi + '. '};
                 break;
               case 'article-journal':
                 citeString += author + '. ' + '„' + title + '“. ' + '<em>' + containerTitle + '</em>. ' + volume + '.' + issue + '(' + year + '): ' + pageRange + '.';
-                if(issn){citeString += ' ISSN: ' + isbn + '.'};
-                if(doi){citeString += ' DOI: ' + doi + '.'};
+                if(issn){citeString += ' ISSN: ' + isbn + '. '};
+                if(doi){citeString += ' DOI: ' + doi + '. '};
               default:
                 if(author != ''){citeString += author + '. ';}
                 else if(editor != ''){citeString += editor + ' (Hg.). '}
@@ -140,9 +140,9 @@
                 if(publisher != ''){citeString += publisher + '. ';}
                 if(year != ''){citeString += year + '. ';}
                 if(pageRange != ''){citeString += pageRange + '. ';}
-                if(isbn){citeString += ' ISBN: ' + isbn + '.'};
-                if(issn){citeString += ' ISSN: ' + issn + '.'};
-                if(doi){citeString += ' DOI: ' + doi + '.'};
+                if(isbn){citeString += ' ISBN: ' + isbn + '. '};
+                if(issn){citeString += ' ISSN: ' + issn + '. '};
+                if(doi){citeString += ' DOI: ' + doi + '. '};
             }
 
             let entry = document.createElement('div');
