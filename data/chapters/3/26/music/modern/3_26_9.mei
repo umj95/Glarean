@@ -5,7 +5,7 @@
    <meiHead>
       <fileDesc>
          <titleStmt>
-            <title>3_Symph_8</title>
+            <title></title>
             <respStmt />
          </titleStmt>
          <pubStmt><date isodate="2021-07-05" type="encoding-date">2021-07-05</date>
@@ -86,7 +86,7 @@
                            </note>
                            <note xml:id="note-0000000668140573" dur.ppq="8" dur="1" oct="4" pname="f">
                               <verse xml:id="verse-0000000426648258" n="1">
-                                 <syl xml:id="syl-0000001877346121" con="s" wordpos="s">sunt,</syl>
+                                 <syl xml:id="syl-0000001877346121" con="s" >sunt,</syl>
                               </verse>
                            </note>
                         </layer>
@@ -103,7 +103,7 @@
                            </note>
                            <note xml:id="note-0000001027240094" dur.ppq="8" dur="1" oct="4" pname="g">
                               <verse xml:id="verse-0000000819830706" n="1">
-                                 <syl xml:id="syl-0000000635957255" con="s" wordpos="s">sunt,</syl>
+                                 <syl xml:id="syl-0000000635957255" con="s" >sunt,</syl>
                               </verse>
                            </note>
                         </layer>
@@ -144,7 +144,7 @@
                            </note>
                            <note xml:id="note-0000002051787448" dur.ppq="8" dur="1" oct="4" pname="a">
                               <verse xml:id="verse-0000001759180648" n="1">
-                                 <syl xml:id="syl-0000000254309907" fontstyle="italic" con="s" wordpos="s">sunt</syl>
+                                 <syl xml:id="syl-0000000254309907" fontstyle="italic" con="s" >sunt</syl>
                               </verse>
                            </note>
                         </layer>
@@ -161,7 +161,7 @@
                            </note>
                            <note xml:id="note-0000000899880721" dur.ppq="8" dur="1" oct="4" pname="b" accid.ges="f">
                               <verse xml:id="verse-0000000855475877" n="1">
-                                 <syl xml:id="syl-0000001377143173" fontstyle="italic" con="s" wordpos="s">sunt</syl>
+                                 <syl xml:id="syl-0000001377143173" fontstyle="italic" con="s" >sunt</syl>
                               </verse>
                            </note>
                         </layer>
@@ -223,7 +223,7 @@
                            <rest xml:id="rest-0000000233236326" dur.ppq="4" dur="2" />
                            <note xml:id="note-0000000947323358" dur.ppq="4" dur="2" oct="4" pname="g" stem.dir="up">
                               <verse xml:id="verse-0000000634449564" n="1">
-                                 <syl xml:id="syl-0000001149005746" con="s" wordpos="s">et</syl>
+                                 <syl xml:id="syl-0000001149005746" con="s" >et</syl>
                               </verse>
                            </note>
                         </layer>
@@ -240,7 +240,7 @@
                            <rest xml:id="rest-0000000405718874" dur.ppq="4" dur="2" />
                            <note xml:id="note-0000001865236426" dur.ppq="4" dur="2" oct="4" pname="a" stem.dir="up">
                               <verse xml:id="verse-0000001789769414" n="1">
-                                 <syl xml:id="syl-0000000907967635" con="s" wordpos="s">et</syl>
+                                 <syl xml:id="syl-0000000907967635" con="s" >et</syl>
                               </verse>
                            </note>
                         </layer>
@@ -302,7 +302,7 @@
                            <rest xml:id="rest-0000000945130554" dur.ppq="8" dur="1" />
                            <note xml:id="note-0000002076862248" dur.ppq="8" dur="1" oct="5" pname="c">
                               <verse xml:id="verse-0000001822273930" n="1">
-                                 <syl xml:id="syl-0000000226204688" fontstyle="italic" con="s" wordpos="s">et</syl>
+                                 <syl xml:id="syl-0000000226204688" fontstyle="italic" con="s" >et</syl>
                               </verse>
                            </note>
                         </layer>
@@ -314,7 +314,7 @@
                            <rest xml:id="rest-0000001577373812" dur.ppq="8" dur="1" />
                            <note xml:id="note-0000000960250146" dur.ppq="8" dur="1" oct="5" pname="d">
                               <verse xml:id="verse-0000000053630254" n="1">
-                                 <syl xml:id="syl-0000001370414301" fontstyle="italic" con="s" wordpos="s">et</syl>
+                                 <syl xml:id="syl-0000001370414301" fontstyle="italic" con="s" >et</syl>
                               </verse>
                            </note>
                         </layer>
@@ -449,7 +449,7 @@
                            <rest xml:id="rest-0000000335275892" dur.ppq="4" dur="2" />
                            <note xml:id="note-0000001798851965" dur.ppq="4" dur="2" oct="5" pname="e" stem.dir="down">
                               <verse xml:id="verse-0000000811821981" n="1">
-                                 <syl xml:id="syl-0000000641166757" con="s" wordpos="s">glo</syl>
+                                 <syl xml:id="syl-0000000641166757" con="s" >glo</syl>
                               </verse>
                            </note>
                         </layer>

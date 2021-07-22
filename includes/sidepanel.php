@@ -42,12 +42,12 @@
         </div>
       </fieldset>
       <fieldset>
-        <legend><h2>Marginalien</h2></legend>                     <!-- Offer marginalia -->
+        <legend><h2>Annotationen</h2></legend>                     <!-- Offer marginalia -->
         <div class="control">
-          <label for="margins">Marginalien anzeigen</label>
+          <label for="margins">Annotationen anzeigen</label>
           <?php
           echo    '<input id="margins" type="checkbox" name="marginalia" value="true"';
-          if($chapterOptions['marginalia']){
+          if($chapterOptions['marginalia'] == 'true'){
             echo  ' checked ';
           }
           echo    "/>\n";
@@ -82,10 +82,11 @@
       <input type="submit" name="submit" value="submit"/>
     </form>
     <p><a href="<?php 
+      $thisBook = $chapterOptions['currentBook'];
       $thisChapter = $chapterOptions['currentChapter'];
       $thisLanguage = $chapterOptions['mainLanguage'];
       echo "/data/chapters/";
-      echo "$thisChapter/$thisChapter"."$thisLanguage.xml";
+      echo "$thisBook/$thisChapter/$thisBook"."_"."$thisChapter"."$thisLanguage.xml";
     ?>" download>Dieses Kapitel als TEI-Datei Herunterladen</a></p>
   </div>
 </div>
@@ -102,13 +103,13 @@
     }
     if($_POST['marginalia']) {                                    // marginalia
       $custom .= "marginalia=true&";
-    }
+    } else {$custom .= "marginalia=false&";}
     if($_POST['comments']) {
       for($i = 0; $i < count($_POST['comments']); $i++) {         // comments
         $custom .= "comments[]=" . $_POST['comments'][$i] . "&";
       }
     }
-    $url = "<meta http-equiv=\"refresh\" content=\"0;url=chapter.php?currentChapter=".$chapterOptions['currentChapter']."&mainLanguage=".$chapterOptions['mainLanguage'].$custom."\" />";
+    $url = "<meta http-equiv=\"refresh\" content=\"0;url=chapter.php?currentBook=".$chapterOptions['currentBook']."&currentChapter=".$chapterOptions['currentChapter']."&mainLanguage=".$chapterOptions['mainLanguage'].$custom."\" />";
     echo $url;
   }
 ?>

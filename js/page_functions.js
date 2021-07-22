@@ -1,33 +1,37 @@
 /* ================================================================================= Global Variables ================ */
 
-  var currentChapter = "";                                        // the current main Chapter to be displayed
+  let currentBook = "";                                           // the current book
 
-  var languages = [];
+  let currentChapter = "";                                        // the current main Chapter to be displayed
+
+  const languages = [];
 
     languages['_lat'] = "lateinisch";
     languages['_deu'] = "deutsch";
     languages['_eng'] = "englisch";
 
-  var mainLanguage = "";                                          // the language of the main document
+  let mainLanguage = "";                                          // the language of the main document
 
-  var secondaryLanguages = [];                                    // the translation languages
+  let secondaryLanguages = [];                                    // the translation languages
 
-  var pathToData = "data/chapters/";                               // the (relative) path to the text data folder, containing the chapter folders
-  
-  var comments = {};                                              // the comment Object -> commentary will be loaded in here one at a time
+  const pathToData = "data/chapters/";                            // the (relative) path to the text data folder, containing the chapter folders
+
+  let bibliography = {};
+
+  let comments = {};                                              // the comment Object -> commentary will be loaded in here one at a time
                                                                   // commentary exists in separate JSON files, so comments[editorsComments]
                                                                   // will point to the data from the JSON file containing editorial comments, 
                                                                   // whereas comments[errata] will point to the JSON file containing errata.
                                                                   // Every comment is linked to its target via the target's xml:id attribute.
 
-  var noteNr = 0;                                                 // tracks the Number of Notes
+  let noteNr = 0;                                                 // tracks the Number of Notes
 
 
-  var c = new CETEI();                                            // the primary CETEIcean object
+  const c = new CETEI();                                          // the primary CETEIcean object
                                                                   // (two are specified because we need different sets of behaviors)
-  var d = new CETEI();                                            // the secondary CETEIcean object (for translations)
+  const d = new CETEI();                                          // the secondary CETEIcean object (for translations)
 
-  var fullTextBehaviors = {"tei":{                                // all CETEIcean behaviors are defined here
+  let fullTextBehaviors = {"tei":{                                // all CETEIcean behaviors are defined here
     // Overrides the default ptr behavior, displaying a short link
     //"ptr": function(elt) {
     //  var link = document.createElement("a");
@@ -72,7 +76,7 @@
     },
 
     "pb": function(elt) {                                         // page breaks get their own div-container
-      var pb = document.createElement("div");
+      let pb = document.createElement("div");
       pb.setAttribute("class", "pb");
       pb.innerHTML = elt.getAttribute("n");
       //pb.appendChild(document.createElement("br"));
@@ -105,18 +109,24 @@
         meiBody.setAttribute("class", "meiBody");
         meiBody.setAttribute("id", meiFile + "-body");            // the body's id attribute is the hook for Verovio to pick the right file
         return mei;
+      } else if(fig.getAttribute("type") === "image") {
+        let url = `${pathToData}${currentBook}/${currentChapter}/`;
+        url += fig.children[0].getAttribute("url");
+        image = document.createElement("img");
+        image.setAttribute("src", url);
+        return image;
       }
     },
 
     "choice": function(choice) {                                  // choice builds tooltips to display expansions, of abbreviations,
                                                                   // transliteration of greek script etc.
       if(choice.getAttribute("ana") === "transl") {               // transliterations
-        var transl = document.createElement("span");
+        let transl = document.createElement("span");
         transl.setAttribute("class", "transl tooltip")
-        var orig = document.createElement("span");
+        let orig = document.createElement("span");
         orig.setAttribute("class", "orig");
         orig.innerHTML = choice.children[0].innerHTML;
-        var reg = document.createElement("span");
+        let reg = document.createElement("span");
         reg.setAttribute("class", "reg tiptext");
         reg.innerHTML = choice.children[1].innerHTML;
         transl.appendChild(orig);
@@ -124,17 +134,31 @@
         return transl;
       } 
       else if(choice.getAttribute("ana") === "abbr") {            // abbreviations
-        var abbr = document.createElement("span");
+        let abbr = document.createElement("span");
         abbr.setAttribute("class", "abbr tooltip")
-        var orig = document.createElement("span");
+        let orig = document.createElement("span");
         orig.setAttribute("class", "orig");
         orig.innerHTML = choice.children[0].innerHTML;
-        var reg = document.createElement("span");
+        let reg = document.createElement("span");
         reg.setAttribute("class", "reg tiptext");
         reg.innerHTML = choice.children[1].innerHTML;
         abbr.appendChild(orig);
         abbr.appendChild(reg);
         return abbr;
+      }
+      else if(choice.getAttribute("ana") === "errata") {          // errata
+        let erratum = document.createElement("span");
+        erratum.setAttribute("class", "errata tooltip")
+        let sic = document.createElement("span");
+        sic.setAttribute("class", "sic");
+        sic.innerHTML = choice.children[0].innerHTML;
+        let corr = document.createElement("span");
+        corr.setAttribute("class", "corr tiptext");
+        corr.innerHTML = "Erratum: ";
+        corr.innerHTML += choice.children[1].innerHTML;
+        erratum.appendChild(sic);
+        erratum.appendChild(corr);
+        return erratum;
       }
     },
 
@@ -154,7 +178,26 @@
       }
     },
 
-    "add": function(add) {
+    "emph": function(emph) {
+      emphasis = document.createElement("em");
+      if(emph.hasAttribute("style")) {
+        emphasis.style.textAlign = emph.getAttribute("style");
+      }
+      if(emph.hasAttribute("rend")) {
+        emphasis.style.fontStyle = emph.getAttribute("rend");
+      }
+      emphasis.innerHTML = emph.innerHTML;
+      return emphasis;
+    },
+
+    "note": function(note) {
+      var margin = document.createElement("span");
+      margin.setAttribute("class", "margin");
+      margin.innerHTML = note.innerHTML;
+      return margin;
+    },
+
+    /*"add": function(add) {
       var addition = document.createElement("span");
       addition.setAttribute("class", "addition");
       if(add.hasAttribute("rend")) {
@@ -165,7 +208,7 @@
       }
       addition.innerHTML = add.innerHTML;
       return addition;
-    },
+    },*/
 
     "p": function(para) {                                         // paragraphs with id (all of them) get their own <p>-tags
       if(para.hasAttribute("xml:id")) {
@@ -194,7 +237,7 @@
   }
 };
 
-  var translTextBehaviors = {"tei":{                              // all CETEIcean behaviors for translated texts
+  let translTextBehaviors = {"tei":{                              // all CETEIcean behaviors for translated texts
     // Overrides the default ptr behavior, displaying a short link
     //"ptr": function(elt) {
     //  var link = document.createElement("a");
@@ -301,7 +344,7 @@
 
 
   function insertTEIChapter() {                                   // inserts a full TEI document at location PATH in #FULLTEXT
-    let path = pathToData + currentChapter + "/" + currentChapter + mainLanguage + ".xml";
+    let path = `${pathToData}${currentBook}/${currentChapter}/${currentBook}_${currentChapter}${mainLanguage}.xml`;
     c.getHTML5(path, function(data) {
       document.getElementById("fulltext").innerHTML = "";
       document.getElementById("fulltext").appendChild(data);
@@ -312,20 +355,51 @@
     Object.keys(optionsList).forEach(function(key){
       if(key === "marginalia" && optionsList[key] === "true") {
         console.log("marginalia === true");
-        fullTextBehaviors["tei"]["note"] = function(note) {
-          var margin = document.createElement("span");
-          margin.setAttribute("class", "margin");
-          margin.innerHTML = note.innerHTML;
-          return margin;
+        fullTextBehaviors["tei"]["add"] = function(add) {
+          let addition = document.createElement("span");
+          addition.setAttribute("class", "addition");
+          if(add.hasAttribute("rend")) {
+            addition.style.color = add.getAttribute("rend");
+          }
+          if(add.getAttribute("type") === "heading") {
+            addition.className += " heading";
+          } else if(add.getAttribute("type") === "super") {
+            addition.className += " superscript";
+          }
+          addition.innerHTML = add.innerHTML;
+          return addition;
+          //fullTextBehaviors["tei"]["note"] = function(note) {
+          // var margin = document.createElement("span");
+          // margin.setAttribute("class", "margin");
+          // margin.innerHTML = note.innerHTML;
+          // return margin;
         };
-      } else {
+        fullTextBehaviors["tei"]["hi"] = function(hi) {
+          let highlight = document.createElement("span");
+          highlight.setAttribute("class", "highlight");
+          if(hi.hasAttribute("rend")) {
+            highlight.style.color = hi.getAttribute("rend");
+          } else if(hi.hasAttribute("style")) {
+            highlight.style.textDecoration = hi.getAttribute("style");
+            highlight.style.textDecorationColor = "red";
+          }
+          highlight.innerHTML = hi.innerHTML;
+          return highlight;
+        }
+      } else if(key === "marginalia" && optionsList[key] != "true"){
         console.log("marginalia != true");
-        fullTextBehaviors["tei"]["note"] = function(note) {
-          var margin = document.createElement("span");
-          margin.setAttribute("class", "margin");
-          margin.innerHTML = note.innerHTML;
-          margin.innerHTML = "";
-          return margin;
+        fullTextBehaviors["tei"]["add"] = function(add) {
+          var addition = document.createElement("span");
+          addition.setAttribute("class", "addition");
+          addition.innerHTML = add.innerHTML;
+          addition.innerHTML = "";
+          return addition;
+        // fullTextBehaviors["tei"]["note"] = function(note) {
+        //   var margin = document.createElement("span");
+        //   margin.setAttribute("class", "margin");
+        //   margin.innerHTML = note.innerHTML;
+        //   margin.innerHTML = "";
+        //   return margin;
         };
       }
     })
@@ -342,10 +416,11 @@
       } else {
         document.getElementById("optionsPanel").style.height = "100vh";
       }
-    } else if(form == 'notesPanel') {
+    } else if(form == 'notesPanel') {                             // opens the right Panel
+      console.log('notesPanel button clicked');
       if($(window).width() > 600){
-        document.getElementById("noteArea").style.width = "40%";
-        document.getElementById("noteArea").style.marginLeft = "60%";
+        document.getElementById("noteArea").style.width = "30%";
+        document.getElementById("noteArea").style.marginLeft = "70%";
         //document.getElementById("body-text").style.marginRight = "30%";
       } else {
         document.getElementById("noteArea").style.height = "50vh";
@@ -361,7 +436,7 @@
       } else {
         document.getElementById("optionsPanel").style.height = "0";
       }
-    } else if(form === "notesPanel") {
+    } else if(form === "notesPanel") {                            // closes the right Panel
       if($(window).width() > 600){
         document.getElementById("noteArea").style.width = "0";
         document.getElementById("noteArea").style.marginLeft = "100%";
@@ -445,9 +520,9 @@
     newNote.appendChild(title);
     newNote.appendChild(body);
     newNote.appendChild(footer);
-    if($(window).width() < 1200) {              // if on mobile, open commentary panel immediately
+    //if($(window).width() < 1200) {              // if on mobile, open commentary panel immediately
       openPanel('notesPanel');
-    }
+    //}
   }
   
   function deleteNote(noteId) {                                   // deletes a Note wit ID NOTEID
@@ -459,7 +534,7 @@
   }
   
   function fetchParagraph(paraID, noteBodyID, langSpecifier) {    // fetches a paragraph with id PARAID from a file at location PATH
-    let path = pathToData + currentChapter + "/" + currentChapter + langSpecifier + ".xml";
+    let path = `${pathToData}${currentBook}/${currentChapter}/${currentBook}_${currentChapter}${langSpecifier}.xml`;
     d.getHTML5(path, function(data) {
       const noteBody = document.getElementById(noteBodyID);
       for (const p of Array.from(data.getElementsByTagName("tei-p"))) {
@@ -472,24 +547,30 @@
   }
 
   async function insertComments(commentaryFile) {                 //inserts comment links in the body text at all targets specified in COMMENTARYFILE
-    let path = pathToData + currentChapter + "/" + commentaryFile + ".json"
+    let path = `${pathToData}${currentBook}/${currentChapter}/${commentaryFile}.json`;
 
-    var rawCommentary = await fetch(path);
+    let rawCommentary = await fetch(path);
     comments[commentaryFile] = await rawCommentary.json();
-
     
-    for (var key in comments[commentaryFile]) {
+    for (let key in comments[commentaryFile]) {
       if(comments[commentaryFile].hasOwnProperty(key)) {
-        var id = comments[commentaryFile][key].id;
-        var target = document.getElementById(comments[commentaryFile][key].target);
-        var comment = document.createElement("span");
-        comment.setAttribute("class", "comment");
+        let id = comments[commentaryFile][key].id;                // get Appropriate IDs
+        let target = document.getElementById(comments[commentaryFile][key].target);
+
+        let commentContainer = document.createElement("span");    //create Comment Link + Tooltip
+        //commentContainer.setAttribute("class", "tooltip");
+        let commentTip = document.createElement("span");
+        commentTip.setAttribute("class", "tiptext");
+        commentTip.innerHTML = "Kommentar öffnen";
+        let comment = document.createElement("span");
+        comment.setAttribute("class", "comment tooltip");
         comment.setAttribute("id", "comment_" + comments[commentaryFile][key].id)
-        var commentLink = document.createElement("a");
+        let commentLink = document.createElement("a");
         commentLink.setAttribute("class", "commentLink ");
         commentLink.setAttribute("href", "#");
         commentLink.setAttribute('onclick', 'createNote("comment", "' + id + '", "' + commentaryFile + '")');
-        commentLink.innerHTML = " &#x2020;";
+        commentLink.innerHTML = "&#176;";
+        comment.appendChild(commentTip);
         comment.appendChild(commentLink);
         target.appendChild(comment);
       }
@@ -507,41 +588,101 @@
         var commentAuthor = comments[commentCorpus][key].author;
         var commentTitle = comments[commentCorpus][key].title;
         var commentContent = comments[commentCorpus][key].content;
-        var commentsReferences = comments[commentCorpus][key].references;
+        var commentLinks = comments[commentCorpus][key].links;
+        var commentReferences = comments[commentCorpus][key].references;
       }
     }
-    var title = document.createElement("h5");               // note title
+    var title = document.createElement("h5");                     // note title
     title.setAttribute("class", "commentTitle");
     title.innerHTML = commentTitle;
 
-    var author = document.createElement("span");            // note author
+    var author = document.createElement("span");                  // note author
     author.setAttribute("class", "commentAuthor");
     author.innerHTML = commentAuthor;
 
-    var content = document.createElement("div");            // note content
+    var content = document.createElement("div");                  // note content
     content.setAttribute("class", "commentContent");
     content.innerHTML = commentContent;
 
-    var references = document.createElement("div");         // note references
-    references.setAttribute("class", "commentReferences");
-    references.innerHTML = "<h6>Weiterführende Literatur</h6>"
-    var referenceList = document.createElement("ul");
-    for(var i = 0; i < commentsReferences.length; i++) {
-      var item = document.createElement("li");
-      item.innerHTML = commentsReferences[i];
-      referenceList.appendChild(item);
+    if(commentLinks) {
+      var links = document.createElement("div");                    // note links
+      links.setAttribute("class", "commentLinks");
+      links.innerHTML = "<h6>Weblinks</h6>"
+      var linkList = document.createElement("ul");
+      for(var i = 0; i < commentLinks.length; i++) {
+        var item = document.createElement("li");
+        item.innerHTML = '<a href="' + commentLinks[i] + '" target="_blank" rel="noopener">' + commentLinks[i] + '</a>';
+        linkList.appendChild(item);
+      }
+      links.appendChild(linkList);
     }
-    references.appendChild(referenceList);
+
+    if(commentReferences){
+      var references = document.createElement("div");               // note references
+      references.setAttribute("class", "commentReferences");
+      references.innerHTML = "<h6>Weiterführende Literatur</h6>"
+      var referenceList = document.createElement("ul");
+      for(var i = 0; i < commentReferences.length; i++) {
+        var item = document.createElement("li");
+        item.innerHTML = cite(commentReferences[i][0], commentReferences[i][1]);
+        referenceList.appendChild(item);
+      }
+      references.appendChild(referenceList);
+    }
 
     commentText.appendChild(title);
     commentText.appendChild(author);
     commentText.appendChild(content);
-    commentText.appendChild(references);
+    if(links){commentText.appendChild(links);}
+    if(references){commentText.appendChild(references);}
 
     return commentText;
   }
 
-  function waitForEl(selector, callback) {                        //gives document time to build objects that are targeted by functions
+  function printBibliography(option) {
+    if(option === 'csl') {
+      var a = document.createElement("a");
+      a.href = "data/site/sources.json";
+      a.setAttribute("download", "glarean_bibliography_csl.json");
+      a.click();
+    }
+    else if(option === 'txt') {
+
+    }
+  }
+
+  async function getCiteStyle() {
+    let csl = fetch('data/site/mla.csl');
+    return csl;
+  }
+
+  function cite(citeKey, range = '') {                                 // takes a citeKey and a range, returns a short citation
+    for(let i = 0; i < bibliography.length; i++) {
+      if(bibliography[i].id === citeKey) {                        // browse the bibliography
+        let source = bibliography[i];
+        let title = '';
+
+        if(source.hasOwnProperty('title-short')){                 // determine title
+          title = source['title-short'];
+        } else { title = source.title;}
+        let authors = '';
+
+        const authorList = source.author.length;
+        for(let i = 0; i < authorList; i++) {
+          author = source.author[i]['family'];
+          authors += author;
+          if(i == (authorList - 1) || authorList == 1) {
+            authors += ', ';
+          } else {authors += ' &amp; ';}
+        }
+        let citation = '<span class="tooltip"><a href="bibliography.php#' + citeKey + '" rel="noopener" target="blank">' + authors + '</a><span class="tiptext">Zum Bibliographieeintrag</span></span>' + title;
+        let citeString = '<span class="citation">' + citation + ', ' + range + '.</span>'
+        return citeString;
+      }
+    }
+  }
+
+  function waitForEl(selector, callback) {                        // gives document time to build objects that are targeted by functions
     if (jQuery(selector).length) {
       callback;
     } else {

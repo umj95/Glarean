@@ -1,0 +1,16 @@
+[
+  {
+    "id": "0001",
+    "target": "add_001",
+    "author": "Janosch Umbreit",
+    "title": "Johannes Algoers Auszeichnungen",
+    "content": "Die roten Markierungen im Text folgen den Auszeichnungen eines Vorbesitzers dieses Exemplars des <em>Dodecachordon</em>, der sich in einer Notiz am Ende des Werkes als Johannes Algoer identifiziert und seine Arbeit mit dem Buch auf das Jahr 1555 datiert. Als Freiburger Student ist es durchaus wahrscheinlich, dass er selbst bei Glarean studierte. Weitere Details folgen, sobald mehr der handschriftlichen Notizen entziffert sind."
+  },
+  {
+    "id": "0002",
+    "target": "add_022",
+    "author": "Janosch Umbreit",
+    "title": "Prosequamur / Prosequemur",
+    "content": "Algoers Verbesserung deckt sich mit der Anmerkung im Errata-Verzeichnis: \"Pagina prima, […] prosequemur, non, prosequamur\"."
+  }
+]

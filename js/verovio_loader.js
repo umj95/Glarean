@@ -10,7 +10,7 @@ function insertSVGs(toolkit, meiNumber, files) {                  // renders the
 }
 
 async function getMEIfiles(meiNumber) {                           // retrieves the mei-files, returns as array / promise
-  var path = pathToData + currentChapter + "/";
+  var path = `${pathToData}${currentBook}/${currentChapter}/`;
   var fetches = [];
   for (let i = 0; i < meiNumber.length; i++) {
     fileLocation = meiNumber[i].parentNode.id;

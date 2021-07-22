@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>Von der Unterteilung und Definition der Musik</title>
+				<author>Glareanus, Henricus Loriti</author>
+        <editor role="editor">Sean Ferguson</editor>
+        <editor role="editor">Charles Atkinson</editor>
+        <editor role="editor">Bradley Jon Tucker</editor>
+        <editor role="editor">Thomas J. Mathiesen</editor>
+				<editor role="editor">Janosch Umbreit</editor>
+				<respStmt>
+						<resp>basierend auf dem digitalen Text aus dem Thesaurus Musicarum Latinarum, codiert und übersetzt von</resp>
+						<name>Janosch Umbreit</name>
+				</respStmt>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Janosch Umbreit</publisher>
+			</publicationStmt>
+			<sourceDesc>
+        <biblStruct>
+          <monogr>
+            <author>Glareanus, Henricus Loriti (1488-1563)</author>
+            <title>Dodecachordon</title>
+            <edition>Ed. stereotypa</edition>
+            <imprint>
+              <pubPlace>Basileae</pubPlace>
+              <publisher>Per Henrichvm Petri</publisher>
+              <date>1547</date>
+            </imprint>
+            <extent>470 S.</extent>
+          </monogr>
+        </biblStruct>
+        <bibl>
+          Freiburger Exemplar von Glareans Dodecachordon, mit handschriftlichen Annotationen, aus dem Besitz von <name type="person" ref="http://d-nb.info/gnd/1047654199">Johannes Algoer</name>
+        </bibl>
+      </sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<p>Diese Datei enthält das erste Kapitel des ersten Buches aus Heinrich Glareans Dodekachordon in deutscher Übersetzung nach einer Übertragung des Thesaurus Musicarum Latinarum. Dies ist, zusammen mit dem lateinischen Original Übersetzung, teil eines digitalen Editionsprojektes ausgewählter Passagen aus dem Dodekachordon.</p>
+		</encodingDesc>
+		<profileDesc>
+			<creation>
+				<date when="2021-07-22">22.07.2021</date>
+				<name type="place">Regensburg, Deutschland</name>
+			</creation>
+			<langUsage>
+				<language ident="la">Latein</language>
+			</langUsage>
+		</profileDesc>
+		<revisionDesc>
+			<change when="2021-07-22">Initialversion</change>
+		</revisionDesc>
+	</teiHeader>
+	<text>
+		<body>
+      <div1 type="chapter" n="1">
+        <pb n="1"/>
+        <head n="1">Von der Unterteilung und Definition der Musik, Kapitel 1.</head>
+        <p xml:id="p1">Die Musik ist zweigeteilt, in Theorie und Praxis. Die Theorie besteht in der Betrachtung musikalischer Angelegenheiten. 
+        Sie ist dreigeteilt, laut <name type="person">Boethius</name>, Buch 1, Kapitel 2, nämlich: Weltmusik, welche die Harmonie der ganzen Welt und ihrer Teile mit einbezieht; menschliche Musik, welche die Beziehung zwischen Körper und Geist und deren Verbindungen behandelt; drittens, Musik, von der man sagt, sie beruhe auf Instrumenten und in der Tat diskutiert derselbe Autor diese Dinge in fünf Büchern. Praxis besteht in der Ausführung der Musik. Dies besteht aus <term>Rhythmus</term>, aus <term>Metrum</term> und aus <term>Klang</term>. Manche Klänge finden sich in Instrumenten, die untereinander schon verschieden sind, andere finden sich in der menschlichen Stimme, von denen wir nun versuchen werden, die wichtigste, nämlich die regulierte Musik zu behandeln, die den Gesang betrifft. Gesang jedoch ist zweigeteilt: der eine, einfach und gleichmäßig und für gewöhnlich in Kirchen verwendet, ist die <term>musica plana</term>, Gregorianisch genannt. Der andere ist verschieden und vielgestaltig, von ihm stammt die Musik, die einige <term>figural</term>, andere <term>mensural</term> nennen. Da zu diesem nichts Gewisses bei den Alten zu finden ist, zumindest soweit ich weiß, werden wir hier der Tradition der Autoren unserer eigenen Zeit folgen.</p>
+        <p xml:id="p2"><emph style="center" rend="italic">Definition der Theorie.</emph><lb/>
+        Musik ist die Fähigkeit, durch Vernunft und Urteilskraft, die Unterschiede zwischen hohen und tiefen Tönen vorsichtig abzuwägen. <name type="person">Boethius</name> Buch 5, Kapitel 1.<lb/>
+        <emph style="center" rend="italic">Definition der Praxis.</emph><lb/>
+        Musik ist die Wissenschaft vom rhythmischen Singen. <name type="person">Sankt Augustin</name>.</p>
+      </div1>
+    </body>
+  </text>
+</TEI>

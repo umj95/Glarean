@@ -122,7 +122,7 @@
                            <rest xml:id="rest-0000002047220626" dur.ppq="4" dur="1" />
                            <note xml:id="note-0000001947787825" dur.ppq="4" dur="1" oct="4" pname="a">
                               <verse xml:id="verse-0000000537201575" n="1">
-                                 <syl xml:id="syl-0000001374102796" con="s" wordpos="s">qui</syl>
+                                 <syl xml:id="syl-0000001374102796" con="s">qui</syl>
                               </verse>
                            </note>
                         </layer>
@@ -159,7 +159,7 @@
                         <layer xml:id="layer-0000001526254758" n="1">
                            <note xml:id="note-0000000332595982" dur.ppq="4" dur="1" oct="4" pname="g">
                               <verse xml:id="verse-0000001085394625" n="1">
-                                 <syl xml:id="syl-0000001930164446" fontstyle="italic" con="s" wordpos="s">qui</syl>
+                                 <syl xml:id="syl-0000001930164446" fontstyle="italic" con="s">qui</syl>
                               </verse>
                            </note>
                            <note xml:id="note-0000001391017405" dots="1" dur.ppq="6" dur="1" oct="4" pname="e">
