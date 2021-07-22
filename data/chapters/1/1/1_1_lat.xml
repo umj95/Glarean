@@ -59,18 +59,25 @@
       <div1 type="chapter" n="1">
         <pb n="1"/>
         <head n="1">De Musices diuisione ac definitione, Caput I.</head>
-        <p xml:id="p1"><hi rend="red">Musica</hi> duplex est, <hi style="underline"><add type="super">Speculatiua</add>Theorice ac <add type="super">[???]</add>practice.</hi><note><add><hi style="underline">DIVISIO</hi> MUSICES</add></note> Theorice circa rerum musicarum <add type="super">Speculationem</add>contemplationem<note><add><hi rend="underline">Quid</hi> sn Theorica</add></note> uersatur: Ea triplex est authore <name type="person">Boethio</name> libro 1. cap. 2.<note><add>[???]</add></note> <hi style="underline"><hi rend="red">M</hi>undana</hi>, quae de harmonia totius et partium mundi consyderat. <hi style="underline"><hi rend="red">H</hi>umana</hi> quae de proportionibus corporis et animae, atque harum inter se partium pertractat. 
+        <p xml:id="p1"><hi rend="red" xml:id="add_001">Musica</hi> duplex est, <hi style="underline" xml:id="add_002"><add type="super" xml:id="add_003">Speculatiua</add>Theorice ac <add type="super" xml:id="add_004">[???]</add>practice.</hi><note><add xml:id="add_005"><hi style="underline">DIVISIO</hi> MUSICES</add></note> Theorice circa rerum musicarum <add type="super" xml:id="add_006">Speculationem</add>contemplationem<note><add xml:id="add_007"><hi rend="underline">Quid</hi> sn Theorica</add></note> uersatur: Ea triplex est authore <name type="person">Boethio</name> libro 1. cap. 2.<note><add xml:id="add_008">[???]</add></note> <hi style="underline" xml:id="add_009"><hi rend="red">M</hi>undana</hi>, quae de harmonia totius et partium mundi consyderat. 
+				<hi style="underline" xml:id="add_010"><hi rend="red">H</hi>umana</hi> quae de proportionibus corporis et animae, atque harum inter se partium pertractat. 
 				<note>
-					<add>
+					<add xml:id="add_011">
 						<figure type="image">
 							<graphic url="images/1_1_images_1.png"/>
 						</figure>
 					</add>
-				</note><hi style="underline">Tertia, quae in qui</hi>busdam consistere dicitur instrumentis, ac de ea quidem idem author quinque libris disputat. <hi style="underline"><hi rend="red">P</hi>ractice circa executionem cantus consistit.</hi> Haec in <term>Rhythmis</term> est, in <term>metris</term>, in <term>sonis</term>. Et soni quidem, alij in instrumentis, quae et ipsa uaria sunt, alij in humana uoce reperiuntur, de quibus nunc potissimum disserere conabimur. de regulata uidelicet musica, quae de cantu est.<note><add rend="red">Cantus e[st?] duplex</add></note> <hi style="underline"><hi rend="red">P</hi>orro cantus duplex est, alter simplex ac uniformis,</hi> quo nunc uulgo in templis utuntur, et de hoc tractat <term>musica plana</term>, quam Gregorianam uocant: <hi style="underline">alter uarius ac multiformis, de</hi> quo est musica quam alij <term>figuralem</term>, alij <term>mensuralem</term> nunc uocant. De hoc cantu quando apud ueteres nihil, quod equidem sciam, reperitur certi, aetatis nostrae authorum traditionem in posterioribus prosequemur.</p>
-        <p xml:id="p2"><emph style="center" rend="italic">Definitio Theorices.</emph><lb/>
-        <hi style="underline"><hi rend="red">M</hi>vsica est facultas differentias acutorum et grauium sonorum, sensu ac ratione perpendens. <name type="person">Boethius</name></hi> libro 5. cap. 1.<lb/>
+				</note>
+				<hi style="underline">Tertia, quae in qui</hi>busdam consistere dicitur instrumentis, ac de ea quidem idem author quinque libris disputat. 
+				<hi style="underline" xml:id="add_012"><hi rend="red">P</hi>ractice circa executionem cantus consistit.
+				</hi> Haec in <add type="super" xml:id="add_013">harmonijs</add><term>Rhythmis</term> est, in <add type="super" xml:id="add_014">[???]</add><term>metris</term>, in <add type="super" xml:id="add_015">[???]</add><term>sonis</term>. Et soni quidem, alij in <add type="super" xml:id="add_016">musicis</add>instrumentis, quae et ipsa uaria sunt, alij in humana uoce reperiuntur, de quibus nunc potissimum disserere conabimur. 
+				<add type="super" xml:id="add_017">[???]</add>de regulata uidelicet musica, quae de cantu est.<note><add rend="red" xml:id="add_018">Cantus e[st?] duplex</add></note> 
+				<hi style="underline" xml:id="add_019"><hi rend="red">P</hi>orro cantus duplex est, alter <add type="super" xml:id="add_020">[???]</add>simplex ac uniformis,</hi> quo nunc uulgo in templis utuntur, et de hoc tractat <term>musica plana</term>, quam Gregorianam uocant: <hi style="underline" xml:id="add_021">alter uarius ac multiformis, de</hi> quo est musica quam alij <term>figuralem</term>, alij <term>mensuralem</term> nunc uocant. 
+				De hoc cantu quando apud ueteres nihil, quod equidem sciam, reperitur certi, aetatis nostrae authorum traditionem in posterioribus prosequ<add type="super" xml:id="add_022">e</add>amur.</p>
+        <p xml:id="p2"><emph style="center" rend="italic">Definitio <add type="super" xml:id="add_023">Contemplatiuae siue Contemplatiuae.</add>Theorices.</emph><lb/>
+        <hi style="underline" xml:id="add_024"><hi rend="red">M</hi>vsica est <add type="super" xml:id="add_025">scientia[?]</add>facultas <add type="super" xml:id="add_026">distantias[?]</add>differentias acutorum et grauium <note><add xml:id="add_026">quia absq audi[??] homo [???] musicam [???].</add></note>sonorum, sensu ac ratione <add type="super" xml:id="add_027">indicans</add>perpendens. <name type="person">Boethius</name></hi> libro 5. cap. 1.<lb/>
         <emph style="center" rend="italic">Definitio Practices.</emph><lb/>
-        <hi style="underline"><hi rend="red">M</hi>vsica est recte modulandi scientia.</hi> <name type="person">Diuus Augustinus</name>.</p>
+        <hi style="underline" xml:id="add_028"><hi rend="red">M</hi>vsica est recte modulandi scientia.</hi> <name type="person">Diuus Augustinus</name>.</p>
       </div1>
     </body>
   </text>
