@@ -88,8 +88,8 @@
         <h1><span class="grc">ΔΟΔΕΚΑΧΟΡΔΟΝ</span></h1>
         <a href="javascript:void(0);" class="hamburger" onclick="topNavExpand()">&#x2630;</a>
         <nav id="topnav" class="main">
-          <a href="index.php">Home</a></li>
-          <a href="chapter_select.php">Kapitel</a></li>
+          <a href="index.php">Home</a>
+          <a href="chapter_select.php">Kapitel</a>
           <a href="about.php">Über dieses Projekt</a>
           <a href="edition.php">Editionsrichtlinien</a>
           <a href="bibliography.php">Bibliographie</a>
