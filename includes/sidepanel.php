@@ -33,7 +33,7 @@
               echo    "</label>\n"
                     . "<input id=\"transl$language\" type=\"checkbox\" name=\"secondaryLanguages[]\" value=\"$language\"";
               if(in_array($language, $chapterOptions['secondaryLanguages'])) {
-                echo  "checked ";
+                echo  " checked ";
               }
               echo    "/><br/>\n";
               $i++;

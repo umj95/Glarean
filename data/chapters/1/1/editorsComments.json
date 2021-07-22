@@ -12,5 +12,12 @@
     "author": "Janosch Umbreit",
     "title": "Prosequamur / Prosequemur",
     "content": "Algoers Verbesserung deckt sich mit der Anmerkung im Errata-Verzeichnis: \"Pagina prima, […] prosequemur, non, prosequamur\"."
+  },
+  {
+    "id": "0003",
+    "target": "add_011",
+    "author": "Janosch Umbreit",
+    "title": "Randskizzen",
+    "content": "Gerade in den ersten Kapiteln visualisiert Algoer von Zeit zu Zeit Kapitelinhalte in den Marginalien. Da diese Skizzen nur schwer kodierbar sind, werden sie hier als Bilder wiedergegeben. So können sie gleichzeitig als Illustration von Algoers Handschrift dienen."
   }
 ]

@@ -22,17 +22,16 @@
 
     optionalBehaviors(chapterOptions);                            // Load custom TEI behaviors
             
-    d.addBehaviors(translTextBehaviors);                          // add behaviors to the translation text object
+    translText.addBehaviors(translTextBehaviors);                 // add behaviors to the translation text object
 
-    c.addBehaviors(fullTextBehaviors);                            // add behaviors to the main language text object
-
-    //getBibliography().then(result => bibliography = result);
+    fullText.addBehaviors(fullTextBehaviors);                     // add behaviors to the main language text object
 
   </script>
+  
   <div class="chapter">
     <section id="body-text" class="body-text">
       <div id="fulltext" class="text">
-        <script>insertTEIChapter()</script>                       <!-- insert the TEI document -->
+        <script>insertTEIChapter(fullText)</script>                       <!-- insert the TEI document -->
       </div>
     </section>
     <button name="comments" class="panel" id="notesButton" onclick="openPanel('notesPanel')"></button>

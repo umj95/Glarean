@@ -62,6 +62,18 @@
   <li>Marginalien werden mit dem Tag <pre>&lt;note&gt;[Text]&lt;/note&gt;</pre> gekennzeichnet</li>
   <li>Da Marginalien immer Handschriftlich sind, sind sie folglich immer: <pre>&lt;note&gt;&lt;add&gt;[Text]&lt;/add&gt;&lt;/note&gt;</pre></li>
 </ul>
+<h3>Errata (lt. Errata-Verzeichnis)</h3>
+<ul>
+  <li>Errata werden mit dem <pre>choice</pre>-tag gekennzeichnet. Die im Fließtext vorkommende Variante wird mit <pre>sic</pre>-ausgezeichnet, die Verbesserung aus dem Errata-Verzeichnis mit <pre>corr</pre>.</li>
+</ul>
+<p>Beispiel:<br/>
+<pre class="block">
+  &lt;choice ana="errata"&gt;
+    &lt;sic&gt;prosequamur&lt;/sic&gt;
+    &lt;corr&gt;prosequemur&lt;/corr&gt;
+  &lt;/choice&gt;
+</pre>
+</p>
 <h3>Transliterationen</h3>
 <ul>
   <li>Transliterationen, bei denen Original und Transliteration angegeben werden, sind umspannt von einem <pre>choice</pre>-tag: <pre>&lt;choice ana="transl"&gt;[Original und Transliteration]&lt;/choice&gt;</pre></li>
