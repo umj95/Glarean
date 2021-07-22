@@ -59,11 +59,18 @@
       <div1 type="chapter" n="1">
         <pb n="1"/>
         <head n="1">De Musices diuisione ac definitione, Caput I.</head>
-        <p xml:id="p1">Musica duplex est, Theorice ac practice.<note><add>DIVISIO MUSICES</add></note> Theorice circa rerum musicarum contemplationem<note><add>Quid sn Theorica</add></note> uersatur: Ea triplex est authore <name type="person">Boethio</name> libro 1. cap. 2. Mundana, quae de harmonia totius et partium mundi consyderat. Humana quae de proportionibus corporis et animae, atque harum inter se partium pertractat. Tertia, quae in quibusdam consistere dicitur instrumentis, ac de ea quidem idem author quinque libris disputat. Practice circa executionem cantus consistit. Haec in <term>Rhythmis</term> est, in <term>metris</term>, in <term>sonis</term>. Et soni quidem, alij in instrumentis, quae et ipsa uaria sunt, alij in humana uoce reperiuntur, de quibus nunc potissimum disserere conabimur. de regulata uidelicet musica, quae de cantu est. Porro cantus duplex est, alter simplex ac uniformis, quo nunc uulgo in templis utuntur, et de hoc tractat <term>musica plana</term>, quam Gregorianam uocant: alter uarius ac multiformis, de quo est musica quam alij <term>figuralem</term>, alij <term>mensuralem</term> nunc uocant. De hoc cantu quando apud ueteres nihil, quod equidem sciam, reperitur certi, aetatis nostrae authorum traditionem in posterioribus prosequemur.</p>
-        <p>Definitio Theorices.</p>
-        <p>Mvsica est facultas differentias acutorum et grauium sonorum, sensu ac ratione perpendens. <name type="person">Boethius</name> libro 5. cap. 1.</p>
-        <p>Definitio Practices.</p>
-        <p>Mvsica est recte modulandi scientia. <name type="person">Diuus Augustinus</name>.</p>
+        <p xml:id="p1"><hi rend="red">Musica</hi> duplex est, <hi style="underline"><add type="super">Speculatiua</add>Theorice ac <add type="super">[???]</add>practice.</hi><note><add><hi style="underline">DIVISIO</hi> MUSICES</add></note> Theorice circa rerum musicarum <add type="super">Speculationem</add>contemplationem<note><add><hi rend="underline">Quid</hi> sn Theorica</add></note> uersatur: Ea triplex est authore <name type="person">Boethio</name> libro 1. cap. 2.<note><add>[???]</add></note> <hi style="underline"><hi rend="red">M</hi>undana</hi>, quae de harmonia totius et partium mundi consyderat. <hi style="underline"><hi rend="red">H</hi>umana</hi> quae de proportionibus corporis et animae, atque harum inter se partium pertractat. 
+				<note>
+					<add>
+						<figure type="image">
+							<graphic url="images/1_1_images_1.png"/>
+						</figure>
+					</add>
+				</note><hi style="underline">Tertia, quae in qui</hi>busdam consistere dicitur instrumentis, ac de ea quidem idem author quinque libris disputat. <hi style="underline"><hi rend="red">P</hi>ractice circa executionem cantus consistit.</hi> Haec in <term>Rhythmis</term> est, in <term>metris</term>, in <term>sonis</term>. Et soni quidem, alij in instrumentis, quae et ipsa uaria sunt, alij in humana uoce reperiuntur, de quibus nunc potissimum disserere conabimur. de regulata uidelicet musica, quae de cantu est.<note><add rend="red">Cantus e[st?] duplex</add></note> <hi style="underline"><hi rend="red">P</hi>orro cantus duplex est, alter simplex ac uniformis,</hi> quo nunc uulgo in templis utuntur, et de hoc tractat <term>musica plana</term>, quam Gregorianam uocant: <hi style="underline">alter uarius ac multiformis, de</hi> quo est musica quam alij <term>figuralem</term>, alij <term>mensuralem</term> nunc uocant. De hoc cantu quando apud ueteres nihil, quod equidem sciam, reperitur certi, aetatis nostrae authorum traditionem in posterioribus prosequemur.</p>
+        <p xml:id="p2"><emph style="center" rend="italic">Definitio Theorices.</emph><lb/>
+        <hi style="underline"><hi rend="red">M</hi>vsica est facultas differentias acutorum et grauium sonorum, sensu ac ratione perpendens. <name type="person">Boethius</name></hi> libro 5. cap. 1.<lb/>
+        <emph style="center" rend="italic">Definitio Practices.</emph><lb/>
+        <hi style="underline"><hi rend="red">M</hi>vsica est recte modulandi scientia.</hi> <name type="person">Diuus Augustinus</name>.</p>
       </div1>
     </body>
   </text>
