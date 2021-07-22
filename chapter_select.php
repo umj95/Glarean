@@ -5,10 +5,9 @@
     <section class="body-text">
         <div id="fulltext" class="text">
         <h2>Kapitel</h2>
-        <p>Bitte wählen Sie hier Kapitel und Sprache aus. Sie können auch innerhalb eines Kapitels Passagen in der Übersetzung / im Original lesen.</p>
-        <p>Bisher wurde das folgende Kapitel aufbereitet:</p>
+        <p>Bitte wählen Sie hier Kapitel und Sprache aus. Sie können auch innerhalb eines Kapitels Passagen in der Übersetzung / im Original lesen. Noch nicht freigegebene Kapitel sind grau markiert.</p>
         <h3>Libri primi Capita XXI.</h3>
-        <ol>
+        <ol class="chapter_select">
           <li>De Musices diuisione ac definitione Caput I.</li>
           <li>De Elementis Practices Caput II.</li>
           <li>Quae in Guidonis typo rudibus huius artis consyderanda Caput III.</li>
@@ -32,7 +31,7 @@
           <li>Parasceue ad sequentis libri commentationem Caput XXI.</li>
         </ol>
         <h3>Libri secundi, Capita XXXIX</h3>
-        <ol>
+        <ol class="chapter_select">
         <li>Quo pacto uere Modorum discrimen sumendum Caput I.</li>
           <li>Quid systema, quae Modorum nomina, qui cuique Diapason Modus aptandus Caput II.</li>
           <li>Quomodo ex connexione Diatessaron ac diapente XXIIII Diapason species fiant, e quibus XII reijcantur, XII recipiantur Caput III.</li>
@@ -74,7 +73,7 @@
           <li>De inueniendis Tenoribus ad Phonascos admonitio. Caput XXXIX.</li>
         </ol>
         <h3>Libri tertij Capita XXVI.</h3>
-        <ol>
+        <ol class="chapter_select">
           <li>De notarum figuris. Caput I.</li>
           <li>De notarum ligaturis. Caput II.</li>
           <li>De Pausis. Caput III.</li>
@@ -100,7 +99,7 @@
           <li>De Hypoionico. Caput XXIII.</li>
           <li>De binorum Modorum connexione exempla, atque inibi obiter Iusquini Pratensis Encomium. Caput XXIIII</li>
           <li>De Tenoribus Diapason non explentibus. Caput XXV.</li>
-          <li>De Symphonetarum Ingenio Caput XXVI · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=26&mainLanguage=_lat&marginalia=false">Latein</a><span class="tiptext">Dieses Kapitel auf latein Lesen</span></span> · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=26&mainLanguage=_deu&marginalia=false">Deutsch</a><span class="tiptext">Dieses Kapitel auf deutsch lesen</span></span></li>
+          <li class="released">De Symphonetarum Ingenio Caput XXVI · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=26&mainLanguage=_lat&marginalia=false">Latein</a><span class="tiptext">Dieses Kapitel auf latein Lesen</span></span> · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=26&mainLanguage=_deu&marginalia=false">Deutsch</a><span class="tiptext">Dieses Kapitel auf deutsch lesen</span></span></li>
         </ol>
         </div>
       </div>
