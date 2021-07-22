@@ -565,7 +565,7 @@ button.panel {
   .chapter h1, .chapter h2, .chapter h3, .chapter h4, .chapter h5, .chapter h6 {
     margin: 0.7em 0 0.2em 0;
     /* font-family: var(--headings-font); */
-    font-feature-settings: "smcp";
+    /* font-feature-settings: "smcp"; */
     letter-spacing: 0.075em;
     line-height: normal;}
   
@@ -624,6 +624,11 @@ button.panel {
     color: darkred;
   }
 
+  tei-lb::after {
+    content: "";
+    display: block;
+  }
+
   @media only screen and (max-width: 1100px) {
     .body-text { grid-column: 1 / 25;
       overflow-x: hidden;
@@ -665,6 +670,14 @@ button.panel {
     text-align: center;
   }
 
+  .addition.superscript {
+    display: inline-block;
+    position: absolute;
+    transform: translate(0, -60%);
+    font-size: var(--comment-fontsize);
+    text-decoration: none;
+  }
+
   /* ----------------- Margins ----------------- */
   
   .margin {
@@ -677,6 +690,14 @@ button.panel {
 
   .margin em {
     font-style: normal;}
+  
+  .margin img {
+    max-width: 15em;
+    width: auto;
+    height: auto;
+    padding: 0.2em;
+    border: 0.1em solid var(--header-blue);
+  }
 
   @media only screen and (max-width: 1100px) {
     .margin {margin-right: -30%;}

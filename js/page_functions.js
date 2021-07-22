@@ -76,7 +76,7 @@
     },
 
     "pb": function(elt) {                                         // page breaks get their own div-container
-      var pb = document.createElement("div");
+      let pb = document.createElement("div");
       pb.setAttribute("class", "pb");
       pb.innerHTML = elt.getAttribute("n");
       //pb.appendChild(document.createElement("br"));
@@ -109,6 +109,12 @@
         meiBody.setAttribute("class", "meiBody");
         meiBody.setAttribute("id", meiFile + "-body");            // the body's id attribute is the hook for Verovio to pick the right file
         return mei;
+      } else if(fig.getAttribute("type") === "image") {
+        let url = `${pathToData}${currentBook}/${currentChapter}/`;
+        url += fig.children[0].getAttribute("url");
+        image = document.createElement("img");
+        image.setAttribute("src", url);
+        return image;
       }
     },
 
@@ -156,6 +162,18 @@
         init.innerHTML = initial.innerHTML;
         return init;
       }
+    },
+
+    "emph": function(emph) {
+      emphasis = document.createElement("em");
+      if(emph.hasAttribute("style")) {
+        emphasis.style.textAlign = emph.getAttribute("style");
+      }
+      if(emph.hasAttribute("rend")) {
+        emphasis.style.fontStyle = emph.getAttribute("rend");
+      }
+      emphasis.innerHTML = emph.innerHTML;
+      return emphasis;
     },
 
     "note": function(note) {
@@ -324,13 +342,15 @@
       if(key === "marginalia" && optionsList[key] === "true") {
         console.log("marginalia === true");
         fullTextBehaviors["tei"]["add"] = function(add) {
-          var addition = document.createElement("span");
+          let addition = document.createElement("span");
           addition.setAttribute("class", "addition");
           if(add.hasAttribute("rend")) {
             addition.style.color = add.getAttribute("rend");
           }
           if(add.getAttribute("type") === "heading") {
             addition.className += " heading";
+          } else if(add.getAttribute("type") === "super") {
+            addition.className += " superscript";
           }
           addition.innerHTML = add.innerHTML;
           return addition;
@@ -340,6 +360,18 @@
           // margin.innerHTML = note.innerHTML;
           // return margin;
         };
+        fullTextBehaviors["tei"]["hi"] = function(hi) {
+          let highlight = document.createElement("span");
+          highlight.setAttribute("class", "highlight");
+          if(hi.hasAttribute("rend")) {
+            highlight.style.color = hi.getAttribute("rend");
+          } else if(hi.hasAttribute("style")) {
+            highlight.style.textDecoration = hi.getAttribute("style");
+            highlight.style.textDecorationColor = "red";
+          }
+          highlight.innerHTML = hi.innerHTML;
+          return highlight;
+        }
       } else if(key === "marginalia" && optionsList[key] != "true"){
         console.log("marginalia != true");
         fullTextBehaviors["tei"]["add"] = function(add) {
