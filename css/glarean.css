@@ -673,7 +673,7 @@ button.panel {
   .addition.superscript {
     display: inline-block;
     position: absolute;
-    transform: translate(0, -60%);
+    transform: translate(0, -55%);
     font-size: var(--comment-fontsize);
     text-decoration: none;
   }

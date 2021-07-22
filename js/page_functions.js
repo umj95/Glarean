@@ -535,22 +535,28 @@
   async function insertComments(commentaryFile) {                 //inserts comment links in the body text at all targets specified in COMMENTARYFILE
     let path = `${pathToData}${currentBook}/${currentChapter}/${commentaryFile}.json`;
 
-    var rawCommentary = await fetch(path);
+    let rawCommentary = await fetch(path);
     comments[commentaryFile] = await rawCommentary.json();
-
     
-    for (var key in comments[commentaryFile]) {
+    for (let key in comments[commentaryFile]) {
       if(comments[commentaryFile].hasOwnProperty(key)) {
-        var id = comments[commentaryFile][key].id;
-        var target = document.getElementById(comments[commentaryFile][key].target);
-        var comment = document.createElement("span");
-        comment.setAttribute("class", "comment");
+        let id = comments[commentaryFile][key].id;                // get Appropriate IDs
+        let target = document.getElementById(comments[commentaryFile][key].target);
+
+        let commentContainer = document.createElement("span");    //create Comment Link + Tooltip
+        //commentContainer.setAttribute("class", "tooltip");
+        let commentTip = document.createElement("span");
+        commentTip.setAttribute("class", "tiptext");
+        commentTip.innerHTML = "Kommentar öffnen";
+        let comment = document.createElement("span");
+        comment.setAttribute("class", "comment tooltip");
         comment.setAttribute("id", "comment_" + comments[commentaryFile][key].id)
-        var commentLink = document.createElement("a");
+        let commentLink = document.createElement("a");
         commentLink.setAttribute("class", "commentLink ");
         commentLink.setAttribute("href", "#");
         commentLink.setAttribute('onclick', 'createNote("comment", "' + id + '", "' + commentaryFile + '")');
-        commentLink.innerHTML = " &#x2020;";
+        commentLink.innerHTML = " &#176;";
+        comment.appendChild(commentTip);
         comment.appendChild(commentLink);
         target.appendChild(comment);
       }
