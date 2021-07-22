@@ -1,5 +1,7 @@
 /* ================================================================================= Global Variables ================ */
 
+  let currentBook = "";                                           // the current book
+
   let currentChapter = "";                                        // the current main Chapter to be displayed
 
   const languages = [];
@@ -310,7 +312,7 @@
 
 
   function insertTEIChapter() {                                   // inserts a full TEI document at location PATH in #FULLTEXT
-    let path = pathToData + currentChapter + "/" + currentChapter + mainLanguage + ".xml";
+    let path = `${pathToData}${currentBook}/${currentChapter}/${currentBook}_${currentChapter}${mainLanguage}.xml`;
     c.getHTML5(path, function(data) {
       document.getElementById("fulltext").innerHTML = "";
       document.getElementById("fulltext").appendChild(data);
@@ -486,7 +488,7 @@
   }
   
   function fetchParagraph(paraID, noteBodyID, langSpecifier) {    // fetches a paragraph with id PARAID from a file at location PATH
-    let path = pathToData + currentChapter + "/" + currentChapter + langSpecifier + ".xml";
+    let path = `${pathToData}${currentBook}/${currentChapter}/${currentBook}_${currentChapter}${langSpecifier}.xml`;
     d.getHTML5(path, function(data) {
       const noteBody = document.getElementById(noteBodyID);
       for (const p of Array.from(data.getElementsByTagName("tei-p"))) {
@@ -499,7 +501,7 @@
   }
 
   async function insertComments(commentaryFile) {                 //inserts comment links in the body text at all targets specified in COMMENTARYFILE
-    let path = pathToData + currentChapter + "/" + commentaryFile + ".json"
+    let path = `${pathToData}${currentBook}/${currentChapter}/${commentaryFile}.json`;
 
     var rawCommentary = await fetch(path);
     comments[commentaryFile] = await rawCommentary.json();

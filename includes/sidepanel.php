@@ -82,10 +82,11 @@
       <input type="submit" name="submit" value="submit"/>
     </form>
     <p><a href="<?php 
+      $thisBook = $chapterOptions['currentBook'];
       $thisChapter = $chapterOptions['currentChapter'];
       $thisLanguage = $chapterOptions['mainLanguage'];
       echo "/data/chapters/";
-      echo "$thisChapter/$thisChapter"."$thisLanguage.xml";
+      echo "$thisBook/$thisChapter/$thisBook"."_"."$thisChapter"."$thisLanguage.xml";
     ?>" download>Dieses Kapitel als TEI-Datei Herunterladen</a></p>
   </div>
 </div>
