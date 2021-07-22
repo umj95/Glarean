@@ -73,7 +73,12 @@
 				</hi> Haec in <add type="super" xml:id="add_013">harmonijs</add><term>Rhythmis</term> est, in <add type="super" xml:id="add_014">[???]</add><term>metris</term>, in <add type="super" xml:id="add_015">[???]</add><term>sonis</term>. Et soni quidem, alij in <add type="super" xml:id="add_016">musicis</add>instrumentis, quae et ipsa uaria sunt, alij in humana uoce reperiuntur, de quibus nunc potissimum disserere conabimur. 
 				<add type="super" xml:id="add_017">[???]</add>de regulata uidelicet musica, quae de cantu est.<note><add rend="red" xml:id="add_018">Cantus e[st?] duplex</add></note> 
 				<hi style="underline" xml:id="add_019"><hi rend="red">P</hi>orro cantus duplex est, alter <add type="super" xml:id="add_020">[???]</add>simplex ac uniformis,</hi> quo nunc uulgo in templis utuntur, et de hoc tractat <term>musica plana</term>, quam Gregorianam uocant: <hi style="underline" xml:id="add_021">alter uarius ac multiformis, de</hi> quo est musica quam alij <term>figuralem</term>, alij <term>mensuralem</term> nunc uocant. 
-				De hoc cantu quando apud ueteres nihil, quod equidem sciam, reperitur certi, aetatis nostrae authorum traditionem in posterioribus prosequ<add type="super" xml:id="add_022">e</add>amur.</p>
+				De hoc cantu quando apud ueteres nihil, quod equidem sciam, reperitur certi, aetatis nostrae authorum traditionem in posterioribus 
+				<choice ana="errata">
+					<sic>prosequ<add type="super" xml:id="add_022">e</add>amur</sic>
+					<corr>prosequemur</corr>
+				</choice>
+				.</p>
         <p xml:id="p2"><emph style="center" rend="italic">Definitio <add type="super" xml:id="add_023">Contemplatiuae siue Contemplatiuae.</add>Theorices.</emph><lb/>
         <hi style="underline" xml:id="add_024"><hi rend="red">M</hi>vsica est <add type="super" xml:id="add_025">scientia[?]</add>facultas <add type="super" xml:id="add_026">distantias[?]</add>differentias acutorum et grauium <note><add xml:id="add_026">quia absq audi[??] homo [???] musicam [???].</add></note>sonorum, sensu ac ratione <add type="super" xml:id="add_027">indicans</add>perpendens. <name type="person">Boethius</name></hi> libro 5. cap. 1.<lb/>
         <emph style="center" rend="italic">Definitio Practices.</emph><lb/>

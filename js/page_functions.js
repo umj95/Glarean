@@ -121,12 +121,12 @@
     "choice": function(choice) {                                  // choice builds tooltips to display expansions, of abbreviations,
                                                                   // transliteration of greek script etc.
       if(choice.getAttribute("ana") === "transl") {               // transliterations
-        var transl = document.createElement("span");
+        let transl = document.createElement("span");
         transl.setAttribute("class", "transl tooltip")
-        var orig = document.createElement("span");
+        let orig = document.createElement("span");
         orig.setAttribute("class", "orig");
         orig.innerHTML = choice.children[0].innerHTML;
-        var reg = document.createElement("span");
+        let reg = document.createElement("span");
         reg.setAttribute("class", "reg tiptext");
         reg.innerHTML = choice.children[1].innerHTML;
         transl.appendChild(orig);
@@ -134,17 +134,31 @@
         return transl;
       } 
       else if(choice.getAttribute("ana") === "abbr") {            // abbreviations
-        var abbr = document.createElement("span");
+        let abbr = document.createElement("span");
         abbr.setAttribute("class", "abbr tooltip")
-        var orig = document.createElement("span");
+        let orig = document.createElement("span");
         orig.setAttribute("class", "orig");
         orig.innerHTML = choice.children[0].innerHTML;
-        var reg = document.createElement("span");
+        let reg = document.createElement("span");
         reg.setAttribute("class", "reg tiptext");
         reg.innerHTML = choice.children[1].innerHTML;
         abbr.appendChild(orig);
         abbr.appendChild(reg);
         return abbr;
+      }
+      else if(choice.getAttribute("ana") === "errata") {          // errata
+        let erratum = document.createElement("span");
+        erratum.setAttribute("class", "errata tooltip")
+        let sic = document.createElement("span");
+        sic.setAttribute("class", "sic");
+        sic.innerHTML = choice.children[0].innerHTML;
+        let corr = document.createElement("span");
+        corr.setAttribute("class", "corr tiptext");
+        corr.innerHTML = "Erratum: ";
+        corr.innerHTML += choice.children[1].innerHTML;
+        erratum.appendChild(sic);
+        erratum.appendChild(corr);
+        return erratum;
       }
     },
 
@@ -555,7 +569,7 @@
         commentLink.setAttribute("class", "commentLink ");
         commentLink.setAttribute("href", "#");
         commentLink.setAttribute('onclick', 'createNote("comment", "' + id + '", "' + commentaryFile + '")');
-        commentLink.innerHTML = " &#176;";
+        commentLink.innerHTML = "&#176;";
         comment.appendChild(commentTip);
         comment.appendChild(commentLink);
         target.appendChild(comment);
