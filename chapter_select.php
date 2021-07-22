@@ -8,7 +8,7 @@
         <p>Bitte wählen Sie hier Kapitel und Sprache aus. Sie können auch innerhalb eines Kapitels Passagen in der Übersetzung / im Original lesen. Noch nicht freigegebene Kapitel sind grau markiert.</p>
         <h3>Libri primi Capita XXI.</h3>
         <ol class="chapter_select">
-          <li>De Musices diuisione ac definitione Caput I.</li>
+          <li class="released">De Musices diuisione ac definitione Caput I. · <span class="tooltip"><a href="chapter.php?currentBook=1&currentChapter=1&mainLanguage=_lat&marginalia=false">Latein</a><span class="tiptext">Dieses Kapitel auf latein Lesen</span></span> · <span class="tooltip"><a href="chapter.php?currentBook=1&currentChapter=1&mainLanguage=_deu&marginalia=false">Deutsch</a><span class="tiptext">Dieses Kapitel auf deutsch lesen</span></span></li></li>
           <li>De Elementis Practices Caput II.</li>
           <li>Quae in Guidonis typo rudibus huius artis consyderanda Caput III.</li>
           <li>De Clauibus et uocum deductionibus per easdem, de notularum item figuris Caput IIII.</li>

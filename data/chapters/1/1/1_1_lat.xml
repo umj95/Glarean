@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>De Musices diuisione ac definitione</title>
+				<author>Glareanus, Henricus Loriti</author>
+        <editor role="editor">Sean Ferguson</editor>
+        <editor role="editor">Charles Atkinson</editor>
+        <editor role="editor">Bradley Jon Tucker</editor>
+        <editor role="editor">Thomas J. Mathiesen</editor>
+				<editor role="editor">Janosch Umbreit</editor>
+				<respStmt>
+						<resp>basierend auf dem digitalen Text aus dem Thesaurus Musicarum Latinarum, codiert von</resp>
+						<name>Janosch Umbreit</name>
+				</respStmt>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Janosch Umbreit</publisher>
+			</publicationStmt>
+			<sourceDesc>
+        <biblStruct>
+          <monogr>
+            <author>Glareanus, Henricus Loriti (1488-1563)</author>
+            <title>Dodecachordon</title>
+            <edition>Ed. stereotypa</edition>
+            <imprint>
+              <pubPlace>Basileae</pubPlace>
+              <publisher>Per Henrichvm Petri</publisher>
+              <date>1547</date>
+            </imprint>
+            <extent>470 S.</extent>
+          </monogr>
+        </biblStruct>
+        <bibl>
+          Freiburger Exemplar von Glareans Dodecachordon, mit handschriftlichen Annotationen, aus dem Besitz von <name type="person" ref="http://d-nb.info/gnd/1047654199">Johannes Algoer</name>
+        </bibl>
+      </sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<p>Diese Datei enthält das erste Kapitel des ersten Buches aus Heinrich Glareans Dodekachordon im lateinischen Original nach einer Übertragung des Thesaurus Musicarum Latinarum. Dies ist, zusammen mit einer deutschen Übersetzung, teil eines digitalen Editionsprojektes ausgewählter Passagen aus dem Dodekachordon.</p>
+		</encodingDesc>
+		<profileDesc>
+			<creation>
+				<date when="2021-07-22">22.07.2021</date>
+				<name type="place">Regensburg, Deutschland</name>
+			</creation>
+			<langUsage>
+				<language ident="la">Latein</language>
+			</langUsage>
+		</profileDesc>
+		<revisionDesc>
+			<change when="2021-07-22">Initialversion</change>
+		</revisionDesc>
+	</teiHeader>
+	<text>
+		<body>
+      <div1 type="chapter" n="1">
+        <pb n="1"/>
+        <head n="1">De Musices diuisione ac definitione, Caput I.</head>
+        <p xml:id="p1">Musica duplex est, Theorice ac practice.<note><add>DIVISIO MUSICES</add></note> Theorice circa rerum musicarum contemplationem<note><add>Quid sn Theorica</add></note> uersatur: Ea triplex est authore <name type="person">Boethio</name> libro 1. cap. 2. Mundana, quae de harmonia totius et partium mundi consyderat. Humana quae de proportionibus corporis et animae, atque harum inter se partium pertractat. Tertia, quae in quibusdam consistere dicitur instrumentis, ac de ea quidem idem author quinque libris disputat. Practice circa executionem cantus consistit. Haec in <term>Rhythmis</term> est, in <term>metris</term>, in <term>sonis</term>. Et soni quidem, alij in instrumentis, quae et ipsa uaria sunt, alij in humana uoce reperiuntur, de quibus nunc potissimum disserere conabimur. de regulata uidelicet musica, quae de cantu est. Porro cantus duplex est, alter simplex ac uniformis, quo nunc uulgo in templis utuntur, et de hoc tractat <term>musica plana</term>, quam Gregorianam uocant: alter uarius ac multiformis, de quo est musica quam alij <term>figuralem</term>, alij <term>mensuralem</term> nunc uocant. De hoc cantu quando apud ueteres nihil, quod equidem sciam, reperitur certi, aetatis nostrae authorum traditionem in posterioribus prosequemur.</p>
+        <p>Definitio Theorices.</p>
+        <p>Mvsica est facultas differentias acutorum et grauium sonorum, sensu ac ratione perpendens. <name type="person">Boethius</name> libro 5. cap. 1.</p>
+        <p>Definitio Practices.</p>
+        <p>Mvsica est recte modulandi scientia. <name type="person">Diuus Augustinus</name>.</p>
+      </div1>
+    </body>
+  </text>
+</TEI>
