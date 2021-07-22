@@ -791,8 +791,9 @@ button.panel {
     font-size: var(--comment-fontsize);
     }
 
-  .comment {
+  #notesContent .comment {
     font-family: var(--site-font);
+    border: 1px solid darkred;;
   }
 
   .comment h5, .comment h6 {
@@ -820,6 +821,14 @@ button.panel {
   .noteTitle, .noteFooter {
     color: #efe4d8;
     background-color: var(--header-blue);}
+
+  #notesContent .comment .noteTitle {
+    color: #efe4d8;
+    background-color: darkred;}
+  
+  #notesContent .comment .noteFooter {
+    color: #efe4d8;
+    background-color: darkred;}
   
   .noteTitle {
     grid-area: title;

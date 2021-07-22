@@ -27,20 +27,11 @@
   let noteNr = 0;                                                 // tracks the Number of Notes
 
 
-  const c = new CETEI();                                          // the primary CETEIcean object
+  const fullText = new CETEI();                                          // the primary CETEIcean object
                                                                   // (two are specified because we need different sets of behaviors)
-  const d = new CETEI();                                          // the secondary CETEIcean object (for translations)
+  const translText = new CETEI();                                          // the secondary CETEIcean object (for translations)
 
   let fullTextBehaviors = {"tei":{                                // all CETEIcean behaviors are defined here
-    // Overrides the default ptr behavior, displaying a short link
-    //"ptr": function(elt) {
-    //  var link = document.createElement("a");
-    //  link.innerHTML = elt.getAttribute("target").replace(/https?:\/\/([^\/]+)\/.*/, "$1");
-    //  link.href = elt.getAttribute("target");
-    //  return link;
-    //},
-    // Adds a new handler for <term>, wrapping it in an HTML <b>
-    // Note that you could just do `term: ["<b>","</b>"]` instead.
     "term":                                                       // put a term in its own span container
       function(elt) {
         var term = document.createElement("span");
@@ -181,6 +172,7 @@
     "emph": function(emph) {
       emphasis = document.createElement("em");
       if(emph.hasAttribute("style")) {
+        emphasis.style.display = "block";
         emphasis.style.textAlign = emph.getAttribute("style");
       }
       if(emph.hasAttribute("rend")) {
@@ -196,19 +188,6 @@
       margin.innerHTML = note.innerHTML;
       return margin;
     },
-
-    /*"add": function(add) {
-      var addition = document.createElement("span");
-      addition.setAttribute("class", "addition");
-      if(add.hasAttribute("rend")) {
-        addition.style.color = add.getAttribute("rend");
-      }
-      if(add.getAttribute("type") === "heading") {
-        addition.className += " heading";
-      }
-      addition.innerHTML = add.innerHTML;
-      return addition;
-    },*/
 
     "p": function(para) {                                         // paragraphs with id (all of them) get their own <p>-tags
       if(para.hasAttribute("xml:id")) {
@@ -238,15 +217,6 @@
 };
 
   let translTextBehaviors = {"tei":{                              // all CETEIcean behaviors for translated texts
-    // Overrides the default ptr behavior, displaying a short link
-    //"ptr": function(elt) {
-    //  var link = document.createElement("a");
-    //  link.innerHTML = elt.getAttribute("target").replace(/https?:\/\/([^\/]+)\/.*/, "$1");
-    //  link.href = elt.getAttribute("target");
-    //  return link;
-    //},
-    // Adds a new handler for <term>, wrapping it in an HTML <b>
-    // Note that you could just do `term: ["<b>","</b>"]` instead.
     "term":                                                       // put a term in its own span container
       function(elt) {
         var term = document.createElement("span");
@@ -343,9 +313,9 @@
 /* ================================================================================= Functions ================= */
 
 
-  function insertTEIChapter() {                                   // inserts a full TEI document at location PATH in #FULLTEXT
+  function insertTEIChapter(chapter) {                                   // inserts a full TEI document at location PATH in #FULLTEXT
     let path = `${pathToData}${currentBook}/${currentChapter}/${currentBook}_${currentChapter}${mainLanguage}.xml`;
-    c.getHTML5(path, function(data) {
+    chapter.getHTML5(path, function(data) {
       document.getElementById("fulltext").innerHTML = "";
       document.getElementById("fulltext").appendChild(data);
     });
@@ -405,6 +375,7 @@
     })
 
     console.log(fullTextBehaviors);
+    console.log(translTextBehaviors);
   }
 
   function openPanel(form) {                                      // opens the left Panel
@@ -535,7 +506,7 @@
   
   function fetchParagraph(paraID, noteBodyID, langSpecifier) {    // fetches a paragraph with id PARAID from a file at location PATH
     let path = `${pathToData}${currentBook}/${currentChapter}/${currentBook}_${currentChapter}${langSpecifier}.xml`;
-    d.getHTML5(path, function(data) {
+    translText.getHTML5(path, function(data) {
       const noteBody = document.getElementById(noteBodyID);
       for (const p of Array.from(data.getElementsByTagName("tei-p"))) {
         if(p.getAttribute("id") === paraID) {
@@ -557,9 +528,7 @@
         let id = comments[commentaryFile][key].id;                // get Appropriate IDs
         let target = document.getElementById(comments[commentaryFile][key].target);
 
-        let commentContainer = document.createElement("span");    //create Comment Link + Tooltip
-        //commentContainer.setAttribute("class", "tooltip");
-        let commentTip = document.createElement("span");
+        let commentTip = document.createElement("span");          // create Comment + Tooltip
         commentTip.setAttribute("class", "tiptext");
         commentTip.innerHTML = "Kommentar öffnen";
         let comment = document.createElement("span");
@@ -656,7 +625,7 @@
     return csl;
   }
 
-  function cite(citeKey, range = '') {                                 // takes a citeKey and a range, returns a short citation
+  function cite(citeKey, range = '') {                            // takes a citeKey and a range, returns a short citation
     for(let i = 0; i < bibliography.length; i++) {
       if(bibliography[i].id === citeKey) {                        // browse the bibliography
         let source = bibliography[i];
