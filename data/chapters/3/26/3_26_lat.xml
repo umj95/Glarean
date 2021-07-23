@@ -62,14 +62,14 @@
         <pb n="440"/>
         <head n="1">De <term>Symphonetarum</term> ingenio</head>
         <p xml:id="p1">
-        <add type="heading">CAPUT XXVI</add>
+        <add xml:id="add_001" type="heading">CAPUT XXVI</add>
         Finis erat huius libri, portentosae sane magnitudinis si exempla respicias, non omnino magni, si commentationem spectes. Sed libuit unum duntaxat caput annectere de <term>Symphonetarum</term> ingenio. Neque enim his suus hac in arte deest genius, ex quo spectentur probenturue. Horum igitur fuere alij (nam breuiter id narrandum est) qui solum ad ostentationem sua edebant, et haec multo maxima turba est: Alij ut plurimos delectarent ac iuuentutem exercerent. Nonnulli ut Ecclesiastici Cantus maiestatem iuuarent. Inuenias qui necessitatem etiam suam hac arte leuarent, et horum plurimi. Sed de quibusdam pauca dicenda, quantum nos auditu precepimus a fide dignis.</p>
         <div2 type="section" n="1.1">
           <head n="1.1">De Iodoco pratensi</head>
           <p xml:id="p2">In primis uero de <name xml:id="118524895" type="person" key="Josq" ref="http://d-nb.info/gnd/118524895">Iodoci Pratensis</name>, ut Cantorum coryphaei <term>ingenio</term> de quo non semel in prioribus. Is multa iucunda relatu fecisse dicitur, antequam in <sic>hominnm</sic> noticiam uenerit. Inter alia multa et hoc ferunt. <name type="person"><roleName><placeName>Francorum</placeName> Regem</roleName> Lituichum XII</name>. haud scio quod sacerdotium homini promisisse. Verum cum promissa leuiter, ut in Regum aulis fieri solet, caderent, ibi commotum Iodocum psalmum composuisse. <title>Memor esto uerbi tui seruo tuo</title>, tanta maiestate ac elegantia, ut ad Cantorum collegium relatus ac deinde iusto iudicio excussus, admirationi omnibus fuerit. Regem suffuso pudore promissionem diutius differe non ausum, beneficium quod promiserat, prestitisse, Ibi uero uirum, Principis liberalitatem expertum, continuo alterum progratiarum actione orsum esse psalmum, <title xml:id="bonitatem">Bonitatem fecisti cum seruo tuo Domine</title>. Verum inter has duas Harmonias uidere licet, quanto dubia praemiorum spes plus urgeat, quam certo depositum beneficium. Neque enim paulo uenustior est, meo quidem iudicatu, si affectus spectes prior quam posterior editio. Idem Iodocus, cum ab nescio quo Magnate beneficium ambiret, ac ille procrastinator identidem diceret mutila illa Francorum lingua, <foreign xml:lang="fr">Laise faire moy</foreign>, hoc est, sine me facere, haud cunctanter ad eadem uerba totam composuit Missam oppido elegantem La sol fa re mi.</p>
           <pb n="441"/>
           <p xml:id="p3">Ad ostentationem autem artis haud dubie duas illas Missas instituit <title xml:lang="fr">L’homme arme, cum super uoces Musicaleis</title>, tum <title>ad VI tonum</title>, ita enim ipse Hypoionicum nominauit. Amauit et hic Iodocus ex una uoce plureis deducere, quod post eum multi aemulati sunt. Sed ante eum <name type="person">Ioannes Ockenheim</name>, de quo paulo post, ea in exercitatione claruerat. Eius rei cum superius per diuersos Modos aliquot exempla posuerimus, sed eodem <term>temporis</term> motu incedentia, hic tardante altero temporis mensuram signo, dupla ratione decantanda, ponemus. Sunt autem ex priore Missa, in qua Modos identidem uariauit, ad Hypodorium tria haec oppido breuia.
-          <add type="heading" rend="red">Ex missa Iusqvini super uoces mvsicales.</add></p>
+          <add xml:id="add_002" type="heading" rend="red">Ex missa Iusqvini super uoces mvsicales.</add></p>
           <figure type="music">
             <notatedMusic corresp="3_26_1.mei"></notatedMusic>
           </figure>
@@ -81,7 +81,7 @@
             <notatedMusic corresp="3_26_3.mei"></notatedMusic>
           </figure>
           <p xml:id="p4">Idem Iodocus treis uoces tribus diuersis signis praepositis ex una uoce eliciendas exemplo docuit ubi ualor notularum in Tenore, si Thema in spicias sit duplus ad notulas in Basi. Baseos uero notulae sesquialterae ad Cantus notulas, Ita ut duplae rationi sesquiplam mixtam intelligamus. Sed primum exemplum ponamus, ut ipse ex eodem Missa adposuit. Deinde Thematis <term>resolutionem</term> in treis uoces cum propria cuiusque uocis sede subiungamus.</p>
-          <note><add>Sexta notula ante signum concordantiae[?]</add></note>
+          <note><add xml:id="add_03">Sexta notula ante signum concordantiae erit nigra</add></note>
           <figure type="music">
             <head>Ex una uoce tres, ex eiusdem Iodoci Missa Lhome arme super uoces musicales.</head>
             <notatedMusic corresp="3_26_4.mei"></notatedMusic>
@@ -158,14 +158,19 @@
         </div2>
         <div2 type="section" n="1.2">
           <head n="1.2">Okenheim</head>
-          <p xml:id="p14"><note><add>Basis [?] Tenor Sog. Cantus [?]</add></note><note><add>Tolum fa [?] mi in [?] fa Tolum mi.</add></note>Haec hactenus de Iodoco satis superque. Antiquior aliquanto fuit Okenheim et ipse Belga, qui ingenio omneis excelluisse dicitur. Quippe quem constat triginta sex uocibus garritum quendam instituisse. Eum nos non uidimus. Certe inuentione et ingenij acrimonia admirabilis fuit. Amauit autem
+          <p xml:id="p14"><note><add xml:id="add_004">Basis [?] Tenor Sog. Cantus [?]</add></note><note><add xml:id="add_005">Tolum fa [?] mi in [?] fa Tolum mi.</add></note>Haec hactenus de Iodoco satis superque. Antiquior aliquanto fuit Okenheim et ipse Belga, qui ingenio omneis excelluisse dicitur. Quippe quem constat triginta sex uocibus garritum quendam instituisse. Eum nos non uidimus. Certe inuentione et ingenij acrimonia admirabilis fuit. Amauit autem
           <choice ana="transl">
 						<orig><foreign xml:lang="grc">καθολικὰ</foreign></orig>
 						<reg>katholika</reg>
 					</choice>
-          in cantu, hoc est, Cantiones instituere, quae multis cantarentur modis ad cantorum propemodum arbitrium, ita tamen ut Harmoniae ac consonantiarum ratio nihilo secius obseruaretur, quale in primis hoc eius ferunt carmen, in quo aureis habeas oportet. <title>Fuga trium uocum in Epidiatessaron</title> (nam sic nunc loquuntur) <title>post perfectum tempus</title>.</p>
+          in cantu, hoc est, Cantiones instituere, quae multis cantarentur modis ad cantorum propemodum arbitrium, ita tamen ut Harmoniae ac consonantiarum ratio nihilo secius obseruaretur, quale in primis hoc eius ferunt carmen, in quo aureis habeas oportet. <title>Fuga trium uocum in Epidiatessaron</title> (nam sic nunc loquuntur) <title>post perfectum tempus</title>.<note>
+					<add xml:id="006">
+						<figure type="image">
+							<graphic url="images/3_26_images_1.png"/>
+						</figure>
+					</add>
+				</note></p>
           <figure type="music">
-            <note><add>[music: c-4 clef, f-g-c']</add></note>
             <notatedMusic corresp="3_26_16.mei"></notatedMusic>
           </figure>
           <p xml:id="p15">Idem Okenheim Missam ad omnem Tonum (ita enim ipse nominauit) composuit cum ad treis duntaxat uoceis, secundum treis diatessaron species, decantaretur, nulla initio claui adposita, sed circulo duntaxat cum uirgula interrogatoria uel lineam uel spacium notante. Eius Missae unum
@@ -202,7 +207,7 @@
             <head>Sequuntur aliae eiusdem Antonij Cantiones</head>
             <!-- Benedictus -->
             <notatedMusic corresp="3_26_19.mei"></notatedMusic>
-            <note><add>Tertia ni [?] erit no. ni Aa. [??]</add></note>
+            <note><add xml:id="007">Tertia in g erit non in Aa.</add></note>
           </figure>
           <pb n="459"/>
           <figure type="music">
@@ -230,7 +235,7 @@
           <figure type="music">
             <!-- Conceptio Mariae Virginis -->
             <notatedMusic corresp="3_26_22.mei"></notatedMusic>
-            <note><add>breuis erit</add></note>
+            <note><add xml:id="008">breuis erit</add></note>
           </figure>
           <pb n="463"/>
           <pb n="464"/>
@@ -257,11 +262,11 @@
           <figure type="music">
             <!-- Nesciens Mater -->
             <notatedMusic corresp="3_26_26.mei"></notatedMusic>
-            <note><add>Clauis ni[?] medio.</add></note>
+            <note><add xml:id="009">Clauis ni[?] medio.</add></note>
           </figure>
           <pb n="467"/>
           <pb n="468"/>
-          <p xml:id="p23">Verum enimuero non modo nimis longus, sed ineptus me hercules etiam fuero, si omneis recensere uoluero uel huius, uel ante nos aetatis Symphonetas, multo magis etiam si eorundem Cantiones. In primis autem hoc de me hic fateri libet, semper displicuisse nobis cum leueis omnes Cantiones, nihil nisi garritum quendam adferenteis, ac ad stultorum aureis demulcendas institutas, quales sunt illae Centonum laciniae male consarcinatae: Tum maxime lasciuas ac turpeis, quibus nunc omneis Christianae nationes, pro dolor, personant, et refertae sunt ubique. Ego hunc cantum grauem uolo, et ad Dei Optimam Maximam laudem pertinere, non ad ostentationem. Volo honestae uoluptati adesse. Denique ad Ingenij culturam adhiberi, ac maxime ad <add>b</add>album <note><add>balbum.</add></note> puerorum os formandum, ut inquit <name type="person">Flaccus</name>. Iucunditatis gratia quaesitus ac inuentus est, sed praeterea multis rebus utilis esse potest, Iocos, modo sint maturi et honesti, ab hoc non secludo. Caeterum plus laudis habent ac uere merentur Ioci, si qui incidunt cum grauitate et occasione quaesiti: Quales Iodoci Pratensis aliquot feruntur, et qualis est quem iam dicturi sumus. Lutuichus Francorum Rex eius nominis XII. admodum exili uoce fuisse dicitur. Is haud scio qua Cantione olim delectatus, cum a Cantorum suorum Primario rogasset, Ecquid Cantionem aliquot uocibus institueret, In qua et ipse aliquam canere uocem posset. Cantor admirans Regis postulationem, quem sciebat Musices prorsus ignarum, ac paulum cunctatus, tandem inuento quod diceret, faciam, inquit, Domine Rex Cantionem, in qua et Maiestati tuae dabitur canendi locus. Postridie quam pransus fuisset Rex, ac Cantilenis more regio recreandus esset: Cantor eam quam mox subijciemus attulit Cantionem, quatuor institutam uocibus. In qua non tam probo ingenium artis, atque laudo industriam cum arte coniunctam. Nam Cantionem eam ita instituerat, ut pueri duo Cantum incinerent ex uno Themate subtiliter sane ac tenere, uidelicet ne Regis uox, oppido gracilis obtunderetur. Alteram uocem Regi dederat uno perpetuo phthongo pernotatam Altitonantis sub limitate, quae Regiae uoci apta esset. Nec contentus eo lenocinio (Tanta sedulitate omnia prospiciebat in re quidem parua, sed ex qua ipse beneuolum sibi fecit principem) ne Rex uacillaret, ipse symphonetes cantaturus Basin ita eam adornauit, ut identidem altero dimidij temporis phthongo in octaua succurreret Regi. Est autem octaua uelut unisonus, per quam Regis uox mire iuuabatur. Risit machinamentum Rex hilariter, ac cum gaudio hominem dimisit nec indonatum, nec absque optata gratia. Huiusmodi iocos dixi mihi placere. Sed nunc audiamus rarum miraculum, Regem ipsum cum suis Cantoribus intonantem. Verba erant linguae Romanae, illius mutilae, qua nunc, derelicta uetere Gallorum lingua Gallia balbutit uerius quam loquitur. Sed liberum esto cuique quod notulis uolet subscribere.</p>
+          <p xml:id="p23">Verum enimuero non modo nimis longus, sed ineptus me hercules etiam fuero, si omneis recensere uoluero uel huius, uel ante nos aetatis Symphonetas, multo magis etiam si eorundem Cantiones. In primis autem hoc de me hic fateri libet, semper displicuisse nobis cum leueis omnes Cantiones, nihil nisi garritum quendam adferenteis, ac ad stultorum aureis demulcendas institutas, quales sunt illae Centonum laciniae male consarcinatae: Tum maxime lasciuas ac turpeis, quibus nunc omneis Christianae nationes, pro dolor, personant, et refertae sunt ubique. Ego hunc cantum grauem uolo, et ad Dei Optimam Maximam laudem pertinere, non ad ostentationem. Volo honestae uoluptati adesse. Denique ad Ingenij culturam adhiberi, ac maxime ad <add xml:id="010">b</add>album <note><add xml:id="011">balbum.</add></note> puerorum os formandum, ut inquit <name type="person">Flaccus</name>. Iucunditatis gratia quaesitus ac inuentus est, sed praeterea multis rebus utilis esse potest, Iocos, modo sint maturi et honesti, ab hoc non secludo. Caeterum plus laudis habent ac uere merentur Ioci, si qui incidunt cum grauitate et occasione quaesiti: Quales Iodoci Pratensis aliquot feruntur, et qualis est quem iam dicturi sumus. Lutuichus Francorum Rex eius nominis XII. admodum exili uoce fuisse dicitur. Is haud scio qua Cantione olim delectatus, cum a Cantorum suorum Primario rogasset, Ecquid Cantionem aliquot uocibus institueret, In qua et ipse aliquam canere uocem posset. Cantor admirans Regis postulationem, quem sciebat Musices prorsus ignarum, ac paulum cunctatus, tandem inuento quod diceret, faciam, inquit, Domine Rex Cantionem, in qua et Maiestati tuae dabitur canendi locus. Postridie quam pransus fuisset Rex, ac Cantilenis more regio recreandus esset: Cantor eam quam mox subijciemus attulit Cantionem, quatuor institutam uocibus. In qua non tam probo ingenium artis, atque laudo industriam cum arte coniunctam. Nam Cantionem eam ita instituerat, ut pueri duo Cantum incinerent ex uno Themate subtiliter sane ac tenere, uidelicet ne Regis uox, oppido gracilis obtunderetur. Alteram uocem Regi dederat uno perpetuo phthongo pernotatam Altitonantis sub limitate, quae Regiae uoci apta esset. Nec contentus eo lenocinio (Tanta sedulitate omnia prospiciebat in re quidem parua, sed ex qua ipse beneuolum sibi fecit principem) ne Rex uacillaret, ipse symphonetes cantaturus Basin ita eam adornauit, ut identidem altero dimidij temporis phthongo in octaua succurreret Regi. Est autem octaua uelut unisonus, per quam Regis uox mire iuuabatur. Risit machinamentum Rex hilariter, ac cum gaudio hominem dimisit nec indonatum, nec absque optata gratia. Huiusmodi iocos dixi mihi placere. Sed nunc audiamus rarum miraculum, Regem ipsum cum suis Cantoribus intonantem. Verba erant linguae Romanae, illius mutilae, qua nunc, derelicta uetere Gallorum lingua Gallia balbutit uerius quam loquitur. Sed liberum esto cuique quod notulis uolet subscribere.</p>
           <pb n="469"/>
           <figure type="music">
             <!-- Cantus Regis -->
