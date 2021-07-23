@@ -44,37 +44,50 @@
 			<div1 type="chapter" n="1">
 				<pb n="440"/>
 				<head n="1">Von der Kunst der <term xml:lang="la">Symphonetae</term></head>
-				<p xml:id="p1">Hier hätte dieses Buch enden sollen, welches sicherlich von gewaltigem Umfang ist, wenn man die <emph>Exempla</emph> berücksichtigt, jedoch gar nicht groß, wenn man nur den Text betrachtet. Jedoch wollte ich noch ein Kapitel zur Kunst der <term xml:lang="la" ref="data/symph.html">Symphonetae</term> anfügen. Denn es fehlt ihnen in dieser Kunst nicht an Ingenium, anhand dessen sie betrachtet und beurteilt werden könnten. Derer gab es nun einige (von denen kurz die Rede sein muss), die nur komponiert haben, um ihr eigenes Können zur schau zu stellen und dies ist bei weitem die größte Gruppe; andere, um zu gefallen und die Jugend zu lehren. Manche haben komponiert um die Majestät des Kichengesangs zu mehren. Man entdeckt auch solche, die durch diese Kunst einer inneren Notwendigkeit Abhilfe schaffen und es gibt ihrer einige.<note place="end">Das ist eine Anmerkung!</note> Von einigen jedoch sollen noch einige Worte gesprochen werden, von denen wir, durch unterrichtendes Anhören, von vertrauenswürdigen Männern wissen.</p>
+				<p xml:id="p1">Hier hätte dieses Buch enden sollen, welches sicherlich von gewaltigem Umfang ist, wenn man die <emph>Exempla</emph> berücksichtigt, jedoch gar nicht groß, wenn man nur den Text betrachtet. Jedoch wollte ich noch ein Kapitel zur Kunst der <term xml:lang="la" ref="data/symph.html">Symphonetae</term> anfügen. Denn es fehlt ihnen in dieser Kunst nicht an Ingenium, anhand dessen sie betrachtet und beurteilt werden könnten. Derer gab es nun einige (von denen kurz die Rede sein muss), die nur komponiert haben, um ihr eigenes Können zur schau zu stellen und dies ist bei weitem die größte Gruppe; andere, um zu gefallen und die Jugend zu lehren. Manche haben komponiert um die Majestät des Kichengesangs zu mehren. Man entdeckt auch solche, die durch diese Kunst einer inneren Notwendigkeit Abhilfe schaffen und es gibt ihrer einige. Von einigen jedoch sollen noch einige Worte gesprochen werden, von denen wir, durch unterrichtendes Anhören, von vertrauenswürdigen Männern wissen.</p>
 				<div2 type="section" n="1.1">
 					<head n="1.1">Zu Josquin des Prez</head>
 					<p xml:id="p2">Zunächst soll von <name xml:id="118524895" type="person" ref="http://d-nb.info/gnd/118524895">Josquin des Prez</name> die Rede sein, dem Oberhaupt der Sänger, dessen <term xml:lang="la">ingenium</term> schon öfters angesprochen wurde. Von ihm wird gesagt, dass er vielerlei Dinge unternahm, bevor er allgemein bekannt wurde. Neben vielen anderen, wird auch die folgende Geschichte berichtet: <name type="person">Ludwig XII</name>, der König von Frankreich, hatte ihm eine Pfründe versprochen. Nachdem dieses Versprechen unerfüllt blieb, wie dies an Königshöfen so oft der Fall ist, wurde Josquin hierdurch angeregt, einen Psalm zu komponieren, <title xml:lang="la">Memor esto verbi tui servo</title>, von solch großer Majestät und Eleganz, dass er, nachdem er vor das Collegium der Sänger gebracht und von ihnen in strenger Gerechtigkeit geprüft worden war, von allen bewundert wurde. Der beschämte König wagte es daraufhin nicht, das Versprochene weiter aufzuschieben und vergab die Wohltat wie angekündigt. Da aber Josquin nun mit der Freigebigkeit des Fürsten vertraut war, ging er sofort dazu über, aus Dankbarkeit einen weiteren Psalm, <title xml:lang="la">Bonitatem fecisti cum servo tuo Domine</title>, zu komponieren. Doch merkt man bei der Betrachtung dieser beider Harmonien, wieviel mehr einen eine unsichere Hoffnung, statt einer sicher gewussten Wohltat antreibt. Denn die erste Komposition, so meine ich, ist, wenn man die Affekte betrachtet, um einiges schöner. Auf ähnliche Weise schrieb Josquin, als er sich um eines wichtigen Mannes Wohltat bewerben wollte, eines Aufschiebers, der stehts in der entstellten Sprache der Franken „<foreign xml:lang="fr">Laise faire moi</foreign>“, was „lass mich nur machen“ heißen soll, sprach, ohne Zögern eine komplette und sehr elegante Messe auf diese Worte: La fa re mi.</p>
 					<pb n="441"/>
-					<p xml:id="p3">Jedoch schrieb er die beiden Messen <title xml:lang="fr">L’homme armé super voces musicales</title> und <title xml:lang="fr">L’homme armé ad VI tonum</title> (denn so nannte er das Hypoionische) sicherlich, um seine Kunstfertigkeit zur Schau zu stellen. Auch liebte Josquin es, aus einer Stimme mehrere abzuleiten, worin ihm auch viele nachgeeifert haben. Doch schon vor ihm tat sich <name type="person">Johannes Ockeghem</name>, der in Kürze besprochen werden soll, in dieser Kunst hervor. Da wir schon einige Beispiele für diese Sache schon einige Beispiele in den diversen Modi gegeben haben, jedoch nur solche, in denen das gleiche <term xml:lang="la">tempus</term> eingehalten wird, wollen wir hier einige anführen, bei denen ein Mensurzeichen das Tempo verlangsamt und das in doppelter Ratio gesungen werden muss. Aus der ersten Messe, in der er oft die Modi gewechselt hat, zeigen wir hier drei sehr kurze Beispiele im Hypodorischen.</p>
-					<figure type="music">
-            <head>Aus Josquins <title>Missa l’homme armé super voces musicales</title></head>
-            <notatedMusic corresp="3_Symph_1.mei"></notatedMusic>
+					<p xml:id="p3">Jedoch schrieb er die beiden Messen <title xml:lang="fr">L’homme armé super voces musicales</title> und <title xml:lang="fr">L’homme armé ad VI tonum</title> (denn so nannte er das Hypoionische) sicherlich, um seine Kunstfertigkeit zur Schau zu stellen. Auch liebte Josquin es, aus einer Stimme mehrere abzuleiten, worin ihm auch viele nachgeeifert haben. Doch schon vor ihm tat sich <name type="person">Johannes Ockeghem</name>, der in Kürze besprochen werden soll, in dieser Kunst hervor. Da wir schon einige Beispiele für diese Sache schon einige Beispiele in den diversen Modi gegeben haben, jedoch nur solche, in denen das gleiche <term xml:lang="la">tempus</term> eingehalten wird, wollen wir hier einige anführen, bei denen ein Mensurzeichen das Tempo verlangsamt und das in doppelter Ratio gesungen werden muss. Aus der ersten Messe, in der er oft die Modi gewechselt hat, zeigen wir hier drei sehr kurze Beispiele im Hypodorischen.
+					<add xml:id="add_002" type="heading" rend="red">Aus Josquins Missa super voces musicales</add></p>
+          <figure type="music">
+            <notatedMusic corresp="3_26_1.mei"></notatedMusic>
           </figure>
           <pb n="442"/>
           <figure type="music">
-            <head>Qui uenit In nomine Domini.</head>
-            <notatedMusic corresp="3_Symph_2.mei"></notatedMusic>
+            <notatedMusic corresp="3_26_2.mei"></notatedMusic>
           </figure>
-					<!--<div type="music" id="music_3-1">[Musikbeispiel 1]</div>-->
+          <figure type="music">
+            <notatedMusic corresp="3_26_3.mei"></notatedMusic>
+          </figure>
 					<p xml:id="p4">Indem er, aus einer Stimme drei machend, einer einzigen Stimme drei Mensurzeichen voranstellt hat Josquin ein Beispiel erschaffen, wo der Notenwert im Tenor, wenn man diese Stimme als das Thema annehmen will, den doppelten Wert des Basses hat. Die Bassstimme hingegen steht im Verhältnis drei zu zwei [sesquialtera] zum Cantus, so dass wir die doppelte Ratio in Verbindung mit der eineinhalbfachen erkennen. Doch zunächst präsentieren wir das Beispiel, wie er es in der zuvorgenannten Messe anbringt. Die <term xml:lang="la">resolutio</term> des Themas, in der die drei Stimmen mit ihren richtigen Schlüsseln angegeben sind, haben wir angefügt.</p>
-					<!--<div type="music" id="music_3-2a">[Musikbeispiel 2a und b]</div>
-					<div type="music" id="music_3-2b">[Musikbeispiel 2a und b]</div>-->
-					<pb n="443"/>
-					<pb n="444"/>
+					<figure type="music">
+            <head>Aus einer Stimme drei, aus desselben Josquin Missa l'homme Armé super voces musicales</head>
+            <notatedMusic corresp="3_26_4.mei"></notatedMusic>
+          </figure>
+          <pb n="443"/>
+          <figure type="music">
+            <head>Es folgt die Auflösung</head>
+            <notatedMusic corresp="3_26_5.mei"></notatedMusic>
+          </figure>
+          <pb n="444"/>
 					<p xml:id="p5">In derartigen Kompositionen, um frei heraus zu sagen was ich empfinde, geht es mehr um das Zurschaustellen der Kunstfertigkeit, als um wirklich erfreulichen Hörgenuss. Von solcher Art ist das folgende Beispiel von unserem Landsmann <name type="person">Ludwig Senfl</name> aus <name type="place">Zürich</name>, einem gelehrten Komponisten aus unserer Zeit. Dem Brauch der Sänger folgend hat er ihm eine Kanonbeschreibung vorangestellt: <title>Omne trinum perfectum</title>. Des Weiteren hat er folgendes Zitat aus Buch fünf der Odyssee vorangestellt:
 					<app>
 						<lem><foreign xml:lang="grc">Τρὶς μάϰαρες Δαναοὶ ϰαὶ τετράϰις</foreign></lem>
 						<rdg>Tris makares Danaoi kai tetrakis</rdg>
 					</app>,
 					was <name type="person">Vergil</name> in der <title>Aeneis</title> mit „Oh drei und vierfach gesegnet“ übersetzt. Es wird einem gelehrten Leser nicht schwer fallen, dieses Rätsel zu lösen, wenn er die Verhältnisse der Quinte, Quarte und Oktave bedenkt. Auf diese Weise hat auch <name type="person">Macrobius</name> das eben genannte Vergilsche Zitat gelöst.</p>
-					<!--<div type="music" id="music_3-3">[Musikbeispiel 3]</div>-->
+					<figure type="music">
+            <head>Lutuichi Senflij Tigurini Hypoaeolius, Canon. Omne trinum perfectum.</head>
+            <notatedMusic corresp="3_26_6.mei"></notatedMusic>
+          </figure>
 					<p xml:id="p6">Doch noch beeindruckender ist das Beispiel von <name type="person">Pierre de la Rue</name>, das, ohne Zweifel Josquin nachahmend, die gleichen Verhältnisse, allerdings in vier Mensurzeichen, vorangestellt hat. In diesem bewegen sich Bassus und Altus ohne Diminution, letzterer in <term xml:lang="la">tempus perfectum</term>, ersterer in <term xml:lang="la">tempus imperfectum</term>. Der Cantus aber bewegt sich in Diminution im <term xml:lang="la">tempus imperfectum</term>. Der Tenor verläuft in eineinhalbfacher Ratio, was gar nicht schwer zu singen ist, wenn man sich recht auf die Hemiolen einlässt. Der Modus ist hypodorisch, wenngleich er am Ende unvollständig ist. Da das Werk von anderen schon aufgelöst wurde erschien es uns ausreichend, es hier nur anzuführen. Da wir so viele andere Rätsel so gewissenhaft aufgelöst haben, kann kein Leser uns mit Recht grollen, wenn wir einige ihm zu lösen überlassen.</p>
 					<pb n="445"/>
-					<!--<div type="music" id="music_3-4">[Musikbeispiel 4]</div>-->
+					<figure type="music">
+            <head>Petri Platensis IIII uocum fuga ex unica ad Hypodorium.</head>
+            <notatedMusic corresp="3_26_7.mei"></notatedMusic>
+          </figure>
 					<p xml:id="p7">Pierre de la Rue hat auch eine ganze Messe, <title xml:lang="la">O salutaris hostia</title>, komponiert, in der vier Stimmen aus einer hergeleitet werden, wobei er mit Buchstaben den Beginn und das Ende jeder Stimme anzeigt. Wir haben uns entschlossen, nur ein Kyrie mit dem Beginn der <term xml:lang="la">resolutio</term> hier zu zeigen. Von hier aus kann der Leser, von diesen schon allzu vielen Beispielen aus, Weitere in der gleichen Weise prüfen. Die Anfänge der vier Stimmen sind durch die Buchstaben S.C.T.B gekennzeichnet, wobei S für die höchste Stimme, die wir Cantus nennen, steht, C für Contratenor, T für Tenor und B für Bassus. Das Ende der Stimmen wird mit demselben Buchstaben, über dem ein Halbkreis gedruckt ist, angegeben.</p>
 					<!-- <div type="music" id="music_3-5">[Musikbeispiel 5a und b]</div> -->
 					<pb n="446"/>
