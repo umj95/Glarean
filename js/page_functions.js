@@ -67,11 +67,35 @@
     },
 
     "pb": function(elt) {                                         // page breaks get their own div-container
-      let pb = document.createElement("div");
-      pb.setAttribute("class", "pb");
+      let page = document.createElement("div");
+      page.setAttribute("class", "pb");
+
+      let pageLink = document.createElement("a");
+      freiburgPageNr = parseInt(elt.getAttribute("n")) + 24;
+      let link = "";
+      if(freiburgPageNr < 100) {
+        link = "http://dl.ub.uni-freiburg.de/diglit/glareanus1547/00" + freiburgPageNr;
+      } else {
+        link = "http://dl.ub.uni-freiburg.de/diglit/glareanus1547/0" + freiburgPageNr;
+      }
+      pageLink.setAttribute("href", link);
+      pageLink.setAttribute("rel", "noopener");
+      pageLink.setAttribute("target", "_blank");
+      pageLink.setAttribute("class", "tooltip");
+      pageLink.innerHTML = "&rarr;";
+
+      let pageTip = document.createElement("span");
+      pageTip.setAttribute("class", "tiptext");
+      pageTip.innerHTML = "Digitalisat dieser Seite";
+
+      pageLink.appendChild(pageTip);
+
+      let pb = document.createElement("span");
       pb.innerHTML = elt.getAttribute("n");
       //pb.appendChild(document.createElement("br"));
-      return pb;
+      page.appendChild(pageLink);
+      page.appendChild(pb);
+      return page;
     },
 
     "figure": function(fig) {                                     // figure contains musical examples – it is built with a container,
@@ -491,9 +515,8 @@
     newNote.appendChild(title);
     newNote.appendChild(body);
     newNote.appendChild(footer);
-    //if($(window).width() < 1200) {              // if on mobile, open commentary panel immediately
-      openPanel('notesPanel');
-    //}
+    alertText();
+    openPanel('notesPanel');
   }
   
   function deleteNote(noteId) {                                   // deletes a Note wit ID NOTEID
@@ -502,6 +525,7 @@
     if($(window).width() < 600) {
       closePanel("notesPanel");
     }
+    alertText();
   }
   
   function fetchParagraph(paraID, noteBodyID, langSpecifier) {    // fetches a paragraph with id PARAID from a file at location PATH
@@ -524,24 +548,31 @@
     comments[commentaryFile] = await rawCommentary.json();
     
     for (let key in comments[commentaryFile]) {
+
       if(comments[commentaryFile].hasOwnProperty(key)) {
         let id = comments[commentaryFile][key].id;                // get Appropriate IDs
         let target = document.getElementById(comments[commentaryFile][key].target);
+        console.log(target);
 
-        let commentTip = document.createElement("span");          // create Comment + Tooltip
-        commentTip.setAttribute("class", "tiptext");
-        commentTip.innerHTML = "Kommentar öffnen";
-        let comment = document.createElement("span");
-        comment.setAttribute("class", "comment tooltip");
-        comment.setAttribute("id", "comment_" + comments[commentaryFile][key].id)
-        let commentLink = document.createElement("a");
-        commentLink.setAttribute("class", "commentLink ");
-        commentLink.setAttribute("href", "#");
-        commentLink.setAttribute('onclick', 'createNote("comment", "' + id + '", "' + commentaryFile + '")');
-        commentLink.innerHTML = "&#176;";
-        comment.appendChild(commentTip);
-        comment.appendChild(commentLink);
-        target.appendChild(comment);
+        if(target.id.includes("add") && chapterOptions['marginalia'] == "false") {
+          console.log("it has add!")
+        }  // dont add comments to annotations that are not displayed
+        else {
+          let commentTip = document.createElement("span");          // create Comment + Tooltip
+          commentTip.setAttribute("class", "tiptext");
+          commentTip.innerHTML = "Kommentar öffnen";
+          let comment = document.createElement("span");
+          comment.setAttribute("class", "comment tooltip");
+          comment.setAttribute("id", "comment_" + comments[commentaryFile][key].id)
+          let commentLink = document.createElement("a");
+          commentLink.setAttribute("class", "commentLink ");
+          commentLink.setAttribute("href", "#");
+          commentLink.setAttribute('onclick', 'createNote("comment", "' + id + '", "' + commentaryFile + '")');
+          commentLink.innerHTML = "&#176;";
+          comment.appendChild(commentTip);
+          comment.appendChild(commentLink);
+          target.appendChild(comment);
+        }
       }
     }
   }
@@ -658,5 +689,17 @@
       setTimeout(function() {
         waitForEl(selector, callback);
       }, 100);
+    }
+  }
+
+  function alertText(){
+    if(document.getElementsByClassName("note").length === 0) {
+      let alert = document.createElement("p");
+      alert.setAttribute("id", "note_alert");
+      alert.innerHTML = "Hier werden Kommentare und Übersetzungen angezeigt. Momentan sind keine Elemente offen.";
+      document.getElementById("notesContent").appendChild(alert);
+    }
+    else if((document.getElementsByClassName("note").length > 0) && document.getElementById("note_alert")) {
+      document.getElementById("notesContent").removeChild(document.getElementById("note_alert"));
     }
   }

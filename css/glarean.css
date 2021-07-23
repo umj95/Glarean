@@ -114,7 +114,6 @@ body {
 /*  ---------------- Links ---------------- */
 
 a {
-  word-break: break-all;
   font-feature-settings: "smcp";
   color: inherit;
   letter-spacing: 0.08em;
@@ -586,6 +585,10 @@ button.panel {
     font-size: inherit;
     font-style: inherit;
     font-feature-settings: inherit;}
+
+  .sic {
+    color: darkred;
+  }
   
   .meiHead {
     padding: 0.3em;
@@ -845,6 +848,10 @@ button.panel {
   
   .noteBody .margin {
     display: none;}
+
+  .noteBody a {
+    word-break: break-all;
+  }
   
   .note .closebtn {
     position: relative;
