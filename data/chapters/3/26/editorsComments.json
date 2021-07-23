@@ -26,5 +26,12 @@
     "title": "<span class=\"grc\">Τρὶς μάϰαρες</span>",
     "content": "Aus der <em>Odyssee</em>. Deutsche Übersetzung: „Dreimal selig und viermal die Danaer [die einst im weiten Troja zugrunde gingen, den Atreussöhnen zuliebe.]“ (Übers. Hampe, 1979). – Klage des Herumirrenden Odysseus",
     "links": ["http://gams.uni-graz.at/archive/get/o:via.2553/sdef:TEI/get"]
+  },
+  {
+    "id": "0004",
+    "target": "add_002",
+    "author": "Janosch Umbreit",
+    "title": "",
+    "content": "Algoer liefert hier den Titel des Musikbeispiels, so wie es auch im Errata-Verzeichnis vermerkt ist: „P. 441. Supra Benedictus titulus erit, maiusculis literis Ex Missa IVSQVINI SVPER VOCES MVSICALEIS.“"
   }
 ]
