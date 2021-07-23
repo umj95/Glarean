@@ -548,24 +548,31 @@
     comments[commentaryFile] = await rawCommentary.json();
     
     for (let key in comments[commentaryFile]) {
+
       if(comments[commentaryFile].hasOwnProperty(key)) {
         let id = comments[commentaryFile][key].id;                // get Appropriate IDs
         let target = document.getElementById(comments[commentaryFile][key].target);
+        console.log(target);
 
-        let commentTip = document.createElement("span");          // create Comment + Tooltip
-        commentTip.setAttribute("class", "tiptext");
-        commentTip.innerHTML = "Kommentar öffnen";
-        let comment = document.createElement("span");
-        comment.setAttribute("class", "comment tooltip");
-        comment.setAttribute("id", "comment_" + comments[commentaryFile][key].id)
-        let commentLink = document.createElement("a");
-        commentLink.setAttribute("class", "commentLink ");
-        commentLink.setAttribute("href", "#");
-        commentLink.setAttribute('onclick', 'createNote("comment", "' + id + '", "' + commentaryFile + '")');
-        commentLink.innerHTML = "&#176;";
-        comment.appendChild(commentTip);
-        comment.appendChild(commentLink);
-        target.appendChild(comment);
+        if(target.id.includes("add") && chapterOptions['marginalia'] == "false") {
+          console.log("it has add!")
+        }  // dont add comments to annotations that are not displayed
+        else {
+          let commentTip = document.createElement("span");          // create Comment + Tooltip
+          commentTip.setAttribute("class", "tiptext");
+          commentTip.innerHTML = "Kommentar öffnen";
+          let comment = document.createElement("span");
+          comment.setAttribute("class", "comment tooltip");
+          comment.setAttribute("id", "comment_" + comments[commentaryFile][key].id)
+          let commentLink = document.createElement("a");
+          commentLink.setAttribute("class", "commentLink ");
+          commentLink.setAttribute("href", "#");
+          commentLink.setAttribute('onclick', 'createNote("comment", "' + id + '", "' + commentaryFile + '")');
+          commentLink.innerHTML = "&#176;";
+          comment.appendChild(commentTip);
+          comment.appendChild(commentLink);
+          target.appendChild(comment);
+        }
       }
     }
   }
