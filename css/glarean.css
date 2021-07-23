@@ -114,7 +114,6 @@ body {
 /*  ---------------- Links ---------------- */
 
 a {
-  word-break: break-all;
   font-feature-settings: "smcp";
   color: inherit;
   letter-spacing: 0.08em;
@@ -845,6 +844,10 @@ button.panel {
   
   .noteBody .margin {
     display: none;}
+
+  .noteBody a {
+    word-break: break-all;
+  }
   
   .note .closebtn {
     position: relative;
