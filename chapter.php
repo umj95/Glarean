@@ -40,6 +40,9 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closePanel('notesPanel')">&times;</a>
       </div>
       <div id="notesContent">
+        <script>
+          alertText();
+        </script>
       </div>
     </div>
     <script>
