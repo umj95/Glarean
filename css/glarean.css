@@ -718,6 +718,9 @@ button.panel {
     background-color: var(--background-beige);
     font-size: var(--comment-fontsize);
     text-align: center;
+    font-feature-settings: normal;
+    text-shadow: none;
+    color: black;
     border-radius: 4px;
     border: 1px solid var(--header-blue);
     box-shadow: 5px 5px 5px #888;
