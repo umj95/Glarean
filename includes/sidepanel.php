@@ -109,7 +109,7 @@
         $custom .= "comments[]=" . $_POST['comments'][$i] . "&";
       }
     }
-    $url = "<meta http-equiv=\"refresh\" content=\"0;url=chapter.php?currentBook=".$chapterOptions['currentBook']."&currentChapter=".$chapterOptions['currentChapter']."&mainLanguage=".$chapterOptions['mainLanguage'].$custom."\" />";
+    $url = "<meta http-equiv=\"refresh\" content=\"0;url=/pages/chapter.php?currentBook=".$chapterOptions['currentBook']."&currentChapter=".$chapterOptions['currentChapter']."&mainLanguage=".$chapterOptions['mainLanguage'].$custom."\" />";
     echo $url;
   }
 ?>

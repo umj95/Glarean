@@ -1,5 +1,5 @@
 <?php
-    include("includes/header.php");
+    include("../includes/header.php");
   ?>
     <div class="chapter">
       <section class="body-text">
@@ -10,5 +10,5 @@
       </section>
     </div>
     <?php
-      include("includes/footer.php");
+      include("../includes/footer.php");
     ?>

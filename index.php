@@ -5,10 +5,10 @@
       <section class="body-text">
           <div id="fulltext" class="text">
             <h2>Home</h2>
-            <p>Willkommen auf der Seite des <em>Glarean-Projekts</em>! Diese Seite wird noch mit Inhalten gefüllt. Auch die Links funktionieren noch nicht alle. <a href="chapter_select.php">Hier</a> kommen Sie auf eine Liste der schon erarbeiteten Kapitel.</p>
+            <p>Willkommen auf der Seite des <em>Glarean-Projekts</em>! Diese Seite wird noch mit Inhalten gefüllt. Auch die Links funktionieren noch nicht alle. <a href="pages/chapter_select.php">Hier</a> kommen Sie auf eine Liste der schon erarbeiteten Kapitel.</p>
             <h3>Diese Edition benutzen</h3>
-            <p>Aufbau und Ideen hinter diesem Projekt werden in Kürze genauer in <a href="about.php">Über dieses Projekt</a> beschrieben werden. Hier einstweilen einige Hinweise zu den schon vorhandenen Inhalten:</p>
-            <p>Alle Kapitel der drei Bücher des <em>Dodecachordon</em> werden auf der Seite <a href="chapter_select.php">Kapitel</a> aufgelistet. Bereits transkribierte Kapitel (aktuell 1.1 &amp; 3.26) sind schwarz hervorgehoben. Jedes Kapitel kann entweder auf Latein oder Deutsch gelesen werden. Die Ansicht der Kapitel kann mit dem blauen Knopf am linken Bildschirmrand personalisiert werden. Folgende Optionen stehen aktuell zur Auswahl:</p>
+            <p>Aufbau und Ideen hinter diesem Projekt werden in Kürze genauer in <a href="pages/about.php">Über dieses Projekt</a> beschrieben werden. Hier einstweilen einige Hinweise zu den schon vorhandenen Inhalten:</p>
+            <p>Alle Kapitel der drei Bücher des <em>Dodecachordon</em> werden auf der Seite <a href="pages/chapter_select.php">Kapitel</a> aufgelistet. Bereits transkribierte Kapitel (aktuell 1.1 &amp; 3.26) sind schwarz hervorgehoben. Jedes Kapitel kann entweder auf Latein oder Deutsch gelesen werden. Die Ansicht der Kapitel kann mit dem blauen Knopf am linken Bildschirmrand personalisiert werden. Folgende Optionen stehen aktuell zur Auswahl:</p>
             <ul>
               <li>Übersetzungen: Wenn diese Box angeklickt wird, erscheint links neben jedem Absatz ein blauer Knopf, der, wenn gedrückt, den entsprechenden Absatz in der gewählten Sprache neben dem Haupttext anzeigt.</li>
               <li>Annotationen: Diese Edition beruht auf einem Exemplar des <em>Dodecachordon</em> aus dem Besitz Johannes Algoers. Wenn diese Box ausgewählt ist, werden die teils sehr ausführlichen Hervorhebungen, Verbesserungen und Kommentare Algoers angezeigt. Aktuell sind Annotationen jedoch nur im lateinischen Text verfügbar.</li>
