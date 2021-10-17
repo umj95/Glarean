@@ -78,9 +78,17 @@
             });\n
           </script>\n";
       }
-      if(isset($_POST['lang'])) {
+      if(isset($_POST['lang'])) {                                 // reload page after language change
         $_SESSION['lang'] = $_POST['lang'];
-        $page = $_SERVER['PHP_SELF'];
+
+        $pageLang = $_SESSION['lang'];
+        $domain = "localhost:8000";//$_SERVER['SERVER_NAME'];
+
+        if($currentFile!= "index.php"){
+          $page = "http://$domain/pages/$pageLang/$currentFile";
+        } else {
+          $page = $_SERVER['PHP_SELF'];
+        }
         $sec = "10";
         header("Refresh: $sec; url=$page");
       }

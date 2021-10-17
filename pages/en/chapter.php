@@ -3,8 +3,11 @@
   This file takes the $chapterOptions colleted from $_GET in header.php and builds the chapter accordingly,
   using one CETEI object for the main text and one for the translations, both with their specific behaviors
   =========================*/
-  include("../includes/header.php");
-  include("../includes/sidepanel.php");
+  $currentFile = basename(__FILE__);
+  session_start();
+  $pageLang = $_SESSION['lang'];
+  include("../../$pageLang/includes/header.php");
+  include("../$pageLang/includes/sidepanel.php");
 
   $optionsToJSON = json_encode($chapterOptions);                  // $chapterOptions (assocArray collected from GET requests in sidepanel.php) 
                                                                   // is put into a JSON-Object for further use by Javascript

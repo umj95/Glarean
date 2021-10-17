@@ -1,4 +1,5 @@
 <?php
+    $currentFile = basename(__FILE__);
     session_start();
     $pageLang = $_SESSION['lang'];
     include("../../includes/$pageLang/header.php");

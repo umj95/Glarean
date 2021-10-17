@@ -1,4 +1,5 @@
   <?php
+    $currentFile = basename(__FILE__);
     session_start();
     if(isset($_POST['recordSize'])) {                               // check for screen dimensions
       $height = $_POST['height'];
@@ -7,7 +8,9 @@
       $_SESSION['screen_width'] = $width;
     }
   
-    $_SESSION['lang'] = "de";                                       // set the initial page language
+    if(!isset($_SESSION['lang'])){
+      $_SESSION['lang'] = "de";
+    }                                       // set the initial page language
     $pageLang = $_SESSION['lang'];
     include("includes/$pageLang/header.php");
   ?>
