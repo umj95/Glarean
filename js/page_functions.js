@@ -14,7 +14,7 @@
 
   let secondaryLanguages = [];                                    // the translation languages
 
-  const pathToData = "data/chapters/";                            // the (relative) path to the text data folder, containing the chapter folders
+  const pathToData = "https://raw.githubusercontent.com/umj95/Glarean_Dodekachordon_Text/main/data/"; // the path to the text data folder, containing the chapter folders
 
   let bibliography = {};
 
@@ -337,7 +337,7 @@
 /* ================================================================================= Functions ================= */
 
 
-  function insertTEIChapter(chapter) {                                   // inserts a full TEI document at location PATH in #FULLTEXT
+  function insertTEIChapter(chapter) {                            // inserts a full TEI document at location PATH in #FULLTEXT
     let path = `${pathToData}${currentBook}/${currentChapter}/${currentBook}_${currentChapter}${mainLanguage}.xml`;
     chapter.getHTML5(path, function(data) {
       document.getElementById("fulltext").innerHTML = "";
@@ -519,7 +519,7 @@
     openPanel('notesPanel');
   }
   
-  function deleteNote(noteId) {                                   // deletes a Note wit ID NOTEID
+  function deleteNote(noteId) {                                   // deletes a Note with ID NOTEID
     var elem = document.getElementById(noteId);
     document.getElementById("notesContent").removeChild(elem);
     if($(window).width() < 600) {
@@ -639,7 +639,7 @@
     return commentText;
   }
 
-  function printBibliography(option) {
+  function printBibliography(option) {                            // creates download links for bibliographies according to format specified in OPTION
     if(option === 'csl') {
       var a = document.createElement("a");
       a.href = "data/site/sources.json";
@@ -651,7 +651,7 @@
     }
   }
 
-  async function getCiteStyle() {
+  async function getCiteStyle() {                                 // fetches the citation style
     let csl = fetch('data/site/mla.csl');
     return csl;
   }
@@ -692,7 +692,7 @@
     }
   }
 
-  function alertText(){
+  function alertText(){                                           // creates an explanatory paragraph in the notes pane if no notes are open
     if(document.getElementsByClassName("note").length === 0) {
       let alert = document.createElement("p");
       alert.setAttribute("id", "note_alert");

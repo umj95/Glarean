@@ -12,7 +12,7 @@
   <script type="text/javascript" src="https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js" defer></script>
   <script type="text/javascript" src="js/verovio_loader.js"></script>
   <script>
-    var chapterOptions = <?php echo $optionsToJSON;?>;            // extract chapter variables -> fill the global variables specified in js/page-functions
+    let chapterOptions = <?php echo $optionsToJSON;?>;            // extract chapter variables -> fill the global variables specified in js/page-functions
     mainLanguage = chapterOptions.mainLanguage;
     currentBook = chapterOptions.currentBook;
     currentChapter = chapterOptions.currentChapter;
