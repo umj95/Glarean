@@ -262,7 +262,7 @@ footer {
   grid-column-start: 1;
   grid-column-end: 25;
   position: relative;
-  height: 0.4in;
+  /* height: 0.4in; */
   width: 100%;
   bottom: 0;
   color: var(--paper-beige);
