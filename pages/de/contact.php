@@ -1,5 +1,7 @@
 <?php
-    include("../includes/header.php");
+    session_start();
+    $pageLang = $_SESSION['lang'];
+    include("../../includes/$pageLang/header.php");
   ?>
     <div class="chapter">
       <section class="body-text">
@@ -10,5 +12,5 @@
       </section>
     </div>
     <?php
-      include("../includes/footer.php");
+      include("../../includes/$pageLang/footer.php");
     ?>

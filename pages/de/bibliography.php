@@ -1,6 +1,7 @@
-
 <?php
-  include("../includes/header.php");
+  session_start();
+  $pageLang = $_SESSION['lang'];
+  include("../../includes/$pageLang/header.php");
 ?>
   <div class="chapter">
     <section class="body-text">
@@ -12,7 +13,7 @@
         <a href="javascript:void(0)" onclick="printBibliography('tex')">bibtex</a> · 
         <a href="javascript:void(0)" onclick="printBibliography('txt')">txt</a></p>
         <div id="bibliography" class="bibliography"></div>
-        <script src="js/citation.js" type="text/javascript"></script>
+        <script src="/js/citation.js" type="text/javascript"></script>
         <script>
           /*const Cite = require('citation-js');
           let example = new Cite(bibliography);
@@ -156,5 +157,5 @@
     </section>
   </div>
 <?php
-  include("includes/footer.php");
+  include("../../includes/$pageLang/footer.php");
 ?>

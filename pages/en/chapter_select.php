@@ -1,14 +1,16 @@
 <?php
-    include("../includes/header.php");
+    session_start();
+    $pageLang = $_SESSION['lang'];
+    include("../../includes/$pageLang/header.php");
 ?>
   <div class="chapter">
     <section class="body-text">
         <div id="fulltext" class="text">
-        <h2>Kapitel</h2>
-        <p>Bitte wählen Sie hier Kapitel und Sprache aus. Sie können auch innerhalb eines Kapitels Passagen in der Übersetzung / im Original lesen. Noch nicht freigegebene Kapitel sind grau markiert.</p>
+        <h2>Chapters</h2>
+        <p>Please chose the chapter you want to read, as well as the main language you want to read in. You will still be able to view and compare single paragraphs in another language from within the viewer. Chapters that have not been released yet are marked grey.</p>
         <h3>Libri primi Capita XXI.</h3>
         <ol class="chapter_select">
-          <li class="released">De Musices diuisione ac definitione Caput I. · <span class="tooltip"><a href="/pages/chapter.php?currentBook=1&currentChapter=1&mainLanguage=_lat&marginalia=false">Latein</a><span class="tiptext">Dieses Kapitel auf latein Lesen</span></span> · <span class="tooltip"><a href="/pages/chapter.php?currentBook=1&currentChapter=1&mainLanguage=_deu&marginalia=false">Deutsch</a><span class="tiptext">Dieses Kapitel auf deutsch lesen</span></span></li></li>
+          <li class="released">De Musices diuisione ac definitione Caput I. · <span class="tooltip"><a href="/pages/chapter.php?currentBook=1&currentChapter=1&mainLanguage=_lat&marginalia=false">Latin</a><span class="tiptext">Read this chapter in Latin</span></span> · <span class="tooltip"><a href="/pages/chapter.php?currentBook=1&currentChapter=1&mainLanguage=_deu&marginalia=false">German</a><span class="tiptext">Read this chapter in German</span></span></li></li>
           <li>De Elementis Practices Caput II.</li>
           <li>Quae in Guidonis typo rudibus huius artis consyderanda Caput III.</li>
           <li>De Clauibus et uocum deductionibus per easdem, de notularum item figuris Caput IIII.</li>
@@ -99,12 +101,12 @@
           <li>De Hypoionico. Caput XXIII.</li>
           <li>De binorum Modorum connexione exempla, atque inibi obiter Iusquini Pratensis Encomium. Caput XXIIII</li>
           <li>De Tenoribus Diapason non explentibus. Caput XXV.</li>
-          <li class="released">De Symphonetarum Ingenio Caput XXVI · <span class="tooltip"><a href="/pages/chapter.php?currentBook=3&currentChapter=26&mainLanguage=_lat&marginalia=false">Latein</a><span class="tiptext">Dieses Kapitel auf latein Lesen</span></span> · <span class="tooltip"><a href="/pages/chapter.php?currentBook=3&currentChapter=26&mainLanguage=_deu&marginalia=false">Deutsch</a><span class="tiptext">Dieses Kapitel auf deutsch lesen</span></span></li>
+          <li class="released">De Symphonetarum Ingenio Caput XXVI · <span class="tooltip"><a href="/pages/chapter.php?currentBook=3&currentChapter=26&mainLanguage=_lat&marginalia=false">Latin</a><span class="tiptext">Read this chapter in Latin</span></span> · <span class="tooltip"><a href="/pages/chapter.php?currentBook=3&currentChapter=26&mainLanguage=_deu&marginalia=false">German</a><span class="tiptext">Read this chapter in German</span></span></li>
         </ol>
         </div>
       </div>
     </section>
   </div>
 <?php
-  include("../includes/footer.php");
+  include("../../includes/$pageLang/footer.php");
 ?>

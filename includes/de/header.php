@@ -2,14 +2,7 @@
   /*=========================
   This header contains the boilerplate header for all pages.
   Additionally, it contains global variables for php.
-  =========================*/
-  session_start();
-  if(isset($_POST['recordSize'])) {                               // check for screen dimensions
-    $height = $_POST['height'];
-    $width = $_POST['width'];
-    $_SESSION['screen_height'] = $height;
-    $_SESSION['screen_width'] = $width;
-  }
+  =========================*
     
   function parseOptionstoString($chapterOptions) {                // converts $chapterOptions into a String
     $passOptions = "";
@@ -34,8 +27,13 @@
   /* --------------------------------------------------------------  Global Variables  ------------------- */
   $languageList = array('_lat', '_deu');                          // the available languages for translations
   
-  $languages    = array( '_lat' => 'lateinisch',                  // expand the languages for labels etc.
-                         '_deu' => 'deutsch');
+  if($_SESSION['lang'] == "de") {                                 // expand the languages for labels etc. according to language variable
+    $languages    = array( '_lat' => 'lateinisch',                  
+                           '_deu' => 'deutsch');
+  } elseif($_SESSION['lang'] == "en") {
+    $languages    = array( '_lat' => 'Latin',
+                           '_deu' => 'German');
+  }
 
   $commentaryOptions = array('editorsComments', 'additionalComments');  // commentary options to offer
 
@@ -44,7 +42,7 @@
     $chapterOptions[$key] = $value;
   }
 
-  $bibliography = file_get_contents('data/site/sources.json');    // the bibliography as a json object
+  $bibliography = file_get_contents('../../data/site/sources.json');    // the bibliography as a json object
 
   /* ----------------------------------------------------------------------------------------------------- */
 ?>
@@ -80,6 +78,12 @@
             });\n
           </script>\n";
       }
+      if(isset($_POST['lang'])) {
+        $_SESSION['lang'] = $_POST['lang'];
+        $page = $_SERVER['PHP_SELF'];
+        $sec = "10";
+        header("Refresh: $sec; url=$page");
+      }
     ?>
   </head>
   <body>
@@ -89,12 +93,16 @@
         <a href="javascript:void(0);" class="hamburger" onclick="topNavExpand()">&#x2630;</a>
         <nav id="topnav" class="main">
           <a href="/index.php">Home</a>
-          <a href="/pages/chapter_select.php">Kapitel</a>
-          <a href="/pages/about.php">Über dieses Projekt</a>
-          <a href="/pages/edition.php">Editionsrichtlinien</a>
-          <a href="/pages/bibliography.php">Bibliographie</a>
-          <a href="/pages/impressum.php">Impressum</a>
-          <a href="/pages/contact.php">Kontakt</a>
+          <a href="/pages/<?php echo "$pageLang";?>/chapter_select.php">Kapitel</a>
+          <a href="/pages/<?php echo "$pageLang";?>/about.php">Über dieses Projekt</a>
+          <a href="/pages/<?php echo "$pageLang";?>/edition.php">Editionsrichtlinien</a>
+          <a href="/pages/<?php echo "$pageLang";?>/bibliography.php">Bibliographie</a>
+          <a href="/pages/<?php echo "$pageLang";?>/impressum.php">Impressum</a>
+          <a href="/pages/<?php echo "$pageLang";?>/contact.php">Kontakt</a>
+          <form action="<?php $_SERVER["PHP_SELF"]?>" method="post">
+            <button type="submit" name="lang" value="de">deutsch</button>
+            <button type="submit" name="lang" value="en">english</button>
+          </form>
         </nav>
       </div>
       <script type="text/javascript"> 
@@ -109,7 +117,8 @@
           prevScrollpos = currentScrollPos;
         }
       </script>
-        <!-- bibliography = <?php echo $bibliography;?> -->
+      <script type="text/javascript">
+      bibliography = <?php echo $bibliography;?>
       </script>
     </header>
     

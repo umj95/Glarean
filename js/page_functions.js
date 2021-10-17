@@ -147,7 +147,7 @@
         transl.appendChild(orig);
         transl.appendChild(reg);
         return transl;
-      } 
+      }
       else if(choice.getAttribute("ana") === "abbr") {            // abbreviations
         let abbr = document.createElement("span");
         abbr.setAttribute("class", "abbr tooltip")
