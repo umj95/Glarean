@@ -19,16 +19,16 @@
   <div id="content">
     <form method="POST">
       <fieldset>                                                  <!-- languages: options as previously defined in $languageOptions -->
-        <legend><h2>Übersetzungen</h2></legend>
+        <legend><h2><?php if($pageLang == 'de'){echo "Übersetzungen";} else {echo "Translations";}?></h2></legend>
         <div class="control">
           <?php
             $i = 0;
             foreach($languageOptions as $language) {
               echo "<label for=\"transl$language\">";
               if($language == '_lat') {
-                echo "Original auf " . $languages[$language] . " anbieten";
+                if($pageLang == 'de'){echo "Original auf " . $languages[$language] . " anbieten"; } else {echo "Offer original in " . $languages[$language];}
               } else {
-                echo "Übersetzung auf " . $languages[$language] . " anbieten";
+                if($pageLang == 'de'){echo "Übersetzung auf " . $languages[$language] . " anbieten"; } else {echo "Offer translation in " . $languages[$language];}
               }
               echo    "</label>\n"
                     . "<input id=\"transl$language\" type=\"checkbox\" name=\"secondaryLanguages[]\" value=\"$language\"";
@@ -42,9 +42,9 @@
         </div>
       </fieldset>
       <fieldset>
-        <legend><h2>Annotationen</h2></legend>                     <!-- Offer marginalia -->
+        <legend><h2><?php if($pageLang == 'de'){echo "Anmerkungen";} else {echo "Annotations";}?></h2></legend>                     <!-- Offer marginalia -->
         <div class="control">
-          <label for="margins">Annotationen anzeigen</label>
+          <label for="margins"><?php if($pageLang == 'de'){echo "Anmerkungen anzeigen";} else {echo "Show annotations";}?></label>
           <?php
           echo    '<input id="margins" type="checkbox" name="marginalia" value="true"';
           if($chapterOptions['marginalia'] == 'true'){
@@ -55,16 +55,16 @@
         </div>
       </fieldset>
       <fieldset>
-        <legend><h2>Kommentare</h2></legend>                      <!-- Offer commentary: available options are listed in $commentaryOptions (header.php) -->
+        <legend><h2><?php if($pageLang == 'de'){echo "Kommentare";} else {echo "Commentary";}?></h2></legend>                      <!-- Offer commentary: available options are listed in $commentaryOptions (header.php) -->
         <div class="control">
           <?php
           if (is_array($commentaryOptions) || is_object($commentaryOptions)) {
             foreach($commentaryOptions as $commentary) {
               echo "<label for=\"$commentary\">";
               if($commentary == "editorsComments") {
-                echo "Kommentare der Herausgeber anbieten";
+                if($pageLang == 'de'){echo "Kommentare der Herausgeber anbieten"; } else {echo "Offer editors’ comments ";}
               } else if($commentary == "additionalComments") {
-                echo "Weitere Kommentare anbieten";
+                if($pageLang == 'de'){echo "Weitere Kommentare anbieten"; } else {echo "Offer further commentary";}
               }
               echo  "</label>\n"
                   ."<input id=\"$commentary\" type=\"checkbox\" name=\"comments[]\" value=\"$commentary\"";
@@ -78,16 +78,16 @@
           
         </div>
       </fieldset>
-      <label for="margins">Änderungen vornehmen</label>           <!-- Submit selection -->
+      <label for="margins"><?php if($pageLang == 'de'){echo "Änderungen abschicken";} else {echo "Submit Changes";}?></label>           <!-- Submit selection -->
       <input type="submit" name="submit" value="submit"/>
     </form>
     <p><a href="<?php 
       $thisBook = $chapterOptions['currentBook'];
       $thisChapter = $chapterOptions['currentChapter'];
       $thisLanguage = $chapterOptions['mainLanguage'];
-      echo "/data/chapters/";
+      echo "https://raw.githubusercontent.com/umj95/Glarean_Dodekachordon_Text/main/data/";
       echo "$thisBook/$thisChapter/$thisBook"."_"."$thisChapter"."$thisLanguage.xml";
-    ?>" download>Dieses Kapitel als TEI-Datei Herunterladen</a></p>
+    ?>" download><?php if($pageLang == 'de'){echo "Dieses Kapitel als TEI-Datei herunterladen";} else {echo "Download this chapter as a TEI file";}?></a></p>
   </div>
 </div>
 <?php
@@ -109,7 +109,7 @@
         $custom .= "comments[]=" . $_POST['comments'][$i] . "&";
       }
     }
-    $url = "<meta http-equiv=\"refresh\" content=\"0;url=chapter.php?currentBook=".$chapterOptions['currentBook']."&currentChapter=".$chapterOptions['currentChapter']."&mainLanguage=".$chapterOptions['mainLanguage'].$custom."\" />";
+    $url = "<meta http-equiv=\"refresh\" content=\"0;url=/pages/chapter.php?currentBook=".$chapterOptions['currentBook']."&currentChapter=".$chapterOptions['currentChapter']."&mainLanguage=".$chapterOptions['mainLanguage'].$custom."\" />";
     echo $url;
   }
 ?>

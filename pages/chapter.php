@@ -3,22 +3,27 @@
   This file takes the $chapterOptions colleted from $_GET in header.php and builds the chapter accordingly,
   using one CETEI object for the main text and one for the translations, both with their specific behaviors
   =========================*/
-  include("includes/header.php");
-  include("includes/sidepanel.php");
+  $currentFile = basename(__FILE__);
+  session_start();
+  $pageLang = $_SESSION['lang'];
+  include("static_texts.php");
+  include("../includes/header.php");
+  include("../includes/sidepanel.php");
 
   $optionsToJSON = json_encode($chapterOptions);                  // $chapterOptions (assocArray collected from GET requests in sidepanel.php) 
                                                                   // is put into a JSON-Object for further use by Javascript
 ?>
   <script type="text/javascript" src="https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js" defer></script>
-  <script type="text/javascript" src="js/verovio_loader.js"></script>
+  <script type="text/javascript" src="/js/verovio_loader.js"></script>
   <script>
-    var chapterOptions = <?php echo $optionsToJSON;?>;            // extract chapter variables -> fill the global variables specified in js/page-functions
+    let chapterOptions = <?php echo $optionsToJSON;?>;            // extract chapter variables -> fill the global variables specified in js/page-functions
+    
     mainLanguage = chapterOptions.mainLanguage;
     currentBook = chapterOptions.currentBook;
     currentChapter = chapterOptions.currentChapter;
     secondaryLanguages = chapterOptions.secondaryLanguages;
     marginalia = chapterOptions.marginalia;
-    //commentaryOptions = chapterOptions.comments;
+    commentaryOptions = chapterOptions.comments;
 
     optionalBehaviors(chapterOptions);                            // Load custom TEI behaviors
             
@@ -60,5 +65,5 @@
     </script>
   </div>
 <?php
-  include("includes/footer.php");
+  include("../includes/footer.php");
 ?>

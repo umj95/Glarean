@@ -185,6 +185,11 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
   #container .hamburger {
     display: none;
   }
+
+  .languageSwitcher {
+    align: right;
+    margin: 0.5em;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -262,7 +267,7 @@ footer {
   grid-column-start: 1;
   grid-column-end: 25;
   position: relative;
-  height: 0.4in;
+  /* height: 0.4in; */
   width: 100%;
   bottom: 0;
   color: var(--paper-beige);

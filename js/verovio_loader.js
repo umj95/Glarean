@@ -19,7 +19,7 @@ async function getMEIfiles(meiNumber) {                           // retrieves t
   }
   return fetches;
 }
-  
+
 function addVerovio() {                                           // starts Verovio toolkit and calls helper functions
 
     var tk;

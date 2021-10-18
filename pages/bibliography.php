@@ -1,18 +1,18 @@
-
 <?php
-  include("includes/header.php");
+  $currentFile = basename(__FILE__);
+  session_start();
+  $pageLang = $_SESSION['lang'];
+  include("static_texts.php");
+  include("../includes/header.php");
+  if($pageLang == 'de') {
+    echo $bibliographyGerman;
+  } else if($pageLang == 'en') {
+    echo $bibliographyEnglish;
+  } else {
+    echo "Error: No language specified.";
+  }
 ?>
-  <div class="chapter">
-    <section class="body-text">
-      <div id="fulltext" class="text">
-        <h2>Bibliographie</h2>
-        <p>Diese Literaturliste Herunterladen:<br/>
-        <a href="javascript:void(0)" onclick="printBibliography('pdf')">pdf</a> · 
-        <a href="javascript:void(0)" onclick="printBibliography('csl')">csl-json</a> · 
-        <a href="javascript:void(0)" onclick="printBibliography('tex')">bibtex</a> · 
-        <a href="javascript:void(0)" onclick="printBibliography('txt')">txt</a></p>
-        <div id="bibliography" class="bibliography"></div>
-        <script src="js/citation.js" type="text/javascript"></script>
+        <script src="/js/citation.js" type="text/javascript"></script>
         <script>
           /*const Cite = require('citation-js');
           let example = new Cite(bibliography);
@@ -156,5 +156,5 @@
     </section>
   </div>
 <?php
-  include("includes/footer.php");
+  include("../../includes/$pageLang/footer.php");
 ?>

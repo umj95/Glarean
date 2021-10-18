@@ -4,17 +4,19 @@
 
   let currentChapter = "";                                        // the current main Chapter to be displayed
 
-  const languages = [];
+  let languages = [];
 
     languages['_lat'] = "lateinisch";
     languages['_deu'] = "deutsch";
     languages['_eng'] = "englisch";
 
+  let pageLanguage = "";                                          // the language in which static texts and page functions are displayed
+
   let mainLanguage = "";                                          // the language of the main document
 
   let secondaryLanguages = [];                                    // the translation languages
 
-  const pathToData = "data/chapters/";                            // the (relative) path to the text data folder, containing the chapter folders
+  const pathToData = "https://raw.githubusercontent.com/umj95/Glarean_Dodekachordon_Text/main/data/"; // the path to the text data folder, containing the chapter folders
 
   let bibliography = {};
 
@@ -86,7 +88,11 @@
 
       let pageTip = document.createElement("span");
       pageTip.setAttribute("class", "tiptext");
-      pageTip.innerHTML = "Digitalisat dieser Seite";
+      if(pageLanguage == "de"){
+        pageTip.innerHTML = "Digitalisat dieser Seite";
+      } else {
+        pageTip.innerHTML = "Digitalised version of this page";
+      }
 
       pageLink.appendChild(pageTip);
 
@@ -147,7 +153,7 @@
         transl.appendChild(orig);
         transl.appendChild(reg);
         return transl;
-      } 
+      }
       else if(choice.getAttribute("ana") === "abbr") {            // abbreviations
         let abbr = document.createElement("span");
         abbr.setAttribute("class", "abbr tooltip")
@@ -225,7 +231,11 @@
             container.setAttribute("class", "transl-button tooltip");
             var label = document.createElement("span");
             label.setAttribute("class", "tiptext");
-            label.innerHTML = "Diesen Absatz auf " + languages[language] + " übersetzen";
+            if(pageLanguage == 'de'){
+              label.innerHTML = "Diesen Absatz auf " + languages[language] + " übersetzen";
+            } else {
+              label.innerHTML = "Translate this paragraph to " + languages[language];
+            }
             var button1 = document.createElement("button");
             button1.setAttribute("class", "transl");
             button1.setAttribute('onclick', 'createNote("transl", "' + para.getAttribute("xml:id") + '", "' + language + '")');
@@ -337,7 +347,7 @@
 /* ================================================================================= Functions ================= */
 
 
-  function insertTEIChapter(chapter) {                                   // inserts a full TEI document at location PATH in #FULLTEXT
+  function insertTEIChapter(chapter) {                            // inserts a full TEI document at location PATH in #FULLTEXT
     let path = `${pathToData}${currentBook}/${currentChapter}/${currentBook}_${currentChapter}${mainLanguage}.xml`;
     chapter.getHTML5(path, function(data) {
       document.getElementById("fulltext").innerHTML = "";
@@ -457,8 +467,8 @@
     // specifierA is a generic variable, used for language in translations
     // and commentary specification in comments
     noteNr++;
-    var noteID = "note_" + noteNr;
-    var newNote = document.createElement("div"); //create Note
+    let noteID = "note_" + noteNr;
+    let newNote = document.createElement("div"); //create Note
     newNote.setAttribute("class", "note");
     newNote.setAttribute("id", noteID);
 
@@ -469,7 +479,11 @@
       var title = document.createElement("div");  // create Title
       title.setAttribute("class", "noteTitle");
       var titling = document.createElement("span");
-      var noteTitle = "Übersetzung";
+      if(pageLanguage == 'de') {
+        var noteTitle = "Übersetzung";
+      } else {
+        var noteTitle = "Translation";
+      }
       titling.innerHTML = noteTitle;
       var closeNote = document.createElement("button");   // close Button
       closeNote.setAttribute("class", "closebtn");
@@ -519,7 +533,7 @@
     openPanel('notesPanel');
   }
   
-  function deleteNote(noteId) {                                   // deletes a Note wit ID NOTEID
+  function deleteNote(noteId) {                                   // deletes a Note with ID NOTEID
     var elem = document.getElementById(noteId);
     document.getElementById("notesContent").removeChild(elem);
     if($(window).width() < 600) {
@@ -560,7 +574,11 @@
         else {
           let commentTip = document.createElement("span");          // create Comment + Tooltip
           commentTip.setAttribute("class", "tiptext");
-          commentTip.innerHTML = "Kommentar öffnen";
+          if(pageLanguage == 'de') {
+            commentTip.innerHTML = "Kommentar öffnen";
+          } else {
+            commentTip.innerHTML = "Open commentary";
+          }
           let comment = document.createElement("span");
           comment.setAttribute("class", "comment tooltip");
           comment.setAttribute("id", "comment_" + comments[commentaryFile][key].id)
@@ -620,7 +638,11 @@
     if(commentReferences){
       var references = document.createElement("div");               // note references
       references.setAttribute("class", "commentReferences");
-      references.innerHTML = "<h6>Weiterführende Literatur</h6>"
+      if(pageLanguage == 'de') {
+        references.innerHTML = "<h6>Weiterführende Literatur</h6>";
+      } else {
+        references.innerHTML = "<h6>Further resources</h6>";
+      }
       var referenceList = document.createElement("ul");
       for(var i = 0; i < commentReferences.length; i++) {
         var item = document.createElement("li");
@@ -639,7 +661,7 @@
     return commentText;
   }
 
-  function printBibliography(option) {
+  function printBibliography(option) {                            // creates download links for bibliographies according to format specified in OPTION
     if(option === 'csl') {
       var a = document.createElement("a");
       a.href = "data/site/sources.json";
@@ -651,7 +673,7 @@
     }
   }
 
-  async function getCiteStyle() {
+  async function getCiteStyle() {                                 // fetches the citation style
     let csl = fetch('data/site/mla.csl');
     return csl;
   }
@@ -675,7 +697,11 @@
             authors += ', ';
           } else {authors += ' &amp; ';}
         }
-        let citation = '<span class="tooltip"><a href="bibliography.php#' + citeKey + '" rel="noopener" target="blank">' + authors + '</a><span class="tiptext">Zum Bibliographieeintrag</span></span>' + title;
+        if(pageLanguage == 'de') {
+          var citation = '<span class="tooltip"><a href="bibliography.php#' + citeKey + '" rel="noopener" target="blank">' + authors + '</a><span class="tiptext">Zum Bibliographieeintrag</span></span>' + title;
+        } else {
+          var citation = '<span class="tooltip"><a href="bibliography.php#' + citeKey + '" rel="noopener" target="blank">' + authors + '</a><span class="tiptext">Jump to bibliography entry</span></span>' + title;
+        }
         let citeString = '<span class="citation">' + citation + ', ' + range + '.</span>'
         return citeString;
       }
@@ -692,11 +718,15 @@
     }
   }
 
-  function alertText(){
+  function alertText(){                                           // creates an explanatory paragraph in the notes pane if no notes are open
     if(document.getElementsByClassName("note").length === 0) {
       let alert = document.createElement("p");
       alert.setAttribute("id", "note_alert");
-      alert.innerHTML = "Hier werden Kommentare und Übersetzungen angezeigt. Momentan sind keine Elemente offen.";
+      if(pageLanguage == 'de') {
+        alert.innerHTML = "Hier werden Kommentare und Übersetzungen angezeigt. Momentan sind keine Elemente offen.";
+      } else {
+        alert.innerHTML = "This pane displays commentary and translations. No elements are currently open.";
+      }
       document.getElementById("notesContent").appendChild(alert);
     }
     else if((document.getElementsByClassName("note").length > 0) && document.getElementById("note_alert")) {
