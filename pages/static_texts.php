@@ -65,7 +65,7 @@ $homeTextGerman = '<h2>Home</h2>
 ;
 
 $homeTextEnglish = '<h2>Home</h2>
-<p>Welcome on the home page of the <em>Glarean Project</em>! This page is still being filled with content and some of the links might not be working yet as well. <a href="pages/chapter_select.php">Here</a> you will get to a list of the chapters that are already available.</p>
+<p>Welcome to the home page of the <em>Glarean Project</em>! This page is still being filled with content and some of the links might not be working yet as well. <a href="pages/chapter_select.php">Here</a> you will get to a list of the chapters that are already available.</p>
 <h3>How to use this edition</h3>
 <p>The ideas behind this project will shortly be explained in more detail in the <a href="pages/about.php">about</a> section. For now, here are some tips concerning the content that is already available now:</p>
 <p>All chapters of the three books of the <em>Dodekachordon</em> are being listed on the <a href="pages/chapter_select.php">Chapters</a> page. Already transcribed chapters (currently 1.1 and 3.26 are highlighted. Each chapter can be read in either Latin or German. The display of the chapter can be personalised over the blue button on the left edge of the window. The following options are supported so far:</p>
