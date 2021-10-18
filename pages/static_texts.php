@@ -5,13 +5,13 @@ $GLOBALS['headerGerman'] = '<header id="header">
   <h1><span class="grc">ΔΟΔΕΚΑΧΟΡΔΟΝ</span></h1>
   <a href="javascript:void(0);" class="hamburger" onclick="topNavExpand()">&#x2630;</a>
   <nav id="topnav" class="main">
-    <a href="/index.php">Home</a>
-    <a href="/pages/chapter_select.php">Kapitel</a>
-    <a href="/pages/about.php">Über dieses Projekt</a>
-    <a href="/pages/edition.php">Editionsrichtlinien</a>
-    <a href="/pages/bibliography.php">Bibliographie</a>
-    <a href="/pages/impressum.php">Impressum</a>
-    <a href="/pages/contact.php">Kontakt</a>'
+    <a href="index.php">Home</a>
+    <a href="pages/chapter_select.php">Kapitel</a>
+    <a href="pages/about.php">Über dieses Projekt</a>
+    <a href="pages/edition.php">Editionsrichtlinien</a>
+    <a href="pages/bibliography.php">Bibliographie</a>
+    <a href="pages/impressum.php">Impressum</a>
+    <a href="pages/contact.php">Kontakt</a>'
 ;
 
 $GLOBALS['headerEnglish'] = '<header id="header">
@@ -19,13 +19,13 @@ $GLOBALS['headerEnglish'] = '<header id="header">
   <h1><span class="grc">ΔΟΔΕΚΑΧΟΡΔΟΝ</span></h1>
   <a href="javascript:void(0);" class="hamburger" onclick="topNavExpand()">&#x2630;</a>
   <nav id="topnav" class="main">
-    <a href="/index.php">Home</a>
-    <a href="/pages/chapter_select.php">Chapters</a>
-    <a href="/pages/about.php">About</a>
-    <a href="/pages/edition.php">Edition Guidelines</a>
-    <a href="/pages/bibliography.php">Bibliography</a>
-    <a href="/pages/impressum.php">Impressum</a>
-    <a href="/pages/contact.php">Contact</a>'
+    <a href="index.php">Home</a>
+    <a href="pages/chapter_select.php">Chapters</a>
+    <a href="pages/about.php">About</a>
+    <a href="pages/edition.php">Edition Guidelines</a>
+    <a href="pages/bibliography.php">Bibliography</a>
+    <a href="pages/impressum.php">Impressum</a>
+    <a href="pages/contact.php">Contact</a>'
 ;
 
 /* Footer */

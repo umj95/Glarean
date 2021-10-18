@@ -12,7 +12,7 @@
     echo "Error: No language specified.";
   }
 ?>
-        <script src="/js/citation.js" type="text/javascript"></script>
+        <script src="js/citation.js" type="text/javascript"></script>
         <script>
           /*const Cite = require('citation-js');
           let example = new Cite(bibliography);
@@ -156,5 +156,5 @@
     </section>
   </div>
 <?php
-  include("../../includes/$pageLang/footer.php");
+  include("../includes/footer.php");
 ?>
