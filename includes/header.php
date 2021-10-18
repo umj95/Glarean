@@ -45,7 +45,7 @@
     $chapterOptions[$key] = $value;
   }
 
-  $bibliography = file_get_contents("../data/site/sources.json");    // the bibliography as a json object
+  $bibliography = file_get_contents("data/site/sources.json");    // the bibliography as a json object
  
   /* ----------------------------------------------------------------------------------------------------- */
 
