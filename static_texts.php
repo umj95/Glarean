@@ -185,7 +185,7 @@ $chapterSelectTextGerman = '<div class="chapter">
       <li>De Hypoionico. Caput XXIII.</li>
       <li>De binorum Modorum connexione exempla, atque inibi obiter Iusquini Pratensis Encomium. Caput XXIIII</li>
       <li>De Tenoribus Diapason non explentibus. Caput XXV.</li>
-      <li class="released">De Symphonetarum Ingenio Caput XXVI · <span class="tooltip"><a href="/pages/chapter.php?currentBook=3&currentChapter=26&mainLanguage=_lat&marginalia=false">Latein</a><span class="tiptext">Dieses Kapitel auf latein Lesen</span></span> · <span class="tooltip"><a href="/pages/chapter.php?currentBook=3&currentChapter=26&mainLanguage=_deu&marginalia=false">Deutsch</a><span class="tiptext">Dieses Kapitel auf deutsch lesen</span></span></li>
+      <li class="released">De Symphonetarum Ingenio Caput XXVI · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=26&mainLanguage=_lat&marginalia=false">Latein</a><span class="tiptext">Dieses Kapitel auf latein Lesen</span></span> · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=26&mainLanguage=_deu&marginalia=false">Deutsch</a><span class="tiptext">Dieses Kapitel auf deutsch lesen</span></span></li>
     </ol>
     </div>
   </div>
