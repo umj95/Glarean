@@ -58,7 +58,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link rel="stylesheet" href="css/glarean.css"/>
-    <link rel="icon" type="image/ico" href="/favicon.ico">
+    <link rel="icon" type="image/ico" href="favicon.ico">
     <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
     <script type="text/javascript" src="js/CETEI.js"></script>
     <script type="text/javascript" src="js/page_functions.js"></script>
