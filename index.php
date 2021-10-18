@@ -13,7 +13,7 @@
     }                                       // set the initial page language
     $pageLang = $_SESSION['lang'];
 
-    include("pages/static_texts.php");
+    include("static_texts.php");
     include("includes/header.php");
 
     echo $pageLang;
