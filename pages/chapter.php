@@ -17,12 +17,13 @@
   <script type="text/javascript" src="/js/verovio_loader.js"></script>
   <script>
     let chapterOptions = <?php echo $optionsToJSON;?>;            // extract chapter variables -> fill the global variables specified in js/page-functions
+    
     mainLanguage = chapterOptions.mainLanguage;
     currentBook = chapterOptions.currentBook;
     currentChapter = chapterOptions.currentChapter;
     secondaryLanguages = chapterOptions.secondaryLanguages;
     marginalia = chapterOptions.marginalia;
-    //commentaryOptions = chapterOptions.comments;
+    commentaryOptions = chapterOptions.comments;
 
     optionalBehaviors(chapterOptions);                            // Load custom TEI behaviors
             

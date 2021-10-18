@@ -476,9 +476,9 @@
   
     if(kind === "transl") {                                       // makes note for translated paragraph
       newNote.setAttribute("class", "note transl");
-      let title = document.createElement("div");  // create Title
+      var title = document.createElement("div");  // create Title
       title.setAttribute("class", "noteTitle");
-      let titling = document.createElement("span");
+      var titling = document.createElement("span");
       if(pageLanguage == 'de') {
         var noteTitle = "Übersetzung";
       } else {

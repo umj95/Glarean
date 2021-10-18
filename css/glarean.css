@@ -185,6 +185,11 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
   #container .hamburger {
     display: none;
   }
+
+  .languageSwitcher {
+    align: right;
+    margin: 0.5em;
+  }
 }
 
 @media screen and (max-width: 600px) {

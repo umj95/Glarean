@@ -112,10 +112,10 @@
     }
     ?>
     <form action="<?php $_SERVER["PHP_SELF"]?>" method="post">
-    <button type="submit" name="lang" value="de">deutsch</button>
+    <button class="languageSwitcher" type="submit" name="lang" value="de">🇩🇪</button>
   </form>
   <form action="<?php $_SERVER["PHP_SELF"]?>" method="post">
-    <button type="submit" name="lang" value="en">english</button>
+    <button class="languageSwitcher" type="submit" name="lang" value="en">🇬🇧</button>
   </form>
 </nav>
 </div>
