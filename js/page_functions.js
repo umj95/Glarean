@@ -239,6 +239,11 @@
             var button1 = document.createElement("button");
             button1.setAttribute("class", "transl");
             button1.setAttribute('onclick', 'createNote("transl", "' + para.getAttribute("xml:id") + '", "' + language + '")');
+            if(language == '_deu'){
+              button1.innerText = "🇩🇪";
+            } else if(language == '_lat'){
+              button1.innerText = "🇻🇦";
+            }
             container.appendChild(label);
             container.appendChild(button1);
             paragraph.appendChild(container);
@@ -428,8 +433,8 @@
         document.getElementById("noteArea").style.marginLeft = "70%";
         //document.getElementById("body-text").style.marginRight = "30%";
       } else {
-        document.getElementById("noteArea").style.height = "50vh";
-        document.getElementById("noteArea").style.marginTop = "50vh";
+        document.getElementById("noteArea").style.height = "100vh";
+        document.getElementById("noteArea").style.marginTop = "0vh";
       }
     }
   }
@@ -451,8 +456,8 @@
     }
   }
 
-  function topNavExpand() {                                       //make menu items look better on mobile
-    var x = document.getElementById("topnav");
+  function hamburgerExpand() {                                       //make menu items look better on mobile
+    let x = document.getElementById("hamburgerExpand");
     if (x.className === "main") {
       x.className += " responsive";
     } else {
@@ -536,9 +541,9 @@
   function deleteNote(noteId) {                                   // deletes a Note with ID NOTEID
     var elem = document.getElementById(noteId);
     document.getElementById("notesContent").removeChild(elem);
-    if($(window).width() < 600) {
+    /* if($(window).width() < 600) {
       closePanel("notesPanel");
-    }
+    } */
     alertText();
   }
   

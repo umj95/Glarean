@@ -62,6 +62,16 @@
         addVerovio();
       }
     });
+
+    let optionsPanel = document.getElementById("optionsPanel");
+    let notesPanel = document.getElementById("noteArea");
+    window.onclick = function(event) {
+      if (event.target == notesPanel) {
+        closePanel("notesPanel");
+      } else if(event.target == optionsPanel) {
+        closePanel("optionsPanel");
+      }
+    } 
     </script>
   </div>
 <?php

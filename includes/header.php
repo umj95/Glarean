@@ -51,7 +51,7 @@
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="<?php echo $pageLang;?>">
   <head>
     <meta charset="UTF-8">
     <title>ΔΟΔΕΚΑΧΟΡΔΟΝ</title>
@@ -111,22 +111,24 @@
       echo "Error: No language specified. SessionLang = $pageLang\n";
     }
     ?>
-    <form action="<?php $_SERVER["PHP_SELF"]?>" method="post">
-    <button class="languageSwitcher" type="submit" name="lang" value="de">🇩🇪</button>
-  </form>
-  <form action="<?php $_SERVER["PHP_SELF"]?>" method="post">
-    <button class="languageSwitcher" type="submit" name="lang" value="en">🇬🇧</button>
-  </form>
-</nav>
+<div id="languages">
+      <form action="<?php $_SERVER["PHP_SELF"]?>" method="post">
+        <button class="languageSwitcher" type="submit" name="lang" value="de">🇩🇪</button>
+      </form>
+      <form action="<?php $_SERVER["PHP_SELF"]?>" method="post">
+        <button class="languageSwitcher" type="submit" name="lang" value="en">🇬🇧</button>
+      </form>
+    </div>
 </div>
 <script type="text/javascript"> 
 let prevScrollpos = window.pageYOffset;                    // make header disappear on scroll
+let headerHeight = document.getElementById("header").offsetHeight + 10;
 window.onscroll = function() {
   let currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
     document.getElementById("header").style.top = "0";
   } else {
-    document.getElementById("header").style.top = "-0.8in";
+    document.getElementById("header").style.top = "-" + headerHeight + "px";
   }
   prevScrollpos = currentScrollPos;
 }

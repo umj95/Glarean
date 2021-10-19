@@ -2,30 +2,32 @@
 /* Header */
 $GLOBALS['headerGerman'] = '<header id="header">
 <div id="container">
-  <h1><span class="grc">ΔΟΔΕΚΑΧΟΡΔΟΝ</span></h1>
-  <a href="javascript:void(0);" class="hamburger" onclick="topNavExpand()">&#x2630;</a>
-  <nav id="topnav" class="main">
-    <a href="index.php">Home</a>
-    <a href="chapter_select.php">Kapitel</a>
-    <a href="about.php">Über dieses Projekt</a>
-    <a href="edition.php">Editionsrichtlinien</a>
-    <a href="bibliography.php">Bibliographie</a>
-    <a href="impressum.php">Impressum</a>
-    <a href="contact.php">Kontakt</a>'
+  <h1><span class="grc"><a href="index.php">ΔΟΔΕΚΑΧΟΡΔΟΝ</a></span></h1>
+  <a href="javascript:void(0);" class="hamburger" onclick="hamburgerExpand()">&#x2630;</a>
+  <div id="hamburgerExpand" class="main">
+    <nav id="topnav" class="main">
+      <a href="chapter_select.php">Kapitel</a>
+      <!--<a href="about.php">Über dieses Projekt</a>-->
+      <a href="edition.php">Edition</a>
+      <a href="bibliography.php">Bibliographie</a>
+      <a href="impressum.php">Impressum</a>
+      <a href="contact.php">Kontakt</a>
+    </nav>'
 ;
 
 $GLOBALS['headerEnglish'] = '<header id="header">
 <div id="container">
-  <h1><span class="grc">ΔΟΔΕΚΑΧΟΡΔΟΝ</span></h1>
-  <a href="javascript:void(0);" class="hamburger" onclick="topNavExpand()">&#x2630;</a>
-  <nav id="topnav" class="main">
-    <a href="index.php">Home</a>
-    <a href="chapter_select.php">Chapters</a>
-    <a href="about.php">About</a>
-    <a href="edition.php">Edition Guidelines</a>
-    <a href="bibliography.php">Bibliography</a>
-    <a href="impressum.php">Impressum</a>
-    <a href="contact.php">Contact</a>'
+  <h1><span class="grc"><a href="index.php">ΔΟΔΕΚΑΧΟΡΔΟΝ</a></span></h1>
+  <a href="javascript:void(0);" class="hamburger" onclick="hamburgerExpand()">&#x2630;</a>
+  <div id="hamburgerExpand" class="main">
+    <nav id="topnav">
+      <a href="chapter_select.php">Chapters</a>
+      <!--<a href="about.php">About</a>-->
+      <a href="edition.php">Edition</a>
+      <a href="bibliography.php">Bibliography</a>
+      <a href="impressum.php">Impressum</a>
+      <a href="contact.php">Contact</a>
+    </nav>'
 ;
 
 /* Footer */
