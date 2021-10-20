@@ -1,36 +1,37 @@
 <?php
+session_start();
+  include("../backend_functions.php");
   /*=========================
   This header contains the boilerplate header for all pages.
   Additionally, it contains global variables for php.
-  =========================*/
-    
-  session_start();
+  =========================*/ 
+  
+/* --------------------------------------------------------------  Global Variables  ------------------- */
 
-  function parseOptionstoString($chapterOptions) {                // converts $chapterOptions into a String
-    $passOptions = "";
-    foreach($chapterOptions as $key => $option) {
-      $name = $key;
-      if(is_array($option)) {
-        $subOptionList = array();
-        foreach($option as $subOption) {
-          array_push($subOptionList, $subOption);
-        }
-        $value = json_encode($subOptionList);
-        $passOptions .= $name . "=" . "$value" . "; ";
-      } else {
-        $value = "$option";
-        $passOptions .= $name . "=" . "\"$value\"" . "; ";
-      }
-    }
-    return $passOptions;
+  if(isset($_POST['recordSize'])) {                               // check for screen dimensions
+    $height = $_POST['height'];
+    $width = $_POST['width'];
+    $_SESSION['screen_height'] = $height;
+    $_SESSION['screen_width'] = $width;
   }
 
-  /* --------------------------------------------------------------  Global Variables  ------------------- */
+  if(!isset($_SESSION['lang'])){                                  // set the initial page language
+    $_SESSION['lang'] = "de";
+  }
+  $pageLang = $_SESSION['lang'];
+
+  if(isset($_POST['lang'])) {                                     // reload page after language change
+    $_SESSION['lang'] = $_POST['lang'];
+
+    $pageLang = $_SESSION['lang'];
+    $page = $_SERVER['PHP_SELF'];
+    header("Refresh: url=$page");
+  }
  
   $languageList = array('_lat', '_deu');                          // the available languages for translations
   
   if($_SESSION['lang'] == "de") {                                 // expand the languages for labels etc. according to language variable
-    $languages    = array( '_lat' => 'lateinisch',                  
+    $languages    = array( '_lat' => 'lateinisch',
                            '_deu' => 'deutsch');
   } elseif($_SESSION['lang'] == "en") {
     $languages    = array( '_lat' => 'Latin',
@@ -40,15 +41,11 @@
   $commentaryOptions = array( 'editorsComments', 
                               'additionalComments');              // commentary options to offer
 
-  $chapterOptions = array();                                      // load chapter options from GET -> into $chapterOptions -> also used extensively in chapter.php
-  foreach($_GET as $key => $value) {
-    $chapterOptions[$key] = $value;
-  }
+  $chapterOptions = parseGETintoChapterOptions();
 
   $bibliography = file_get_contents("data/site/sources.json");    // the bibliography as a json object
  
-  /* ----------------------------------------------------------------------------------------------------- */
-
+/* ----------------------------------------------------------------------------------------------------- */
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $pageLang;?>">
@@ -81,17 +78,9 @@
             });\n
           </script>\n";
       } */
-
-      if(isset($_POST['lang'])) {                                 // reload page after language change
-        $_SESSION['lang'] = $_POST['lang'];
-
-        $pageLang = $_SESSION['lang'];
-        $page = $_SERVER['PHP_SELF'];
-        header("Refresh: url=$page");
-      }
     ?>
     <script type="text/javascript">
-      pageLanguage = "<?php echo $pageLang; ?>";
+      pageLanguage = "<?php echo $pageLang; ?>";                  // pass page language choice to JS
 
       if(pageLanguage != 'de') {
         languages['_lat'] = "Latin";
@@ -121,16 +110,6 @@
     </div>
 </div>
 <script type="text/javascript"> 
-let prevScrollpos = window.pageYOffset;                    // make header disappear on scroll
-let headerHeight = document.getElementById("header").offsetHeight + 10;
-window.onscroll = function() {
-  let currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("header").style.top = "0";
-  } else {
-    document.getElementById("header").style.top = "-" + headerHeight + "px";
-  }
-  prevScrollpos = currentScrollPos;
-}
+  scrollSensitiveHeader();
 </script>
 </header>

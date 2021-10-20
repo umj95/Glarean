@@ -202,7 +202,7 @@ $chapterSelectTextEnglish = '  <div class="chapter">
     <p>Please chose the chapter you want to read, as well as the main language you want to read in. You will still be able to view and compare single paragraphs in another language from within the viewer. Chapters that have not been released yet are marked grey.</p>
     <h3>Libri primi Capita XXI.</h3>
     <ol class="chapter_select">
-      <li class="released">De Musices diuisione ac definitione Caput I. · <span class="tooltip"><a href="/pages/chapter.php?currentBook=1&currentChapter=1&mainLanguage=_lat&marginalia=false">Latin</a><span class="tiptext">Read this chapter in Latin</span></span> · <span class="tooltip"><a href="/pages/chapter.php?currentBook=1&currentChapter=1&mainLanguage=_deu&marginalia=false">German</a><span class="tiptext">Read this chapter in German</span></span></li></li>
+      <li class="released">De Musices diuisione ac definitione Caput I. · <span class="tooltip"><a href="chapter.php?currentBook=1&currentChapter=1&mainLanguage=_lat&marginalia=false">Latin</a><span class="tiptext">Read this chapter in Latin</span></span> · <span class="tooltip"><a href="chapter.php?currentBook=1&currentChapter=1&mainLanguage=_deu&marginalia=false">German</a><span class="tiptext">Read this chapter in German</span></span></li></li>
       <li>De Elementis Practices Caput II.</li>
       <li>Quae in Guidonis typo rudibus huius artis consyderanda Caput III.</li>
       <li>De Clauibus et uocum deductionibus per easdem, de notularum item figuris Caput IIII.</li>

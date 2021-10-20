@@ -738,3 +738,17 @@
       document.getElementById("notesContent").removeChild(document.getElementById("note_alert"));
     }
   }
+
+  function scrollSensitiveHeader() {                              // make header disappear on scroll
+    let prevScrollpos = window.pageYOffset;
+    let headerHeight = document.getElementById("header").offsetHeight + 10;
+    window.onscroll = function() {
+      let currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("header").style.top = "0";
+      } else {
+        document.getElementById("header").style.top = "-" + headerHeight + "px";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  }
