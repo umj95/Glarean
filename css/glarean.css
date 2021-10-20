@@ -83,7 +83,8 @@ html {
   overflow-x: hidden;  /* Overflow cannot be hidden or else position:sticky does not work */
   font-family: var(--site-font);
   font-size: 1.45vw;
-  box-sizing: border-box;}
+  box-sizing: border-box;
+  hyphens: auto;}
 
 body {
   display: grid;
@@ -136,7 +137,7 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
 
 @media screen and (min-width: 600px) {
   header {
-    max-height: 0.8in;
+    /* max-height: 0.8in; */
     position: fixed; 
     top: 0;
     z-index: 2;
@@ -153,7 +154,7 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: baseline;}
+    align-items: center;}
 
   /* Note that the header elements are the only ones given in fixed widths */
 
@@ -162,7 +163,7 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
     margin: 0;
     padding: 1rem;
     text-align: center;
-    font-size: 30px;
+    /* font-size: 30px; */
     font-family: var(--edition-font);
     letter-spacing: 0.1em;}
 
@@ -186,9 +187,29 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
     display: none;
   }
 
+  header #hamburgerExpand {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header #languages {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin: auto;
+    margin-right: 0;
+    padding: 1em;
+  }
+
   .languageSwitcher {
-    align: right;
+    align-self: right;
     margin: 0.5em;
+    cursor: pointer;
   }
 }
 
@@ -224,7 +245,7 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
     text-decoration: none;
     color: #efe4d8;}
 
-  header #container nav.main {display: none;}
+  header #container #hamburgerExpand {display: none;}
 
   header #container a.hamburger {
     color: var(--paper-beige);
@@ -237,13 +258,13 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
 
   header #container .hamburger {display: none;}
 
-  header #container nav.main.responsive a.hamburger {
+  header #container #hamburgerExpand.main.responsive a.hamburger {
     position: absolute;
     right: 0;
     top: 0;
     font-size: 8vw;}
 
-  header #container nav.main.responsive {
+  header #container #hamburgerExpand.main.responsive {
     position: relative;
     width: 100%;
     display: block;
@@ -251,6 +272,23 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
     color: var(--paper-beige);
     background-color: var(--header-blue);
     transition: 0.4s;}
+
+  header #languages {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-right: 0;
+    padding: 1em;
+  }
+
+  .languageSwitcher {
+    align-self: right;
+    margin: 0.5em;
+    cursor: pointer;
+  }
 }
 
 /* ---------------- Works Cited -------------*/
@@ -414,8 +452,7 @@ button.panel {
     transition: all 0.5s linear;
     display: grid;
     grid-template-columns: 4.16vw auto 4.16vw;
-    grid-template-rows: 0.4in 0.4in auto;
-    box-shadow: 7px 7px 25px #31302f;}
+    grid-template-rows: 0.4in 0.4in auto;}
 
   #optionsPanel {
     z-index: 5;
@@ -461,34 +498,30 @@ button.panel {
     z-index: 3;
     top: 0;
     left: 0;
-    background-color: var(--background-beige);
-    overflow-x: hidden;
-    -webkit-transition: all 0.4s linear;
-    -moz-transition: all 0.4s linear;
-    -o-transition: all 0.4s linear;
-    transition: all 0.4s linear;
-    display: grid;
-    grid-template-columns: 8vh auto 8vh;
-    grid-template-rows: 0.4in auto;
-    grid-template-areas:  ". . button"
-                          ". textcontent .";
-    box-shadow: 7px 7px 25px #31302f;}
+    overflow: auto}
 
-   .panel#noteArea {
-      margin-top: 100%;
-      animation-direction: reverse;
-  }
+  .panel#noteArea {
+    margin-top: 100%;
+    animation-direction: reverse;}
   
   .panel #closer {
-    grid-area: button;
-    display: flex;
-    justify-content: center;
-    align-items: center;}
-
-  .panel#noteArea #closer {
     display: none;}
   
-  .panel #content {grid-area: textcontent;}
+  .panel#optionsPanel #content {
+    margin-bottom: 50%;
+    background-color: var(--background-beige);
+    box-shadow: 7px 7px 25px #31302f;
+    padding: 2em;
+    overflow: auto;
+    max-height: 50%;}
+
+  .panel#noteArea #notesContent {
+    /* margin-top: 50%; */
+    background-color: var(--background-beige);
+    box-shadow: 7px 7px 25px #31302f;
+    padding: 2em;
+    overflow: auto;
+    max-height: 50%;}
   
   .panel .closebtn {
     position: relative;
@@ -505,7 +538,7 @@ button.panel {
   .closebtn:hover {
     box-shadow: 2px 2px 4px var(--paper-shadow);}
   
-  button.panel {
+  button.panel {            /* Button on bottom of screen to open panels */
     position: fixed;
     top: 90%;
     left: 10%;
@@ -545,7 +578,7 @@ button.panel {
     grid-row: 1 / 4;
     padding-top: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;}
 }
@@ -651,6 +684,9 @@ button.panel {
       overflow-x: hidden;}
     .text {
       grid-column: 1 / 25;}
+    #fulltext {
+      overflow-x: hidden;
+    }
   }
   
   /* ----------------- Music ------------------- */
@@ -878,7 +914,9 @@ button.panel {
   @media only screen and (max-width: 600px) {
     .note {
       margin: 0;
+      margin-bottom: 1em;
       width: 100%;
+      overflow: initial;
       display: grid;
       grid-template-rows: 0.4in auto;}
     .noteTitle{height: 0.4in;}
@@ -897,7 +935,7 @@ button.panel {
     .noteBody {overflow: scroll;}
 
     .noteFooter {
-      min-height: 1rem;
+      min-height: 0.5rem;
     }
   }
 

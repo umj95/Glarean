@@ -1,9 +1,10 @@
 <?php
   /*=========================
   This included section allows for the customisation of the selected chapter text, with things like translations and commentary.
-  Pre-existant selections, such as the current chapter, are retrieved from GET. Once the Submit button is pressed, all selections are transported via GET
-  and the page gets reloaded.
+  Pre-existant selections, such as the current chapter, are retrieved from GET. 
+  Once the Submit button is pressed, all selections are transported via GET and the page gets reloaded.
   =========================*/
+
   $languageOptions = array();                                     // filter the current main language from the available languages
   for($i = 0; $i < count($languageList); $i++) {                  // global serverside variables such as $languageList are declared in header.php
     if($languageList[$i] != $chapterOptions['mainLanguage']) {
@@ -18,7 +19,8 @@
   </div>
   <div id="content">
     <form method="POST">
-      <fieldset>                                                  <!-- languages: options as previously defined in $languageOptions -->
+      <fieldset>
+        <!-- languages: options as previously defined in $languageOptions -->
         <legend><h2><?php if($pageLang == 'de'){echo "Übersetzungen";} else {echo "Translations";}?></h2></legend>
         <div class="control">
           <?php
@@ -42,7 +44,8 @@
         </div>
       </fieldset>
       <fieldset>
-        <legend><h2><?php if($pageLang == 'de'){echo "Anmerkungen";} else {echo "Annotations";}?></h2></legend>                     <!-- Offer marginalia -->
+        <!-- Offer marginalia -->
+        <legend><h2><?php if($pageLang == 'de'){echo "Anmerkungen";} else {echo "Annotations";}?></h2></legend>                     
         <div class="control">
           <label for="margins"><?php if($pageLang == 'de'){echo "Anmerkungen anzeigen";} else {echo "Show annotations";}?></label>
           <?php
@@ -55,7 +58,8 @@
         </div>
       </fieldset>
       <fieldset>
-        <legend><h2><?php if($pageLang == 'de'){echo "Kommentare";} else {echo "Commentary";}?></h2></legend>                      <!-- Offer commentary: available options are listed in $commentaryOptions (header.php) -->
+        <!-- Offer commentary: available options are listed in $commentaryOptions (header.php) -->
+        <legend><h2><?php if($pageLang == 'de'){echo "Kommentare";} else {echo "Commentary";}?></h2></legend>                      
         <div class="control">
           <?php
           if (is_array($commentaryOptions) || is_object($commentaryOptions)) {
@@ -75,10 +79,10 @@
             }
           }
           ?>
-          
         </div>
       </fieldset>
-      <label for="margins"><?php if($pageLang == 'de'){echo "Änderungen abschicken";} else {echo "Submit Changes";}?></label>           <!-- Submit selection -->
+      <!-- Submit selection -->
+      <label for="margins"><?php if($pageLang == 'de'){echo "Änderungen abschicken";} else {echo "Submit Changes";}?></label>           
       <input type="submit" name="submit" value="submit"/>
     </form>
     <p><a href="<?php 
@@ -113,4 +117,3 @@
     echo $url;
   }
 ?>
-<!-- Commit comment -->

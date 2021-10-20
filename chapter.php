@@ -1,11 +1,12 @@
 <?php
+session_start();
   /*=========================
   This file takes the $chapterOptions colleted from $_GET in header.php and builds the chapter accordingly,
   using one CETEI object for the main text and one for the translations, both with their specific behaviors
   =========================*/
   $currentFile = basename(__FILE__);
-  session_start();
   $pageLang = $_SESSION['lang'];
+  include("backend_functions.php");
   include("static_texts.php");
   include("includes/header.php");
   include("includes/sidepanel.php");
@@ -51,17 +52,27 @@
       </div>
     </div>
     <script>
-    window.addEventListener("load", function() {                  // notes and Music are added after main text has loaded
-      if(chapterOptions.comments) {                               // load selected commentaries AFTER the TEI document has been loaded
-        for(let i in chapterOptions.comments) {                   // every set of commentary is inserted iteratively
-          insertComments(chapterOptions.comments[i]);
+      window.addEventListener("load", function() {                  // notes and Music are added after main text has loaded
+        if(chapterOptions.comments) {                               // load selected commentaries AFTER the TEI document has been loaded
+          for(let i in chapterOptions.comments) {                   // every set of commentary is inserted iteratively
+            insertComments(chapterOptions.comments[i]);
+          }
         }
-      }
 
-      if(this.document.getElementsByClassName("music").length > 0) {  // if chapter has music examples, call verovio
-        addVerovio();
-      }
-    });
+        if(this.document.getElementsByClassName("music").length > 0) {  // if chapter has music examples, call verovio
+          addVerovio();
+        }
+      });
+
+      let optionsPanel = document.getElementById("optionsPanel");
+      let notesPanel = document.getElementById("noteArea");
+      window.onclick = function(event) {
+        if (event.target == notesPanel) {
+          closePanel("notesPanel");
+        } else if(event.target == optionsPanel) {
+          closePanel("optionsPanel");
+        }
+      } 
     </script>
   </div>
 <?php
