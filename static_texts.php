@@ -20,7 +20,7 @@ $GLOBALS['headerEnglish'] = '<header id="header">
   <h1><span class="grc"><a href="index.php">ΔΟΔΕΚΑΧΟΡΔΟΝ</a></span></h1>
   <a href="javascript:void(0);" class="hamburger" onclick="hamburgerExpand()">&#x2630;</a>
   <div id="hamburgerExpand" class="main">
-    <nav id="topnav">
+    <nav id="topnav" class="main">
       <a href="chapter_select.php">Chapters</a>
       <!--<a href="about.php">About</a>-->
       <a href="edition.php">Edition</a>
