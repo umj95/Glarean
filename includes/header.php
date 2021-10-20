@@ -18,17 +18,19 @@ session_start();
   /* Geolocation processing follows this tutorial: 
   https://www.geeksforgeeks.org/how-to-get-visitors-country-from-their-ip-in-php/ */
   
-  $ip = getVisIpAddr();                                           // get user's IP for language setting
+  if(!isset($_SESSION['lang'])){
+    $ip = getVisIpAddr();                                           // get user's IP for language setting
 
-  $ipdat = @json_decode(file_get_contents(                        // get country from IP with https://www.geoplugin.com API
-    "http://www.geoplugin.net/json.gp?ip=" . $ip));
+    $ipdat = @json_decode(file_get_contents(                        // get country from IP with https://www.geoplugin.com API
+      "http://www.geoplugin.net/json.gp?ip=" . $ip));
 
-  $visitorCountry = $ipdat->geoplugin_countryName;
+    $visitorCountry = $ipdat->geoplugin_countryName;
 
-  if($visitorCountry == 'Germany' || $visitorCountry == 'Austria') {
-    $_SESSION['lang'] = "de";
-  } else {
-    $_SESSION['lang'] = "en";
+    if($visitorCountry == 'Germany' || $visitorCountry == 'Austria') {
+      $_SESSION['lang'] = "de";
+    } else {
+      $_SESSION['lang'] = "en";
+    }
   }
 
   $pageLang = $_SESSION['lang'];
