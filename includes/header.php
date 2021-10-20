@@ -1,6 +1,6 @@
 <?php
 session_start();
-  include("../backend_functions.php");
+  //include("../backend_functions.php");
   /*=========================
   This header contains the boilerplate header for all pages.
   Additionally, it contains global variables for php.
@@ -108,6 +108,7 @@ session_start();
         <button class="languageSwitcher" type="submit" name="lang" value="en">🇬🇧</button>
       </form>
     </div>
+  </div>
 </div>
 <script type="text/javascript"> 
   scrollSensitiveHeader();

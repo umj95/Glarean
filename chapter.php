@@ -9,7 +9,6 @@ session_start();
   include("backend_functions.php");
   include("static_texts.php");
   include("includes/header.php");
-  include("includes/sidepanel.php");
 
   $optionsToJSON = json_encode($chapterOptions);                  // $chapterOptions (assocArray collected from GET requests in sidepanel.php) 
                                                                   // is put into a JSON-Object for further use by Javascript
@@ -33,11 +32,19 @@ session_start();
     fullText.addBehaviors(fullTextBehaviors);                     // add behaviors to the main language text object
 
   </script>
-  
+  <?php 
+      constructSidePanel(                                         // construct the options panel
+        $chapterOptions, 
+        $commentaryOptions, 
+        $languageList, 
+        $pageLang, 
+        $languages);
+  ?>
   <div class="chapter">
     <section id="body-text" class="body-text">
       <div id="fulltext" class="text">
-        <script>insertTEIChapter(fullText)</script>                       <!-- insert the TEI document -->
+        <!-- insert the TEI document -->
+        <script>insertTEIChapter(fullText)</script>
       </div>
     </section>
     <button name="comments" class="panel" id="notesButton" onclick="openPanel('notesPanel')"></button>
@@ -47,14 +54,14 @@ session_start();
       </div>
       <div id="notesContent">
         <script>
-          alertText();
+          alertText();                                            // if no comments are opened, display dummy text
         </script>
       </div>
     </div>
     <script>
-      window.addEventListener("load", function() {                  // notes and Music are added after main text has loaded
-        if(chapterOptions.comments) {                               // load selected commentaries AFTER the TEI document has been loaded
-          for(let i in chapterOptions.comments) {                   // every set of commentary is inserted iteratively
+      window.addEventListener("load", function() {                // notes and Music are added after main text has loaded
+        if(chapterOptions.comments) {                             // load selected commentaries AFTER the TEI document has been loaded
+          for(let i in chapterOptions.comments) {                 // every set of commentary is inserted iteratively
             insertComments(chapterOptions.comments[i]);
           }
         }
@@ -76,5 +83,9 @@ session_start();
     </script>
   </div>
 <?php
+  if(isset($_POST['submit'])){                                    // reload the page if the submit button in the options panel is pressed
+    RefreshURL($chapterOptions);
+  }
+
   include("includes/footer.php");
 ?>
