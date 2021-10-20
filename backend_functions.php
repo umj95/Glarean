@@ -157,4 +157,17 @@
             $url = "<meta http-equiv=\"refresh\" content=\"0;url=chapter.php?currentBook=".$chapOp['currentBook']."&currentChapter=".$chapOp['currentChapter']."&mainLanguage=".$chapOp['mainLanguage'].$custom."\" />";
             echo $url;
         }
+
+    function getVisIpAddr() {
+    
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+            return $_SERVER['HTTP_CLIENT_IP'];
+        }
+        else if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            return $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }
+        else {
+            return $_SERVER['REMOTE_ADDR'];
+        }
+    }
 ?>
