@@ -417,41 +417,86 @@
     console.log(translTextBehaviors);
   }
 
-  function openPanel(form) {                                      // opens the left Panel
-    if(form == 'optionsPanel') {
+  function openPanel(form) {                                      // opens a panel
+    if(form == 'optionsPanel') {                                  // left panel
+
+      let panel = document.getElementById("optionsPanel");
+      let button = document.getElementById("optionsButton");
+
       if($(window).width() > 1200){
-          document.getElementById("optionsPanel").style.width = "25%";
+          panel.style.width = "25%";
+          button.style.cssText = `
+            left: 25%;
+            border-radius: 150px 150px;
+            z-index: 6;`;
       } else if($(window).width() > 600){
-        document.getElementById("optionsPanel").style.width = "40%";
+        panel.style.width = "40%";
+        button.style.cssText = `
+            left: 40%;
+            border-radius: 150px 150px;
+            z-index: 6;`;
       } else {
-        document.getElementById("optionsPanel").style.height = "100vh";
+        panel.style.height = "100vh";
       }
-    } else if(form == 'notesPanel') {                             // opens the right Panel
-      console.log('notesPanel button clicked');
+      button.setAttribute("onclick", "closePanel('optionsPanel')");
+      button.innerText = "◄";
+
+    } else if(form == 'notesPanel') {                             // right Panel
+
+      let panel = document.getElementById("noteArea");
+      let button = document.getElementById("notesButton");
+
       if($(window).width() > 600){
-        document.getElementById("noteArea").style.width = "30%";
-        document.getElementById("noteArea").style.marginLeft = "70%";
-        //document.getElementById("body-text").style.marginRight = "30%";
+        panel.style.cssText = `
+          width: 30%;
+          margin-left: 70%;`;
+        button.style.cssText = `
+          left: 70%;
+          border-radius: 150px 150px;
+          z-index: 6;`;
+        button.setAttribute("onclick", "closePanel('notesPanel')");
+        button.innerText = "►";
       } else {
-        document.getElementById("noteArea").style.height = "100vh";
-        document.getElementById("noteArea").style.marginTop = "0vh";
+        panel.style.height = "100%";
+        panel.style.marginTop = "0vh";
+        button.setAttribute("onclick", "closePanel('notesPanel')");
       }
     }
   }
 
-  function closePanel(form) {                                     // closes the left Panel
-    if(form === "optionsPanel") {
+  function closePanel(form) {                                     // closes a panel
+    if(form === "optionsPanel") {                                 // left panel
+
+      let panel = document.getElementById("optionsPanel");
+      let button = document.getElementById("optionsButton");
+
       if($(window).width() > 600){
-        document.getElementById("optionsPanel").style.width = "0";
+        panel.style.width = "0";
+        button.style.cssText = `
+            left: 0%;
+            border-radius: 0 150px 150px 0;
+            z-index: 2;`;
       } else {
-        document.getElementById("optionsPanel").style.height = "0";
+        panel.style.height = "0";
       }
-    } else if(form === "notesPanel") {                            // closes the right Panel
+      button.setAttribute("onclick", "openPanel('optionsPanel')");
+      button.innerText = "►";
+
+    } else if(form === "notesPanel") {                            // right Panel
+
+      let panel = document.getElementById("noteArea");
+      let button = document.getElementById("notesButton");
+
       if($(window).width() > 600){
-        document.getElementById("noteArea").style.width = "0";
-        document.getElementById("noteArea").style.marginLeft = "100%";
+        panel.style.width = "0";
+        button.style.cssText = `
+          left: 100%;
+          z-index: 2;`;
+        button.setAttribute("onclick", "openPanel('notesPanel')");
+        button.innerText = "◄";
       } else {
-        document.getElementById("noteArea").style.height = "0";
+        panel.style.height = "0";
+        button.setAttribute("onclick", "openPanel('notesPanel')");
       }
     }
   }

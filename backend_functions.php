@@ -45,11 +45,11 @@
         }
 
         echo '
-        <button class="panel" onclick="openPanel(\'optionsPanel\')"></button>
+        <button id="optionsButton" class="panel" onclick="openPanel(\'optionsPanel\')">&#9658;</button>
         <div id="optionsPanel" class="panel">
-          <div id="closer">
+          <!-- <div id="closer">
             <a href="javascript:void(0)" class="closebtn" onclick="closePanel(\'optionsPanel\')">&times;</a>
-          </div>
+          </div> -->
           <div id="content">
             <form method="POST">
               <fieldset>
@@ -103,7 +103,7 @@
                     foreach($comOpt as $commentary) {
                       echo "<label for=\"$commentary\">";
                       if($commentary == "editorsComments") {
-                        if($pageL == 'de'){echo "Kommentare der Herausgeber anbieten"; } else {echo "Offer editors’ comments ";}
+                        if($pageL == 'de'){echo "Kommentare der Herausgeber anbieten"; } else {echo "Offer editors’ comments";}
                       } else if($commentary == "additionalComments") {
                         if($pageL == 'de'){echo "Weitere Kommentare anbieten"; } else {echo "Offer further commentary";}
                       }

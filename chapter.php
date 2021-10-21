@@ -47,11 +47,11 @@ session_start();
         <script>insertTEIChapter(fullText)</script>
       </div>
     </section>
-    <button name="comments" class="panel" id="notesButton" onclick="openPanel('notesPanel')"></button>
+    <button name="comments" class="panel" id="notesButton" onclick="openPanel('notesPanel')">◄</button>
     <div id="noteArea" class="panel">
-      <div id="closer">
+      <!-- <div id="closer">
         <a href="javascript:void(0)" class="closebtn" onclick="closePanel('notesPanel')">&times;</a>
-      </div>
+      </div> -->
       <div id="notesContent">
         <script>
           alertText();                                            // if no comments are opened, display dummy text
