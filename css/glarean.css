@@ -387,10 +387,10 @@ button.panel {
   top: 50%;
   left: 0;
   border: none;
-  color: var(--paper-beige);
+  color: var(--background-beige);
   background-color: var(--header-blue);
   font-family: inherit;
-  font-size: 2em;
+  font-size: 1.7em;
   cursor: pointer;
   height: 6vh;
   width: 6vh;
