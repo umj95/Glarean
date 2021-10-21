@@ -12,5 +12,11 @@
   } else {
     echo "Error: No language specified.";
   }
+  echo '<script type="text/javascript">
+  let hash = window.location.hash;
+  if(hash == "#tutorial") {
+    constructTip(3);
+  }
+  </script>';
   include("includes/footer.php");
 ?>

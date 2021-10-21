@@ -45,7 +45,7 @@ $GLOBALS['footerEnglish'] = '<footer>
 /* Home */
 
 $homeTextGerman = '<h2>Home</h2>
-<p>Willkommen auf der Seite des <em>Glarean-Projekts</em>! Diese Seite wird noch mit Inhalten gefüllt. Auch die Links funktionieren noch nicht alle. <a href="chapter_select.php">Hier</a> kommen Sie auf eine Liste der schon erarbeiteten Kapitel.</p>
+<p>Willkommen auf der Seite des <em>Glarean-Projekts</em>! Diese Seite wird noch mit Inhalten gefüllt. Auch die Links funktionieren noch nicht alle. <a href="chapter_select.php">Hier</a> kommen Sie auf eine Liste der schon erarbeiteten Kapitel. Und <a onclick="javascript:startTutorial()">hier</a> geht es zum Tutorial</p>
 <h3>Diese Edition benutzen</h3>
 <p>Aufbau und Ideen hinter diesem Projekt werden in Kürze genauer in <a href="about.php">Über dieses Projekt</a> beschrieben werden. Hier einstweilen einige Hinweise zu den schon vorhandenen Inhalten:</p>
 <p>Alle Kapitel der drei Bücher des <em>Dodekachordon</em> werden auf der Seite <a href="chapter_select.php">Kapitel</a> aufgelistet. Bereits transkribierte Kapitel (aktuell 1.1 &amp; 3.26) sind schwarz hervorgehoben. Jedes Kapitel kann entweder auf Latein oder Deutsch gelesen werden. Die Ansicht der Kapitel kann mit dem blauen Knopf am linken Bildschirmrand personalisiert werden. Folgende Optionen stehen aktuell zur Auswahl:</p>
@@ -67,7 +67,7 @@ $homeTextGerman = '<h2>Home</h2>
 ;
 
 $homeTextEnglish = '<h2>Home</h2>
-<p>Welcome to the home page of the <em>Glarean Project</em>! This page is still being filled with content and some of the links might not be working yet as well. <a href="chapter_select.php">Here</a> you will get to a list of the chapters that are already available.</p>
+<p>Welcome to the home page of the <em>Glarean Project</em>! This page is still being filled with content and some of the links might not be working yet as well. <a href="chapter_select.php">Here</a> you will get to a list of the chapters that are already available. And <a onclick="javascript:startTutorial()">here</a> you get to the tutorial.</p>
 <h3>How to use this edition</h3>
 <p>The ideas behind this project will shortly be explained in more detail in the <a href="about.php">about</a> section. For now, here are some tips concerning the content that is already available now:</p>
 <p>All chapters of the three books of the <em>Dodekachordon</em> are being listed on the <a href="chapter_select.php">Chapters</a> page. Already transcribed chapters (currently 1.1 and 3.26 are highlighted. Each chapter can be read in either Latin or German. The display of the chapter can be personalised over the blue button on the left edge of the window. The following options are supported so far:</p>
@@ -90,7 +90,7 @@ $homeTextEnglish = '<h2>Home</h2>
 
 /* ChapterSelect */
 $chapterSelectTextGerman = '<div class="chapter">
-<section class="body-text">
+<section id="body-text" class="body-text">
     <div id="fulltext" class="text">
     <h2>Kapitel</h2>
     <p>Bitte wählen Sie hier Kapitel und Sprache aus. Sie können auch innerhalb eines Kapitels Passagen in der Übersetzung / im Original lesen. Noch nicht freigegebene Kapitel sind grau markiert.</p>
@@ -196,7 +196,7 @@ $chapterSelectTextGerman = '<div class="chapter">
 ;
 
 $chapterSelectTextEnglish = '  <div class="chapter">
-<section class="body-text">
+<section id="body-text" class="body-text">
     <div id="fulltext" class="text">
     <h2>Chapters</h2>
     <p>Please chose the chapter you want to read, as well as the main language you want to read in. You will still be able to view and compare single paragraphs in another language from within the viewer. Chapters that have not been released yet are marked grey.</p>
