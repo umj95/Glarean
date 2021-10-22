@@ -830,50 +830,6 @@
     modalBackgr.setAttribute("class", "modalBackgr");
     modalBackgr.setAttribute("id", "modalBackgr");
 
-    switch(number) {
-      case 0:
-        break;
-      case 1:
-        modal.style.marginLeft = "10%";
-        modal.style.top = "calc(0.8in + 3rem)"
-        break;
-      case 2:
-        modal.style.marginRight = "2.5%";
-        modal.style.top = "calc(0.8in + 3rem)"
-        modal.style.width = "25%";
-        break;
-      case 3:
-        modal.style.marginLeft = "10%";
-        modal.style.top = "60%";
-        modal.style.width = "25%";
-        break;
-      case 4:
-        modal.style.marginLeft = "5%";
-        modal.style.top = "50%";
-        modal.style.width = "25%";
-        break;
-      case 5:
-        modal.style.marginLeft = "40%";
-        modal.style.top = "50%";
-        modal.style.width = "25%";
-        break;
-      case 6:
-        modal.style.marginLeft = "40%";
-        modal.style.top = "20%";
-        modal.style.width = "25%";
-        break;
-      case 7:
-        modal.style.marginLeft = "5%";
-        modal.style.top = "20%";
-        modal.style.width = "25%";
-        break;
-      case 8:
-        modal.style.marginLeft = "40%";
-        modal.style.top = "20%";
-        modal.style.width = "25%";
-        break;
-    }
-
     modal.setAttribute("class", "note");
     modal.setAttribute("id", "tutorial");
 
@@ -890,6 +846,57 @@
     modalBody.appendChild(tutorialText(number));
 
     modalBackgr.appendChild(modal);
+
+    if(window.innerWidth > 600) {
+      switch(number) {
+        case 0:
+          break;
+        case 1:
+          modal.style.marginLeft = "10%";
+          modal.style.top = "calc(0.8in + 3rem)"
+          break;
+        case 2:
+          modal.style.marginRight = "2.5%";
+          modal.style.top = "calc(0.8in + 3rem)"
+          modal.style.width = "25%";
+          break;
+        case 3:
+          modal.style.marginLeft = "10%";
+          modal.style.top = "60%";
+          modal.style.width = "25%";
+          break;
+        case 4:
+          modal.style.marginLeft = "5%";
+          modal.style.top = "50%";
+          modal.style.width = "25%";
+          break;
+        case 5:
+          modal.style.marginLeft = "40%";
+          modal.style.top = "50%";
+          modal.style.width = "25%";
+          break;
+        case 6:
+          modal.style.marginLeft = "40%";
+          modal.style.top = "20%";
+          modal.style.width = "25%";
+          break;
+        case 7:
+          modal.style.marginLeft = "5%";
+          modal.style.top = "20%";
+          modal.style.width = "25%";
+          break;
+        case 8:
+          modal.style.marginLeft = "40%";
+          modal.style.top = "20%";
+          modal.style.width = "25%";
+          break;
+      }
+    } else {
+      modal.style.marginTop = "65%";
+      modal.style.marginBottom = "10%";
+      modal.style.width = "95%";
+      //modal.style.height = "30%";
+    }
 
     document.getElementById("body-text").appendChild(modalBackgr);
   }
@@ -972,9 +979,9 @@
       case 8:                                                     // close the notes area
         createNote("transl", "p1", "_deu");
         if(pageLanguage == "de") {
-          text.innerHTML = "Durch klicken auf den runden blauen Knopf an der Seite der Notizablage kann dieses Feld, genau so wie auch die Optionenauswahl, geschlossen werden. Offene Übersetzungen, Kommentare, etc. gehen dadurch nicht verloren, sondern können durch nochmaliges Klicken auf den blauen Knopf wieder aufgerufen werden. Diese Elemente können einzeln duch den Schließknopf oben rechts geschlossen werden. Nur wenn die Webseite selbst geschlossen wird, werden auch alle offenen Notizen geschlossen. Damit sind wir am Ende des Tutorials angekommen. Durch klick auf „Weiter“ kommen Sie zurück zur Startseite.";
+          text.innerHTML = "Durch klicken auf den runden blauen Knopf an der Seite der Notizablage (oder, in der mobilen Ansicht, einfach durch tippen außerhalb der Notizablage) kann dieses Feld, genau so wie auch die Optionenauswahl, geschlossen werden. Offene Übersetzungen, Kommentare, etc. gehen dadurch nicht verloren, sondern können durch nochmaliges Klicken auf den blauen Knopf wieder aufgerufen werden. Diese Elemente können einzeln duch den Schließknopf oben rechts geschlossen werden. Nur wenn die Webseite selbst geschlossen wird, werden auch alle offenen Notizen geschlossen. Damit sind wir am Ende des Tutorials angekommen. Durch klick auf „Beenden“ kommen Sie zurück zur Startseite.";
         } else {
-          text.innerHTML = "By clicking on the round blue button on the side of the note tray, this field can be closed, just like the option selection. Open translations, comments, etc. are not lost, but can be recalled by clicking the blue button again. These elements can be closed individually by clicking the close button in the upper right corner. Only when the web page itself is closed, all open notes will be closed as well. With this, we have reached the end of the tutorial. By clicking on “Next”, you will be taken back to the home page.";
+          text.innerHTML = "By clicking on the round blue button on the side of the note tray, this field can be closed, just like the option selection (In the mobile version, just tap the screen outside of the panel to close it). Open translations, comments, etc. are not lost, but can be recalled by clicking the blue button again. These elements can be closed individually by clicking the close button in the upper right corner. Only when the web page itself is closed, all open notes will be closed as well. With this, we have reached the end of the tutorial. By clicking on “Finish”, you will be taken back to the home page.";
         }
         moveButton.setAttribute("onclick", "closeTutorial()")
         break;
