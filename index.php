@@ -20,7 +20,7 @@ session_start();
         </div>
         <script type="text/javascript">
           window.onhashchange = function () {
-            window.onload
+            //window.onload
             let hash = window.location.hash;
             if(hash == "#tutorial") {
               constructTip(0);

@@ -809,7 +809,7 @@
   }
 
   function closeTutorial() {
-    let tutorialDiv = document.getElementById("tutorial");
+    let tutorialDiv = document.getElementById("modalBackgr");
     tutorialDiv.remove();
     tutorial = false;
     window.location.href = "index.php";
@@ -817,17 +817,69 @@
 
   function constructTip(number) {
     if(number > 0) {
-      if(!!document.getElementById("tutorial")){
-        document.getElementById("tutorial").remove();
+      if(!!document.getElementById("modalBackgr")){
+        document.getElementById("modalBackgr").remove();
       }
     }
+    let modalBackgr = document.createElement("div");
     let modal       = document.createElement("div");
     let modalHeader = document.createElement("div");
     let modalBody   = document.createElement("div");
     let modalFooter = document.createElement("div");
 
-    modal.setAttribute("class", "tutorialModal");
+    modalBackgr.setAttribute("class", "modalBackgr");
+    modalBackgr.setAttribute("id", "modalBackgr");
+
+    switch(number) {
+      case 0:
+        break;
+      case 1:
+        modal.style.marginLeft = "10%";
+        modal.style.top = "calc(0.8in + 3rem)"
+        break;
+      case 2:
+        modal.style.marginRight = "2.5%";
+        modal.style.top = "calc(0.8in + 3rem)"
+        modal.style.width = "25%";
+        break;
+      case 3:
+        modal.style.marginLeft = "10%";
+        modal.style.top = "60%";
+        modal.style.width = "25%";
+        break;
+      case 4:
+        modal.style.marginLeft = "5%";
+        modal.style.top = "50%";
+        modal.style.width = "25%";
+        break;
+      case 5:
+        modal.style.marginLeft = "40%";
+        modal.style.top = "50%";
+        modal.style.width = "25%";
+        break;
+      case 6:
+        modal.style.marginLeft = "40%";
+        modal.style.top = "20%";
+        modal.style.width = "25%";
+        break;
+      case 7:
+        modal.style.marginLeft = "5%";
+        modal.style.top = "20%";
+        modal.style.width = "25%";
+        break;
+      case 8:
+        modal.style.marginLeft = "40%";
+        modal.style.top = "20%";
+        modal.style.width = "25%";
+        break;
+    }
+
+    modal.setAttribute("class", "note");
     modal.setAttribute("id", "tutorial");
+
+    modalHeader.setAttribute("class", "noteTitle");
+    modalBody.setAttribute("class", "noteBody");
+    modalFooter.setAttribute("class", "noteFooter");
 
     modalHeader.innerHTML = "Tutorial";
 
@@ -837,7 +889,9 @@
 
     modalBody.appendChild(tutorialText(number));
 
-    document.getElementById("body-text").appendChild(modal);
+    modalBackgr.appendChild(modal);
+
+    document.getElementById("body-text").appendChild(modalBackgr);
   }
 
   function tutorialText(nr) {
@@ -878,7 +932,7 @@
         if(pageLanguage == "de") {
           text.innerHTML = "Auf dieser Seite können Sie auswählen, welches Kapitel Sie lesen möchten. Die verfügbaren Kapitel sind schwarz markiert. Sie können das Kapitel entweder im lateinischen Original oder in einer der verfügbaren Übersetzungen aufrufen, indem Sie auf die entsprechende Sprache klicken. Durch einen klick auf „Weiter“ kommen wir zum ersten Kapitel auf Latein.";
         } else {
-          text.innerHTML = "On this page you can select which chapter you want to read. The available chapters are marked in black. You can access the chapter either in the original Latin or in one of the available translations by clicking on the appropriate language. Clicking on “Next” will take you to the first chapter on latin.";
+          text.innerHTML = "On this page you can select which chapter you want to read. The available chapters are marked in black. You can access the chapter either in the original Latin or in one of the available translations by clicking on the appropriate language. Clicking on “Next” will take you to the first chapter in latin.";
         }
         moveButton.setAttribute("onclick", 'window.location.href = "chapter.php?currentBook=1&currentChapter=1&mainLanguage=_lat&marginalia=false#tutorial1"');
         break;
@@ -920,7 +974,7 @@
         if(pageLanguage == "de") {
           text.innerHTML = "Durch klicken auf den runden blauen Knopf an der Seite der Notizablage kann dieses Feld, genau so wie auch die Optionenauswahl, geschlossen werden. Offene Übersetzungen, Kommentare, etc. gehen dadurch nicht verloren, sondern können durch nochmaliges Klicken auf den blauen Knopf wieder aufgerufen werden. Diese Elemente können einzeln duch den Schließknopf oben rechts geschlossen werden. Nur wenn die Webseite selbst geschlossen wird, werden auch alle offenen Notizen geschlossen. Damit sind wir am Ende des Tutorials angekommen. Durch klick auf „Weiter“ kommen Sie zurück zur Startseite.";
         } else {
-          text.innerHTML = "By clicking on the round blue button on the side of the note tray, this field can be closed, as well as the option selection. Open translations, comments, etc. are not lost, but can be recalled by clicking the blue button again. These elements can be closed individually by clicking the close button in the upper right corner. Only when the web page itself is closed, all open notes will be closed as well. With this, we have reached the end of the tutorial. By clicking on “Next”, you will be taken back to the home page.";
+          text.innerHTML = "By clicking on the round blue button on the side of the note tray, this field can be closed, just like the option selection. Open translations, comments, etc. are not lost, but can be recalled by clicking the blue button again. These elements can be closed individually by clicking the close button in the upper right corner. Only when the web page itself is closed, all open notes will be closed as well. With this, we have reached the end of the tutorial. By clicking on “Next”, you will be taken back to the home page.";
         }
         moveButton.setAttribute("onclick", "closeTutorial()")
         break;
@@ -930,15 +984,25 @@
 
     closeButton.setAttribute("onclick", "closeTutorial()");
     if(pageLanguage == "de") {
+      if(nr == 8) {
+        moveButton.innerText = "Beenden";
+      } else {
+        moveButton.innerText = "Weiter";
+      }
       closeButton.innerText = "Schließen";
-      moveButton.innerText = "Weiter";
     } else {
       closeButton.innerText = "Close";
-      moveButton.innerText = "Next";
+      if(nr == 8) {
+        moveButton.innerText = "Finish";
+      } else {
+        moveButton.innerText = "Next";
+      }
     }
 
     buttons.appendChild(closeButton);
     buttons.appendChild(moveButton);
+
+    buttons.setAttribute("class", "modalButtons");
 
     container.appendChild(buttons);
     
