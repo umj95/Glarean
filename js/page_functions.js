@@ -1,4 +1,4 @@
-/* ================================================================================= Global Variables ================ */
+/* ================================================= GLOBAL VARIABLES ================ */
 
   let currentBook = "";                                           // the current book
 
@@ -353,8 +353,9 @@
       },
     }                                                               // these three belong to c.addBehaviors -> DO NOT DELETE!
   };
-/* ================================================================================= Functions ================= */
+/* ======================================================= FUNCTIONS ================= */
 
+/* ===================== CETEIcean related Functions ================================= */
 
   function insertTEIChapter(chapter) {                            // inserts a full TEI document at location PATH in #FULLTEXT
     let path = `${pathToData}${currentBook}/${currentChapter}/${currentBook}_${currentChapter}${mainLanguage}.xml`;
@@ -420,6 +421,276 @@
     console.log(fullTextBehaviors);
     console.log(translTextBehaviors);
   }
+
+  function fetchParagraph(translCETEI, paraID, noteBodyID, langSpecifier) {    // fetches a paragraph with id PARAID from a file at location PATH
+    let path = `${pathToData}${currentBook}/${currentChapter}/${currentBook}_${currentChapter}${langSpecifier}.xml`;
+    translCETEI.getHTML5(path, function(transl) {
+      let noteBody = document.getElementById(noteBodyID);
+      for (const p of Array.from(transl.getElementsByTagName("tei-p"))) {
+        if(p.getAttribute("id") === paraID) {
+          document.adoptNode(p);
+          noteBody.appendChild(p);
+        }
+      }
+    });
+  }
+
+/* ===================== Notes and Comments ========================================== */
+
+  function createNote(kind, key, specifierA = "") {               // creates a new Note
+    // KIND is the sort of note (translation, person, etc 
+    // – determines the styling) and KEY is the 
+    // identifier that is used to load the data.
+    // specifierA is a generic variable, used for language in translations
+    // and commentary specification in comments
+    noteNr++;
+    let noteID = "note_" + noteNr;
+    let newNote = document.createElement("div"); //create Note
+    newNote.setAttribute("class", "note");
+    newNote.setAttribute("id", noteID);
+
+    document.getElementById("notesContent").appendChild(newNote);
+  
+    if(kind === "transl") {                                       // makes note for translated paragraph
+      newNote.setAttribute("class", "note transl");
+      var title = document.createElement("div");  // create Title
+      title.setAttribute("class", "noteTitle");
+      var titling = document.createElement("span");
+      if(pageLanguage == 'de') {
+        var noteTitle = "Übersetzung";
+      } else {
+        var noteTitle = "Translation";
+      }
+      titling.innerHTML = noteTitle;
+      var closeNote = document.createElement("button");   // close Button
+      closeNote.setAttribute("class", "closebtn");
+      closeNote.setAttribute('onclick', 'deleteNote("' + noteID + '")');
+      closeNote.innerHTML = "&times;";
+      title.appendChild(titling);
+      title.appendChild(closeNote);
+  
+      var body = document.createElement("p");  // create Body
+      body.setAttribute("class", "noteBody");
+      body.setAttribute("id", "noteBody_" + noteID);
+      var footer = document.createElement("p");  // create Footer
+      footer.setAttribute("class", "noteFooter");
+      footer.innerHTML = "";
+      
+      waitForEl("#noteBody_" + noteID, fetchParagraph(translText, key, "noteBody_" + noteID, specifierA));
+    }
+    else if(kind === "comment") {                                 // makes note for comment
+      newNote.setAttribute("class", "note comment");
+      var title = document.createElement("div");          // create Title
+      title.setAttribute("class", "noteTitle");
+      var titling = document.createElement("span");
+      var noteTitle = "Kommentar";
+      titling.innerHTML = noteTitle;
+      var closeNote = document.createElement("button");   // close Button
+      closeNote.setAttribute("class", "closebtn");
+      closeNote.setAttribute('onclick', 'deleteNote("' + noteID + '")');
+      closeNote.innerHTML = "&times;";
+      title.appendChild(titling);
+      title.appendChild(closeNote);
+  
+      var body = document.createElement("div");  // create Body
+      body.setAttribute("class", "noteBody");
+      body.setAttribute("id", "noteBody_" + noteID);
+      var footer = document.createElement("p");  // create Footer
+      footer.setAttribute("class", "noteFooter");
+      footer.innerHTML = "";
+      
+      var content = fetchComment(key, "noteBody_" + noteID, specifierA);
+      body.appendChild(content);
+    }
+  
+    newNote.appendChild(title);
+    newNote.appendChild(body);
+    newNote.appendChild(footer);
+    alertText();
+    openPanel('notesPanel');
+  }
+  
+  function deleteNote(noteId) {                                   // deletes a Note with ID NOTEID
+    var elem = document.getElementById(noteId);
+    document.getElementById("notesContent").removeChild(elem);
+    /* if($(window).width() < 600) {
+      closePanel("notesPanel");
+    } */
+    alertText();
+  }
+
+  function alertText() {                                          // creates an explanatory paragraph in the notes pane if no notes are open
+    if(document.getElementsByClassName("note").length === 0) {
+      let alert = document.createElement("p");
+      alert.setAttribute("id", "note_alert");
+      if(pageLanguage == 'de') {
+        alert.innerHTML = "Hier werden Kommentare und Übersetzungen angezeigt. Momentan sind keine Elemente offen.";
+      } else {
+        alert.innerHTML = "This pane displays commentary and translations. No elements are currently open.";
+      }
+      document.getElementById("notesContent").appendChild(alert);
+    }
+    else if((document.getElementsByClassName("note").length > 0) && document.getElementById("note_alert")) {
+      document.getElementById("notesContent").removeChild(document.getElementById("note_alert"));
+    }
+  }
+
+  async function insertComments(commentaryFile) {                 //inserts comment links in the body text at all targets specified in COMMENTARYFILE
+    let path = `${pathToData}${currentBook}/${currentChapter}/${commentaryFile}.json`;
+
+    let rawCommentary = await fetch(path);
+    comments[commentaryFile] = await rawCommentary.json();
+    
+    for (let key in comments[commentaryFile]) {
+
+      if(comments[commentaryFile].hasOwnProperty(key)) {
+        let id = comments[commentaryFile][key].id;                // get Appropriate IDs
+        let target = document.getElementById(comments[commentaryFile][key].target);
+        console.log(target);
+
+        if(target.id.includes("add") && chapterOptions['marginalia'] == "false") {
+          console.log("it has add!")
+        }  // dont add comments to annotations that are not displayed
+        else {
+          let commentTip = document.createElement("span");          // create Comment + Tooltip
+          commentTip.setAttribute("class", "tiptext");
+          if(pageLanguage == 'de') {
+            commentTip.innerHTML = "Kommentar öffnen";
+          } else {
+            commentTip.innerHTML = "Open commentary";
+          }
+          let comment = document.createElement("span");
+          comment.setAttribute("class", "comment tooltip");
+          comment.setAttribute("id", "comment_" + comments[commentaryFile][key].id)
+          let commentLink = document.createElement("a");
+          commentLink.setAttribute("class", "commentLink ");
+          commentLink.setAttribute("href", "#");
+          commentLink.setAttribute('onclick', 'createNote("comment", "' + id + '", "' + commentaryFile + '")');
+          commentLink.innerHTML = "&#176;";
+          comment.appendChild(commentTip);
+          comment.appendChild(commentLink);
+          target.appendChild(comment);
+        }
+      }
+    }
+  }
+
+  function fetchComment(commentId, noteBodyID, commentCorpus) {   // inserts a comment from comments[COMMENTCORPUS] into a note
+    //comments = JSON.parse(comments);
+
+    commentText = document.createElement("div");
+    commentText.setAttribute("class", "commentText");
+
+    for (var key in comments[commentCorpus]) {
+      if(comments[commentCorpus][key].id === commentId) {
+        var commentAuthor = comments[commentCorpus][key].author;
+        var commentTitle = comments[commentCorpus][key].title;
+        var commentContent = comments[commentCorpus][key].content;
+        var commentLinks = comments[commentCorpus][key].links;
+        var commentReferences = comments[commentCorpus][key].references;
+      }
+    }
+    var title = document.createElement("h5");                     // note title
+    title.setAttribute("class", "commentTitle");
+    title.innerHTML = commentTitle;
+
+    var author = document.createElement("span");                  // note author
+    author.setAttribute("class", "commentAuthor");
+    author.innerHTML = commentAuthor;
+
+    var content = document.createElement("div");                  // note content
+    content.setAttribute("class", "commentContent");
+    content.innerHTML = commentContent;
+
+    if(commentLinks) {
+      var links = document.createElement("div");                  // note links
+      links.setAttribute("class", "commentLinks");
+      links.innerHTML = "<h6>Weblinks</h6>"
+      var linkList = document.createElement("ul");
+      for(var i = 0; i < commentLinks.length; i++) {
+        var item = document.createElement("li");
+        item.innerHTML = '<a href="' + commentLinks[i] + '" target="_blank" rel="noopener">' + commentLinks[i] + '</a>';
+        linkList.appendChild(item);
+      }
+      links.appendChild(linkList);
+    }
+
+    if(commentReferences){
+      var references = document.createElement("div");               // note references
+      references.setAttribute("class", "commentReferences");
+      if(pageLanguage == 'de') {
+        references.innerHTML = "<h6>Weiterführende Literatur</h6>";
+      } else {
+        references.innerHTML = "<h6>Further resources</h6>";
+      }
+      var referenceList = document.createElement("ul");
+      for(var i = 0; i < commentReferences.length; i++) {
+        var item = document.createElement("li");
+        item.innerHTML = cite(commentReferences[i][0], commentReferences[i][1]);
+        referenceList.appendChild(item);
+      }
+      references.appendChild(referenceList);
+    }
+
+    commentText.appendChild(title);
+    commentText.appendChild(author);
+    commentText.appendChild(content);
+    if(links){commentText.appendChild(links);}
+    if(references){commentText.appendChild(references);}
+
+    return commentText;
+  }
+
+/* ===================== Bibliography and Citation =================================== */
+
+  function printBibliography(option) {                            // creates download links for bibliographies according to format specified in OPTION
+    if(option === 'csl') {
+      var a = document.createElement("a");
+      a.href = "data/site/sources.json";
+      a.setAttribute("download", "glarean_bibliography_csl.json");
+      a.click();
+    }
+    else if(option === 'txt') {
+
+    }
+  }
+
+  async function getCiteStyle() {                                 // fetches the citation style
+    let csl = fetch('data/site/mla.csl');
+    return csl;
+  }
+
+  function cite(citeKey, range = '') {                            // takes a citeKey and a range, returns a short citation
+    for(let i = 0; i < bibliography.length; i++) {
+      if(bibliography[i].id === citeKey) {                        // browse the bibliography
+        let source = bibliography[i];
+        let title = '';
+
+        if(source.hasOwnProperty('title-short')){                 // determine title
+          title = source['title-short'];
+        } else { title = source.title;}
+        let authors = '';
+
+        const authorList = source.author.length;
+        for(let i = 0; i < authorList; i++) {
+          author = source.author[i]['family'];
+          authors += author;
+          if(i == (authorList - 1) || authorList == 1) {
+            authors += ', ';
+          } else {authors += ' &amp; ';}
+        }
+        if(pageLanguage == 'de') {
+          var citation = '<span class="tooltip"><a href="bibliography.php#' + citeKey + '" rel="noopener" target="blank">' + authors + '</a><span class="tiptext">Zum Bibliographieeintrag</span></span>' + title;
+        } else {
+          var citation = '<span class="tooltip"><a href="bibliography.php#' + citeKey + '" rel="noopener" target="blank">' + authors + '</a><span class="tiptext">Jump to bibliography entry</span></span>' + title;
+        }
+        let citeString = '<span class="citation">' + citation + ', ' + range + '.</span>'
+        return citeString;
+      }
+    }
+  }
+
+/* ===================== Page Functionalites, Scroll Events etc ====================== */
 
   function openPanel(form) {                                      // opens a panel
     if(form == 'optionsPanel') {                                  // left panel
@@ -514,280 +785,6 @@
     }
   }
 
-  function createNote(kind, key, specifierA = "") {               // creates a new Note
-    // KIND is the sort of note (translation, person, etc 
-    // – determines the styling) and KEY is the 
-    // identifier that is used to load the data.
-    // specifierA is a generic variable, used for language in translations
-    // and commentary specification in comments
-    noteNr++;
-    let noteID = "note_" + noteNr;
-    let newNote = document.createElement("div"); //create Note
-    newNote.setAttribute("class", "note");
-    newNote.setAttribute("id", noteID);
-
-    document.getElementById("notesContent").appendChild(newNote);
-  
-    if(kind === "transl") {                                       // makes note for translated paragraph
-      newNote.setAttribute("class", "note transl");
-      var title = document.createElement("div");  // create Title
-      title.setAttribute("class", "noteTitle");
-      var titling = document.createElement("span");
-      if(pageLanguage == 'de') {
-        var noteTitle = "Übersetzung";
-      } else {
-        var noteTitle = "Translation";
-      }
-      titling.innerHTML = noteTitle;
-      var closeNote = document.createElement("button");   // close Button
-      closeNote.setAttribute("class", "closebtn");
-      closeNote.setAttribute('onclick', 'deleteNote("' + noteID + '")');
-      closeNote.innerHTML = "&times;";
-      title.appendChild(titling);
-      title.appendChild(closeNote);
-  
-      var body = document.createElement("p");  // create Body
-      body.setAttribute("class", "noteBody");
-      body.setAttribute("id", "noteBody_" + noteID);
-      var footer = document.createElement("p");  // create Footer
-      footer.setAttribute("class", "noteFooter");
-      footer.innerHTML = "";
-      
-      waitForEl("#noteBody_" + noteID, fetchParagraph(translText, key, "noteBody_" + noteID, specifierA));
-    }
-    else if(kind === "comment") {                                 // makes note for comment
-      newNote.setAttribute("class", "note comment");
-      var title = document.createElement("div");          // create Title
-      title.setAttribute("class", "noteTitle");
-      var titling = document.createElement("span");
-      var noteTitle = "Kommentar";
-      titling.innerHTML = noteTitle;
-      var closeNote = document.createElement("button");   // close Button
-      closeNote.setAttribute("class", "closebtn");
-      closeNote.setAttribute('onclick', 'deleteNote("' + noteID + '")');
-      closeNote.innerHTML = "&times;";
-      title.appendChild(titling);
-      title.appendChild(closeNote);
-  
-      var body = document.createElement("div");  // create Body
-      body.setAttribute("class", "noteBody");
-      body.setAttribute("id", "noteBody_" + noteID);
-      var footer = document.createElement("p");  // create Footer
-      footer.setAttribute("class", "noteFooter");
-      footer.innerHTML = "";
-      
-      var content = fetchComment(key, "noteBody_" + noteID, specifierA);
-      body.appendChild(content);
-    }
-  
-    newNote.appendChild(title);
-    newNote.appendChild(body);
-    newNote.appendChild(footer);
-    alertText();
-    openPanel('notesPanel');
-  }
-  
-  function deleteNote(noteId) {                                   // deletes a Note with ID NOTEID
-    var elem = document.getElementById(noteId);
-    document.getElementById("notesContent").removeChild(elem);
-    /* if($(window).width() < 600) {
-      closePanel("notesPanel");
-    } */
-    alertText();
-  }
-  
-  function fetchParagraph(translCETEI, paraID, noteBodyID, langSpecifier) {    // fetches a paragraph with id PARAID from a file at location PATH
-    let path = `${pathToData}${currentBook}/${currentChapter}/${currentBook}_${currentChapter}${langSpecifier}.xml`;
-    translCETEI.getHTML5(path, function(transl) {
-      let noteBody = document.getElementById(noteBodyID);
-      for (const p of Array.from(transl.getElementsByTagName("tei-p"))) {
-        if(p.getAttribute("id") === paraID) {
-          document.adoptNode(p);
-          noteBody.appendChild(p);
-        }
-      }
-    });
-  }
-
-  async function insertComments(commentaryFile) {                 //inserts comment links in the body text at all targets specified in COMMENTARYFILE
-    let path = `${pathToData}${currentBook}/${currentChapter}/${commentaryFile}.json`;
-
-    let rawCommentary = await fetch(path);
-    comments[commentaryFile] = await rawCommentary.json();
-    
-    for (let key in comments[commentaryFile]) {
-
-      if(comments[commentaryFile].hasOwnProperty(key)) {
-        let id = comments[commentaryFile][key].id;                // get Appropriate IDs
-        let target = document.getElementById(comments[commentaryFile][key].target);
-        console.log(target);
-
-        if(target.id.includes("add") && chapterOptions['marginalia'] == "false") {
-          console.log("it has add!")
-        }  // dont add comments to annotations that are not displayed
-        else {
-          let commentTip = document.createElement("span");          // create Comment + Tooltip
-          commentTip.setAttribute("class", "tiptext");
-          if(pageLanguage == 'de') {
-            commentTip.innerHTML = "Kommentar öffnen";
-          } else {
-            commentTip.innerHTML = "Open commentary";
-          }
-          let comment = document.createElement("span");
-          comment.setAttribute("class", "comment tooltip");
-          comment.setAttribute("id", "comment_" + comments[commentaryFile][key].id)
-          let commentLink = document.createElement("a");
-          commentLink.setAttribute("class", "commentLink ");
-          commentLink.setAttribute("href", "#");
-          commentLink.setAttribute('onclick', 'createNote("comment", "' + id + '", "' + commentaryFile + '")');
-          commentLink.innerHTML = "&#176;";
-          comment.appendChild(commentTip);
-          comment.appendChild(commentLink);
-          target.appendChild(comment);
-        }
-      }
-    }
-  }
-
-  function fetchComment(commentId, noteBodyID, commentCorpus) {   // inserts a comment from comments[COMMENTCORPUS] into a note
-    //comments = JSON.parse(comments);
-
-    commentText = document.createElement("div");
-    commentText.setAttribute("class", "commentText");
-
-    for (var key in comments[commentCorpus]) {
-      if(comments[commentCorpus][key].id === commentId) {
-        var commentAuthor = comments[commentCorpus][key].author;
-        var commentTitle = comments[commentCorpus][key].title;
-        var commentContent = comments[commentCorpus][key].content;
-        var commentLinks = comments[commentCorpus][key].links;
-        var commentReferences = comments[commentCorpus][key].references;
-      }
-    }
-    var title = document.createElement("h5");                     // note title
-    title.setAttribute("class", "commentTitle");
-    title.innerHTML = commentTitle;
-
-    var author = document.createElement("span");                  // note author
-    author.setAttribute("class", "commentAuthor");
-    author.innerHTML = commentAuthor;
-
-    var content = document.createElement("div");                  // note content
-    content.setAttribute("class", "commentContent");
-    content.innerHTML = commentContent;
-
-    if(commentLinks) {
-      var links = document.createElement("div");                    // note links
-      links.setAttribute("class", "commentLinks");
-      links.innerHTML = "<h6>Weblinks</h6>"
-      var linkList = document.createElement("ul");
-      for(var i = 0; i < commentLinks.length; i++) {
-        var item = document.createElement("li");
-        item.innerHTML = '<a href="' + commentLinks[i] + '" target="_blank" rel="noopener">' + commentLinks[i] + '</a>';
-        linkList.appendChild(item);
-      }
-      links.appendChild(linkList);
-    }
-
-    if(commentReferences){
-      var references = document.createElement("div");               // note references
-      references.setAttribute("class", "commentReferences");
-      if(pageLanguage == 'de') {
-        references.innerHTML = "<h6>Weiterführende Literatur</h6>";
-      } else {
-        references.innerHTML = "<h6>Further resources</h6>";
-      }
-      var referenceList = document.createElement("ul");
-      for(var i = 0; i < commentReferences.length; i++) {
-        var item = document.createElement("li");
-        item.innerHTML = cite(commentReferences[i][0], commentReferences[i][1]);
-        referenceList.appendChild(item);
-      }
-      references.appendChild(referenceList);
-    }
-
-    commentText.appendChild(title);
-    commentText.appendChild(author);
-    commentText.appendChild(content);
-    if(links){commentText.appendChild(links);}
-    if(references){commentText.appendChild(references);}
-
-    return commentText;
-  }
-
-  function printBibliography(option) {                            // creates download links for bibliographies according to format specified in OPTION
-    if(option === 'csl') {
-      var a = document.createElement("a");
-      a.href = "data/site/sources.json";
-      a.setAttribute("download", "glarean_bibliography_csl.json");
-      a.click();
-    }
-    else if(option === 'txt') {
-
-    }
-  }
-
-  async function getCiteStyle() {                                 // fetches the citation style
-    let csl = fetch('data/site/mla.csl');
-    return csl;
-  }
-
-  function cite(citeKey, range = '') {                            // takes a citeKey and a range, returns a short citation
-    for(let i = 0; i < bibliography.length; i++) {
-      if(bibliography[i].id === citeKey) {                        // browse the bibliography
-        let source = bibliography[i];
-        let title = '';
-
-        if(source.hasOwnProperty('title-short')){                 // determine title
-          title = source['title-short'];
-        } else { title = source.title;}
-        let authors = '';
-
-        const authorList = source.author.length;
-        for(let i = 0; i < authorList; i++) {
-          author = source.author[i]['family'];
-          authors += author;
-          if(i == (authorList - 1) || authorList == 1) {
-            authors += ', ';
-          } else {authors += ' &amp; ';}
-        }
-        if(pageLanguage == 'de') {
-          var citation = '<span class="tooltip"><a href="bibliography.php#' + citeKey + '" rel="noopener" target="blank">' + authors + '</a><span class="tiptext">Zum Bibliographieeintrag</span></span>' + title;
-        } else {
-          var citation = '<span class="tooltip"><a href="bibliography.php#' + citeKey + '" rel="noopener" target="blank">' + authors + '</a><span class="tiptext">Jump to bibliography entry</span></span>' + title;
-        }
-        let citeString = '<span class="citation">' + citation + ', ' + range + '.</span>'
-        return citeString;
-      }
-    }
-  }
-
-  function waitForEl(selector, callback) {                        // gives document time to build objects that are targeted by functions
-    if (jQuery(selector).length) {
-      callback;
-    } else {
-      setTimeout(function() {
-        waitForEl(selector, callback);
-      }, 100);
-    }
-  }
-
-  function alertText() {                                           // creates an explanatory paragraph in the notes pane if no notes are open
-    if(document.getElementsByClassName("note").length === 0) {
-      let alert = document.createElement("p");
-      alert.setAttribute("id", "note_alert");
-      if(pageLanguage == 'de') {
-        alert.innerHTML = "Hier werden Kommentare und Übersetzungen angezeigt. Momentan sind keine Elemente offen.";
-      } else {
-        alert.innerHTML = "This pane displays commentary and translations. No elements are currently open.";
-      }
-      document.getElementById("notesContent").appendChild(alert);
-    }
-    else if((document.getElementsByClassName("note").length > 0) && document.getElementById("note_alert")) {
-      document.getElementById("notesContent").removeChild(document.getElementById("note_alert"));
-    }
-  }
-
   function scrollSensitiveHeader() {                              // make header disappear on scroll
     let prevScrollpos = window.pageYOffset;
     let headerHeight = document.getElementById("header").offsetHeight + 10;
@@ -802,32 +799,34 @@
     }
   }
 
-  function startTutorial() {
+/* ===================== Tutorial ==================================================== */
+
+  function startTutorial() {                                      // starts the tutorial by reloading index.php with the #tutorial flag
     window.location.href = "index.php#tutorial"
     tutorial = true;
     //constructTip(0);
   }
 
-  function closeTutorial() {
+  function closeTutorial() {                                      // closes the torial and reloads the index.php page
     let tutorialDiv = document.getElementById("modalBackgr");
     tutorialDiv.remove();
     tutorial = false;
     window.location.href = "index.php";
   }
 
-  function constructTip(number) {
+  function constructTip(number) {                                 // constructs a tutorial window based on the number passed to it
     if(number > 0) {
       if(!!document.getElementById("modalBackgr")){
-        document.getElementById("modalBackgr").remove();
+        document.getElementById("modalBackgr").remove();          // remove any existing tutorial window
       }
     }
-    let modalBackgr = document.createElement("div");
+    let modalBackgr = document.createElement("div");              // create the various wrapper divs
     let modal       = document.createElement("div");
     let modalHeader = document.createElement("div");
     let modalBody   = document.createElement("div");
     let modalFooter = document.createElement("div");
 
-    modalBackgr.setAttribute("class", "modalBackgr");
+    modalBackgr.setAttribute("class", "modalBackgr");             // set attributes
     modalBackgr.setAttribute("id", "modalBackgr");
 
     modal.setAttribute("class", "note");
@@ -843,11 +842,11 @@
     modal.appendChild(modalBody);
     modal.appendChild(modalFooter);
 
-    modalBody.appendChild(tutorialText(number));
+    modalBody.appendChild(tutorialText(number));                  // insert the text and navigation buttons based on the tut. number
 
     modalBackgr.appendChild(modal);
 
-    if(window.innerWidth > 600) {
+    if(window.innerWidth > 600) {                                 // in desktop view, place each window individually, depending on the topic of the text
       switch(number) {
         case 0:
           break;
@@ -892,7 +891,7 @@
           break;
       }
     } else {
-      modal.style.marginTop = "65%";
+      modal.style.marginTop = "65%";                              // on mobile, just place the tutorial on the bottom of the screen
       modal.style.marginBottom = "10%";
       modal.style.width = "95%";
       //modal.style.height = "30%";
@@ -901,8 +900,8 @@
     document.getElementById("body-text").appendChild(modalBackgr);
   }
 
-  function tutorialText(nr) {
-    let container   = document.createElement("div");
+  function tutorialText(nr) {                                     // inserts the appropriate text based on the number in the tutorial, returns node containing text and buttons
+    let container   = document.createElement("div");              // create wrappers
     let text        = document.createElement("p");
 
     let buttons     = document.createElement("div");
@@ -989,7 +988,7 @@
 
     container.appendChild(text);
 
-    closeButton.setAttribute("onclick", "closeTutorial()");
+    closeButton.setAttribute("onclick", "closeTutorial()");       // handle button languages and last button exception
     if(pageLanguage == "de") {
       if(nr == 8) {
         moveButton.innerText = "Beenden";
@@ -1014,4 +1013,16 @@
     container.appendChild(buttons);
     
     return container;
+  }
+
+/* ===================== Helper Functions ============================================ */
+
+  function waitForEl(selector, callback) {                        // gives document time to build objects that are targeted by functions
+    if (jQuery(selector).length) {
+      callback;
+    } else {
+      setTimeout(function() {
+        waitForEl(selector, callback);
+      }, 100);
+    }
   }
