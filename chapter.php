@@ -18,12 +18,12 @@ session_start();
   <script>
     let chapterOptions = <?php echo $optionsToJSON;?>;            // extract chapter variables -> fill the global variables specified in js/page-functions
     
-    mainLanguage = chapterOptions.mainLanguage;
-    currentBook = chapterOptions.currentBook;
-    currentChapter = chapterOptions.currentChapter;
-    secondaryLanguages = chapterOptions.secondaryLanguages;
-    marginalia = chapterOptions.marginalia;
-    commentaryOptions = chapterOptions.comments;
+    mainLanguage        = chapterOptions.mainLanguage;
+    currentBook         = chapterOptions.currentBook;
+    currentChapter      = chapterOptions.currentChapter;
+    secondaryLanguages  = chapterOptions.secondaryLanguages;
+    marginalia          = chapterOptions.marginalia;
+    commentaryOptions   = chapterOptions.comments;
 
     optionalBehaviors(chapterOptions);                            // Load custom TEI behaviors
             
@@ -79,7 +79,13 @@ session_start();
         } else if(event.target == optionsPanel) {
           closePanel("optionsPanel");
         }
-      } 
+      }
+      let hash = window.location.hash;
+        if(hash == "#tutorial1") {
+          constructTip(4);
+        } else if(hash == "#tutorial2") {
+          constructTip(7);
+        }
     </script>
   </div>
 <?php

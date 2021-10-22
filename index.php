@@ -7,7 +7,7 @@ session_start();
     include("includes/header.php");
   ?>
     <div class="chapter">
-      <section class="body-text">
+      <section id="body-text" class="body-text">
           <div id="fulltext" class="text">
             <?php
             if($_SESSION['lang'] == "de") {
@@ -18,6 +18,15 @@ session_start();
             ?>
           </div>
         </div>
+        <script type="text/javascript">
+          window.onhashchange = function () {
+            //window.onload
+            let hash = window.location.hash;
+            if(hash == "#tutorial") {
+              constructTip(0);
+            }
+          };
+        </script>
       </section>
     </div>
     <?php

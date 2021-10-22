@@ -3,9 +3,13 @@ function insertSVGs(toolkit, meiNumber, files) {                  // renders the
   for(let i = 0; i < meiNumber.length; i++) {
     let fileLocation = meiNumber[i].id;                           // the id of the corresponding div
     console.log(fileLocation);
-    svg[i] = toolkit.renderData(files[i],{});
-    console.log("SVG Nr " + i);
-    document.getElementById(fileLocation).innerHTML = svg[i];     // render in meiBody-div
+    if(files[i].charAt(0) != "<") {
+      svg[i] = "This file could not be loaded :(";
+    } else {
+      svg[i] = toolkit.renderData(files[i],{});
+      console.log("SVG Nr " + i);
+    }
+    document.getElementById(fileLocation).innerHTML = svg[i];   // render in meiBody-div
   };
 }
 
