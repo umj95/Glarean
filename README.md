@@ -1,5 +1,5 @@
-# Heinrich Glarean’s *Dodekachordon* Online – an Experiment
-This is the repository for a planned project of mine that aims at testing out various elements of digital publishing and scholarly editing, using [Heinrich Glarean’s](https://en.wikipedia.org/wiki/Heinrich_Glarean) [*Dodekachordon*](https://imslp.org/wiki/Dodecachordon_(Glareanus,_Henricus)) as its guinea pig.
+# Heinrich Glarean’s *Dodekachordon* Online
+This is the main repository of a university project that aims at testing out various elements of digital publishing and scholarly editing, using [Heinrich Glarean’s](https://en.wikipedia.org/wiki/Heinrich_Glarean) [*Dodekachordon*](https://imslp.org/wiki/Dodecachordon_(Glareanus,_Henricus)) as its guinea pig.
 By providing a digital edition of (small parts of) a book on musical theory from the Renaissance, I hope to explore ways to uncover the intricacies of edition histories, expose elements of early modern learning, and make musical examples explorable and connectable.
 In doing this, I hope to learn some tools of the trade, on both the musicological and the digital humanities side of things.
 More details on what I hope to achieve and how I plan to go about it can be found in my [proposal](data/site/meta/Proposal.md). The [Impressum](data/site/meta/Impressum.md) contains a list of all the great tools and ressources I use in this project.
