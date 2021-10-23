@@ -386,7 +386,7 @@ button.panel {
   align-items: center;
   justify-content: center;
   top: 50%;
-  left: 0;
+  /*left: 0;*/
   border: none;
   color: var(--background-beige);
   background-color: var(--header-blue);
@@ -397,7 +397,8 @@ button.panel {
   width: 6vh;
   border-radius: 150px 150px;
   transform: translate(-3vh);
-  box-shadow: 5px 5px 20px var(--paper-shadow);}
+  box-shadow: 5px 5px 20px var(--paper-shadow);
+  margin: 3%;}
 
 @media screen and (min-width: 600px) /*and (max-width: 1100px)*/ {
   .panel {
@@ -420,7 +421,7 @@ button.panel {
   }
 
   #notesButton {
-    left: 100%;}
+    margin-left: 97%;}
   
   #noteArea {width: 0;}
   
@@ -824,7 +825,7 @@ button.panel {
     height: 2vh;
     width: 2vh;
     color: var(--header-blue);
-    background-color: #efe4d8;
+    color: var(--paper-beige);
     text-align: center;
     font-size: 1.8vh;
     overflow: hidden;
@@ -832,6 +833,10 @@ button.panel {
     cursor: pointer;
     padding-top: 0vh;
     padding-bottom: 1vh;}
+
+  .note .closebtn:hover {
+    box-shadow: none;
+  }
 
   @media only screen and (max-width: 600px) {
     .note {

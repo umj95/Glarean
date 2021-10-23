@@ -45,7 +45,7 @@
         }
 
         echo '
-        <button id="optionsButton" class="panel" onclick="openPanel(\'optionsPanel\')">&#9658;</button>
+        <button id="optionsButton" class="panel" onclick="openPanel(\'optionsPanel\')">☛</button>
         <div id="optionsPanel" class="panel">
           <!-- <div id="closer">
             <a href="javascript:void(0)" class="closebtn" onclick="closePanel(\'optionsPanel\')">&times;</a>

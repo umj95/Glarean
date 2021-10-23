@@ -714,7 +714,7 @@
         panel.style.height = "100vh";
       }
       button.setAttribute("onclick", "closePanel('optionsPanel')");
-      button.innerText = "◄";
+      button.innerText = "☚";
 
     } else if(form == 'notesPanel') {                             // right Panel
 
@@ -726,11 +726,11 @@
           width: 30%;
           margin-left: 70%;`;
         button.style.cssText = `
-          left: 70%;
+          margin-left: 67%;
           border-radius: 150px 150px;
           z-index: 6;`;
         button.setAttribute("onclick", "closePanel('notesPanel')");
-        button.innerText = "►";
+        button.innerText = "☛";
       } else {
         panel.style.height = "100%";
         panel.style.marginTop = "0vh";
@@ -748,14 +748,14 @@
       if($(window).width() > 600){
         panel.style.width = "0";
         button.style.cssText = `
-            left: 0%;
-            border-radius: 0 150px 150px 0;
+            margin-left: 3%;
+            border-radius: 150px 150px;
             z-index: 2;`;
       } else {
         panel.style.height = "0";
       }
       button.setAttribute("onclick", "openPanel('optionsPanel')");
-      button.innerText = "►";
+      button.innerText = "☛";
 
     } else if(form === "notesPanel") {                            // right Panel
 
@@ -765,10 +765,10 @@
       if($(window).width() > 600){
         panel.style.width = "0";
         button.style.cssText = `
-          left: 100%;
+          margin-left: 97%;
           z-index: 2;`;
         button.setAttribute("onclick", "openPanel('notesPanel')");
-        button.innerText = "◄";
+        button.innerText = "☚";
       } else {
         panel.style.height = "0";
         button.setAttribute("onclick", "openPanel('notesPanel')");
