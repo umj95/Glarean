@@ -26,7 +26,6 @@ session_start();
     commentaryOptions   = chapterOptions.comments;
 
     optionalBehaviors(chapterOptions);                            // Load custom TEI behaviors
-            
     translText.addBehaviors(translTextBehaviors);                 // add behaviors to the translation text object
 
     fullText.addBehaviors(fullTextBehaviors);                     // add behaviors to the main language text object
@@ -81,7 +80,7 @@ session_start();
         }
       }
       let hash = window.location.hash;
-        if(hash == "#tutorial1") {
+        ifphotos no(hash == "#tutorial1") {
           constructTip(4);
         } else if(hash == "#tutorial2") {
           constructTip(7);
