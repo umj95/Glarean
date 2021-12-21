@@ -169,9 +169,9 @@ $chapterSelectTextGerman = '<div class="chapter">
       <li>De Modi, Tempore, ac Prolatione. Caput V.</li>
       <li>De Signis. Caput VI.</li>
       <li>De tactu siue cantandi mensura. Caput VII.</li>
-      <li>De Augmentatione, Diminutione, ac Semidiapente. Caput VIII.</li>
+      <li class="released">De Augmentatione, Diminutione, ac Semidiapente. Caput VIII. · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=8&mainLanguage=_lat&marginalia=false">Latein</a><span class="tiptext">Dieses Kapitel auf latein Lesen</span></span> · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=8&mainLanguage=_deu&marginalia=false">Deutsch</a><span class="tiptext">Dieses Kapitel auf deutsch lesen</span></span></li>
       <li>De Notularum imperfectione. Caput IX.</li>
-      <li>De Alteratione. Caput X.</li>
+      <li class="released">De Alteratione. Caput X. · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=10&mainLanguage=_lat&marginalia=false">Latein</a><span class="tiptext">Dieses Kapitel auf latein Lesen</span></span> · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=10&mainLanguage=_deu&marginalia=false">Deutsch</a><span class="tiptext">Dieses Kapitel auf deutsch lesen</span></span></li>
       <li>De Syncope, et huius nouae in institutionis diuersitate querela, cum exemplis ad eam ostendendam opportunis. Denique de VI uocum Musicalium (quas uocant) deductionibus exempla. Caput XI.</li>
       <li>De Proportionibus Musicis. Caput XII.</li>
       <li>Duodecim Modorum exempla, ac primum Hypodorij ac Aeolij. Caput XIII.</li>
@@ -275,9 +275,9 @@ $chapterSelectTextEnglish = '  <div class="chapter">
       <li>De Modi, Tempore, ac Prolatione. Caput V.</li>
       <li>De Signis. Caput VI.</li>
       <li>De tactu siue cantandi mensura. Caput VII.</li>
-      <li>De Augmentatione, Diminutione, ac Semidiapente. Caput VIII.</li>
+      <li class="released">De Augmentatione, Diminutione, ac Semidiapente. Caput VIII. · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=8&mainLanguage=_lat&marginalia=false">Latein</a><span class="tiptext">Read this chapter in Latin</span></span> · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=8&mainLanguage=_deu&marginalia=false">Deutsch</a><span class="tiptext">Read this chapter in German</span></span></li>
       <li>De Notularum imperfectione. Caput IX.</li>
-      <li>De Alteratione. Caput X.</li>
+      <li class="released">De Alteratione. Caput X. · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=10&mainLanguage=_lat&marginalia=false">Latein</a><span class="tiptext">Read this chapter in Latin</span></span> · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=10&mainLanguage=_deu&marginalia=false">Deutsch</a><span class="tiptext">Read this chapter in German</span></span></li>
       <li>De Syncope, et huius nouae in institutionis diuersitate querela, cum exemplis ad eam ostendendam opportunis. Denique de VI uocum Musicalium (quas uocant) deductionibus exempla. Caput XI.</li>
       <li>De Proportionibus Musicis. Caput XII.</li>
       <li>Duodecim Modorum exempla, ac primum Hypodorij ac Aeolij. Caput XIII.</li>
@@ -330,7 +330,7 @@ $editionGuidelinesGerman = '<div class="chapter">
     <p>Diese Richtlinien sind, wie alle Inhalte dieser Seite, „work in progress“. Insbesondere Bereiche der Edition, die noch in der Entwicklungsphase sind (zum jetzigen Zeitpunkt insbesondere Musikbeispiele und Annotationen) können und werden sich noch ändern!</p>
     <p>Eine Auflistung der zur Auszeichnung der Texte verwendeten TEI-tags findet sich auf der <a href="https://github.com/umj95/Glarean_Dodekachordon_Text/wiki" rel="noopener" target="_blank">Wiki-Seite des Github-Repositorys</a>.</p>
     <h3>Textgrundlage</h3>
-    <p>Diese Edition von Heinrich Glareans <em class="title">Dodecachordon</em> basiert auf dem von der Universitätsbibliothek Freiburg bereitgestellten <a href="http://dl.ub.uni-freiburg.de/diglit/glareanus1547" rel="noopener" target="_blank">Scan</a> (URN: <a href="urn:nbn:de:bsz:25-digilib-6262" rel="noopener" target="_blank">urn:nbn:de:bsz:25-digilib-6262</a>) der Erstausgabe des Werkes. Da es sich bei dieser Edition, wie auf der Seite <a href="about.php" target="_blank">Über dieses Projekt</a> beschrieben, um ein rein didaktisches Projekt handelt, wurde dieses Exemplar auch aus rein didaktischen Beweggründen zum Referenzpunkt der Edition erklärt. Es verfügt über einen reichen Schatz an Anmerkungen, wohl aus der Feder seines ehemaligen Besitzers, Johannes Algoers, der vermutlich während seiner Zeit als Student in Freiburg selbst bei Glarean studiert hat.</p>
+    <p>Diese Edition von Heinrich Glareans <em class="title">Dodecachordon</em> basiert auf dem von der Universitätsbibliothek Freiburg bereitgestellten <a href="http://dl.ub.uni-freiburg.de/diglit/glareanus1547" rel="noopener" target="_blank">Scan</a> (URN: urn:nbn:de:bsz:25-digilib-6262) der Erstausgabe des Werkes. Da es sich bei dieser Edition, wie auf der Seite <a href="about.php" target="_blank">Über dieses Projekt</a> beschrieben, um ein rein didaktisches Projekt handelt, wurde dieses Exemplar auch aus rein didaktischen Beweggründen zum Referenzpunkt der Edition erklärt. Es verfügt über einen reichen Schatz an Anmerkungen, wohl aus der Feder seines ehemaligen Besitzers, Johannes Algoers, der vermutlich während seiner Zeit als Student in Freiburg selbst bei Glarean studiert hat.</p>
     <h3>Lateinischer Text</h3>
     <p>Der lateinische Text basiert auf der vom <em>Thesaurus Musicarum Latinarum</em> bereitgestellten <a href="https://chmtl.indiana.edu/tml/16th/GLADOD1_TEXT.html" rel="noopener" target="_blank">Transkription</a>. Wo immer diese vom Freiburger Exemplar abweicht, wurde der Freiburger Version der Vorzug gegeben. Abkürzungen, Digraphe, etc. wurden nach dem Vorbild des TML stillschweigend aufgelöst. Ebenso sind Allographe (z.B. langes s – „ſ“) modernisiert, mit Ausnahme – wieder der Praxis des TML folgend – der Buchstaben u und v, sowie i und j, die dem Freiburger Exemplar folgend beibehalten wurden. Griechische Passagen sind originalgetreu transkribiert, lateinische Transliterationen sind im TEI-Dokument gegeben. In der Browseransicht können diese per Mouse-hover angezeigt werden. Übersetzungen in Form von Anmerkungen sind geplant. Paragraphen folgen der Textaufteilung im Original.Der Textsatz orientiert sich am Freiburger Original, aktuell steht jedoch noch nicht fest, zu welchem Maße er davon abweichen wird. So werden z.B. aktuell Werktitel kursiviert, was im Original nicht der Fall ist. Ebenso werden Links in Kapitälchen gekennzeichnet, was natürlich auch im Original nicht so ist.</p>
     <h3>Deutscher Text</h3>
@@ -349,7 +349,7 @@ $editionGuidelinesEnglish = '<div class="chapter">
     <p>These guidelines, like all content on this site, are "work in progress". In particular, areas of the edition that are still under development (at this stage, especially music examples and annotations) can and will change!</p>
     <p>A listing of the TEI tags used to mark up the texts can be found on the <a href="https://github.com/umj95/Glarean_Dodekachordon_Text/wiki" rel="noopener" target="_blank">Wiki page of the Github repository</a>.</p>
     <h3>Textual basis</h3>
-    <p>This edition of Heinrich Glarean\'s <em class="title">Dodecachordon</em> is based on the <a href="http://dl.ub.uni-freiburg. de/diglit/glareanus1547" rel="noopener" target="_blank">Scan</a> (URN: <a href="urn:nbn:de:bsz:25-digilib-6262" rel="noopener" target="_blank">urn:nbn:de:bsz:25-digilib-6262</a>) of the first edition of the work. Since this edition is a purely didactic project, as described on the page <a href="about.php" target="_blank">About this project</a>, this copy was also declared the reference point of the edition for purely didactic reasons. It has a rich treasure of annotations, probably from the pen of its former owner, Johannes Algoers, who presumably studied with Glarean himself during his time as a student in Freiburg.</p>
+    <p>This edition of Heinrich Glarean\'s <em class="title">Dodecachordon</em> is based on the <a href="http://dl.ub.uni-freiburg.de/diglit/glareanus1547" rel="noopener" target="_blank">Scan</a> (URN: urn:nbn:de:bsz:25-digilib-6262) of the first edition of the work. Since this edition is a purely didactic project, as described on the page <a href="about.php" target="_blank">About this project</a>, this copy was also declared the reference point of the edition for purely didactic reasons. It has a rich treasure of annotations, probably from the pen of its former owner, Johannes Algoers, who presumably studied with Glarean himself during his time as a student in Freiburg.</p>
     <h3>Latin text</h3>
     <p>The Latin text is based on the <a href="https://chmtl.indiana.edu/tml/16th/GLADOD1_TEXT.html" rel="noopener" target="_blank">transcription</a> provided by the <em>Thesaurus Musicarum Latinarum</em>. Wherever this differs from the Freiburg copy, preference has been given to the Freiburg version. Abbreviations, digraphs, etc. have been silently resolved along the lines of the TML. Likewise, allographs (e.g. long s - "ſ") have been modernised, with the exception - again following the practice of the TML - of the letters u and v, as well as i and j, which have been retained following the Freiburg copy. Greek passages are transcribed true to the original, Latin transliterations are given in the TEI document. In the browser view, these can be displayed by mouse-hover. Translations in the form of annotations are planned. Paragraphs follow the layout of the text in the original. The typesetting of the text is based on the Freiburg original, but it is not yet clear to what extent it will deviate from this. For example, work titles are currently italicised, which is not the case in the original. Likewise, links are marked in small capitals, which of course is not the case in the original either.</p>
     <h3>German text</h3>
@@ -368,10 +368,10 @@ $bibliographyGerman = '<div class="chapter">
   <div id="fulltext" class="text">
     <h2>Bibliographie</h2>
     <p>Diese Literaturliste Herunterladen:<br/>
-    <a href="javascript:void(0)" onclick="printBibliography(\'pdf\')">pdf</a> · 
-    <a href="javascript:void(0)" onclick="printBibliography(\'csl\')">csl-json</a> · 
+    <!-- <a href="javascript:void(0)" onclick="printBibliography(\'pdf\')">pdf</a> · --> 
+    <a href="javascript:void(0)" onclick="printBibliography(\'csl\')">csl-json</a> <!-- · 
     <a href="javascript:void(0)" onclick="printBibliography(\'tex\')">bibtex</a> · 
-    <a href="javascript:void(0)" onclick="printBibliography(\'txt\')">txt</a></p>
+    <a href="javascript:void(0)" onclick="printBibliography(\'txt\')">txt</a>--></p>
     <div id="bibliography" class="bibliography"></div>'
 ;
 
@@ -380,10 +380,10 @@ $bibliographyEnglish = '<div class="chapter">
   <div id="fulltext" class="text">
     <h2>Bibliography</h2>
     <p>Download this bibliography:<br/>
-    <a href="javascript:void(0)" onclick="printBibliography(\'pdf\')">pdf</a> · 
-    <a href="javascript:void(0)" onclick="printBibliography(\'csl\')">csl-json</a> · 
+    <!--<a href="javascript:void(0)" onclick="printBibliography(\'pdf\')">pdf</a> · -->
+    <a href="javascript:void(0)" onclick="printBibliography(\'csl\')">csl-json</a> <!--· 
     <a href="javascript:void(0)" onclick="printBibliography(\'tex\')">bibtex</a> · 
-    <a href="javascript:void(0)" onclick="printBibliography(\'txt\')">txt</a></p>
+    <a href="javascript:void(0)" onclick="printBibliography(\'txt\')">txt</a>--></p>
     <div id="bibliography" class="bibliography"></div>'
 ;
 

@@ -80,7 +80,7 @@ session_start();
         }
       }
       let hash = window.location.hash;
-        ifphotos no(hash == "#tutorial1") {
+        if(hash == "#tutorial1") {
           constructTip(4);
         } else if(hash == "#tutorial2") {
           constructTip(7);
