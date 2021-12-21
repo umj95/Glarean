@@ -369,6 +369,23 @@
     Object.keys(optionsList).forEach(function(key){
       if(key === "marginalia" && optionsList[key] === "true") {
         console.log("marginalia === true");
+
+/*         fullTextBehaviors["tei"]["substr"] = function(substr) {
+          let annotation = document.createElement("span");
+          annotation.setAttribute("class", "annotation");
+
+          let text = document.createElement("span");
+          let addition = document.createElement("span");
+          text.innerHTML = subst.children[0].innerHTML;
+          addition = substr.children[1].innerHTML;
+
+          annotation.appendChild(text);
+          annotation.appendChild(addition);
+
+          return annotation;
+        } */
+
+
         fullTextBehaviors["tei"]["add"] = function(add) {
           let addition = document.createElement("span");
           addition.setAttribute("class", "addition");
@@ -448,7 +465,7 @@
     let newNote = document.createElement("div"); //create Note
     newNote.setAttribute("class", "note");
     newNote.setAttribute("id", noteID);
-
+   
     document.getElementById("notesContent").appendChild(newNote);
   
     if(kind === "transl") {                                       // makes note for translated paragraph
