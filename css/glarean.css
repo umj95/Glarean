@@ -614,13 +614,68 @@ button.panel {
   
   /* ----------------- Music ------------------- */
 
-  .music {
-    background-color: var(--music-beige);
-    border: 1px solid var(--header-blue);
-    margin-left: -15%;
-    margin-right: -15%;
-    margin-bottom: 0.8em;
+  .containerTabs {
+    overflow: hidden;
+    border: none;
+    height: 2em;
+    display: flex;
+    justify-content: space-between;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
   }
+  
+  /* Style the buttons that are used to open the tab content */
+  .containerTabs button {
+    border-top-right-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+    color: var(--header-blue);
+    background-color: var(--background-beige);
+    /* float: left; */
+    border: 1px solid var(--header-blue);
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    flex-grow: 1;
+    font: var(--site-font);
+  }
+  
+  /* Create an active/current tablink class */
+  .containerTabs button.active {
+    color: var(--background-beige);
+    background-color: var(--header-blue);
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid var(--header-blue);
+    background-color: var(--music-beige);
+    border-top: none;
+    max-height: 45vh;
+    overflow-y: scroll;
+  }
+  
+  .containerControls {
+    display: block;
+    padding: 6px 12px;
+    margin-bottom: 1em;
+    border: 1px solid var(--header-blue);
+    border-top: none;
+    background-color: var(--header-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  audio {
+    height: 2em;
+  }
+  
+  .musicOld {
+    max-width: 100%;
+  }
+  
 
   /* ----------------- Handwriting ------------- */
 

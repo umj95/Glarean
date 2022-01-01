@@ -18,8 +18,8 @@
 
   let tutorial = false;
 
-  const pathToData = "https://raw.githubusercontent.com/umj95/Glarean_Dodekachordon_Text/main/data/"; // the path to the text data folder, containing the chapter folders
-
+  //const pathToData = "https://raw.githubusercontent.com/umj95/Glarean_Dodekachordon_Text/main/data/"; // the path to the text data folder, containing the chapter folders
+  const pathToData = "https://homepages.uni-regensburg.de/~umj63240/Glarean_Dodekachordon_Text/data/";
   let bibliography = {};
 
   let comments = {};                                              // the comment Object -> commentary will be loaded in here one at a time
@@ -31,9 +31,9 @@
   let noteNr = 0;                                                 // tracks the Number of Notes
 
 
-  const fullText = new CETEI();                                          // the primary CETEIcean object
+  const fullText = new CETEI();                                   // the primary CETEIcean object
                                                                   // (two are specified because we need different sets of behaviors)
-  const translText = new CETEI();                                          // the secondary CETEIcean object (for translations)
+  const translText = new CETEI();                                 // the secondary CETEIcean object (for translations)
 
   let fullTextBehaviors = {
     "tei":{                                                       // all CETEIcean behaviors are defined here
@@ -107,7 +107,7 @@
         return page;
       },
 
-      "figure": function(fig) {                                     // figure contains musical examples – it is built with a container,
+      /*"figure": function(fig) {                                     // figure contains musical examples – it is built with a container,
                                                                     // a header containing the title
                                                                     // and a body that will be targeted by Verovio to render the corresp.
                                                                     // MEI file, identified by the figure's corresp-attribute
@@ -134,6 +134,107 @@
           meiBody.setAttribute("id", meiFile + "-body");            // the body's id attribute is the hook for Verovio to pick the right file
           return mei;
         } else if(fig.getAttribute("type") === "image") {
+          let url = `${pathToData}${currentBook}/${currentChapter}/`;
+          url += fig.children[0].getAttribute("url");
+          image = document.createElement("img");
+          image.setAttribute("src", url);
+          return image;
+        }
+      },*/
+
+      "figure": function(fig) {
+        if (fig.getAttribute("type") === "music") {
+          let musicID = fig.getAttribute("xml:id");               // get Music ID
+
+          let containerMusic = document.createElement("div");     // create Music Container
+          containerMusic.setAttribute("class", "containerMusic");
+          containerMusic.setAttribute("id", musicID /* + "_containerMusic" */);
+
+          let containerTabs = document.createElement("div");      // create Tab Container
+          containerTabs.setAttribute("class", "containerTabs");
+          containerTabs.setAttribute("id", musicID + "_containerTabs");
+          
+          let tabButtonModern = document.createElement("button"); // create Tab Buttons
+          tabButtonModern.setAttribute("id", musicID + "_buttonModern");
+          tabButtonModern.setAttribute("class", "tablinks");
+          //let openMusicModern = "openMusic(event, '" + musicID + "_containerModern', '" + musicID + "_containerOld')";
+          let openMusicModern = "openMusic(event, '" + musicID + "', 'modern')";
+          tabButtonModern.setAttribute("onClick", openMusicModern);
+          tabButtonModern.innerHTML = "Modern";
+
+          let tabButtonOld = document.createElement("button");
+          tabButtonOld.setAttribute("class", "tablinks active");
+          tabButtonOld.setAttribute("id", musicID + "_buttonOld");
+          //let openMusicOld = "openMusic(event, '" + musicID + "_containerOld', '" + musicID + "_containerModern')";
+          let openMusicOld = "openMusic(event, '" + musicID + "', 'old')";
+          tabButtonOld.setAttribute("onClick", openMusicOld);
+          tabButtonOld.innerHTML = "Original";
+
+          containerTabs.appendChild(tabButtonModern);             // append Tab Buttons to tab container
+          containerTabs.appendChild(tabButtonOld);
+
+          let containerModern = document.createElement("div");    // create Modern Container
+          containerModern.setAttribute("class", "tabcontent containerModern");
+          containerModern.setAttribute("id", musicID + "_containerModern");
+          //containerModern.innerHTML = "Modern";
+
+          let containerOld = document.createElement("div");       // create Old Container
+          containerOld.setAttribute("class", "tabcontent containerOld");
+          containerOld.setAttribute("id", musicID + "_containerOld");
+          containerOld.setAttribute("style", "display:block");
+
+          let containerControls = document.createElement("div");  // create Playback Controls Container
+          containerControls.setAttribute("class", "containerControls");
+          containerControls.setAttribute("id", musicID + "_containerControls");
+
+          let graphics = fig.children;                            // get all associated graphics
+          let figureNumber = graphics.length;
+          let graphicCheck = false;
+          let url = `${pathToData}${currentBook}/${currentChapter}/`;
+
+          for(i = 0; i < figureNumber; i++) {                     // iterate over graphics
+            if(graphics[i].tagName === "TEI-GRAPHIC") {
+              url += graphics[i].getAttribute("url");
+              let musicOld = document.createElement("img");
+              musicOld.setAttribute("class", "musicOld")
+              musicOld.setAttribute("id", "musicOld_" + i);
+              musicOld.setAttribute("src", url);
+              musicOld.setAttribute("loading", "lazy");
+              containerOld.appendChild(musicOld);                 // append images to container
+              url = `${pathToData}${currentBook}/${currentChapter}/`;
+              graphicCheck = true;
+            }
+          };
+          if(!graphicCheck){                                      // error messages for missing scans
+            containerOld.innerHTML = "No scan could be found :(";
+          }
+
+          let audio = document.createElement("audio");             // create audioplayer
+          audio.setAttribute("id", musicID + "_midiPlayer");
+          audio.setAttribute("controls", "");
+
+          let pathToMusic = `${pathToData}${currentBook}/${currentChapter}/`;
+          pathToMusic += 'music/mp3/' + musicID + '.mp3';
+
+          let source = document.createElement("source");
+          source.setAttribute("src", pathToMusic);
+          source.setAttribute("type", "audio/mpeg");
+
+          let errorMessage = document.createElement("p");
+          errorMessage.innerHTML = 'Your browser doesn’t support HTML5 audio. Here is a <a href="'+ pathToMusic +'">link to the audio</a> instead.</p>';
+          
+          audio.appendChild(source);
+          audio.appendChild(errorMessage);
+          containerControls.appendChild(audio);
+
+          containerMusic.appendChild(containerTabs);              // put everything together
+          containerMusic.appendChild(containerModern);
+          containerMusic.appendChild(containerOld);
+          containerMusic.appendChild(containerControls);
+
+          return containerMusic;
+        } 
+        else if(fig.getAttribute("type") === "image") {
           let url = `${pathToData}${currentBook}/${currentChapter}/`;
           url += fig.children[0].getAttribute("url");
           image = document.createElement("img");
@@ -353,17 +454,22 @@
       },
     }                                                               // these three belong to c.addBehaviors -> DO NOT DELETE!
   };
+
+  let tk = {};
 /* ======================================================= FUNCTIONS ================= */
 
 /* ===================== CETEIcean related Functions ================================= */
 
-  function insertTEIChapter(chapter) {                            // inserts a full TEI document at location PATH in #FULLTEXT
-    let path = `${pathToData}${currentBook}/${currentChapter}/${currentBook}_${currentChapter}${mainLanguage}.xml`;
-    chapter.getHTML5(path, function(data) {
-      document.getElementById("fulltext").innerHTML = "";
-      document.getElementById("fulltext").appendChild(data);
-    });
-  }
+function insertTEIChapter(chapter) {                            // returns a promise for the converted TEI document
+  let path = `${pathToData}${currentBook}/${currentChapter}/${currentBook}_${currentChapter}${mainLanguage}.xml`;
+  let returnvalue = chapter.getHTML5(path
+    /* , function(data) {
+    document.getElementById("fulltext").innerHTML = "";
+    document.getElementById("fulltext").appendChild(data);
+    startVerovio();
+  } */);
+  return returnvalue;
+}
 
   function optionalBehaviors(optionsList) {                       // takes the options list from the URL and adds the appropriate behaviors to the fulltextBehaviors object
     Object.keys(optionsList).forEach(function(key){
@@ -797,6 +903,37 @@
       }
       prevScrollpos = currentScrollPos;
     }
+  }
+
+  function openMusic(evt, id, wantedTab) {                        // acc. to tutorial: https://www.w3schools.com/howto/howto_js_tabs.asp
+    //  let i, tabcontent, tablinks;
+                                                                      // close other tab & recolour tabbutton
+      if(wantedTab === 'modern') {
+        document.getElementById(id + "_buttonOld").setAttribute("class", "tablinks");
+        document.getElementById(id + '_containerOld').style.display = "none";
+    
+        document.getElementById(id + "_containerModern").style.display = "block";
+        evt.currentTarget.className += " active";
+      } else if(wantedTab === 'old') {
+        document.getElementById(id + "_buttonModern").setAttribute("class", "tablinks");
+        document.getElementById(id + '_containerModern').style.display = "none";
+    
+        document.getElementById(id + "_containerOld").style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+  }
+
+  function startVerovio(){
+    console.log("startVerovio!");
+    $(document).ready(function() {
+      
+      
+
+        //if(this.document.getElementsByClassName("containerMusic").length > 0) {  // if chapter has music examples, call verovio
+          addVerovio(tk);
+        //}
+      
+    });
   }
 
 /* ===================== Tutorial ==================================================== */

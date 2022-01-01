@@ -13,8 +13,15 @@ session_start();
   $optionsToJSON = json_encode($chapterOptions);                  // $chapterOptions (assocArray collected from GET requests in sidepanel.php) 
                                                                   // is put into a JSON-Object for further use by Javascript
 ?>
-  <script type="text/javascript" src="https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js" defer></script>
+  <!-- Toolkit and custom functions -->
+  <script type="text/javascript" src="js/verovio-toolkit-wasm.js"></script>
   <script type="text/javascript" src="js/verovio_loader.js"></script>
+  <script type="text/javascript">
+    Module.onRuntimeInitialized = async _ => {
+      tk = new verovio.toolkit();
+      console.log("Toolkit instantiated");
+    }
+  </script>
   <script>
     let chapterOptions = <?php echo $optionsToJSON;?>;            // extract chapter variables -> fill the global variables specified in js/page-functions
     
@@ -43,7 +50,12 @@ session_start();
     <section id="body-text" class="body-text">
       <div id="fulltext" class="text">
         <!-- insert the TEI document -->
-        <script>insertTEIChapter(fullText)</script>
+        <script>insertTEIChapter(fullText).then(value => {
+          document.getElementById("fulltext").innerHTML = "";
+          document.getElementById("fulltext").appendChild(value);
+        }).then(() => {
+          startVerovio();
+        })</script>
       </div>
     </section>
     <button name="comments" class="panel" id="notesButton" onclick="openPanel('notesPanel')">☚</button>
@@ -65,9 +77,10 @@ session_start();
           }
         }
 
-        if(this.document.getElementsByClassName("music").length > 0) {  // if chapter has music examples, call verovio
+        /* if(this.document.getElementsByClassName("containerMusic").length > 0) {  // if chapter has music examples, call verovio
+          console.log("I'll start Verovio!");
           addVerovio();
-        }
+        } */
       });
 
       let optionsPanel = document.getElementById("optionsPanel");
@@ -86,6 +99,21 @@ session_start();
           constructTip(7);
         }
     </script>
+    <!-- <script type="text/javascript" >
+      //window.setTimeout(function() {                              // start verovio only after enough time to load DOM
+      function startVerovio(){
+        console.log("domcontent Loaded!");
+        Module.onRuntimeInitialized = async _ => {
+          console.log("Toolkit instantiated");
+          const tk = new verovio.toolkit();
+          //if(this.document.getElementsByClassName("containerMusic").length > 0) {  // if chapter has music examples, call verovio
+            console.log("Starting Verovio");
+            addVerovio(tk);
+          //}
+        }
+      }
+      //}, 40);
+    </script> -->
   </div>
 <?php
   if(isset($_POST['submit'])){                                    // reload the page if the submit button in the options panel is pressed
