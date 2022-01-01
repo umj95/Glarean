@@ -5,16 +5,12 @@
   include("backend_functions.php");
   include("static_texts.php");
   include("includes/header.php");
+  if($pageLang == 'de') {
+    echo $editionGuidelinesGerman;
+  } else if($pageLang == 'en') {
+    echo $editionGuidelinesEnglish;
+  } else {
+    echo "Error: No language specified!";
+  }
+  include("includes/footer.php");
 ?>
-    <div class="chapter">
-      <section class="body-text">
-        <div id="fulltext" class="text">
-        <?php
-          include("data/site/editionsrichtlinien.php");
-        ?>
-        </div>
-      </section>
-    </div>
-    <?php
-      include("includes/footer.php");
-    ?>

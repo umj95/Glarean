@@ -1,54 +1,55 @@
 function insertSVGs(toolkit, meiNumber, files) {                  // renders the files retrieved by getMEIFiles() and inserts them
-  var svg = [];
+  console.log("insertSVGs started");
+  let svg = [];
   for(let i = 0; i < meiNumber.length; i++) {
     let fileLocation = meiNumber[i].id;                           // the id of the corresponding div
-    console.log(fileLocation);
     if(files[i].charAt(0) != "<") {
-      svg[i] = "This file could not be loaded :(";
+      svg[i] = "This file could not be loaded – Maybe it isn't transcribed yet :(";
     } else {
       svg[i] = toolkit.renderData(files[i],{});
       console.log("SVG Nr " + i);
     }
-    document.getElementById(fileLocation).innerHTML = svg[i];   // render in meiBody-div
+    document.getElementById(fileLocation).innerHTML = svg[i];     // render in meiBody-div
   };
 }
 
 async function getMEIfiles(meiNumber) {                           // retrieves the mei-files, returns as array / promise
-  var path = `${pathToData}${currentBook}/${currentChapter}/`;
-  var fetches = [];
+  console.log("getMEIfiles started");
+  let path = `${pathToData}${currentBook}/${currentChapter}/`;
+  let fetches = [];
   for (let i = 0; i < meiNumber.length; i++) {
     fileLocation = meiNumber[i].parentNode.id;
-    fetches[i] = await fetch(path + "music/modern/" + fileLocation);
+    fetches[i] = await fetch(path + "music/modern/" + fileLocation + ".mei");
     fetches[i] = await fetches[i].text();
   }
   return fetches;
 }
 
-function addVerovio() {                                           // starts Verovio toolkit and calls helper functions
+function addVerovio(toolkit) {                                           // starts Verovio toolkit and calls helper functions
+    console.log("addVerovio Started")
 
-    var tk;
-
-    Module.onRuntimeInitialized = async_ => {
-
-      tk = new verovio.toolkit();                                 // instantiate Toolkit
-
-      var zoom = 30;                                              //  declare Options
-      var pageHeight = 500;
-      var pageWidth = 500;
+      let zoom = 40;                                              //  declare Options
+      let pageHeight = 500;
+      let pageWidth = 500;
       pageHeight = $(document).height() * 100 / zoom;
-      pageWidth = $(".music").width() * 100 / zoom;
+      windowWidth = $(document).width();
+      if(windowWidth >= 1100) {
+        pageWidth = windowWidth * 40 / zoom;
+      } else {
+        pageWidth = windowWidth * 60 / zoom;
+      }
       options = {
-                  pageHeight: pageHeight,
-                  pageWidth: pageWidth,
-                  scale: zoom,
-                  adjustPageHeight: true
-              };
+        pageHeight: pageHeight,
+        pageWidth: pageWidth,
+        scale: zoom,
+        adjustPageHeight: true,
+      };
 
-      tk.setOptions(options);
-      var meiNumber = document.getElementsByClassName("meiBody"); // the iterator is defined by the amount of meiBody elements 
-
-      getMEIfiles(meiNumber).then(result => {                     // fetch MEI files, then insert them
-        insertSVGs(tk, meiNumber, result);
+      toolkit.setOptions(options);
+      let meiNumber = document.getElementsByClassName("containerModern"); // the iterator is defined by the amount of meiBody elements 
+      console.log("MeiNumber: " + meiNumber.length);
+      getMEIfiles(meiNumber).then(result => {
+        insertSVGs(toolkit, meiNumber, result);
       });
-    }
+    //}
 }
