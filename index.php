@@ -20,6 +20,7 @@ session_start();
         </div>
         <script type="text/javascript">
           window.onhashchange = function () {
+            console.log("Tutorial!");
             //window.onload
             let hash = window.location.hash;
             if(hash == "#tutorial") {
