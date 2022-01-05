@@ -537,6 +537,7 @@ button.panel {
     margin: 0.7em 0 0.2em 0;
     /* font-family: var(--headings-font); */
     /* font-feature-settings: "smcp"; */
+    font-weight: 500;
     letter-spacing: 0.075em;
     line-height: normal;}
   
