@@ -70,9 +70,9 @@
   --paper-shadow: #88837a;
   --add-grey: rgb(99, 99, 99);
 
-  --edition-font: "Alegreya, serif";
-  --site-font: "Biolinum, sans-serif";
-  --add-font: "Gentium, serif";
+  --edition-font: "Alegreya";
+  --site-font: "Biolinum";
+  --add-font: "Gentium";
   --greek-font: "Alegreya";
 
   --meta-fontsize: 0.9rem;
