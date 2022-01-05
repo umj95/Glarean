@@ -168,7 +168,7 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
     margin: 0;
     padding: 1rem;
     text-align: center;
-    /* font-size: 30px; */
+    font-weight: 500;
     font-family: var(--edition-font);
     letter-spacing: 0.1em;}
 
