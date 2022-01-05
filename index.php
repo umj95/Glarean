@@ -8,7 +8,7 @@ session_start();
   ?>
     <div class="chapter">
       <section id="body-text" class="body-text">
-          <div id="fulltext" class="text">
+          <div id="fulltext" class="text static">
             <?php
             if($_SESSION['lang'] == "de") {
             echo $homeTextGerman;

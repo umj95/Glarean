@@ -91,7 +91,7 @@ $homeTextEnglish = '<h2>Home</h2>
 /* ChapterSelect */
 $chapterSelectTextGerman = '<div class="chapter">
 <section id="body-text" class="body-text">
-    <div id="fulltext" class="text">
+    <div id="fulltext" class="text static">
     <h2>Kapitel</h2>
     <p>Bitte wählen Sie hier Kapitel und Sprache aus. Sie können auch innerhalb eines Kapitels Passagen in der Übersetzung / im Original lesen. Noch nicht freigegebene Kapitel sind grau markiert.</p>
     <h3>Libri primi Capita XXI.</h3>
@@ -197,7 +197,7 @@ $chapterSelectTextGerman = '<div class="chapter">
 
 $chapterSelectTextEnglish = '  <div class="chapter">
 <section id="body-text" class="body-text">
-    <div id="fulltext" class="text">
+    <div id="fulltext" class="text static">
     <h2>Chapters</h2>
     <p>Please chose the chapter you want to read, as well as the main language you want to read in. You will still be able to view and compare single paragraphs in another language from within the viewer. Chapters that have not been released yet are marked grey.</p>
     <h3>Libri primi Capita XXI.</h3>
@@ -305,7 +305,7 @@ $chapterSelectTextEnglish = '  <div class="chapter">
 
 $aboutTextGerman = '<div class="chapter">
 <section class="body-text">
-  <div id="fulltext" class="text">
+  <div id="fulltext" class="text static">
     <p>Inhalte folgen noch.</p>
   </div>
 </section>
@@ -314,7 +314,7 @@ $aboutTextGerman = '<div class="chapter">
 
 $aboutTextEnglish = '<div class="chapter">
 <section class="body-text">
-  <div id="fulltext" class="text">
+  <div id="fulltext" class="text static">
     <p>Content still to follow.</p>
   </div>
 </section>
@@ -325,7 +325,7 @@ $aboutTextEnglish = '<div class="chapter">
 
 $editionGuidelinesGerman = '<div class="chapter">
 <section class="body-text">
-  <div id="fulltext" class="text">
+  <div id="fulltext" class="text static">
     <h2>Editionsrichtlinien</h2>
     <p>Diese Richtlinien sind, wie alle Inhalte dieser Seite, „work in progress“. Insbesondere Bereiche der Edition, die noch in der Entwicklungsphase sind (zum jetzigen Zeitpunkt insbesondere Musikbeispiele und Annotationen) können und werden sich noch ändern!</p>
     <p>Eine Auflistung der zur Auszeichnung der Texte verwendeten TEI-tags findet sich auf der <a href="https://github.com/umj95/Glarean_Dodekachordon_Text/wiki" rel="noopener" target="_blank">Wiki-Seite des Github-Repositorys</a>.</p>
@@ -344,7 +344,7 @@ $editionGuidelinesGerman = '<div class="chapter">
 
 $editionGuidelinesEnglish = '<div class="chapter">
 <section class="body-text">
-  <div id="fulltext" class="text">
+  <div id="fulltext" class="text static">
     <h2>Edition guidelines</h2>
     <p>These guidelines, like all content on this site, are "work in progress". In particular, areas of the edition that are still under development (at this stage, especially music examples and annotations) can and will change!</p>
     <p>A listing of the TEI tags used to mark up the texts can be found on the <a href="https://github.com/umj95/Glarean_Dodekachordon_Text/wiki" rel="noopener" target="_blank">Wiki page of the Github repository</a>.</p>
@@ -365,7 +365,7 @@ $editionGuidelinesEnglish = '<div class="chapter">
 
 $bibliographyGerman = '<div class="chapter">
 <section class="body-text">
-  <div id="fulltext" class="text">
+  <div id="fulltext" class="text static">
     <h2>Bibliographie</h2>
     <p>Diese Literaturliste Herunterladen:<br/>
     <!-- <a href="javascript:void(0)" onclick="printBibliography(\'pdf\')">pdf</a> · --> 
@@ -377,7 +377,7 @@ $bibliographyGerman = '<div class="chapter">
 
 $bibliographyEnglish = '<div class="chapter">
 <section class="body-text">
-  <div id="fulltext" class="text">
+  <div id="fulltext" class="text static">
     <h2>Bibliography</h2>
     <p>Download this bibliography:<br/>
     <!--<a href="javascript:void(0)" onclick="printBibliography(\'pdf\')">pdf</a> · -->
@@ -391,12 +391,12 @@ $bibliographyEnglish = '<div class="chapter">
 
 $impressumGerman = '<div class="chapter">
 <section class="body-text">
-  <div id="fulltext" class="text">
+  <div id="fulltext" class="text static">
     <h2>Impressum</h2>
     <p>Auch wenn es noch in den Kinderschuhen steckt steht fest, dass dieses Projekt ohne eine Reihe an großartigen Ressourcen nicht realisierbar gewesen wäre:</p> 
     <p>In technischer Hinsicht beruht es auf dem TEI-Standard der <a href="https://tei-c.org/"  rel="noopener" target="_blank">Text Encoding Initiative</a>. Die Aufbereitung der Texte zur Ansicht im Webbrowser wird ermöglicht durch die <a href="https://github.com/TEIC/CETEIcean" target="_blank" rel="noopener">CETEIcean-Library</a>. Die Musikbeispiele sind dem <a href="https://music-encoding.org/" target="_blank" rel="noopener">MEI-Standard</a> entsprechend kodiert und werden mit Hilfe von <a href="https://www.verovio.org/" target="_blank" rel="noopener">Verovio</a> im Browser angezeigt. Die Verarbeitung der Bibliographischen Daten erfolgt mit Hilfe der <a href="https://citation.js.org" rel="noopener" target="_blank">Citation.js-Library</a>.</p>
     <p>Die lateinischen Texte beruhen auf der Version des <a href="https://chmtl.indiana.edu/tml/16th/GLADOD1" target="_blank" rel="noopener">Thesaurus Musicarum Latinarum</a>. Die (nur zu Demonstrationszwecken gedachte) deutsche Übersetzung habe ich unter Zuhilfenahme von Millers englischer Übersetzung erstellt. Weitere Quellenangaben und eine Literaturliste folgen noch.</p>
-    <p>Das Projekt wird aktuell von der Uni Regensburg gehostet. Die verwendeten Schriften sind <emph>Crimson Text</emph>, geleitet von <a href="https://github.com/skosch/Crimson" target="_blank" rel="noopener">Sebastian Kosch</a> für die Editionstexte, <a href="https://software.sil.org/gentium/" rel="noopener" target="_blank">Gentium</a> von Victor Gaultney für handschriftliche Annotationen, sowie <a href="https://sourceforge.net/projects/linuxlibertine/" target="_blank" rel="noopener">Linux Biolinum</a> von Philipp H. Poll.</p>
+    <p>Das Projekt wird aktuell von der Uni Regensburg gehostet. Die verwendeten Schriften sind <emph>Alegreya</emph>, entwickelt von Juan Pablo del Peral für <a href="https://www.huertatipografica.com/en" target="_blank" rel="noopener">Huerta Tipografica</a> für die Editionstexte, <a href="https://software.sil.org/gentium/" rel="noopener" target="_blank">Gentium</a> von Victor Gaultney für handschriftliche Annotationen, sowie <a href="https://sourceforge.net/projects/linuxlibertine/" target="_blank" rel="noopener">Linux Biolinum</a> von Philipp H. Poll.</p>
   </div>
 </section>
 </div>'
@@ -404,12 +404,12 @@ $impressumGerman = '<div class="chapter">
 
 $impressumEnglish = '<div class="chapter">
 <section class="body-text">
-  <div id="fulltext" class="text">
+  <div id="fulltext" class="text static">
     <h2>Impressum</h2>
     <p>Even in its infancy, it is evident that this project would never have been possible without a number of wonderful ressources:</p> 
     <p>Technically, the text is based on the TEI standard as published by the <a href="https://tei-c.org/"  rel="noopener" target="_blank">Text Encoding Initiative</a>. The presentation of the texts in the browser is made possible with the help of the <a href="https://github.com/TEIC/CETEIcean" target="_blank" rel="noopener">CETEIcean library</a>. The musical examples are encoded according to the <a href="https://music-encoding.org/" target="_blank" rel="noopener">MEI standard</a> and are rendered with the help of <a href="https://www.verovio.org/" target="_blank" rel="noopener">Verovio</a>. The processing of the bibliographic data happens thanks to the <a href="https://citation.js.org" rel="noopener" target="_blank">Citation.js library</a>.</p>
     <p>The Latin texts are based on the edition by the <a href="https://chmtl.indiana.edu/tml/16th/GLADOD1" target="_blank" rel="noopener">Thesaurus Musicarum Latinarum</a>. The German translation (which is intended only as a demonstration) was created by me with the help of Miller’s English translation.</p>
-    <p>The project is being hosted by the Regensburg university. the fonts used are <emph>Crimson Text</emph>, developed by <a href="https://github.com/skosch/Crimson" target="_blank" rel="noopener">Sebastian Kosch</a> for the texts of the edition, <a href="https://software.sil.org/gentium/" rel="noopener" target="_blank">Gentium</a> by Victor Gaultney for handwritten annotations, as well as <a href="https://sourceforge.net/projects/linuxlibertine/" target="_blank" rel="noopener">Linux Biolinum</a> by Philipp H. Poll.</p>
+    <p>The project is being hosted by the University of Regensburg. the fonts used are <emph>Alegreya</emph>, developed by Juan Pablo del Peral for <a href="https://www.huertatipografica.com/en" target="_blank" rel="noopener">Huerta Tipografica</a> for the texts of the edition, <a href="https://software.sil.org/gentium/" rel="noopener" target="_blank">Gentium</a> by Victor Gaultney for handwritten annotations, as well as <a href="https://sourceforge.net/projects/linuxlibertine/" target="_blank" rel="noopener">Linux Biolinum</a> by Philipp H. Poll.</p>
   </div>
 </section>
 </div>'
@@ -419,7 +419,7 @@ $impressumEnglish = '<div class="chapter">
 
 $contactGerman = '<div class="chapter">
 <section class="body-text">
-  <div id="fulltext" class="text">
+  <div id="fulltext" class="text static">
     <h2>Kontakt</h2>
     <p>Das Projekt wird <a href="https://www.github.com/umj95/Glarean" rel="noopener" target="_blank">hier</a> auf Github gehostet. Wenn Ihnen Fehler auffallen, Sie Feedback oder Anmerkungen haben, öffnen Sie einfach dort eine <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue" rel="noopener" target="_blank">Issue</a>.</p>
   </div>
@@ -428,7 +428,7 @@ $contactGerman = '<div class="chapter">
 
 $contactEnglish = '<div class="chapter">
 <section class="body-text">
-  <div id="fulltext" class="text">
+  <div id="fulltext" class="text static">
     <h2>Contact</h2>
     <p>This project is being hosted <a href="https://www.github.com/umj95/Glarean" rel="noopener" target="_blank">here</a> on Github. If you notice any errors, have comments, or feedback, please open an <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue" rel="noopener" target="_blank">issue</a> there.</p>
   </div>
