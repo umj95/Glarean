@@ -57,6 +57,10 @@
       font-weight: normal;
       font-style: italic;}
 
+    /* Alegreya */
+
+    @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital@0;1&display=swap');
+
 :root {
   --header-blue: #2f4858;
   --paper-beige: #fffcee;
@@ -66,10 +70,10 @@
   --paper-shadow: #88837a;
   --add-grey: rgb(99, 99, 99);
 
-  --edition-font: "Crimson";
-  --site-font: "Biolinum";
-  --add-font: "Gentium";
-  --greek-font: "Crimson";
+  --edition-font: "Alegreya, serif";
+  --site-font: "Biolinum, sans-serif";
+  --add-font: "Gentium, serif";
+  --greek-font: "Alegreya";
 
   --meta-fontsize: 0.9rem;
   --comment-fontsize: 0.8rem;
@@ -132,7 +136,7 @@ a:visited {color: inherit};
 
 button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
 
-.grc {font-family: var(--greek-font);}
+.grc {font-family: var(--edition-font);}
 
 /* ---------------- The Header ---------------- */
 
@@ -233,11 +237,12 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
     position: relative;
     max-width: 70%;
     line-height: 0.5in;
+    font-weight: 500;
     text-align: left;
     padding-left: calc(100vw / 13);
     font-size: 8vw;
     font-family: var(--edition-font);
-    letter-spacing: 0.1em;}
+    letter-spacing: 0.2em;}
 
   header #container nav.main a {
     display: block;
@@ -346,6 +351,12 @@ pre.block {
 
 .chapter_select .released {
   color: black;
+}
+
+/* -------------- Static Pages --------- */
+.static h2, .static h3, .static h4{
+  font-family: var(--site-font);
+  font-weight: normal;
 }
 
 /* =======================================================================================  Panel  ============*/
@@ -519,7 +530,7 @@ button.panel {
     background-color: var(--background-beige);
     font-family: var(--edition-font);
     line-height: 1.4;
-    font-feature-settings:"liga", "dlig", "kern", "onum";
+    font-feature-settings:"liga", /* "dlig",*/ "kern", "onum";
   }
   
   .chapter h1, .chapter h2, .chapter h3, .chapter h4, .chapter h5, .chapter h6 {
