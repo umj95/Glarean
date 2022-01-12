@@ -39,15 +39,19 @@
     "tei":{                                                       // all CETEIcean behaviors are defined here
       "term":                                                       // put a term in its own span container
         function(elt) {
-          var term = document.createElement("span");
+          let term = document.createElement("span");
           term.setAttribute("class", "term");
           if (elt.hasAttribute("ref")) {
-            var ref = document.createElement("a");                  // if it has a ref-attribute, link to it
+            let ref = document.createElement("a");                  // if it has a ref-attribute, link to it
             ref.setAttribute("class", "term");
             ref.setAttribute("href", elt.getAttribute("ref"));
             ref.setAttribute("target", "_blank");
             ref.innerHTML = elt.innerHTML;
             elt.replaceWith(ref);
+          }
+          if (elt.hasAttribute("type") && elt.getAttribute("type") === "notation") {
+            console.log("Hello");
+            term.className += ' notation';
           }
           term.innerHTML = elt.innerHTML;
           return term;
