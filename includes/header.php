@@ -68,6 +68,13 @@ session_start();
     <meta charset="UTF-8">
     <title>ΔΟΔΕΚΑΧΟΡΔΟΝ</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="description"/
+          content="A digital edition of excerpts from Heinrich Glarean's Dodekachordon
+                   with translations into German, as well as commentary and musical examples"/>
+    <meta name="keywords"
+          content="Glarean, Dodekachordon, Digital Edition, Musicology, Music Theory, Music History"/>
+    <meta name="author"
+          content="Janosch Umbreit"/>
     <link rel="stylesheet" href="css/glarean.css"/>
     <link rel="icon" type="image/ico" href="favicon.ico">
     <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
