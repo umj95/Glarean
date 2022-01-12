@@ -674,7 +674,7 @@ button.panel {
     border: 1px solid var(--header-blue);
     background-color: var(--music-beige);
     border-top: none;
-    max-height: 45vh;
+    max-height: 50vh;
     overflow-y: scroll;
   }
   
