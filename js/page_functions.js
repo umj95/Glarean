@@ -199,6 +199,7 @@
               musicOld.setAttribute("class", "musicOld")
               musicOld.setAttribute("id", "musicOld_" + i);
               musicOld.setAttribute("src", url);
+              musicOld.setAttribute("alt", "Scan of the musical example with ID " + graphics[i].getAttribute("url"));
               musicOld.setAttribute("loading", "lazy");
               containerOld.appendChild(musicOld);                 // append images to container
               url = `${pathToData}${currentBook}/${currentChapter}/`;
