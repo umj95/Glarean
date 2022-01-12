@@ -61,6 +61,15 @@
 
     @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital@0;1&display=swap');
 
+    /* Emmentaler */
+
+    @font-face {
+      font-family: "Emmentaler";
+      src: url('fonts/emmentaler/emmentaler_inline.otf') format("opentype");
+      font-weight: normal;
+      font-style: normal;
+    }
+
 :root {
   --header-blue: #2f4858;
   --paper-beige: #fffcee;
@@ -382,7 +391,7 @@ pre.block {
   width: 2.5vh;
   border-radius: 50%;
   color: var(--paper-beige);
-  background-color: var(--header-blue);
+  background-color: inherit;
   text-align: center;
   font-size: 1.8vh;
   overflow: hidden;}
@@ -584,7 +593,8 @@ button.panel {
     grid-template-columns: repeat(25, 1fr);
     background-color: var(--paper-beige);
     box-shadow: 5px 5px 20px #88837a;
-    font-size: 1rem;}
+    font-size: 1rem;
+    line-height: 1.4em;}
   
   .text {
     overflow: visible;
@@ -686,6 +696,14 @@ button.panel {
   
   .musicOld {
     max-width: 100%;
+  }
+
+  /* ----------------- Inline Music ------------ */
+
+  .notation {
+    font-family: 'Emmentaler';
+    font-size: 1.5em;
+    /* vertical-align: bottom; */
   }
   
 
