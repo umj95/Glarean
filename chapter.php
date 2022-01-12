@@ -60,9 +60,6 @@ session_start();
     </section>
     <button name="comments" class="panel" id="notesButton" onclick="openPanel('notesPanel')">☚</button>
     <div id="noteArea" class="panel">
-      <!-- <div id="closer">
-        <a href="javascript:void(0)" class="closebtn" onclick="closePanel('notesPanel')">&times;</a>
-      </div> -->
       <div id="notesContent">
         <script>
           alertText();                                            // if no comments are opened, display dummy text
@@ -76,11 +73,11 @@ session_start();
             insertComments(chapterOptions.comments[i]);
           }
         }
-
-        /* if(this.document.getElementsByClassName("containerMusic").length > 0) {  // if chapter has music examples, call verovio
-          console.log("I'll start Verovio!");
-          addVerovio();
-        } */
+        if(marginalia == "true") {
+          document.getElementById("body-text").setAttribute("style", "line-height: 1.8em");
+        } else {
+          document.getElementById("body-text").setAttribute("style", "line-height: inherit");
+        }
       });
 
       let optionsPanel = document.getElementById("optionsPanel");
@@ -92,28 +89,13 @@ session_start();
           closePanel("optionsPanel");
         }
       }
-      let hash = window.location.hash;
-        if(hash == "#tutorial1") {
-          constructTip(4);
-        } else if(hash == "#tutorial2") {
-          constructTip(7);
-        }
-    </script>
-    <!-- <script type="text/javascript" >
-      //window.setTimeout(function() {                              // start verovio only after enough time to load DOM
-      function startVerovio(){
-        console.log("domcontent Loaded!");
-        Module.onRuntimeInitialized = async _ => {
-          console.log("Toolkit instantiated");
-          const tk = new verovio.toolkit();
-          //if(this.document.getElementsByClassName("containerMusic").length > 0) {  // if chapter has music examples, call verovio
-            console.log("Starting Verovio");
-            addVerovio(tk);
-          //}
-        }
+      let hash = window.location.hash;                            // check for tutorial
+      if(hash == "#tutorial1") {
+        constructTip(4);
+      } else if(hash == "#tutorial2") {
+        constructTip(7);
       }
-      //}, 40);
-    </script> -->
+    </script>
   </div>
 <?php
   if(isset($_POST['submit'])){                                    // reload the page if the submit button in the options panel is pressed

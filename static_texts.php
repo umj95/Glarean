@@ -169,9 +169,9 @@ $chapterSelectTextGerman = '<div class="chapter">
       <li>De Modi, Tempore, ac Prolatione. Caput V.</li>
       <li>De Signis. Caput VI.</li>
       <li>De tactu siue cantandi mensura. Caput VII.</li>
-      <li class="released">De Augmentatione, Diminutione, ac Semidiapente. Caput VIII. · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=8&mainLanguage=_lat&marginalia=false">Latein</a><span class="tiptext">Dieses Kapitel auf latein Lesen</span></span> · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=8&mainLanguage=_deu&marginalia=false">Deutsch</a><span class="tiptext">Dieses Kapitel auf deutsch lesen</span></span></li>
+      <li class="released">De Augmentatione, Diminutione, ac Semidiapente. Caput VIII. · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=8&mainLanguage=_lat&marginalia=false">Latein</a><span class="tiptext">Dieses Kapitel auf latein Lesen</span></span></li>
       <li>De Notularum imperfectione. Caput IX.</li>
-      <li class="released">De Alteratione. Caput X. · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=10&mainLanguage=_lat&marginalia=false">Latein</a><span class="tiptext">Dieses Kapitel auf latein Lesen</span></span> · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=10&mainLanguage=_deu&marginalia=false">Deutsch</a><span class="tiptext">Dieses Kapitel auf deutsch lesen</span></span></li>
+      <li class="released">De Alteratione. Caput X. · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=10&mainLanguage=_lat&marginalia=false">Latein</a><span class="tiptext">Dieses Kapitel auf latein Lesen</span></span></li>
       <li>De Syncope, et huius nouae in institutionis diuersitate querela, cum exemplis ad eam ostendendam opportunis. Denique de VI uocum Musicalium (quas uocant) deductionibus exempla. Caput XI.</li>
       <li>De Proportionibus Musicis. Caput XII.</li>
       <li>Duodecim Modorum exempla, ac primum Hypodorij ac Aeolij. Caput XIII.</li>
@@ -275,9 +275,9 @@ $chapterSelectTextEnglish = '  <div class="chapter">
       <li>De Modi, Tempore, ac Prolatione. Caput V.</li>
       <li>De Signis. Caput VI.</li>
       <li>De tactu siue cantandi mensura. Caput VII.</li>
-      <li class="released">De Augmentatione, Diminutione, ac Semidiapente. Caput VIII. · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=8&mainLanguage=_lat&marginalia=false">Latein</a><span class="tiptext">Read this chapter in Latin</span></span> · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=8&mainLanguage=_deu&marginalia=false">Deutsch</a><span class="tiptext">Read this chapter in German</span></span></li>
+      <li class="released">De Augmentatione, Diminutione, ac Semidiapente. Caput VIII. · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=8&mainLanguage=_lat&marginalia=false">Latein</a><span class="tiptext">Read this chapter in Latin</span></span></li>
       <li>De Notularum imperfectione. Caput IX.</li>
-      <li class="released">De Alteratione. Caput X. · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=10&mainLanguage=_lat&marginalia=false">Latein</a><span class="tiptext">Read this chapter in Latin</span></span> · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=10&mainLanguage=_deu&marginalia=false">Deutsch</a><span class="tiptext">Read this chapter in German</span></span></li>
+      <li class="released">De Alteratione. Caput X. · <span class="tooltip"><a href="chapter.php?currentBook=3&currentChapter=10&mainLanguage=_lat&marginalia=false">Latein</a><span class="tiptext">Read this chapter in Latin</span></span></li>
       <li>De Syncope, et huius nouae in institutionis diuersitate querela, cum exemplis ad eam ostendendam opportunis. Denique de VI uocum Musicalium (quas uocant) deductionibus exempla. Caput XI.</li>
       <li>De Proportionibus Musicis. Caput XII.</li>
       <li>Duodecim Modorum exempla, ac primum Hypodorij ac Aeolij. Caput XIII.</li>

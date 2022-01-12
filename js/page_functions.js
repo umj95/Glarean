@@ -18,6 +18,8 @@
 
   let tutorial = false;
 
+  let marginalia = false;
+
   //const pathToData = "https://raw.githubusercontent.com/umj95/Glarean_Dodekachordon_Text/main/data/"; // the path to the text data folder, containing the chapter folders
   const pathToData = "https://homepages.uni-regensburg.de/~umj63240/Glarean_Dodekachordon_Text/data/";
   let bibliography = {};
