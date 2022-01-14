@@ -698,12 +698,14 @@ button.panel {
     max-width: 100%;
   }
 
+  svg tspan {   /* Make Music Text the same font as the rest */
+    font-family: var(--edition-font);
+  } 
+
   /* ----------------- Inline Music ------------ */
 
   .notation {
     font-family: 'Emmentaler';
-    font-size: 1.5em;
-    /* vertical-align: bottom; */
   }
   
 
