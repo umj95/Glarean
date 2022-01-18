@@ -336,6 +336,10 @@ footer p {
   vertical-align: middle;
   font-size: var(--meta-fontsize);}
 
+footer a {
+  color: var(--paper-beige);
+}
+
 footer .grc {
   font-family: var(--edition-font);
 }
