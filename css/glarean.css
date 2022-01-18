@@ -120,12 +120,10 @@ a {
   cursor: pointer;}
 
 a:visited {
-  color: inherit;
+  color: var(--header-blue);
 }
 
 a:hover {text-shadow: 2px 2px 4px var(--paper-shadow);}
-
-a:visited {color: inherit};
 
 button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
 
