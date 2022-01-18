@@ -25,22 +25,6 @@
       font-weight: bold;
       font-style: bold;}
 
-    /* Crimson */
-
-    @font-face {
-      font-family: "Crimson";
-      src: url( fonts/crimson/Crimson-Roman.otf);
-      src: url('fonts/crimson/Crimson-Roman.otf') format("opentype");
-      font-weight: normal;
-      font-style: normal;}
-    
-    @font-face {
-      font-family: "Crimson";
-      src: url( fonts/crimson/Crimson-Italic.otf);
-      src: url('fonts/crimson/Crimson-Italic.otf') format("opentype");
-      font-weight: normal;
-      font-style: italic;}
-
     /* Gentium */
 
     @font-face {
@@ -60,6 +44,7 @@
     /* Alegreya */
 
     @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital@0;1&display=swap');
+    /* @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Alegreya+Sans:ital@0;1&display=swap'); */
 
     /* Emmentaler */
 
@@ -129,9 +114,8 @@ body {
 
 a {
   font-feature-settings: "smcp";
-  color: inherit;
+  color: var(--header-blue);
   letter-spacing: 0.08em;
-  /* color: var(--header-blue); */
   text-decoration: none;
   cursor: pointer;}
 
@@ -550,11 +534,15 @@ button.panel {
     letter-spacing: 0.075em;
     line-height: normal;}
   
-  .chapter h1 {font-size: 4rem;} .chapter h2 {font-size: 2.4rem;} .chapter h3 {font-size: 2rem;} 
-  .chapter h4 {font-size: 1.5rem;} .chapter h5 {font-size: 1.2rem;} .chapter h6 {font-size: 1rem;}
+  .chapter h1 {font-size: 3rem;} .chapter h2 {font-size: 2rem;} .chapter h3 {font-size: 1.5rem;} 
+  .chapter h4 {font-size: 1.2rem;} .chapter h5 {font-size: 1rem;} .chapter h6 {font-size: 0.8rem;}
 
   .chapter p {
     font-family: inherit;}
+  
+  .chapter a {
+    font-family: 'Alegreya SC';
+  }
   
   .chapter tei-title {
     font-style: italic;}

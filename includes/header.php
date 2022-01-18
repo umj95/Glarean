@@ -75,10 +75,12 @@ session_start();
           content="Glarean, Dodekachordon, Digital Edition, Musicology, Music Theory, Music History"/>
     <meta name="author"
           content="Janosch Umbreit"/>
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/glarean.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap" rel="stylesheet"> 
     <link rel="icon" type="image/ico" href="favicon.ico">
     <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
     <script type="text/javascript" src="js/CETEI.js"></script>
