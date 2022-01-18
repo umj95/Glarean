@@ -771,7 +771,7 @@ button.panel {
   
   .tooltip .tiptext {
     visibility: hidden;
-    max-width: max-content;
+    width: max-content;
     padding: 0.15rem 0.2rem 0.15rem 0.2rem;
     background-color: var(--background-beige);
     font-size: var(--comment-fontsize);
