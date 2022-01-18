@@ -119,10 +119,6 @@ a {
   text-decoration: none;
   cursor: pointer;}
 
-a:visited {
-  color: var(--header-blue);
-}
-
 a:hover {text-shadow: 2px 2px 4px var(--paper-shadow);}
 
 button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
@@ -139,7 +135,7 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
     z-index: 2;
     width: 100%;
     display: block;
-    color: #efe4d8;
+    color: var(--paper-beige);
     background-color: var(--header-blue);
     transition: top 0.4s;
     font-size: var(--meta-fontsize);}
@@ -163,6 +159,10 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
     font-family: var(--edition-font);
     letter-spacing: 0.1em;}
 
+  header #container a, header #container a:visited {
+    color: var(--paper-beige);
+  }
+
   #container nav.main {
     grid-column: 8 / 16;
     place-self: center stretch;
@@ -177,7 +177,7 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
     margin: 0;
     border-top: 1px solid var(--paper-beige);
     border-bottom: 1px solid var(--paper-beige);
-    color: #efe4d8;}
+    color: var(--paper-beige);}
 
   #container .hamburger {
     display: none;
@@ -217,7 +217,7 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
     z-index: 2;
     width: 100%;
     display: block;
-    color: #efe4d8;
+    color: var(--paper-beige);
     background-color: var(--header-blue);
     transition: top 0.4s;}
 
@@ -240,7 +240,7 @@ button:hover {box-shadow: 2px 2px 4px var(--paper-shadow);}
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    color: #efe4d8;}
+    color: var(--paper-beige);}
 
   header #container #hamburgerExpand {display: none;}
 
